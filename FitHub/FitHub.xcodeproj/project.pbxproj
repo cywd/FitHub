@@ -7,8 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D56D4B60E8D8CD0ECEEEF14 /* Pods_FitHub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 684B0EFC6A9D30F55DF1A218 /* Pods_FitHub.framework */; };
+		E7403DFF1FC3FCB0003054D7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7403DFE1FC3FCB0003054D7 /* BaseViewController.swift */; };
+		E7403E011FC3FCD4003054D7 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7403E001FC3FCD4003054D7 /* BaseNavigationController.swift */; };
+		E7403E031FC3FCF5003054D7 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7403E021FC3FCF5003054D7 /* TabBar.swift */; };
+		E7403E051FC3FD08003054D7 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7403E041FC3FD08003054D7 /* TabBarController.swift */; };
+		E7403E071FC3FD8D003054D7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7403E061FC3FD8D003054D7 /* HomeViewController.swift */; };
+		E7403E091FC3FDAC003054D7 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7403E081FC3FDAC003054D7 /* MeViewController.swift */; };
+		E7403E0B1FC3FE13003054D7 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7403E0A1FC3FE13003054D7 /* NavigationController.swift */; };
+		E7403E0D1FC4001D003054D7 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7403E0C1FC4001D003054D7 /* NavigationBar.swift */; };
+		E7403E0F1FC402FA003054D7 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7403E0E1FC402FA003054D7 /* Home.storyboard */; };
 		E77CE5431FBEC04500A120B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77CE5421FBEC04500A120B2 /* AppDelegate.swift */; };
-		E77CE5451FBEC04500A120B2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77CE5441FBEC04500A120B2 /* ViewController.swift */; };
 		E77CE5481FBEC04500A120B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E77CE5461FBEC04500A120B2 /* Main.storyboard */; };
 		E77CE54A1FBEC04500A120B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E77CE5491FBEC04500A120B2 /* Assets.xcassets */; };
 		E77CE54D1FBEC04500A120B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E77CE54B1FBEC04500A120B2 /* LaunchScreen.storyboard */; };
@@ -34,9 +43,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		684B0EFC6A9D30F55DF1A218 /* Pods_FitHub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FitHub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6997D6C2A0F99CAC8347C059 /* Pods-FitHub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitHub.release.xcconfig"; path = "Pods/Target Support Files/Pods-FitHub/Pods-FitHub.release.xcconfig"; sourceTree = "<group>"; };
+		89905B76143CFD45D9D78DE2 /* Pods-FitHub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitHub.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FitHub/Pods-FitHub.debug.xcconfig"; sourceTree = "<group>"; };
+		E7403DFE1FC3FCB0003054D7 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		E7403E001FC3FCD4003054D7 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		E7403E021FC3FCF5003054D7 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		E7403E041FC3FD08003054D7 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		E7403E061FC3FD8D003054D7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		E7403E081FC3FDAC003054D7 /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
+		E7403E0A1FC3FE13003054D7 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		E7403E0C1FC4001D003054D7 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
+		E7403E0E1FC402FA003054D7 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		E77CE53F1FBEC04500A120B2 /* FitHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E77CE5421FBEC04500A120B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E77CE5441FBEC04500A120B2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E77CE5471FBEC04500A120B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E77CE5491FBEC04500A120B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E77CE54C1FBEC04500A120B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D56D4B60E8D8CD0ECEEEF14 /* Pods_FitHub.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +95,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		826199E039EDB83B64748FED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				684B0EFC6A9D30F55DF1A218 /* Pods_FitHub.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E77CE5361FBEC04500A120B2 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +110,8 @@
 				E77CE5561FBEC04500A120B2 /* FitHubTests */,
 				E77CE5611FBEC04500A120B2 /* FitHubUITests */,
 				E77CE5401FBEC04500A120B2 /* Products */,
+				F5EF5CCB3F07069AD11315EF /* Pods */,
+				826199E039EDB83B64748FED /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,7 +129,15 @@
 			isa = PBXGroup;
 			children = (
 				E77CE5421FBEC04500A120B2 /* AppDelegate.swift */,
-				E77CE5441FBEC04500A120B2 /* ViewController.swift */,
+				E7403DFE1FC3FCB0003054D7 /* BaseViewController.swift */,
+				E7403E001FC3FCD4003054D7 /* BaseNavigationController.swift */,
+				E7403E0A1FC3FE13003054D7 /* NavigationController.swift */,
+				E7403E021FC3FCF5003054D7 /* TabBar.swift */,
+				E7403E0C1FC4001D003054D7 /* NavigationBar.swift */,
+				E7403E041FC3FD08003054D7 /* TabBarController.swift */,
+				E7403E061FC3FD8D003054D7 /* HomeViewController.swift */,
+				E7403E0E1FC402FA003054D7 /* Home.storyboard */,
+				E7403E081FC3FDAC003054D7 /* MeViewController.swift */,
 				E77CE5461FBEC04500A120B2 /* Main.storyboard */,
 				E77CE5491FBEC04500A120B2 /* Assets.xcassets */,
 				E77CE54B1FBEC04500A120B2 /* LaunchScreen.storyboard */,
@@ -125,6 +164,15 @@
 			path = FitHubUITests;
 			sourceTree = "<group>";
 		};
+		F5EF5CCB3F07069AD11315EF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				89905B76143CFD45D9D78DE2 /* Pods-FitHub.debug.xcconfig */,
+				6997D6C2A0F99CAC8347C059 /* Pods-FitHub.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +180,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E77CE5671FBEC04500A120B2 /* Build configuration list for PBXNativeTarget "FitHub" */;
 			buildPhases = (
+				6B0ED392EDC7346F04BE07AB /* [CP] Check Pods Manifest.lock */,
 				E77CE53B1FBEC04500A120B2 /* Sources */,
 				E77CE53C1FBEC04500A120B2 /* Frameworks */,
 				E77CE53D1FBEC04500A120B2 /* Resources */,
+				B7E452399CE94DEE8625E5F7 /* [CP] Embed Pods Frameworks */,
+				7B955D9217D03353E191183D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -235,6 +286,7 @@
 				E77CE54D1FBEC04500A120B2 /* LaunchScreen.storyboard in Resources */,
 				E77CE54A1FBEC04500A120B2 /* Assets.xcassets in Resources */,
 				E77CE5481FBEC04500A120B2 /* Main.storyboard in Resources */,
+				E7403E0F1FC402FA003054D7 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,13 +306,68 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6B0ED392EDC7346F04BE07AB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7B955D9217D03353E191183D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FitHub/Pods-FitHub-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B7E452399CE94DEE8625E5F7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FitHub/Pods-FitHub-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E77CE53B1FBEC04500A120B2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E77CE5451FBEC04500A120B2 /* ViewController.swift in Sources */,
+				E7403E011FC3FCD4003054D7 /* BaseNavigationController.swift in Sources */,
+				E7403E0B1FC3FE13003054D7 /* NavigationController.swift in Sources */,
+				E7403E091FC3FDAC003054D7 /* MeViewController.swift in Sources */,
 				E77CE5431FBEC04500A120B2 /* AppDelegate.swift in Sources */,
+				E7403E051FC3FD08003054D7 /* TabBarController.swift in Sources */,
+				E7403E0D1FC4001D003054D7 /* NavigationBar.swift in Sources */,
+				E7403DFF1FC3FCB0003054D7 /* BaseViewController.swift in Sources */,
+				E7403E031FC3FCF5003054D7 /* TabBar.swift in Sources */,
+				E7403E071FC3FD8D003054D7 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,6 +531,7 @@
 		};
 		E77CE5681FBEC04500A120B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89905B76143CFD45D9D78DE2 /* Pods-FitHub.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -439,6 +547,7 @@
 		};
 		E77CE5691FBEC04500A120B2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6997D6C2A0F99CAC8347C059 /* Pods-FitHub.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
