@@ -37,13 +37,11 @@ class HomeViewController: BaseViewController {
         self.tableView.fit_registerCell(cell: UserTableViewCell.self)
         
         self.page = 1
-        
-        self.tableView.fr_headerView = FRNormalHeader(ComponentRefreshingClosure: {
+        self.tableView.fr.headerView = FRNormalHeader(ComponentRefreshingClosure: {
             self.loadData()
         })
-        self.tableView.fr_headerView?.beginRefreshing()
-        
-        self.tableView.fr_footerView = FRAutoNormalFooter(ComponentRefreshingClosure: {
+        self.tableView.fr.headerView?.beginRefreshing()
+        self.tableView.fr.footerView = FRAutoNormalFooter(ComponentRefreshingClosure: {
             self.loadMore()
         })
     }
@@ -60,8 +58,8 @@ class HomeViewController: BaseViewController {
 
     func refreshData() {
         NetworkManager.loadUserDataWith(self.page, 0) { (items, total_count) in
-            self.tableView.fr_headerView?.endRefreshing()
-            self.tableView.fr_footerView?.endRefreshing()
+            self.tableView.fr.headerView?.endRefreshing()
+            self.tableView.fr.footerView?.endRefreshing()
             
             if self.page == 1 {
                 self.items = items
