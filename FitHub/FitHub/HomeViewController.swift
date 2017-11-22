@@ -23,7 +23,7 @@ class HomeViewController: BaseViewController {
         let tableView = UITableView(frame: CGRect.zero, style: .plain)
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.rowHeight = 44;
+        tableView.rowHeight = 60.0
         tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         return tableView
     }()
