@@ -9,10 +9,23 @@
 import UIKit
 
 class HomeViewController: BaseViewController {
+    
+    var scrollView: UIScrollView?
+    
+    lazy var tableView: UITableView = {
+        let tableView = UITableView(frame: CGRect.zero, style: .plain)
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.rowHeight = 44;
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+        return tableView
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Home"
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,4 +44,16 @@ class HomeViewController: BaseViewController {
     }
     */
 
+}
+
+extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+    
 }

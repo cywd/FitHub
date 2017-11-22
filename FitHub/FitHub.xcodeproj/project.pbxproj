@@ -17,6 +17,12 @@
 		E7403E0B1FC3FE13003054D7 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7403E0A1FC3FE13003054D7 /* NavigationController.swift */; };
 		E7403E0D1FC4001D003054D7 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7403E0C1FC4001D003054D7 /* NavigationBar.swift */; };
 		E7403E0F1FC402FA003054D7 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7403E0E1FC402FA003054D7 /* Home.storyboard */; };
+		E746084D1FC510B800951AEF /* UICollectionView+FitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = E746084C1FC510B800951AEF /* UICollectionView+FitHub.swift */; };
+		E746084F1FC5117B00951AEF /* UIImage+FitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = E746084E1FC5117B00951AEF /* UIImage+FitHub.swift */; };
+		E74608511FC5151E00951AEF /* UIView+FitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74608501FC5151E00951AEF /* UIView+FitHub.swift */; };
+		E74608531FC518E100951AEF /* UIColor+FitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74608521FC518E100951AEF /* UIColor+FitHub.swift */; };
+		E74608551FC51B1500951AEF /* UIImageView+FitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74608541FC51B1500951AEF /* UIImageView+FitHub.swift */; };
+		E74608571FC51D1300951AEF /* UITableView+FitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74608561FC51D1300951AEF /* UITableView+FitHub.swift */; };
 		E77CE5431FBEC04500A120B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77CE5421FBEC04500A120B2 /* AppDelegate.swift */; };
 		E77CE5481FBEC04500A120B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E77CE5461FBEC04500A120B2 /* Main.storyboard */; };
 		E77CE54A1FBEC04500A120B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E77CE5491FBEC04500A120B2 /* Assets.xcassets */; };
@@ -55,6 +61,12 @@
 		E7403E0A1FC3FE13003054D7 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		E7403E0C1FC4001D003054D7 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		E7403E0E1FC402FA003054D7 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		E746084C1FC510B800951AEF /* UICollectionView+FitHub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+FitHub.swift"; sourceTree = "<group>"; };
+		E746084E1FC5117B00951AEF /* UIImage+FitHub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+FitHub.swift"; sourceTree = "<group>"; };
+		E74608501FC5151E00951AEF /* UIView+FitHub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+FitHub.swift"; sourceTree = "<group>"; };
+		E74608521FC518E100951AEF /* UIColor+FitHub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+FitHub.swift"; sourceTree = "<group>"; };
+		E74608541FC51B1500951AEF /* UIImageView+FitHub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+FitHub.swift"; sourceTree = "<group>"; };
+		E74608561FC51D1300951AEF /* UITableView+FitHub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+FitHub.swift"; sourceTree = "<group>"; };
 		E77CE53F1FBEC04500A120B2 /* FitHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E77CE5421FBEC04500A120B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E77CE5471FBEC04500A120B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -103,6 +115,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E746084B1FC50F9C00951AEF /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				E746084C1FC510B800951AEF /* UICollectionView+FitHub.swift */,
+				E74608561FC51D1300951AEF /* UITableView+FitHub.swift */,
+				E746084E1FC5117B00951AEF /* UIImage+FitHub.swift */,
+				E74608501FC5151E00951AEF /* UIView+FitHub.swift */,
+				E74608521FC518E100951AEF /* UIColor+FitHub.swift */,
+				E74608541FC51B1500951AEF /* UIImageView+FitHub.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		E77CE5361FBEC04500A120B2 = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +167,7 @@
 				E77CE5491FBEC04500A120B2 /* Assets.xcassets */,
 				E77CE54B1FBEC04500A120B2 /* LaunchScreen.storyboard */,
 				E77CE54E1FBEC04500A120B2 /* Info.plist */,
+				E746084B1FC50F9C00951AEF /* Category */,
 			);
 			path = FitHub;
 			sourceTree = "<group>";
@@ -361,12 +387,18 @@
 			files = (
 				E7403E011FC3FCD4003054D7 /* BaseNavigationController.swift in Sources */,
 				E7403E0B1FC3FE13003054D7 /* NavigationController.swift in Sources */,
+				E74608531FC518E100951AEF /* UIColor+FitHub.swift in Sources */,
+				E746084F1FC5117B00951AEF /* UIImage+FitHub.swift in Sources */,
+				E746084D1FC510B800951AEF /* UICollectionView+FitHub.swift in Sources */,
+				E74608511FC5151E00951AEF /* UIView+FitHub.swift in Sources */,
 				E7403E091FC3FDAC003054D7 /* MeViewController.swift in Sources */,
+				E74608571FC51D1300951AEF /* UITableView+FitHub.swift in Sources */,
 				E77CE5431FBEC04500A120B2 /* AppDelegate.swift in Sources */,
 				E7403E051FC3FD08003054D7 /* TabBarController.swift in Sources */,
 				E7403E0D1FC4001D003054D7 /* NavigationBar.swift in Sources */,
 				E7403DFF1FC3FCB0003054D7 /* BaseViewController.swift in Sources */,
 				E7403E031FC3FCF5003054D7 /* TabBar.swift in Sources */,
+				E74608551FC51B1500951AEF /* UIImageView+FitHub.swift in Sources */,
 				E7403E071FC3FD8D003054D7 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
