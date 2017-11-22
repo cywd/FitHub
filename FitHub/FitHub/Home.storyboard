@@ -14,7 +14,7 @@
         <scene sceneID="swW-ao-by4">
             <objects>
                 <navigationController id="Ddt-HN-Xrp" customClass="NavigationController" customModule="FitHub" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="R8W-dh-pFC">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="R8W-dh-pFC" customClass="NavigationBar" customModule="FitHub" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
