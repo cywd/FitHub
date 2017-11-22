@@ -23,6 +23,10 @@
 		E74608531FC518E100951AEF /* UIColor+FitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74608521FC518E100951AEF /* UIColor+FitHub.swift */; };
 		E74608551FC51B1500951AEF /* UIImageView+FitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74608541FC51B1500951AEF /* UIImageView+FitHub.swift */; };
 		E74608571FC51D1300951AEF /* UITableView+FitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74608561FC51D1300951AEF /* UITableView+FitHub.swift */; };
+		E746085B1FC541FF00951AEF /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E746085A1FC541FF00951AEF /* NetworkManager.swift */; };
+		E746085D1FC551D100951AEF /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E746085C1FC551D100951AEF /* UserModel.swift */; };
+		E74608601FC5769800951AEF /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E746085E1FC5769800951AEF /* UserTableViewCell.swift */; };
+		E74608611FC5769800951AEF /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E746085F1FC5769800951AEF /* UserTableViewCell.xib */; };
 		E77CE5431FBEC04500A120B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77CE5421FBEC04500A120B2 /* AppDelegate.swift */; };
 		E77CE5481FBEC04500A120B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E77CE5461FBEC04500A120B2 /* Main.storyboard */; };
 		E77CE54A1FBEC04500A120B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E77CE5491FBEC04500A120B2 /* Assets.xcassets */; };
@@ -67,6 +71,10 @@
 		E74608521FC518E100951AEF /* UIColor+FitHub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+FitHub.swift"; sourceTree = "<group>"; };
 		E74608541FC51B1500951AEF /* UIImageView+FitHub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+FitHub.swift"; sourceTree = "<group>"; };
 		E74608561FC51D1300951AEF /* UITableView+FitHub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+FitHub.swift"; sourceTree = "<group>"; };
+		E746085A1FC541FF00951AEF /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		E746085C1FC551D100951AEF /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		E746085E1FC5769800951AEF /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		E746085F1FC5769800951AEF /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
 		E77CE53F1FBEC04500A120B2 /* FitHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E77CE5421FBEC04500A120B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E77CE5471FBEC04500A120B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -161,12 +169,16 @@
 				E7403E0C1FC4001D003054D7 /* NavigationBar.swift */,
 				E7403E041FC3FD08003054D7 /* TabBarController.swift */,
 				E7403E061FC3FD8D003054D7 /* HomeViewController.swift */,
+				E746085E1FC5769800951AEF /* UserTableViewCell.swift */,
+				E746085F1FC5769800951AEF /* UserTableViewCell.xib */,
 				E7403E0E1FC402FA003054D7 /* Home.storyboard */,
 				E7403E081FC3FDAC003054D7 /* MeViewController.swift */,
 				E77CE5461FBEC04500A120B2 /* Main.storyboard */,
 				E77CE5491FBEC04500A120B2 /* Assets.xcassets */,
 				E77CE54B1FBEC04500A120B2 /* LaunchScreen.storyboard */,
 				E77CE54E1FBEC04500A120B2 /* Info.plist */,
+				E746085C1FC551D100951AEF /* UserModel.swift */,
+				E746085A1FC541FF00951AEF /* NetworkManager.swift */,
 				E746084B1FC50F9C00951AEF /* Category */,
 			);
 			path = FitHub;
@@ -313,6 +325,7 @@
 				E77CE54A1FBEC04500A120B2 /* Assets.xcassets in Resources */,
 				E77CE5481FBEC04500A120B2 /* Main.storyboard in Resources */,
 				E7403E0F1FC402FA003054D7 /* Home.storyboard in Resources */,
+				E74608611FC5769800951AEF /* UserTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,10 +402,13 @@
 				E7403E0B1FC3FE13003054D7 /* NavigationController.swift in Sources */,
 				E74608531FC518E100951AEF /* UIColor+FitHub.swift in Sources */,
 				E746084F1FC5117B00951AEF /* UIImage+FitHub.swift in Sources */,
+				E746085B1FC541FF00951AEF /* NetworkManager.swift in Sources */,
 				E746084D1FC510B800951AEF /* UICollectionView+FitHub.swift in Sources */,
 				E74608511FC5151E00951AEF /* UIView+FitHub.swift in Sources */,
 				E7403E091FC3FDAC003054D7 /* MeViewController.swift in Sources */,
+				E746085D1FC551D100951AEF /* UserModel.swift in Sources */,
 				E74608571FC51D1300951AEF /* UITableView+FitHub.swift in Sources */,
+				E74608601FC5769800951AEF /* UserTableViewCell.swift in Sources */,
 				E77CE5431FBEC04500A120B2 /* AppDelegate.swift in Sources */,
 				E7403E051FC3FD08003054D7 /* TabBarController.swift in Sources */,
 				E7403E0D1FC4001D003054D7 /* NavigationBar.swift in Sources */,

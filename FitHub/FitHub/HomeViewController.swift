@@ -7,10 +7,17 @@
 //
 
 import UIKit
+import FitRefresh
 
 class HomeViewController: BaseViewController {
     
+    var page: Int = 1
+    
     var scrollView: UIScrollView?
+    
+    var items = [UserModel]()
+    
+    var total_count: Int = 0
     
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: CGRect.zero, style: .plain)
@@ -25,9 +32,47 @@ class HomeViewController: BaseViewController {
         super.viewDidLoad()
         title = "Home"
         
+        self.view.addSubview(self.tableView)
+        self.tableView.frame = self.view.bounds
+        self.tableView.fit_registerCell(cell: UserTableViewCell.self)
         
+        self.page = 1
+        
+        self.tableView.fr_headerView = FRNormalHeader(ComponentRefreshingClosure: {
+            self.loadData()
+        })
+        self.tableView.fr_headerView?.beginRefreshing()
+        
+        self.tableView.fr_footerView = FRAutoNormalFooter(ComponentRefreshingClosure: {
+            self.loadMore()
+        })
+    }
+    
+    func loadData() {
+        self.page = 1
+        self.refreshData()
+    }
+    
+    func loadMore() {
+        self.page += 1
+        self.refreshData()
     }
 
+    func refreshData() {
+        NetworkManager.loadUserDataWith(self.page, 0) { (items, total_count) in
+            self.tableView.fr_headerView?.endRefreshing()
+            self.tableView.fr_footerView?.endRefreshing()
+            
+            if self.page == 1 {
+                self.items = items
+            } else {
+                self.items = self.items + items
+            }
+            self.total_count = total_count
+            self.tableView.reloadData()
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -49,11 +94,15 @@ class HomeViewController: BaseViewController {
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return self.items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        
+        let cell = tableView.fit_dequeueReusableCell(indexPath: indexPath) as UserTableViewCell
+        cell.model = self.items[indexPath.row]
+        cell.indexPath = indexPath
+        return cell
     }
     
 }
