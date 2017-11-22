@@ -17,7 +17,7 @@ class MeViewController: BaseViewController {
         self.view.addSubview(self.tableView)
         self.tableView.frame = self.view.bounds
         
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "qwert")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "MeTableViewCell")
     }
     
     // MARK: -
@@ -56,7 +56,7 @@ extension MeViewController: UITableViewDataSource, UITableViewDelegate {
             name = ""
         }
         
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "qwert")
+        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "MeTableViewCell")
         
         cell.textLabel?.text = name
         

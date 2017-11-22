@@ -11,10 +11,10 @@ import UIKit
 
 extension UITableView {
     
-    /// 注册cell registerCell
+    /// 注册cell 自定义cell需要遵守RegisterCellOrNib
     ///
     /// - Parameter cell: cell.self
-    func fit_registerCell<T: UITableViewCell>(cell: T.Type) where T:  RegisterCellOrNib {
+    func fit_registerCell<T: UITableViewCell>(cell: T.Type) where T: RegisterCellOrNib {
         if let xib = T.xib {
             register(xib, forCellReuseIdentifier: T.identifier)
         } else {
@@ -22,8 +22,7 @@ extension UITableView {
         }
     }
     
-
-    /// 复用cell dequeueReusableCell
+    /// 复用cell 自定义cell需要遵守RegisterCellOrNib
     ///
     /// - Parameter indexPath: indexPath
     /// - Returns: cell

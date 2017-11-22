@@ -10,7 +10,7 @@ import UIKit
 
 extension UICollectionView {
     
-    /// 注册cell
+    /// 注册cell 自定义cell需要遵守RegisterCellOrNib
     ///
     /// - Parameter cell: cell.self
     func fit_registerCell<T: UICollectionViewCell>(cell: T.Type) where T: RegisterCellOrNib {
@@ -22,7 +22,7 @@ extension UICollectionView {
     }
     
     
-    /// 复用cell
+    /// 复用cell 自定义cell需要遵守RegisterCellOrNib
     ///
     /// - Parameter indexPath: indexPath
     /// - Returns: UICollectionViewCell
