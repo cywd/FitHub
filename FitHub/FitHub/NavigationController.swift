@@ -14,6 +14,8 @@ class NavigationController: BaseNavigationController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        self.view.backgroundColor = UIColor.white
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,6 +23,12 @@ class NavigationController: BaseNavigationController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+        
+        viewController.hidesBottomBarWhenPushed = true
+        
+        super.pushViewController(viewController, animated: animated)
+    }
 
     /*
     // MARK: - Navigation

@@ -1,21 +1,42 @@
 //
-//  BaseViewController.swift
+//  UserDetailViewController.swift
 //  FitHub
 //
-//  Created by Cyrill on 2017/11/21.
+//  Created by Cyrill on 2017/11/23.
 //  Copyright © 2017年 Cyrill. All rights reserved.
 //
 
 import UIKit
 
-class BaseViewController: UIViewController {
-
+class UserDetailViewController: BaseViewController {
+    
+    var items = [RepositoryModel]()
+    var name: String = ""
+    
+    var model: UserModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-        self.view.backgroundColor = UIColor.white
+    }
+    
+    fileprivate func loadData() {
+        
+    }
+    
+    fileprivate func loadMore() {
+        
+    }
+    
+    fileprivate func requestData() {
+        if let name = model!.login {
+            NetworkManager.loadUserDetailDataWith(1, name) { (items) in
+                
+                self.items = items
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {

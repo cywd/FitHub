@@ -48,15 +48,15 @@ class HomeViewController: BaseViewController {
     
     func loadData() {
         self.page = 1
-        self.refreshData()
+        self.requestData()
     }
     
     func loadMore() {
         self.page += 1
-        self.refreshData()
+        self.requestData()
     }
 
-    func refreshData() {
+    func requestData() {
         NetworkManager.loadUserDataWith(self.page, 0) { (items, total_count) in
             self.tableView.fr.headerView?.endRefreshing()
             self.tableView.fr.footerView?.endRefreshing()
@@ -103,4 +103,11 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let vc = UserDetailViewController()
+        vc.model = self.items[indexPath.row]
+//        vc.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }

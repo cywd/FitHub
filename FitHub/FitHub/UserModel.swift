@@ -30,10 +30,27 @@ class UserModel: NSObject {
     var site_admin: Bool = false
     var score: Float = 0.0
     
+    
+    var name: String?
+    var company: String?
+    var blog: String?
+    var location: String?
+    var email: String?
+    var isHireable: Bool = false
+    var bio: String?
+    var public_repos: Int = 0
+    var public_gists: Int = 0
+    var followers: Int = 0
+    var following: Int = 0
+    var created_at: String?
+    var updated_at: String?
+    
+    
     init(dict: [String: AnyObject]) {
         super.init()
         setValuesForKeys(dict)
     }
+    
     override func setValue(_ value: Any?, forUndefinedKey key: String) {
         print(key)
     }
