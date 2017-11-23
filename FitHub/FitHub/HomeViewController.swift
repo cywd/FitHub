@@ -106,8 +106,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let vc = UserDetailViewController()
-        vc.model = self.items[indexPath.row]
-//        vc.hidesBottomBarWhenPushed = true
+        vc.name = self.items[indexPath.row].login!
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

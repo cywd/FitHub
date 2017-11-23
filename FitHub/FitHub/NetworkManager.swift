@@ -14,7 +14,8 @@ import SwiftyJSON
 
 protocol NetworkManagerProtocol {
     static func loadUserDataWith(_ page: Int, _ currentIndex: Int, completionHandler: @escaping (_ items: [UserModel], _ total_count: Int) -> ())
-    static func loadUserDetailDataWith(_ page: Int, _ userName: String, completionHandler: @escaping (_ items: [RepositoryModel]) -> ())
+    static func loadUserDetailDataWith(userName: String, completionHandler: @escaping (UserModel) -> ())
+    static func loadUserRepositoriesDataWith(_ page: Int, _ userName: String, completionHandler: @escaping (_ items: [RepositoryModel]) -> ())
 }
 
 class NetworkManager: NetworkManagerProtocol {
@@ -56,8 +57,29 @@ class NetworkManager: NetworkManagerProtocol {
         }
     }
 
+    static func loadUserDetailDataWith(userName: String, completionHandler: @escaping (UserModel) -> ()) {
+        let baseUrl = "https://api.github.com"
+        let string = "/users/\(userName)"
+        
+        let url = baseUrl + string
+        
+        Alamofire.request(url, method: .get).responseJSON { (response) in
+            guard response.result.isSuccess else {
+                return
+            }
+            if let value = response.result.value {
+                
+                let json = JSON(value)
+                
+                if let dataDict = json.dictionaryObject {
+                    let model = UserModel(dict: dataDict as [String : AnyObject])
+                    completionHandler(model)
+                }
+            }
+        }
+    }
     
-    static func loadUserDetailDataWith(_ page: Int, _ userName: String, completionHandler: @escaping ([RepositoryModel]) -> ()) {
+    static func loadUserRepositoriesDataWith(_ page: Int, _ userName: String, completionHandler: @escaping ([RepositoryModel]) -> ()) {
 
         let baseUrl = "https://api.github.com"
         let string = "/users/\(userName)/repos?sort=updated&page=\(page)"

@@ -92,6 +92,7 @@ class RepositoryModel: NSObject {
     }
     
     override func setValue(_ value: Any?, forKey key: String) {
+        if value == nil { return }
         super.setValue(value, forKey: key)
         if key == "owner" {
             self.owner = UserModel(dict: value as! [String : AnyObject])

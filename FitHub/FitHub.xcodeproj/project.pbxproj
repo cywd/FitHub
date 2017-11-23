@@ -29,6 +29,10 @@
 		E746085D1FC551D100951AEF /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E746085C1FC551D100951AEF /* UserModel.swift */; };
 		E74608601FC5769800951AEF /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E746085E1FC5769800951AEF /* UserTableViewCell.swift */; };
 		E74608611FC5769800951AEF /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E746085F1FC5769800951AEF /* UserTableViewCell.xib */; };
+		E76746E91FC697560087A2DF /* UserDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76746E81FC697560087A2DF /* UserDetailHeaderView.swift */; };
+		E76746EB1FC6975D0087A2DF /* UserDetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E76746EA1FC6975D0087A2DF /* UserDetailHeaderView.xib */; };
+		E76746F01FC6CBB30087A2DF /* RepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76746EE1FC6CBB30087A2DF /* RepositoryTableViewCell.swift */; };
+		E76746F11FC6CBB30087A2DF /* RepositoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E76746EF1FC6CBB30087A2DF /* RepositoryTableViewCell.xib */; };
 		E77CE5431FBEC04500A120B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77CE5421FBEC04500A120B2 /* AppDelegate.swift */; };
 		E77CE5481FBEC04500A120B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E77CE5461FBEC04500A120B2 /* Main.storyboard */; };
 		E77CE54A1FBEC04500A120B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E77CE5491FBEC04500A120B2 /* Assets.xcassets */; };
@@ -79,6 +83,10 @@
 		E746085C1FC551D100951AEF /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		E746085E1FC5769800951AEF /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		E746085F1FC5769800951AEF /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
+		E76746E81FC697560087A2DF /* UserDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailHeaderView.swift; sourceTree = "<group>"; };
+		E76746EA1FC6975D0087A2DF /* UserDetailHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailHeaderView.xib; sourceTree = "<group>"; };
+		E76746EE1FC6CBB30087A2DF /* RepositoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewCell.swift; sourceTree = "<group>"; };
+		E76746EF1FC6CBB30087A2DF /* RepositoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryTableViewCell.xib; sourceTree = "<group>"; };
 		E77CE53F1FBEC04500A120B2 /* FitHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E77CE5421FBEC04500A120B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E77CE5471FBEC04500A120B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -176,6 +184,10 @@
 				E73789831FC65C05003373B7 /* UserDetailViewController.swift */,
 				E746085E1FC5769800951AEF /* UserTableViewCell.swift */,
 				E746085F1FC5769800951AEF /* UserTableViewCell.xib */,
+				E76746E81FC697560087A2DF /* UserDetailHeaderView.swift */,
+				E76746EA1FC6975D0087A2DF /* UserDetailHeaderView.xib */,
+				E76746EE1FC6CBB30087A2DF /* RepositoryTableViewCell.swift */,
+				E76746EF1FC6CBB30087A2DF /* RepositoryTableViewCell.xib */,
 				E7403E0E1FC402FA003054D7 /* Home.storyboard */,
 				E7403E081FC3FDAC003054D7 /* MeViewController.swift */,
 				E77CE5461FBEC04500A120B2 /* Main.storyboard */,
@@ -329,7 +341,9 @@
 			files = (
 				E77CE54D1FBEC04500A120B2 /* LaunchScreen.storyboard in Resources */,
 				E77CE54A1FBEC04500A120B2 /* Assets.xcassets in Resources */,
+				E76746F11FC6CBB30087A2DF /* RepositoryTableViewCell.xib in Resources */,
 				E77CE5481FBEC04500A120B2 /* Main.storyboard in Resources */,
+				E76746EB1FC6975D0087A2DF /* UserDetailHeaderView.xib in Resources */,
 				E7403E0F1FC402FA003054D7 /* Home.storyboard in Resources */,
 				E74608611FC5769800951AEF /* UserTableViewCell.xib in Resources */,
 			);
@@ -410,6 +424,7 @@
 				E74608531FC518E100951AEF /* UIColor+FitHub.swift in Sources */,
 				E746084F1FC5117B00951AEF /* UIImage+FitHub.swift in Sources */,
 				E746085B1FC541FF00951AEF /* NetworkManager.swift in Sources */,
+				E76746E91FC697560087A2DF /* UserDetailHeaderView.swift in Sources */,
 				E746084D1FC510B800951AEF /* UICollectionView+FitHub.swift in Sources */,
 				E74608511FC5151E00951AEF /* UIView+FitHub.swift in Sources */,
 				E7403E091FC3FDAC003054D7 /* MeViewController.swift in Sources */,
@@ -420,6 +435,7 @@
 				E7403E051FC3FD08003054D7 /* TabBarController.swift in Sources */,
 				E7403E0D1FC4001D003054D7 /* NavigationBar.swift in Sources */,
 				E7403DFF1FC3FCB0003054D7 /* BaseViewController.swift in Sources */,
+				E76746F01FC6CBB30087A2DF /* RepositoryTableViewCell.swift in Sources */,
 				E7403E031FC3FCF5003054D7 /* TabBar.swift in Sources */,
 				E73789841FC65C05003373B7 /* UserDetailViewController.swift in Sources */,
 				E74608551FC51B1500951AEF /* UIImageView+FitHub.swift in Sources */,
@@ -593,6 +609,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3SL26X62NP;
 				INFOPLIST_FILE = FitHub/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cyrill.FitHub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -609,6 +626,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3SL26X62NP;
 				INFOPLIST_FILE = FitHub/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cyrill.FitHub;
 				PRODUCT_NAME = "$(TARGET_NAME)";

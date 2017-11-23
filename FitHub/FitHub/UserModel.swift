@@ -51,6 +51,11 @@ class UserModel: NSObject {
         setValuesForKeys(dict)
     }
     
+    override func setValue(_ value: Any?, forKey key: String) {
+        if value == nil { return }
+        super.setValue(value, forKey: key)
+    }
+    
     override func setValue(_ value: Any?, forUndefinedKey key: String) {
         print(key)
     }

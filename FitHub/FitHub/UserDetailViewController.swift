@@ -10,15 +10,28 @@ import UIKit
 
 class UserDetailViewController: BaseViewController {
     
+    var headerView: UserDetailHeaderView!
+    lazy var tableView: UITableView = {
+        let tableView = UITableView(frame: CGRect.zero, style: .plain)
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.rowHeight = 60.0
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+        return tableView
+    }()
+    
     var items = [RepositoryModel]()
     var name: String = ""
-    
     var model: UserModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.view.addSubview(self.tableView)
+        self.tableView.frame = self.view.bounds
+        
+        requestUserData()
         
     }
     
@@ -30,15 +43,28 @@ class UserDetailViewController: BaseViewController {
         
     }
     
+    fileprivate func requestUserData() {
+        NetworkManager.loadUserDetailDataWith(userName: name, completionHandler: { (userModel) in
+            self.model = userModel
+            
+            self.headerView = UserDetailHeaderView.defaultView()
+            self.tableView.tableHeaderView = self.headerView
+            self.refreshHeader()
+        })
+    }
+    
     fileprivate func requestData() {
-        if let name = model!.login {
-            NetworkManager.loadUserDetailDataWith(1, name) { (items) in
-                
-                self.items = items
-            }
+        
+        NetworkManager.loadUserRepositoriesDataWith(1, name) { (items) in
+            self.items = items
         }
+        
     }
 
+    fileprivate func refreshHeader() {
+        headerView.model = self.model
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -55,4 +81,22 @@ class UserDetailViewController: BaseViewController {
     }
     */
 
+}
+
+extension UserDetailViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        
+        return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+    }
 }
