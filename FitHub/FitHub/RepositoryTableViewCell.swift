@@ -10,6 +10,21 @@ import UIKit
 
 class RepositoryTableViewCell: UITableViewCell, RegisterCellOrNib {
 
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var starLabel: UILabel!
+    @IBOutlet weak var desLabel: UILabel!
+    
+    var model: RepositoryModel? {
+        didSet {
+            self.nameLabel.text = model!.full_name
+            if let starCount = model?.stargazers_count {
+                self.starLabel.text = "\(starCount)⭐️"
+            }
+            
+            self.desLabel.text = model!.repositoryDescription
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

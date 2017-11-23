@@ -15,8 +15,8 @@ class UserDetailViewController: BaseViewController {
         let tableView = UITableView(frame: CGRect.zero, style: .plain)
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.rowHeight = 60.0
-        tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+        tableView.rowHeight = 120.0
+//        tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         return tableView
     }()
     
@@ -50,6 +50,10 @@ class UserDetailViewController: BaseViewController {
             self.headerView = UserDetailHeaderView.defaultView()
             self.tableView.tableHeaderView = self.headerView
             self.refreshHeader()
+            self.tableView.fit_registerCell(cell: RepositoryTableViewCell.self)
+            
+            self.requestData()
+            
         })
     }
     
@@ -57,6 +61,8 @@ class UserDetailViewController: BaseViewController {
         
         NetworkManager.loadUserRepositoriesDataWith(1, name) { (items) in
             self.items = items
+            
+            self.tableView.reloadData()
         }
         
     }
@@ -86,13 +92,13 @@ class UserDetailViewController: BaseViewController {
 extension UserDetailViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        
-        return UITableViewCell()
+        let cell = tableView.fit_dequeueReusableCell(indexPath: indexPath) as RepositoryTableViewCell
+        cell.model = items[indexPath.row]
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
