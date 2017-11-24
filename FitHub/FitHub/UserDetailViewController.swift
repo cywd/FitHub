@@ -15,8 +15,8 @@ class UserDetailViewController: BaseViewController {
         let tableView = UITableView(frame: CGRect.zero, style: .plain)
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.rowHeight = 120.0
-//        tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+//        tableView.rowHeight = 120.0
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         return tableView
     }()
     
@@ -59,7 +59,7 @@ class UserDetailViewController: BaseViewController {
     
     fileprivate func requestData() {
         
-        NetworkManager.loadUserRepositoriesDataWith(1, name) { (items) in
+        NetworkManager.loadUserRepositoriesDataWith(page: 1, userName: name) { (items) in
             self.items = items
             
             self.tableView.reloadData()

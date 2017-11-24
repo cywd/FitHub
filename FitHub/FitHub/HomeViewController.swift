@@ -19,21 +19,12 @@ class HomeViewController: BaseViewController {
     
     var total_count: Int = 0
     
-    lazy var tableView: UITableView = {
-        let tableView = UITableView(frame: CGRect.zero, style: .plain)
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.rowHeight = 60.0
-        tableView.separatorStyle = UITableViewCellSeparatorStyle.none
-        return tableView
-    }()
-
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Home"
         
-        self.view.addSubview(self.tableView)
-        self.tableView.frame = self.view.bounds
         self.tableView.fit_registerCell(cell: UserTableViewCell.self)
         
         self.page = 1
@@ -57,7 +48,7 @@ class HomeViewController: BaseViewController {
     }
 
     func requestData() {
-        NetworkManager.loadUserDataWith(self.page, 0) { (items, total_count) in
+        NetworkManager.loadUserDataWith(page: self.page, currentIndex: 0) { (items, total_count) in
             self.tableView.fr.headerView?.endRefreshing()
             self.tableView.fr.footerView?.endRefreshing()
             

@@ -13,14 +13,17 @@ import SwiftyJSON
 
 
 protocol NetworkManagerProtocol {
-    static func loadUserDataWith(_ page: Int, _ currentIndex: Int, completionHandler: @escaping (_ items: [UserModel], _ total_count: Int) -> ())
+    static func loadUserDataWith(page: Int, currentIndex: Int, completionHandler: @escaping (_ items: [UserModel], _ total_count: Int) -> ())
     static func loadUserDetailDataWith(userName: String, completionHandler: @escaping (UserModel) -> ())
-    static func loadUserRepositoriesDataWith(_ page: Int, _ userName: String, completionHandler: @escaping (_ items: [RepositoryModel]) -> ())
+    static func loadUserRepositoriesDataWith(page: Int, userName: String, completionHandler: @escaping (_ items: [RepositoryModel]) -> ())
+    static func loadUserFollowersDataWith(page: Int, userName: String, completionHandler: @escaping ([UserModel]) -> ())
+    static func loadUserFollowingDataWith(page: Int, userName: String, completionHandler: @escaping ([UserModel]) -> ())
+    static func repositoryDetailWith(userName: String, repositoryName: String, completionHandler: @escaping (RepositoryModel) -> ())
 }
 
 class NetworkManager: NetworkManagerProtocol {
 
-    static func loadUserDataWith(_ page: Int, _ currentIndex: Int, completionHandler: @escaping (_ items: [UserModel], _ total_count: Int) -> ()) {
+    static func loadUserDataWith(page: Int, currentIndex: Int, completionHandler: @escaping (_ items: [UserModel], _ total_count: Int) -> ()) {
         let city = "beijing"
         let language = "all language"
         
@@ -79,7 +82,10 @@ class NetworkManager: NetworkManagerProtocol {
         }
     }
     
-    static func loadUserRepositoriesDataWith(_ page: Int, _ userName: String, completionHandler: @escaping ([RepositoryModel]) -> ()) {
+    //https://developer.github.com/v3/repos/#list-user-repositories
+    //List user repositories
+    //GET /users/:username/repos
+    static func loadUserRepositoriesDataWith(page: Int, userName: String, completionHandler: @escaping ([RepositoryModel]) -> ()) {
 
         let baseUrl = "https://api.github.com"
         let string = "/users/\(userName)/repos?sort=updated&page=\(page)"
@@ -108,6 +114,90 @@ class NetworkManager: NetworkManagerProtocol {
             }
         }
     }
+    
+    //List followers of a user
+    //https://developer.github.com/v3/users/followers/#list-followers-of-a-user
+    //GET /users/:username/followers
+    static func loadUserFollowersDataWith(page: Int, userName: String, completionHandler: @escaping ([UserModel]) -> ()) {
+        let baseUrl = "https://api.github.com"
+        let string = "/users/\(userName)/followers?page=\(page)"
+        
+        let url = baseUrl + string
+        
+        Alamofire.request(url, method: .get).responseJSON { (response) in
+            guard response.result.isSuccess else {
+                return
+            }
+            
+            if let value = response.result.value {
+                
+                let json = JSON(value)
+                
+                if let items = json.arrayObject {
+                    
+                    var models = [UserModel]()
+                    for dict in items {
+                        models.append(UserModel(dict: dict as! [String : AnyObject]))
+                    }
+                    
+                    completionHandler(models)
+                }
+            }
+        }
+    }
+    
+    
+    static func loadUserFollowingDataWith(page: Int, userName: String, completionHandler: @escaping ([UserModel]) -> ()) {
+        let baseUrl = "https://api.github.com"
+        let string = "/users/\(userName)/following?page=\(page)"
+        
+        let url = baseUrl + string
+        
+        Alamofire.request(url, method: .get).responseJSON { (response) in
+            guard response.result.isSuccess else {
+                return
+            }
+            
+            if let value = response.result.value {
+                
+                let json = JSON(value)
+                
+                if let items = json.arrayObject {
+                    
+                    var models = [UserModel]()
+                    for dict in items {
+                        models.append(UserModel(dict: dict as! [String : AnyObject]))
+                    }
+                    
+                    completionHandler(models)
+                }
+            }
+        }
+    }
+    
+    static func repositoryDetailWith(userName: String, repositoryName: String, completionHandler: @escaping (RepositoryModel) -> ()) {
+        let baseUrl = "https://api.github.com"
+        let string = "/repos/\(userName)/\(repositoryName)"
+        
+        let url = baseUrl + string
+        
+        Alamofire.request(url, method: .get).responseJSON { (response) in
+            guard response.result.isSuccess else {
+                return
+            }
+            
+            if let value = response.result.value {
+                
+                let json = JSON(value)
+                
+                if let dataDict = json.dictionaryObject {
+                    let model = RepositoryModel(dict: dataDict as [String : AnyObject])
+                    completionHandler(model)
+                }
+            }
+        }
+    }
+    
     
     
 }
