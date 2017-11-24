@@ -68,6 +68,9 @@ class HomeViewController: BaseViewController {
         }
         
         self.navigationItem.title = language
+        if language == "" {
+            self.navigationItem.title = NSLocalizedString("ALL_LANGUAGE", comment: "所有语言")
+        }
         
         NetworkManager.loadUserDataWith(page: self.page, location: location!, language: language!) { (items, total_count) in
             self.tableView.fr.headerView?.endRefreshing()

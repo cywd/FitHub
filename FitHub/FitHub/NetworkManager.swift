@@ -21,7 +21,7 @@ protocol NetworkManagerProtocol {
 }
 
 class NetworkManager: NetworkManagerProtocol {
-
+    
     static func loadUserDataWith(page: Int, location: String, language: String, completionHandler: @escaping (_ items: [UserModel], _ total_count: Int) -> ()) {
         
         var locationStr = ""
@@ -45,7 +45,7 @@ class NetworkManager: NetworkManagerProtocol {
         
         let url = baseUrl + string
         
-        Alamofire.request(url, method: .get).responseJSON { (response) in
+        Alamofire.request(url, method: .get, headers:["headers":"application/vnd.github.v3+json"]).responseJSON { (response) in
             guard response.result.isSuccess else {
                 return
             }
@@ -76,7 +76,7 @@ class NetworkManager: NetworkManagerProtocol {
         
         let url = baseUrl + string
         
-        Alamofire.request(url, method: .get).responseJSON { (response) in
+        Alamofire.request(url, method: .get, headers:["headers":"application/vnd.github.v3+json"]).responseJSON { (response) in
             guard response.result.isSuccess else {
                 return
             }
@@ -102,7 +102,7 @@ class NetworkManager: NetworkManagerProtocol {
         
         let url = baseUrl + string
         
-        Alamofire.request(url, method: .get).responseJSON { (response) in
+        Alamofire.request(url, method: .get, headers:["headers":"application/vnd.github.v3+json"]).responseJSON { (response) in
             guard response.result.isSuccess else {
                 return
             }
@@ -134,7 +134,7 @@ class NetworkManager: NetworkManagerProtocol {
         
         let url = baseUrl + string
         
-        Alamofire.request(url, method: .get).responseJSON { (response) in
+        Alamofire.request(url, method: .get, headers:["headers":"application/vnd.github.v3+json"]).responseJSON { (response) in
             guard response.result.isSuccess else {
                 return
             }
@@ -163,7 +163,7 @@ class NetworkManager: NetworkManagerProtocol {
         
         let url = baseUrl + string
         
-        Alamofire.request(url, method: .get).responseJSON { (response) in
+        Alamofire.request(url, method: .get, headers:["headers":"application/vnd.github.v3+json"]).responseJSON { (response) in
             guard response.result.isSuccess else {
                 return
             }
@@ -191,7 +191,7 @@ class NetworkManager: NetworkManagerProtocol {
         
         let url = baseUrl + string
         
-        Alamofire.request(url, method: .get).responseJSON { (response) in
+        Alamofire.request(url, method: .get, headers:["headers":"application/vnd.github.v3+json"]).responseJSON { (response) in
             guard response.result.isSuccess else {
                 return
             }
