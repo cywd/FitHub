@@ -10,10 +10,9 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-
-
 protocol NetworkManagerProtocol {
-    static func loadUserDataWith(page: Int, currentIndex: Int, completionHandler: @escaping (_ items: [UserModel], _ total_count: Int) -> ())
+    
+    static func loadUserDataWith(page: Int, location: String, language: String, completionHandler: @escaping (_ items: [UserModel], _ total_count: Int) -> ())
     static func loadUserDetailDataWith(userName: String, completionHandler: @escaping (UserModel) -> ())
     static func loadUserRepositoriesDataWith(page: Int, userName: String, completionHandler: @escaping (_ items: [RepositoryModel]) -> ())
     static func loadUserFollowersDataWith(page: Int, userName: String, completionHandler: @escaping ([UserModel]) -> ())
@@ -23,12 +22,23 @@ protocol NetworkManagerProtocol {
 
 class NetworkManager: NetworkManagerProtocol {
 
-    static func loadUserDataWith(page: Int, currentIndex: Int, completionHandler: @escaping (_ items: [UserModel], _ total_count: Int) -> ()) {
-        let city = "beijing"
-        let language = "all language"
+    static func loadUserDataWith(page: Int, location: String, language: String, completionHandler: @escaping (_ items: [UserModel], _ total_count: Int) -> ()) {
         
-        var q = "location:\(city)+language:\(language)"
-        q = "location:\(city)"
+        var locationStr = ""
+        if location != "" {
+            locationStr = "location:\(location)"
+        }
+        var plus = ""
+        if locationStr != "" {
+            plus = "+"
+        }
+        
+        var languageStr = ""
+        if language != "" {
+            languageStr = "language:\(language)"
+        }
+        
+        let q = locationStr + plus + languageStr
         
         let baseUrl = "https://api.github.com"
         let string = "/search/users?q=\(q)&sort=\("followers")&page=\(page)"

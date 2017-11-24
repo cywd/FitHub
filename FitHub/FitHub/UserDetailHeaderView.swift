@@ -11,6 +11,8 @@ import Kingfisher
 
 class UserDetailHeaderView: UIView {
 
+    @IBAction func cityItem(_ sender: UIBarButtonItem) {
+    }
     @IBOutlet weak var headerImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var realNameLabel: UILabel!

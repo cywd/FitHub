@@ -16,9 +16,9 @@ extension StoryboardLoadable where Self: UIViewController {
     ///
     /// - Parameter name: storyboardname
     /// - Returns: view
-    static func loadStoryboard(name: String?) -> Self {
+    static func loadStoryboard(name: String? = nil) -> Self {
         let storyboard = UIStoryboard(name: "\(self)", bundle: nil)
-        return storyboard.instantiateViewController(withIdentifier: "\(self))") as! Self
+        return storyboard.instantiateViewController(withIdentifier: "\(self)") as! Self
     }
 }
 

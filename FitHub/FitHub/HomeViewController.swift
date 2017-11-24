@@ -11,15 +11,24 @@ import FitRefresh
 
 class HomeViewController: BaseViewController {
     
+    @IBOutlet weak var cityItem: UIBarButtonItem!
+    @IBOutlet weak var languageItem: UIBarButtonItem!
+
     var page: Int = 1
     
     var scrollView: UIScrollView?
     
     var items = [UserModel]()
     
-    var total_count: Int = 0
+    var total_count: Int = 0 {
+        didSet {
+            let localStr = NSLocalizedString("HOME_TOTAL", comment: "总数描述");
+            self.totalLabel.text = "\(localStr):\(total_count)"
+        }
+    }
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var totalLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,10 +57,22 @@ class HomeViewController: BaseViewController {
     }
 
     func requestData() {
-        NetworkManager.loadUserDataWith(page: self.page, currentIndex: 0) { (items, total_count) in
+        
+        var location = UserDefaults.standard.object(forKey: "location") as? String
+        if location == nil {
+            location = "beijing"
+        }
+        var language = UserDefaults.standard.object(forKey: "language") as? String
+        if language == nil {
+            language = ""
+        }
+        
+        self.navigationItem.title = language
+        
+        NetworkManager.loadUserDataWith(page: self.page, location: location!, language: language!) { (items, total_count) in
             self.tableView.fr.headerView?.endRefreshing()
             self.tableView.fr.footerView?.endRefreshing()
-            
+
             if self.page == 1 {
                 self.items = items
             } else {
@@ -59,6 +80,12 @@ class HomeViewController: BaseViewController {
             }
             self.total_count = total_count
             self.tableView.reloadData()
+            
+            if items.count == 0 {
+                self.tableView.fr.footerView?.isHidden = true
+            } else {
+                self.tableView.fr.footerView?.isHidden = false
+            }
         }
     }
     
@@ -67,7 +94,20 @@ class HomeViewController: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func cityItemTap(_ sender: UIBarButtonItem) {
+        print("cityItemTap")
+    }
+    
+    @IBAction func languageItemTap(_ sender: UIBarButtonItem) {
+        print("languageItemTap")
+        
+        let vc = LanguageViewController.loadStoryboard()
+        vc.backHandler = {
+            self.tableView.fr.headerView?.beginRefreshing()
+        }
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 

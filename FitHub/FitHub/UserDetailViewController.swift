@@ -37,10 +37,7 @@ class UserDetailViewController: BaseViewController {
         self.tableView.fr.headerView = FRNormalHeader(ComponentRefreshingClosure: {
             self.loadData()
         })
-        self.tableView.fr.footerView = FRAutoNormalFooter(ComponentRefreshingClosure: {
-            self.loadMore()
-        })
-        
+
         requestUserData()
     }
     
@@ -82,6 +79,14 @@ class UserDetailViewController: BaseViewController {
             }
 
             self.tableView.reloadData()
+            
+            if items.count == 0 {
+                self.tableView.fr.footerView = nil;
+            } else {
+                self.tableView.fr.footerView = FRAutoNormalFooter(ComponentRefreshingClosure: {
+                    self.loadMore()
+                })
+            }
         }
     }
 

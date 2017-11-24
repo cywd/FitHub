@@ -18,7 +18,6 @@
 		E7403E091FC3FDAC003054D7 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7403E081FC3FDAC003054D7 /* MeViewController.swift */; };
 		E7403E0B1FC3FE13003054D7 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7403E0A1FC3FE13003054D7 /* NavigationController.swift */; };
 		E7403E0D1FC4001D003054D7 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7403E0C1FC4001D003054D7 /* NavigationBar.swift */; };
-		E7403E0F1FC402FA003054D7 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7403E0E1FC402FA003054D7 /* Home.storyboard */; };
 		E746084D1FC510B800951AEF /* UICollectionView+FitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = E746084C1FC510B800951AEF /* UICollectionView+FitHub.swift */; };
 		E746084F1FC5117B00951AEF /* UIImage+FitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = E746084E1FC5117B00951AEF /* UIImage+FitHub.swift */; };
 		E74608511FC5151E00951AEF /* UIView+FitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74608501FC5151E00951AEF /* UIView+FitHub.swift */; };
@@ -33,7 +32,10 @@
 		E76746EB1FC6975D0087A2DF /* UserDetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E76746EA1FC6975D0087A2DF /* UserDetailHeaderView.xib */; };
 		E76746F01FC6CBB30087A2DF /* RepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76746EE1FC6CBB30087A2DF /* RepositoryTableViewCell.swift */; };
 		E76746F11FC6CBB30087A2DF /* RepositoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E76746EF1FC6CBB30087A2DF /* RepositoryTableViewCell.xib */; };
-		E76746F31FC7BCF30087A2DF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E76746F21FC7BCF20087A2DF /* Default-568h@2x.png */; };
+		E76746F41FC7EEF40087A2DF /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E76746F61FC7EEF40087A2DF /* Home.storyboard */; };
+		E76747061FC7F10D0087A2DF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E76747081FC7F10D0087A2DF /* Localizable.strings */; };
+		E767470C1FC7F4530087A2DF /* LanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E767470B1FC7F4530087A2DF /* LanguageViewController.swift */; };
+		E767470E1FC7F4760087A2DF /* LanguageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E767470D1FC7F4760087A2DF /* LanguageViewController.storyboard */; };
 		E77CE5431FBEC04500A120B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77CE5421FBEC04500A120B2 /* AppDelegate.swift */; };
 		E77CE5481FBEC04500A120B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E77CE5461FBEC04500A120B2 /* Main.storyboard */; };
 		E77CE54A1FBEC04500A120B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E77CE5491FBEC04500A120B2 /* Assets.xcassets */; };
@@ -73,7 +75,6 @@
 		E7403E081FC3FDAC003054D7 /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		E7403E0A1FC3FE13003054D7 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		E7403E0C1FC4001D003054D7 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
-		E7403E0E1FC402FA003054D7 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		E746084C1FC510B800951AEF /* UICollectionView+FitHub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+FitHub.swift"; sourceTree = "<group>"; };
 		E746084E1FC5117B00951AEF /* UIImage+FitHub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+FitHub.swift"; sourceTree = "<group>"; };
 		E74608501FC5151E00951AEF /* UIView+FitHub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+FitHub.swift"; sourceTree = "<group>"; };
@@ -88,7 +89,14 @@
 		E76746EA1FC6975D0087A2DF /* UserDetailHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailHeaderView.xib; sourceTree = "<group>"; };
 		E76746EE1FC6CBB30087A2DF /* RepositoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewCell.swift; sourceTree = "<group>"; };
 		E76746EF1FC6CBB30087A2DF /* RepositoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryTableViewCell.xib; sourceTree = "<group>"; };
-		E76746F21FC7BCF20087A2DF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		E76746F51FC7EEF40087A2DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
+		E76747011FC7F0430087A2DF /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Home.strings"; sourceTree = "<group>"; };
+		E76747021FC7F0440087A2DF /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		E76747031FC7F0440087A2DF /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		E76747071FC7F10D0087A2DF /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		E76747091FC7F1170087A2DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E767470B1FC7F4530087A2DF /* LanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewController.swift; sourceTree = "<group>"; };
+		E767470D1FC7F4760087A2DF /* LanguageViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LanguageViewController.storyboard; sourceTree = "<group>"; };
 		E77CE53F1FBEC04500A120B2 /* FitHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E77CE5421FBEC04500A120B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E77CE5471FBEC04500A120B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -153,7 +161,6 @@
 		E77CE5361FBEC04500A120B2 = {
 			isa = PBXGroup;
 			children = (
-				E76746F21FC7BCF20087A2DF /* Default-568h@2x.png */,
 				E77CE5411FBEC04500A120B2 /* FitHub */,
 				E77CE5561FBEC04500A120B2 /* FitHubTests */,
 				E77CE5611FBEC04500A120B2 /* FitHubUITests */,
@@ -191,7 +198,9 @@
 				E76746EA1FC6975D0087A2DF /* UserDetailHeaderView.xib */,
 				E76746EE1FC6CBB30087A2DF /* RepositoryTableViewCell.swift */,
 				E76746EF1FC6CBB30087A2DF /* RepositoryTableViewCell.xib */,
-				E7403E0E1FC402FA003054D7 /* Home.storyboard */,
+				E767470B1FC7F4530087A2DF /* LanguageViewController.swift */,
+				E767470D1FC7F4760087A2DF /* LanguageViewController.storyboard */,
+				E76746F61FC7EEF40087A2DF /* Home.storyboard */,
 				E7403E081FC3FDAC003054D7 /* MeViewController.swift */,
 				E77CE5461FBEC04500A120B2 /* Main.storyboard */,
 				E77CE5491FBEC04500A120B2 /* Assets.xcassets */,
@@ -200,6 +209,7 @@
 				E746085C1FC551D100951AEF /* UserModel.swift */,
 				E73789851FC666FA003373B7 /* RepositoryModel.swift */,
 				E746085A1FC541FF00951AEF /* NetworkManager.swift */,
+				E76747081FC7F10D0087A2DF /* Localizable.strings */,
 				E746084B1FC50F9C00951AEF /* Category */,
 			);
 			path = FitHub;
@@ -342,13 +352,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E76747061FC7F10D0087A2DF /* Localizable.strings in Resources */,
 				E77CE54D1FBEC04500A120B2 /* LaunchScreen.storyboard in Resources */,
 				E77CE54A1FBEC04500A120B2 /* Assets.xcassets in Resources */,
 				E76746F11FC6CBB30087A2DF /* RepositoryTableViewCell.xib in Resources */,
 				E77CE5481FBEC04500A120B2 /* Main.storyboard in Resources */,
+				E767470E1FC7F4760087A2DF /* LanguageViewController.storyboard in Resources */,
 				E76746EB1FC6975D0087A2DF /* UserDetailHeaderView.xib in Resources */,
-				E76746F31FC7BCF30087A2DF /* Default-568h@2x.png in Resources */,
-				E7403E0F1FC402FA003054D7 /* Home.storyboard in Resources */,
+				E76746F41FC7EEF40087A2DF /* Home.storyboard in Resources */,
 				E74608611FC5769800951AEF /* UserTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,6 +439,7 @@
 				E74608531FC518E100951AEF /* UIColor+FitHub.swift in Sources */,
 				E746084F1FC5117B00951AEF /* UIImage+FitHub.swift in Sources */,
 				E746085B1FC541FF00951AEF /* NetworkManager.swift in Sources */,
+				E767470C1FC7F4530087A2DF /* LanguageViewController.swift in Sources */,
 				E76746E91FC697560087A2DF /* UserDetailHeaderView.swift in Sources */,
 				E746084D1FC510B800951AEF /* UICollectionView+FitHub.swift in Sources */,
 				E74608511FC5151E00951AEF /* UIView+FitHub.swift in Sources */,
@@ -479,10 +491,29 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		E76746F61FC7EEF40087A2DF /* Home.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E76746F51FC7EEF40087A2DF /* Base */,
+				E76747011FC7F0430087A2DF /* zh-Hans */,
+			);
+			name = Home.storyboard;
+			sourceTree = "<group>";
+		};
+		E76747081FC7F10D0087A2DF /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E76747071FC7F10D0087A2DF /* zh-Hans */,
+				E76747091FC7F1170087A2DF /* Base */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		E77CE5461FBEC04500A120B2 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				E77CE5471FBEC04500A120B2 /* Base */,
+				E76747021FC7F0440087A2DF /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -491,6 +522,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				E77CE54C1FBEC04500A120B2 /* Base */,
+				E76747031FC7F0440087A2DF /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -502,6 +534,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -559,6 +592,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
