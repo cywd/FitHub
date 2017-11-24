@@ -15,9 +15,7 @@ class HomeViewController: BaseViewController {
     @IBOutlet weak var languageItem: UIBarButtonItem!
 
     var page: Int = 1
-    
     var scrollView: UIScrollView?
-    
     var items = [UserModel]()
     
     var total_count: Int = 0 {
