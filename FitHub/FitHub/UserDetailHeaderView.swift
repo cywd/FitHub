@@ -10,12 +10,6 @@ import UIKit
 import Kingfisher
 
 class UserDetailHeaderView: UIView {
-        
-    var imageName: String? {
-        didSet {
-            self.headerImageView.kf.setImage(with: URL(string: imageName!))
-        }
-    }
 
     @IBOutlet weak var headerImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -77,7 +71,9 @@ class UserDetailHeaderView: UIView {
                 self.desLabel.text = des
             } 
             
-            self.imageName = model?.avatar_url
+            if let imageName = model!.avatar_url {
+                self.headerImageView.kf.setImage(with: URL(string: imageName))
+            }
         }
     }
     

@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import FitRefresh
 
 class UserDetailViewController: BaseViewController {
+    
+    var page: Int = 1
     
     var headerView: UserDetailHeaderView!
     lazy var tableView: UITableView = {
@@ -31,16 +34,24 @@ class UserDetailViewController: BaseViewController {
         self.view.addSubview(self.tableView)
         self.tableView.frame = self.view.bounds
         
-        requestUserData()
+        self.tableView.fr.headerView = FRNormalHeader(ComponentRefreshingClosure: {
+            self.loadData()
+        })
+        self.tableView.fr.footerView = FRAutoNormalFooter(ComponentRefreshingClosure: {
+            self.loadMore()
+        })
         
+        requestUserData()
     }
     
     fileprivate func loadData() {
-        
+        self.page = 1
+        self.requestData()
     }
     
     fileprivate func loadMore() {
-        
+        self.page += 1
+        self.requestData()
     }
     
     fileprivate func requestUserData() {
@@ -59,12 +70,19 @@ class UserDetailViewController: BaseViewController {
     
     fileprivate func requestData() {
         
-        NetworkManager.loadUserRepositoriesDataWith(page: 1, userName: name) { (items) in
-            self.items = items
+        NetworkManager.loadUserRepositoriesDataWith(page: self.page, userName: name) { (items) in
             
+            self.tableView.fr.headerView?.endRefreshing()
+            self.tableView.fr.footerView?.endRefreshing()
+            
+            if self.page == 1 {
+                self.items = items
+            } else {
+                self.items = self.items + items
+            }
+
             self.tableView.reloadData()
         }
-        
     }
 
     fileprivate func refreshHeader() {
@@ -92,6 +110,7 @@ class UserDetailViewController: BaseViewController {
 extension UserDetailViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        self.tableView.fr.footerView?.isHidden = (items.count == 0)
         return items.count
     }
     

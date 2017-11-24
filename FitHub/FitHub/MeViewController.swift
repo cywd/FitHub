@@ -49,9 +49,9 @@ extension MeViewController: UITableViewDataSource, UITableViewDelegate {
         var name: String = ""
         switch indexPath.row {
         case 0:
-            name = "login"
+            name = "Login"
         case 1:
-            name = "about"
+            name = "About"
         default:
             name = ""
         }
