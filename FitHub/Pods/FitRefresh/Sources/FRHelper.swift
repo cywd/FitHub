@@ -297,6 +297,42 @@ extension UIView {
     }
 }
 
+// =======================================
+// Bundle Extension
+// =======================================
+extension Bundle {
+    
+    class func fit_refreshBundle() -> Bundle? {
+        return Bundle(path: (Bundle(for: FRComponent.self).path(forResource: "FRResources", ofType: "bundle"))!)
+    }
+    
+    class func fit_localizedStringForKey(_ key: String) -> String {
+        return self.fit_localizedStringForKey(key, value: nil)
+    }
+    
+    class func fit_localizedStringForKey(_ key: String, value: String?) -> String {
+        var varValue = value
+        var bundle: Bundle? = nil
+        if bundle == nil {
+            var language: String = NSLocale.preferredLanguages.first!
+            if (language.hasPrefix("zh")) {
+                language = "zh-Hans"
+            } else {
+                language = "en"
+            }
+
+            let res_Bundle = self.fit_refreshBundle()
+            
+            let path = res_Bundle?.path(forResource: language, ofType: "lproj")
+            
+            bundle = Bundle(path: path!)
+        }
+        
+        varValue = bundle!.localizedString(forKey: key, value: varValue, table: nil)
+        return Bundle.main.localizedString(forKey: key, value: varValue, table: nil)
+    }
+}
+
 
 // =======================================
 // NSDate Extension
@@ -320,10 +356,10 @@ extension Date {
         
         if cmp1.day == cmp2.day {
             
-            formatter.dateFormat = "今天 HH:mm"
+            formatter.dateFormat = Bundle.fit_localizedStringForKey("FitRefreshHeaderDateTodayText", value: "今天") + " HH:mm"
         }else {
             formatter.dateFormat = "MM-dd HH:mm"
         }
-        return "最后更新:" + formatter.string(from: self)
+        return Bundle.fit_localizedStringForKey("FitRefreshHeaderLastTimeText", value: "最后更新") + ":" + formatter.string(from: self)
     }
 }
