@@ -16,7 +16,7 @@ class LanguageViewController: BaseViewController, StoryboardLoadable {
     var items: [String] {
         get {
             let allLanguageStr = NSLocalizedString("ALL_LANGUAGE", comment: "所有语言")
-            return [allLanguageStr, "JavaScript", "Java" , "PHP", "Ruby", "Python", "CSS", "CPP", "C", "Objective-C", "Objective-C++", "Swift", "Shell", "R", "Perl", "Lua", "HTML", "Scala", "Go", "C#", "Kotlin", "Haskell", "Matlab", "R", "AppleScript"]
+            return [allLanguageStr, "JavaScript", "Java" , "PHP", "Ruby", "Python", "CSS", "CPP", "C", "Objective-C", "Swift", "Shell", "R", "Perl", "Lua", "HTML", "Scala", "Go", "C#", "Kotlin", "Haskell", "Matlab", "R", "AppleScript"]
         }
     }
     
