@@ -2,96 +2,108 @@
 //  UserDetailViewController.swift
 //  FitHub
 //
-//  Created by Cyrill on 2017/11/23.
+//  Created by Cyrill on 2017/11/27.
 //  Copyright © 2017年 Cyrill. All rights reserved.
 //
 
 import UIKit
-import FitRefresh
+import Kingfisher
 
-class UserDetailViewController: BaseViewController {
-    
-    var page: Int = 1
-    
-    var headerView: UserDetailHeaderView!
-    lazy var tableView: UITableView = {
-        let tableView = UITableView(frame: CGRect.zero, style: .plain)
-        tableView.dataSource = self
-        tableView.delegate = self
-//        tableView.rowHeight = 120.0
-        tableView.separatorStyle = UITableViewCellSeparatorStyle.none
-        return tableView
-    }()
-    
-    var items = [RepositoryModel]()
+class UserDetailViewController: BaseViewController, StoryboardLoadable {
+
     var name: String = ""
     var model: UserModel?
+    
+    @IBOutlet weak var headImageView: UIImageView!
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    @IBOutlet weak var loginLabel: UILabel!
+    
+    @IBOutlet weak var bioLabel: UILabel!
+    
+    @IBOutlet weak var followersLabel: UILabel!
+    @IBOutlet weak var repositoryLabel: UILabel!
+    @IBOutlet weak var followingLabel: UILabel!
+    
+    @IBOutlet weak var companyLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var blogLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.view.addSubview(self.tableView)
-        self.tableView.frame = self.view.bounds
         
-        self.tableView.fr.headerView = FRNormalHeader(ComponentRefreshingClosure: {
-            self.loadData()
-        })
+        self.requestUserData()
+    }
 
-        requestUserData()
-    }
-    
-    fileprivate func loadData() {
-        self.page = 1
-        self.requestData()
-    }
-    
-    fileprivate func loadMore() {
-        self.page += 1
-        self.requestData()
-    }
-    
     fileprivate func requestUserData() {
         NetworkManager.loadUserDetailDataWith(userName: name, completionHandler: { (userModel) in
             self.model = userModel
             
-            self.headerView = UserDetailHeaderView.defaultView()
-            self.tableView.tableHeaderView = self.headerView
-            self.refreshHeader()
-            self.tableView.fit_registerCell(cell: RepositoryTableViewCell.self)
+            if let name = self.model?.name {
+                self.nameLabel.isHidden = false
+                self.nameLabel.text = name
+            } else {
+                self.nameLabel.isHidden = true
+            }
+            if let login = self.model?.login {
+                self.loginLabel.isHidden = false
+                self.loginLabel.text = login
+            } else {
+                self.loginLabel.isHidden = true
+            }
             
-            self.requestData()
+            self.followersLabel.text = "\(self.model?.followers ?? 0)\nFollowers"
+            self.repositoryLabel.text = "\(self.model?.public_repos ?? 0)\nRepository"
+            self.followingLabel.text = "\(self.model?.following ?? 0)\nFollowing"
+            
+            if let company = self.model?.company {
+                self.companyLabel.isHidden = false
+                self.companyLabel.text = "🏢 "+company
+            } else {
+                self.companyLabel.isHidden = true
+            }
+            if let location = self.model!.location {
+                self.locationLabel.isHidden = false
+                self.locationLabel.text = "🏠 "+location
+            } else {
+                self.locationLabel.isHidden = true
+            }
+            if let email = self.model!.email {
+                self.emailLabel.isHidden = false
+                self.emailLabel.text = "📧 "+email
+            } else {
+                self.emailLabel.isHidden = true
+            }
+            if let blog = self.model!.blog {
+                self.blogLabel.isHidden = false
+                self.blogLabel.text = "🔗 "+blog
+            } else {
+                self.blogLabel.isHidden = true
+            }
+            if let time = self.model!.created_at {
+                self.timeLabel.isHidden = false
+                let subString = time.prefix(10)
+                self.timeLabel.text = "⏳ "+String(subString)
+            } else {
+                self.timeLabel.isHidden = true
+            }
+            
+            if let des = self.model?.bio {
+                self.bioLabel.text = des
+            } else {
+                self.bioLabel.text = ""
+            }
+            
+            if let imageName = self.model?.avatar_url {
+                self.headImageView.kf.setImage(with: URL(string: imageName))
+            }
             
         })
-    }
-    
-    fileprivate func requestData() {
-        
-        NetworkManager.loadUserRepositoriesDataWith(page: self.page, userName: name) { (items) in
-            
-            self.tableView.fr.headerView?.endRefreshing()
-            self.tableView.fr.footerView?.endRefreshing()
-            
-            if self.page == 1 {
-                self.items = items
-            } else {
-                self.items = self.items + items
-            }
-
-            self.tableView.reloadData()
-            
-            if items.count == 0 {
-                self.tableView.fr.footerView = nil;
-            } else {
-                self.tableView.fr.footerView = FRAutoNormalFooter(ComponentRefreshingClosure: {
-                    self.loadMore()
-                })
-            }
-        }
-    }
-
-    fileprivate func refreshHeader() {
-        headerView.model = self.model
     }
     
     override func didReceiveMemoryWarning() {
@@ -110,23 +122,4 @@ class UserDetailViewController: BaseViewController {
     }
     */
 
-}
-
-extension UserDetailViewController: UITableViewDataSource, UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        self.tableView.fr.footerView?.isHidden = (items.count == 0)
-        return items.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.fit_dequeueReusableCell(indexPath: indexPath) as RepositoryTableViewCell
-        cell.model = items[indexPath.row]
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        
-    }
 }

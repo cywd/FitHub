@@ -138,7 +138,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let vc = UserDetailViewController()
+        let vc = UserDetailViewController.loadStoryboard()
         vc.name = self.items[indexPath.row].login!
         self.navigationController?.pushViewController(vc, animated: true)
     }
