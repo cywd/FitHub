@@ -50,13 +50,13 @@ class UserDetailHeaderView: UIView {
                 self.locationLabel.isHidden = true
             }
             if let email = model!.email {
-                self.emailLabel.isHidden = false
+                self.emailLabel.isHidden = email==""
                 self.emailLabel.text = "📧 "+email
             } else {
                 self.emailLabel.isHidden = true
             }
             if let blog = model!.blog {
-                self.blogLabel.isHidden = false
+                self.blogLabel.isHidden = blog==""
                 self.blogLabel.text = "🔗 "+blog
             } else {
                 self.blogLabel.isHidden = true

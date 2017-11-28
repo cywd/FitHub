@@ -20,6 +20,12 @@ class MeViewController: BaseViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "MeTableViewCell")
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.tableView.reloadData()
+    }
+    
     // MARK: -
     
     // MARK: -
