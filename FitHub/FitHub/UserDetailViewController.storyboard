@@ -6,7 +6,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -46,9 +45,8 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" red="1" green="0.40000000000000002" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstItem="fMX-v3-wWJ" firstAttribute="leading" secondItem="uJX-R6-wCE" secondAttribute="leadingMargin" constant="8" id="564-Yg-hJn"/>
+                                            <constraint firstItem="fMX-v3-wWJ" firstAttribute="leading" secondItem="uJX-R6-wCE" secondAttribute="leading" id="564-Yg-hJn"/>
                                             <constraint firstItem="7Oj-U9-vbU" firstAttribute="height" secondItem="frc-fv-xgC" secondAttribute="height" id="5CP-37-Nz7"/>
                                             <constraint firstItem="7Oj-U9-vbU" firstAttribute="width" secondItem="frc-fv-xgC" secondAttribute="width" id="DZJ-hk-IJW"/>
                                             <constraint firstItem="7Oj-U9-vbU" firstAttribute="bottom" secondItem="fMX-v3-wWJ" secondAttribute="bottom" id="I9c-Mn-mUu"/>
@@ -58,7 +56,7 @@
                                             <constraint firstItem="fMX-v3-wWJ" firstAttribute="centerY" secondItem="uJX-R6-wCE" secondAttribute="centerY" id="irb-SX-xVg"/>
                                             <constraint firstItem="frc-fv-xgC" firstAttribute="leading" secondItem="fMX-v3-wWJ" secondAttribute="trailing" constant="8" id="mCd-ZM-nTT"/>
                                             <constraint firstItem="7Oj-U9-vbU" firstAttribute="leading" secondItem="frc-fv-xgC" secondAttribute="leading" id="tXE-zh-jxD"/>
-                                            <constraint firstAttribute="trailing" secondItem="frc-fv-xgC" secondAttribute="trailing" constant="8" id="yuV-AH-YV7"/>
+                                            <constraint firstAttribute="trailing" secondItem="frc-fv-xgC" secondAttribute="trailing" id="yuV-AH-YV7"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tbd-9h-U2o">
@@ -70,29 +68,41 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VK7-6F-5Gx">
                                         <rect key="frame" x="0.0" y="120.5" width="0.0" height="100"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBl-sq-uLI">
+                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBl-sq-uLI">
                                                 <rect key="frame" x="0.0" y="0.0" width="0.0" height="100"/>
+                                                <gestureRecognizers/>
                                                 <string key="text">123
 Label</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="IhM-Rg-PAZ" appends="YES" id="4df-LC-45N"/>
+                                                </connections>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xd0-sb-NZf">
+                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xd0-sb-NZf">
                                                 <rect key="frame" x="127.5" y="0.0" width="0.0" height="100"/>
+                                                <gestureRecognizers/>
                                                 <string key="text">1
 Label</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="JcI-42-IGY" appends="YES" id="5kB-b3-H08"/>
+                                                </connections>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ByT-oq-RxM">
+                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ByT-oq-RxM">
                                                 <rect key="frame" x="247.5" y="0.0" width="0.0" height="100"/>
+                                                <gestureRecognizers/>
                                                 <string key="text">1
 Label</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="5Om-Lz-Ta1" appends="YES" id="Ad6-PF-c3b"/>
+                                                </connections>
                                             </label>
                                         </subviews>
                                         <constraints>
@@ -169,8 +179,53 @@ Label</string>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tN8-GF-O8X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="IhM-Rg-PAZ">
+                    <connections>
+                        <segue destination="3r6-Bf-xpI" kind="push" id="uNl-HQ-duZ"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="JcI-42-IGY">
+                    <connections>
+                        <segue destination="sKy-n7-aud" kind="push" id="K4t-1e-cH3"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="5Om-Lz-Ta1">
+                    <connections>
+                        <segue destination="cPs-Cc-ZRg" kind="push" id="NJF-sc-mDt"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-326" y="-193"/>
+            <point key="canvasLocation" x="-1105" y="-295"/>
+        </scene>
+        <!--FollowerViewController-->
+        <scene sceneID="1IH-15-58h">
+            <objects>
+                <viewControllerPlaceholder storyboardName="FollowerViewController" referencedIdentifier="FollowerViewController" id="3r6-Bf-xpI" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="9si-Bi-eFS"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FpU-al-A7h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-281" y="-582"/>
+        </scene>
+        <!--FollowingViewController-->
+        <scene sceneID="zCd-6Z-gFU">
+            <objects>
+                <viewControllerPlaceholder storyboardName="FollowingViewController" id="cPs-Cc-ZRg" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Ykm-fY-U4K"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IbC-SM-XLq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-281" y="-413"/>
+        </scene>
+        <!--RepositoryViewController-->
+        <scene sceneID="5Pd-hV-Hcf">
+            <objects>
+                <viewControllerPlaceholder storyboardName="RepositoryViewController" id="sKy-n7-aud" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="NQx-El-GI9"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ar1-Dn-mf4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-281" y="-492"/>
         </scene>
     </scenes>
     <resources>

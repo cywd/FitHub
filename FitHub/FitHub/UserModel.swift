@@ -44,8 +44,13 @@ class UserModel: NSObject {
     var following: Int = 0
     var created_at: String?
     var updated_at: String?
-    
-    
+    var private_gists: Int = 0
+    var owned_private_repos: Int = 0
+    var disk_usage: Int = 0
+    var collaborators: Int = 0
+    var two_factor_authentication: Bool = false
+
+
     init(dict: [String: AnyObject]) {
         super.init()
         setValuesForKeys(dict)

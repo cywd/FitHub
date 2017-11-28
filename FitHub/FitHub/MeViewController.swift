@@ -56,6 +56,12 @@ extension MeViewController: UITableViewDataSource, UITableViewDelegate {
             name = ""
         }
         
+        if NetworkManager.isLogin() {
+            if indexPath.row == 0 {
+                name = UserDefaults.standard.value(forKey: "username") as! String
+            }
+        }
+        
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "MeTableViewCell")
         
         cell.textLabel?.text = name
@@ -65,5 +71,18 @@ extension MeViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        if indexPath.row == 0 {
+            if NetworkManager.isLogin() {
+                let vc = UserDetailViewController.loadStoryboard()
+                vc.name = UserDefaults.standard.value(forKey: "username") as! String
+                self.navigationController?.pushViewController(vc, animated: true)
+            } else {
+                let vc11 = LoginViewController()
+                self.navigationController?.present(vc11, animated: true, completion: {
+                    
+                })
+            }
+        }
     }
 }
