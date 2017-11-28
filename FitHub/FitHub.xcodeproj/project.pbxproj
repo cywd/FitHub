@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3D56D4B60E8D8CD0ECEEEF14 /* Pods_FitHub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 684B0EFC6A9D30F55DF1A218 /* Pods_FitHub.framework */; };
-		E73789841FC65C05003373B7 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73789831FC65C05003373B7 /* UserDetailViewController.swift */; };
+		E73789841FC65C05003373B7 /* UserDetailViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73789831FC65C05003373B7 /* UserDetailViewController1.swift */; };
 		E73789861FC666FA003373B7 /* RepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73789851FC666FA003373B7 /* RepositoryModel.swift */; };
 		E7403DFF1FC3FCB0003054D7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7403DFE1FC3FCB0003054D7 /* BaseViewController.swift */; };
 		E7403E011FC3FCD4003054D7 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7403E001FC3FCD4003054D7 /* BaseNavigationController.swift */; };
@@ -18,6 +18,8 @@
 		E7403E091FC3FDAC003054D7 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7403E081FC3FDAC003054D7 /* MeViewController.swift */; };
 		E7403E0B1FC3FE13003054D7 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7403E0A1FC3FE13003054D7 /* NavigationController.swift */; };
 		E7403E0D1FC4001D003054D7 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7403E0C1FC4001D003054D7 /* NavigationBar.swift */; };
+		E742A5B71FCBB180002E8C0A /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E742A5B61FCBB180002E8C0A /* UserDetailViewController.swift */; };
+		E742A5B91FCBB190002E8C0A /* UserDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E742A5B81FCBB190002E8C0A /* UserDetailViewController.storyboard */; };
 		E746084D1FC510B800951AEF /* UICollectionView+FitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = E746084C1FC510B800951AEF /* UICollectionView+FitHub.swift */; };
 		E746084F1FC5117B00951AEF /* UIImage+FitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = E746084E1FC5117B00951AEF /* UIImage+FitHub.swift */; };
 		E74608511FC5151E00951AEF /* UIView+FitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74608501FC5151E00951AEF /* UIView+FitHub.swift */; };
@@ -42,6 +44,14 @@
 		E77CE54D1FBEC04500A120B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E77CE54B1FBEC04500A120B2 /* LaunchScreen.storyboard */; };
 		E77CE5581FBEC04500A120B2 /* FitHubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77CE5571FBEC04500A120B2 /* FitHubTests.swift */; };
 		E77CE5631FBEC04500A120B2 /* FitHubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77CE5621FBEC04500A120B2 /* FitHubUITests.swift */; };
+		E796457B1FCD2E77006C9C1B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79645791FCD2E77006C9C1B /* LoginViewController.swift */; };
+		E796457C1FCD2E77006C9C1B /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E796457A1FCD2E77006C9C1B /* LoginViewController.xib */; };
+		E796457E1FCD56BB006C9C1B /* FollowerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E796457D1FCD56BB006C9C1B /* FollowerViewController.swift */; };
+		E79645801FCD56D8006C9C1B /* FollowingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E796457F1FCD56D8006C9C1B /* FollowingViewController.swift */; };
+		E79645821FCD56E9006C9C1B /* RepositoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79645811FCD56E9006C9C1B /* RepositoryViewController.swift */; };
+		E79645841FCD56F3006C9C1B /* FollowerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E79645831FCD56F3006C9C1B /* FollowerViewController.storyboard */; };
+		E79645861FCD5717006C9C1B /* RepositoryViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E79645851FCD5717006C9C1B /* RepositoryViewController.storyboard */; };
+		E79645881FCD572D006C9C1B /* FollowingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E79645871FCD572D006C9C1B /* FollowingViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,7 +75,7 @@
 		684B0EFC6A9D30F55DF1A218 /* Pods_FitHub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FitHub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6997D6C2A0F99CAC8347C059 /* Pods-FitHub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitHub.release.xcconfig"; path = "Pods/Target Support Files/Pods-FitHub/Pods-FitHub.release.xcconfig"; sourceTree = "<group>"; };
 		89905B76143CFD45D9D78DE2 /* Pods-FitHub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitHub.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FitHub/Pods-FitHub.debug.xcconfig"; sourceTree = "<group>"; };
-		E73789831FC65C05003373B7 /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
+		E73789831FC65C05003373B7 /* UserDetailViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController1.swift; sourceTree = "<group>"; };
 		E73789851FC666FA003373B7 /* RepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryModel.swift; sourceTree = "<group>"; };
 		E7403DFE1FC3FCB0003054D7 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		E7403E001FC3FCD4003054D7 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
@@ -75,6 +85,8 @@
 		E7403E081FC3FDAC003054D7 /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		E7403E0A1FC3FE13003054D7 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		E7403E0C1FC4001D003054D7 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
+		E742A5B61FCBB180002E8C0A /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
+		E742A5B81FCBB190002E8C0A /* UserDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserDetailViewController.storyboard; sourceTree = "<group>"; };
 		E746084C1FC510B800951AEF /* UICollectionView+FitHub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+FitHub.swift"; sourceTree = "<group>"; };
 		E746084E1FC5117B00951AEF /* UIImage+FitHub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+FitHub.swift"; sourceTree = "<group>"; };
 		E74608501FC5151E00951AEF /* UIView+FitHub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+FitHub.swift"; sourceTree = "<group>"; };
@@ -109,6 +121,14 @@
 		E77CE55E1FBEC04500A120B2 /* FitHubUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FitHubUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E77CE5621FBEC04500A120B2 /* FitHubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitHubUITests.swift; sourceTree = "<group>"; };
 		E77CE5641FBEC04500A120B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E79645791FCD2E77006C9C1B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E796457A1FCD2E77006C9C1B /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		E796457D1FCD56BB006C9C1B /* FollowerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerViewController.swift; sourceTree = "<group>"; };
+		E796457F1FCD56D8006C9C1B /* FollowingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingViewController.swift; sourceTree = "<group>"; };
+		E79645811FCD56E9006C9C1B /* RepositoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewController.swift; sourceTree = "<group>"; };
+		E79645831FCD56F3006C9C1B /* FollowerViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FollowerViewController.storyboard; sourceTree = "<group>"; };
+		E79645851FCD5717006C9C1B /* RepositoryViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RepositoryViewController.storyboard; sourceTree = "<group>"; };
+		E79645871FCD572D006C9C1B /* FollowingViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FollowingViewController.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,7 +211,15 @@
 				E7403E0C1FC4001D003054D7 /* NavigationBar.swift */,
 				E7403E041FC3FD08003054D7 /* TabBarController.swift */,
 				E7403E061FC3FD8D003054D7 /* HomeViewController.swift */,
-				E73789831FC65C05003373B7 /* UserDetailViewController.swift */,
+				E742A5B61FCBB180002E8C0A /* UserDetailViewController.swift */,
+				E742A5B81FCBB190002E8C0A /* UserDetailViewController.storyboard */,
+				E796457D1FCD56BB006C9C1B /* FollowerViewController.swift */,
+				E79645831FCD56F3006C9C1B /* FollowerViewController.storyboard */,
+				E79645811FCD56E9006C9C1B /* RepositoryViewController.swift */,
+				E79645851FCD5717006C9C1B /* RepositoryViewController.storyboard */,
+				E796457F1FCD56D8006C9C1B /* FollowingViewController.swift */,
+				E79645871FCD572D006C9C1B /* FollowingViewController.storyboard */,
+				E73789831FC65C05003373B7 /* UserDetailViewController1.swift */,
 				E746085E1FC5769800951AEF /* UserTableViewCell.swift */,
 				E746085F1FC5769800951AEF /* UserTableViewCell.xib */,
 				E76746E81FC697560087A2DF /* UserDetailHeaderView.swift */,
@@ -200,6 +228,8 @@
 				E76746EF1FC6CBB30087A2DF /* RepositoryTableViewCell.xib */,
 				E767470B1FC7F4530087A2DF /* LanguageViewController.swift */,
 				E767470D1FC7F4760087A2DF /* LanguageViewController.storyboard */,
+				E79645791FCD2E77006C9C1B /* LoginViewController.swift */,
+				E796457A1FCD2E77006C9C1B /* LoginViewController.xib */,
 				E76746F61FC7EEF40087A2DF /* Home.storyboard */,
 				E7403E081FC3FDAC003054D7 /* MeViewController.swift */,
 				E77CE5461FBEC04500A120B2 /* Main.storyboard */,
@@ -352,15 +382,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E79645861FCD5717006C9C1B /* RepositoryViewController.storyboard in Resources */,
 				E76747061FC7F10D0087A2DF /* Localizable.strings in Resources */,
 				E77CE54D1FBEC04500A120B2 /* LaunchScreen.storyboard in Resources */,
+				E796457C1FCD2E77006C9C1B /* LoginViewController.xib in Resources */,
 				E77CE54A1FBEC04500A120B2 /* Assets.xcassets in Resources */,
+				E79645881FCD572D006C9C1B /* FollowingViewController.storyboard in Resources */,
+				E742A5B91FCBB190002E8C0A /* UserDetailViewController.storyboard in Resources */,
 				E76746F11FC6CBB30087A2DF /* RepositoryTableViewCell.xib in Resources */,
 				E77CE5481FBEC04500A120B2 /* Main.storyboard in Resources */,
 				E767470E1FC7F4760087A2DF /* LanguageViewController.storyboard in Resources */,
 				E76746EB1FC6975D0087A2DF /* UserDetailHeaderView.xib in Resources */,
 				E76746F41FC7EEF40087A2DF /* Home.storyboard in Resources */,
 				E74608611FC5769800951AEF /* UserTableViewCell.xib in Resources */,
+				E79645841FCD56F3006C9C1B /* FollowerViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,6 +470,7 @@
 			files = (
 				E7403E011FC3FCD4003054D7 /* BaseNavigationController.swift in Sources */,
 				E73789861FC666FA003373B7 /* RepositoryModel.swift in Sources */,
+				E742A5B71FCBB180002E8C0A /* UserDetailViewController.swift in Sources */,
 				E7403E0B1FC3FE13003054D7 /* NavigationController.swift in Sources */,
 				E74608531FC518E100951AEF /* UIColor+FitHub.swift in Sources */,
 				E746084F1FC5117B00951AEF /* UIImage+FitHub.swift in Sources */,
@@ -445,6 +481,7 @@
 				E74608511FC5151E00951AEF /* UIView+FitHub.swift in Sources */,
 				E7403E091FC3FDAC003054D7 /* MeViewController.swift in Sources */,
 				E746085D1FC551D100951AEF /* UserModel.swift in Sources */,
+				E796457B1FCD2E77006C9C1B /* LoginViewController.swift in Sources */,
 				E74608571FC51D1300951AEF /* UITableView+FitHub.swift in Sources */,
 				E74608601FC5769800951AEF /* UserTableViewCell.swift in Sources */,
 				E77CE5431FBEC04500A120B2 /* AppDelegate.swift in Sources */,
@@ -453,8 +490,11 @@
 				E7403DFF1FC3FCB0003054D7 /* BaseViewController.swift in Sources */,
 				E76746F01FC6CBB30087A2DF /* RepositoryTableViewCell.swift in Sources */,
 				E7403E031FC3FCF5003054D7 /* TabBar.swift in Sources */,
-				E73789841FC65C05003373B7 /* UserDetailViewController.swift in Sources */,
+				E73789841FC65C05003373B7 /* UserDetailViewController1.swift in Sources */,
 				E74608551FC51B1500951AEF /* UIImageView+FitHub.swift in Sources */,
+				E79645821FCD56E9006C9C1B /* RepositoryViewController.swift in Sources */,
+				E796457E1FCD56BB006C9C1B /* FollowerViewController.swift in Sources */,
+				E79645801FCD56D8006C9C1B /* FollowingViewController.swift in Sources */,
 				E7403E071FC3FD8D003054D7 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

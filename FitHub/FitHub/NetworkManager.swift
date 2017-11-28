@@ -18,9 +18,12 @@ protocol NetworkManagerProtocol {
     static func loadUserFollowersDataWith(page: Int, userName: String, completionHandler: @escaping ([UserModel]) -> ())
     static func loadUserFollowingDataWith(page: Int, userName: String, completionHandler: @escaping ([UserModel]) -> ())
     static func repositoryDetailWith(userName: String, repositoryName: String, completionHandler: @escaping (RepositoryModel) -> ())
+    
+    static func login(name: String, pwd: String, completionHandler: @escaping ()->())
 }
 
 class NetworkManager: NetworkManagerProtocol {
+    
     
     static func loadUserDataWith(page: Int, location: String, language: String, completionHandler: @escaping (_ items: [UserModel], _ total_count: Int) -> ()) {
         
@@ -45,7 +48,10 @@ class NetworkManager: NetworkManagerProtocol {
         
         let url = baseUrl + string
         
-        Alamofire.request(url, method: .get, headers:["headers":"application/vnd.github.v3+json"]).responseJSON { (response) in
+        
+        let header = self.getHeader()
+        
+        Alamofire.request(url, method: .get, headers:header).responseJSON { (response) in
             guard response.result.isSuccess else {
                 return
             }
@@ -75,8 +81,8 @@ class NetworkManager: NetworkManagerProtocol {
         let string = "/users/\(userName)"
         
         let url = baseUrl + string
-        
-        Alamofire.request(url, method: .get, headers:["headers":"application/vnd.github.v3+json"]).responseJSON { (response) in
+        let header = self.getHeader()
+        Alamofire.request(url, method: .get, headers:header).responseJSON { (response) in
             guard response.result.isSuccess else {
                 return
             }
@@ -101,8 +107,8 @@ class NetworkManager: NetworkManagerProtocol {
         let string = "/users/\(userName)/repos?sort=updated&page=\(page)"
         
         let url = baseUrl + string
-        
-        Alamofire.request(url, method: .get, headers:["headers":"application/vnd.github.v3+json"]).responseJSON { (response) in
+        let header = self.getHeader()
+        Alamofire.request(url, method: .get, headers:header).responseJSON { (response) in
             guard response.result.isSuccess else {
                 return
             }
@@ -133,8 +139,8 @@ class NetworkManager: NetworkManagerProtocol {
         let string = "/users/\(userName)/followers?page=\(page)"
         
         let url = baseUrl + string
-        
-        Alamofire.request(url, method: .get, headers:["headers":"application/vnd.github.v3+json"]).responseJSON { (response) in
+        let header = self.getHeader()
+        Alamofire.request(url, method: .get, headers:header).responseJSON { (response) in
             guard response.result.isSuccess else {
                 return
             }
@@ -162,8 +168,8 @@ class NetworkManager: NetworkManagerProtocol {
         let string = "/users/\(userName)/following?page=\(page)"
         
         let url = baseUrl + string
-        
-        Alamofire.request(url, method: .get, headers:["headers":"application/vnd.github.v3+json"]).responseJSON { (response) in
+        let header = self.getHeader()
+        Alamofire.request(url, method: .get, headers:header).responseJSON { (response) in
             guard response.result.isSuccess else {
                 return
             }
@@ -190,8 +196,8 @@ class NetworkManager: NetworkManagerProtocol {
         let string = "/repos/\(userName)/\(repositoryName)"
         
         let url = baseUrl + string
-        
-        Alamofire.request(url, method: .get, headers:["headers":"application/vnd.github.v3+json"]).responseJSON { (response) in
+        let header = self.getHeader()
+        Alamofire.request(url, method: .get, headers:header).responseJSON { (response) in
             guard response.result.isSuccess else {
                 return
             }
@@ -208,6 +214,77 @@ class NetworkManager: NetworkManagerProtocol {
         }
     }
     
+    static func login(name: String, pwd: String, completionHandler:@escaping ()->()) {
+        let baseUrl = "https://api.github.com"
+        let string = "/authorizations"
+        let url = baseUrl + string
+        let dic = [
+            "note" : "FitHub APP Token",
+            "scopes" : [
+                "public_repo",
+                "repo",
+                "user",
+                "gist"
+            ],
+            "client_id" : "8d53a809cf0b28bb1ff7",
+            "client_secret" : "ac0fbe152c8940c2bb1a71a80a849d1f5eba9aed"
+        ] as [String : Any]
+   
+        let header = self.addAuthorizationHead(username: name, pwd: pwd)
+        UserDefaults.standard.set(header, forKey: "header")
+        
+        Alamofire.request(url, method: .post, parameters: dic, encoding: JSONEncoding.default, headers:
+            header).responseJSON { (response) in
+            guard response.result.isSuccess else {
+                return
+            }
+
+            if let value = response.result.value {
+                let json = JSON(value)
+                let token = json["token"].string
+                
+                UserDefaults.standard.set(true, forKey: "isLogin")
+                UserDefaults.standard.set(token, forKey: "token")
+                UserDefaults.standard.set(name, forKey: "username")
+                completionHandler()
+            }
+        }
+    }
     
+    // MARK: - private
+    class func isLogin() -> Bool {
+        if let isLogin = UserDefaults.standard.value(forKey: "isLogin") {
+            return isLogin as! Bool
+        } else {
+            return false
+        }
+        
+    }
+    
+    fileprivate class func getHeader() -> [String: String]! {
+        var header = [String: String]()
+        header["headers"] = "application/vnd.github.v3+json"
+        if self.isLogin() {
+            if let tt = UserDefaults.standard.value(forKey: "header") {
+                let aa = tt as! [String : String]
+                for (key, value) in aa {
+                    header[key] = value
+                }
+            }
+        }
+        return header
+    }
+    
+    fileprivate class func addAuthorizationHead(base64UsernameAndPwd: String) -> [String: String] {
+        let jsonStr = "Basic " + base64UsernameAndPwd
+        return ["Authorization": jsonStr]
+    }
+    
+    fileprivate class func addAuthorizationHead(username: String, pwd: String) -> [String: String] {
+        let nameAndPwd = username + ":" + pwd
+        let data = nameAndPwd.data(using: String.Encoding.utf8)
+        let jsonStr = "Basic " + String(data!.base64EncodedString())
+        return ["Authorization": jsonStr]
+    }
     
 }
