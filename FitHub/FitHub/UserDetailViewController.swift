@@ -62,13 +62,13 @@ class UserDetailViewController: BaseViewController, StoryboardLoadable {
             self.followingLabel.text = "\(self.model?.following ?? 0)\nFollowing"
             
             if let company = self.model?.company {
-                self.companyLabel.isHidden = false
+                self.companyLabel.isHidden = company==""
                 self.companyLabel.text = "🏢 "+company
             } else {
                 self.companyLabel.isHidden = true
             }
             if let location = self.model!.location {
-                self.locationLabel.isHidden = false
+                self.locationLabel.isHidden = location==""
                 self.locationLabel.text = "🏠 "+location
             } else {
                 self.locationLabel.isHidden = true
@@ -80,7 +80,7 @@ class UserDetailViewController: BaseViewController, StoryboardLoadable {
                 self.emailLabel.isHidden = true
             }
             if let blog = self.model!.blog {
-                self.blogLabel.isHidden = email==""
+                self.blogLabel.isHidden = blog==""
                 self.blogLabel.text = "🔗 "+blog
             } else {
                 self.blogLabel.isHidden = true
