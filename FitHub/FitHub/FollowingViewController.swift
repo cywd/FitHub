@@ -10,6 +10,8 @@ import UIKit
 
 class FollowingViewController: BaseViewController {
 
+    var name: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

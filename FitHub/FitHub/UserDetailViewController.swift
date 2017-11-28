@@ -114,7 +114,18 @@ class UserDetailViewController: BaseViewController, StoryboardLoadable {
 
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        if segue.identifier == "follower" {
+            let vc = segue.destination as! FollowerViewController
+            vc.name = self.name
+        } else if segue.identifier == "repository" {
+            let vc = segue.destination as! RepositoryViewController
+            vc.name = self.name
+        } else if segue.identifier == "following" {
+            let vc = segue.destination as! FollowingViewController
+            vc.name = self.name
+        } else {
+            
+        }
     }
 
 }
