@@ -38,13 +38,13 @@ class UserDetailHeaderView: UIView {
                 self.realNameLabel.isHidden = true
             }
             if let company = model!.company {
-                self.companyLabel.isHidden = false
+                self.companyLabel.isHidden = company==""
                 self.companyLabel.text = "🏢 "+company
             } else {
                 self.companyLabel.isHidden = true
             }
             if let location = model!.location {
-                self.locationLabel.isHidden = false
+                self.locationLabel.isHidden = location==""
                 self.locationLabel.text = "🏠 "+location
             } else {
                 self.locationLabel.isHidden = true

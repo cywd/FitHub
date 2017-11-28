@@ -74,13 +74,13 @@ class UserDetailViewController: BaseViewController, StoryboardLoadable {
                 self.locationLabel.isHidden = true
             }
             if let email = self.model!.email {
-                self.emailLabel.isHidden = false
+                self.emailLabel.isHidden = email==""
                 self.emailLabel.text = "📧 "+email
             } else {
                 self.emailLabel.isHidden = true
             }
             if let blog = self.model!.blog {
-                self.blogLabel.isHidden = false
+                self.blogLabel.isHidden = email==""
                 self.blogLabel.text = "🔗 "+blog
             } else {
                 self.blogLabel.isHidden = true
