@@ -30,7 +30,7 @@ class HomeViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Home"
+        
         
         self.tableView.fit_registerCell(cell: UserTableViewCell.self)
         

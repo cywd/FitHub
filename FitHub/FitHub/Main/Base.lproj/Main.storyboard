@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -56,6 +55,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="Y0b-M3-57u" kind="relationship" relationship="viewControllers" id="hmf-ug-aHW"/>
+                        <segue destination="1aT-5n-NEB" kind="relationship" relationship="viewControllers" id="b4P-BH-D4U"/>
                         <segue destination="KoM-w1-RLY" kind="relationship" relationship="viewControllers" id="4u9-sN-q1K"/>
                     </connections>
                 </tabBarController>
@@ -67,11 +67,21 @@
         <scene sceneID="mCR-oS-Xd6">
             <objects>
                 <viewControllerPlaceholder storyboardName="Home" id="Y0b-M3-57u" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" id="6Ag-2A-EeG"/>
+                    <tabBarItem key="tabBarItem" title="Users" id="6Ag-2A-EeG"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bjR-cu-eTn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-899" y="-409"/>
+        </scene>
+        <!--EventsViewController-->
+        <scene sceneID="qBC-Y1-PLV">
+            <objects>
+                <viewControllerPlaceholder storyboardName="EventsViewController" id="1aT-5n-NEB" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Events" id="29p-uA-IbO"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vYZ-pl-Wxz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-892" y="-248"/>
         </scene>
     </scenes>
     <resources>
