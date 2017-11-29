@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3D56D4B60E8D8CD0ECEEEF14 /* Pods_FitHub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 684B0EFC6A9D30F55DF1A218 /* Pods_FitHub.framework */; };
+		E727C65E1FCEA8DA00DC0BB7 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E727C65D1FCEA8DA00DC0BB7 /* EventModel.swift */; };
 		E73789841FC65C05003373B7 /* UserDetailViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73789831FC65C05003373B7 /* UserDetailViewController1.swift */; };
 		E73789861FC666FA003373B7 /* RepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73789851FC666FA003373B7 /* RepositoryModel.swift */; };
 		E7403DFF1FC3FCB0003054D7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7403DFE1FC3FCB0003054D7 /* BaseViewController.swift */; };
@@ -74,6 +75,7 @@
 		684B0EFC6A9D30F55DF1A218 /* Pods_FitHub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FitHub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6997D6C2A0F99CAC8347C059 /* Pods-FitHub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitHub.release.xcconfig"; path = "Pods/Target Support Files/Pods-FitHub/Pods-FitHub.release.xcconfig"; sourceTree = "<group>"; };
 		89905B76143CFD45D9D78DE2 /* Pods-FitHub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitHub.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FitHub/Pods-FitHub.debug.xcconfig"; sourceTree = "<group>"; };
+		E727C65D1FCEA8DA00DC0BB7 /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 		E73789831FC65C05003373B7 /* UserDetailViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController1.swift; sourceTree = "<group>"; };
 		E73789851FC666FA003373B7 /* RepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryModel.swift; sourceTree = "<group>"; };
 		E7403DFE1FC3FCB0003054D7 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -299,6 +301,7 @@
 		E7A3AA521FCE9E27007AE295 /* Events */ = {
 			isa = PBXGroup;
 			children = (
+				E727C65D1FCEA8DA00DC0BB7 /* EventModel.swift */,
 				E7A3AA501FCE9E1A007AE295 /* EventsViewController.swift */,
 			);
 			path = Events;
@@ -536,6 +539,7 @@
 				E79645821FCD56E9006C9C1B /* RepositoryViewController.swift in Sources */,
 				E796457E1FCD56BB006C9C1B /* FollowerViewController.swift in Sources */,
 				E79645801FCD56D8006C9C1B /* FollowingViewController.swift in Sources */,
+				E727C65E1FCEA8DA00DC0BB7 /* EventModel.swift in Sources */,
 				E7403E071FC3FD8D003054D7 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
