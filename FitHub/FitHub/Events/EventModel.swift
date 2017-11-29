@@ -20,6 +20,7 @@ class EventModel: NSObject {
     var isPublic: Bool = false
     var created_at: String?
     
+    
     // -----------------------
     var org: String?
     
