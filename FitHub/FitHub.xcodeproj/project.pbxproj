@@ -34,8 +34,6 @@
 		E76746EB1FC6975D0087A2DF /* UserDetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E76746EA1FC6975D0087A2DF /* UserDetailHeaderView.xib */; };
 		E76746F01FC6CBB30087A2DF /* RepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76746EE1FC6CBB30087A2DF /* RepositoryTableViewCell.swift */; };
 		E76746F11FC6CBB30087A2DF /* RepositoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E76746EF1FC6CBB30087A2DF /* RepositoryTableViewCell.xib */; };
-		E76746F41FC7EEF40087A2DF /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E76746F61FC7EEF40087A2DF /* Home.storyboard */; };
-		E76747061FC7F10D0087A2DF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E76747081FC7F10D0087A2DF /* Localizable.strings */; };
 		E767470C1FC7F4530087A2DF /* LanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E767470B1FC7F4530087A2DF /* LanguageViewController.swift */; };
 		E767470E1FC7F4760087A2DF /* LanguageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E767470D1FC7F4760087A2DF /* LanguageViewController.storyboard */; };
 		E77CE5431FBEC04500A120B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77CE5421FBEC04500A120B2 /* AppDelegate.swift */; };
@@ -53,7 +51,6 @@
 		E79645861FCD5717006C9C1B /* RepositoryViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E79645851FCD5717006C9C1B /* RepositoryViewController.storyboard */; };
 		E79645881FCD572D006C9C1B /* FollowingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E79645871FCD572D006C9C1B /* FollowingViewController.storyboard */; };
 		E7A3AA511FCE9E1A007AE295 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A3AA501FCE9E1A007AE295 /* EventsViewController.swift */; };
-		E7A3AA541FCE9E42007AE295 /* EventsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7A3AA531FCE9E42007AE295 /* EventsViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,12 +100,6 @@
 		E76746EA1FC6975D0087A2DF /* UserDetailHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailHeaderView.xib; sourceTree = "<group>"; };
 		E76746EE1FC6CBB30087A2DF /* RepositoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewCell.swift; sourceTree = "<group>"; };
 		E76746EF1FC6CBB30087A2DF /* RepositoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryTableViewCell.xib; sourceTree = "<group>"; };
-		E76746F51FC7EEF40087A2DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
-		E76747011FC7F0430087A2DF /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Home.strings"; sourceTree = "<group>"; };
-		E76747021FC7F0440087A2DF /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
-		E76747031FC7F0440087A2DF /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
-		E76747071FC7F10D0087A2DF /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		E76747091FC7F1170087A2DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E767470B1FC7F4530087A2DF /* LanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewController.swift; sourceTree = "<group>"; };
 		E767470D1FC7F4760087A2DF /* LanguageViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LanguageViewController.storyboard; sourceTree = "<group>"; };
 		E77CE53F1FBEC04500A120B2 /* FitHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,7 +123,6 @@
 		E79645851FCD5717006C9C1B /* RepositoryViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RepositoryViewController.storyboard; sourceTree = "<group>"; };
 		E79645871FCD572D006C9C1B /* FollowingViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FollowingViewController.storyboard; sourceTree = "<group>"; };
 		E7A3AA501FCE9E1A007AE295 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
-		E7A3AA531FCE9E42007AE295 /* EventsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventsViewController.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +157,14 @@
 				684B0EFC6A9D30F55DF1A218 /* Pods_FitHub.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E727C65C1FCEA5ED00DC0BB7 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				E746085A1FC541FF00951AEF /* NetworkManager.swift */,
+			);
+			name = Tool;
 			sourceTree = "<group>";
 		};
 		E746084B1FC50F9C00951AEF /* Category */ = {
@@ -207,18 +205,17 @@
 		E77CE5411FBEC04500A120B2 /* FitHub */ = {
 			isa = PBXGroup;
 			children = (
-				E77CE5421FBEC04500A120B2 /* AppDelegate.swift */,
+				E746084B1FC50F9C00951AEF /* Category */,
+				E727C65C1FCEA5ED00DC0BB7 /* Tool */,
 				E7A3AA4E1FCE99DC007AE295 /* Main */,
 				E7A3AA4D1FCE99B1007AE295 /* User */,
 				E7A3AA4C1FCE998E007AE295 /* Repository */,
+				E7A3AA521FCE9E27007AE295 /* Events */,
 				E7A3AA4F1FCE99F4007AE295 /* Login */,
+				E77CE5421FBEC04500A120B2 /* AppDelegate.swift */,
 				E77CE5491FBEC04500A120B2 /* Assets.xcassets */,
 				E77CE54B1FBEC04500A120B2 /* LaunchScreen.storyboard */,
 				E77CE54E1FBEC04500A120B2 /* Info.plist */,
-				E7A3AA521FCE9E27007AE295 /* Events */,
-				E746085A1FC541FF00951AEF /* NetworkManager.swift */,
-				E76747081FC7F10D0087A2DF /* Localizable.strings */,
-				E746084B1FC50F9C00951AEF /* Category */,
 			);
 			path = FitHub;
 			sourceTree = "<group>";
@@ -282,7 +279,6 @@
 				E7403E0C1FC4001D003054D7 /* NavigationBar.swift */,
 				E7403E041FC3FD08003054D7 /* TabBarController.swift */,
 				E7403E061FC3FD8D003054D7 /* HomeViewController.swift */,
-				E76746F61FC7EEF40087A2DF /* Home.storyboard */,
 				E7403E081FC3FDAC003054D7 /* MeViewController.swift */,
 				E77CE5461FBEC04500A120B2 /* Main.storyboard */,
 				E767470B1FC7F4530087A2DF /* LanguageViewController.swift */,
@@ -304,7 +300,6 @@
 			isa = PBXGroup;
 			children = (
 				E7A3AA501FCE9E1A007AE295 /* EventsViewController.swift */,
-				E7A3AA531FCE9E42007AE295 /* EventsViewController.storyboard */,
 			);
 			path = Events;
 			sourceTree = "<group>";
@@ -410,6 +405,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = E77CE5361FBEC04500A120B2;
 			productRefGroup = E77CE5401FBEC04500A120B2 /* Products */;
@@ -429,7 +425,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E79645861FCD5717006C9C1B /* RepositoryViewController.storyboard in Resources */,
-				E76747061FC7F10D0087A2DF /* Localizable.strings in Resources */,
 				E77CE54D1FBEC04500A120B2 /* LaunchScreen.storyboard in Resources */,
 				E796457C1FCD2E77006C9C1B /* LoginViewController.xib in Resources */,
 				E77CE54A1FBEC04500A120B2 /* Assets.xcassets in Resources */,
@@ -437,10 +432,8 @@
 				E742A5B91FCBB190002E8C0A /* UserDetailViewController.storyboard in Resources */,
 				E76746F11FC6CBB30087A2DF /* RepositoryTableViewCell.xib in Resources */,
 				E77CE5481FBEC04500A120B2 /* Main.storyboard in Resources */,
-				E7A3AA541FCE9E42007AE295 /* EventsViewController.storyboard in Resources */,
 				E767470E1FC7F4760087A2DF /* LanguageViewController.storyboard in Resources */,
 				E76746EB1FC6975D0087A2DF /* UserDetailHeaderView.xib in Resources */,
-				E76746F41FC7EEF40087A2DF /* Home.storyboard in Resources */,
 				E74608611FC5769800951AEF /* UserTableViewCell.xib in Resources */,
 				E79645841FCD56F3006C9C1B /* FollowerViewController.storyboard in Resources */,
 			);
@@ -579,29 +572,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E76746F61FC7EEF40087A2DF /* Home.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E76746F51FC7EEF40087A2DF /* Base */,
-				E76747011FC7F0430087A2DF /* zh-Hans */,
-			);
-			name = Home.storyboard;
-			sourceTree = "<group>";
-		};
-		E76747081FC7F10D0087A2DF /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E76747071FC7F10D0087A2DF /* zh-Hans */,
-				E76747091FC7F1170087A2DF /* Base */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
 		E77CE5461FBEC04500A120B2 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				E77CE5471FBEC04500A120B2 /* Base */,
-				E76747021FC7F0440087A2DF /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -610,7 +584,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				E77CE54C1FBEC04500A120B2 /* Base */,
-				E76747031FC7F0440087A2DF /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
