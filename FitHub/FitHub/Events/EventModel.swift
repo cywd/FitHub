@@ -16,15 +16,11 @@ class EventModel: NSObject {
     var actor: UserModel?
     var repo: RepositoryModel?
     // -------------------------
-    var payload : String?
+    var payload : [String: Any?]?
     var isPublic: Bool = false
     var created_at: String?
-    
-    
     // -----------------------
-    var org: String?
-    
-    
+    var org: [String: Any?]?
     
     
     init(dict: [String: AnyObject]) {
