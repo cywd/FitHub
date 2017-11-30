@@ -1,17 +1,15 @@
 //
-//  RepositoryViewController.swift
+//  EventsViewController.swift
 //  FitHub
 //
-//  Created by Cyrill on 2017/11/28.
+//  Created by Cyrill on 2017/11/29.
 //  Copyright © 2017年 Cyrill. All rights reserved.
 //
 
 import UIKit
 
-class RepositoryViewController: BaseViewController {
+class EventsViewController: BaseViewController {
 
-    var name: String = ""
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+ 
 class LanguageViewController: BaseViewController, StoryboardLoadable {
     @IBOutlet weak var tableView: UITableView!
     
@@ -15,7 +15,8 @@ class LanguageViewController: BaseViewController, StoryboardLoadable {
     
     var items: [String] {
         get {
-            let allLanguageStr = NSLocalizedString("ALL_LANGUAGE", comment: "所有语言")
+//            let allLanguageStr = NSLocalizedString("ALL_LANGUAGE", comment: "所有语言")
+            let allLanguageStr = "All Language"
             return [allLanguageStr, "JavaScript", "Java" , "PHP", "Ruby", "Python", "CSS", "CPP", "C", "Objective-C", "Swift", "Shell", "R", "Perl", "Lua", "HTML", "Scala", "Go", "C#", "Kotlin", "Haskell", "Matlab", "R", "AppleScript"]
         }
     }
