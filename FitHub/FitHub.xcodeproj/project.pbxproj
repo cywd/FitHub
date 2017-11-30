@@ -43,6 +43,12 @@
 		E77CE54D1FBEC04500A120B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E77CE54B1FBEC04500A120B2 /* LaunchScreen.storyboard */; };
 		E77CE5581FBEC04500A120B2 /* FitHubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77CE5571FBEC04500A120B2 /* FitHubTests.swift */; };
 		E77CE5631FBEC04500A120B2 /* FitHubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77CE5621FBEC04500A120B2 /* FitHubUITests.swift */; };
+		E782AD4F1FCF9BBA0054DA20 /* OrgModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E782AD4E1FCF9BBA0054DA20 /* OrgModel.swift */; };
+		E782AD511FCFA04C0054DA20 /* PayloadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E782AD501FCFA04C0054DA20 /* PayloadModel.swift */; };
+		E782AD531FCFA5310054DA20 /* PullRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E782AD521FCFA5310054DA20 /* PullRequestModel.swift */; };
+		E782AD551FCFA70D0054DA20 /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E782AD541FCFA70D0054DA20 /* CommentModel.swift */; };
+		E782AD571FCFA7510054DA20 /* DeploymentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E782AD561FCFA7510054DA20 /* DeploymentModel.swift */; };
+		E782AD591FCFA9460054DA20 /* TeamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E782AD581FCFA9460054DA20 /* TeamModel.swift */; };
 		E796457B1FCD2E77006C9C1B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79645791FCD2E77006C9C1B /* LoginViewController.swift */; };
 		E796457C1FCD2E77006C9C1B /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E796457A1FCD2E77006C9C1B /* LoginViewController.xib */; };
 		E796457E1FCD56BB006C9C1B /* FollowerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E796457D1FCD56BB006C9C1B /* FollowerViewController.swift */; };
@@ -116,6 +122,12 @@
 		E77CE55E1FBEC04500A120B2 /* FitHubUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FitHubUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E77CE5621FBEC04500A120B2 /* FitHubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitHubUITests.swift; sourceTree = "<group>"; };
 		E77CE5641FBEC04500A120B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E782AD4E1FCF9BBA0054DA20 /* OrgModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrgModel.swift; sourceTree = "<group>"; };
+		E782AD501FCFA04C0054DA20 /* PayloadModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayloadModel.swift; sourceTree = "<group>"; };
+		E782AD521FCFA5310054DA20 /* PullRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullRequestModel.swift; sourceTree = "<group>"; };
+		E782AD541FCFA70D0054DA20 /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
+		E782AD561FCFA7510054DA20 /* DeploymentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeploymentModel.swift; sourceTree = "<group>"; };
+		E782AD581FCFA9460054DA20 /* TeamModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamModel.swift; sourceTree = "<group>"; };
 		E79645791FCD2E77006C9C1B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E796457A1FCD2E77006C9C1B /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		E796457D1FCD56BB006C9C1B /* FollowerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerViewController.swift; sourceTree = "<group>"; };
@@ -303,6 +315,12 @@
 			children = (
 				E727C65D1FCEA8DA00DC0BB7 /* EventModel.swift */,
 				E7A3AA501FCE9E1A007AE295 /* EventsViewController.swift */,
+				E782AD4E1FCF9BBA0054DA20 /* OrgModel.swift */,
+				E782AD501FCFA04C0054DA20 /* PayloadModel.swift */,
+				E782AD521FCFA5310054DA20 /* PullRequestModel.swift */,
+				E782AD541FCFA70D0054DA20 /* CommentModel.swift */,
+				E782AD561FCFA7510054DA20 /* DeploymentModel.swift */,
+				E782AD581FCFA9460054DA20 /* TeamModel.swift */,
 			);
 			path = Events;
 			sourceTree = "<group>";
@@ -513,12 +531,14 @@
 			files = (
 				E7403E011FC3FCD4003054D7 /* BaseNavigationController.swift in Sources */,
 				E73789861FC666FA003373B7 /* RepositoryModel.swift in Sources */,
+				E782AD591FCFA9460054DA20 /* TeamModel.swift in Sources */,
 				E742A5B71FCBB180002E8C0A /* UserDetailViewController.swift in Sources */,
 				E7A3AA511FCE9E1A007AE295 /* EventsViewController.swift in Sources */,
 				E7403E0B1FC3FE13003054D7 /* NavigationController.swift in Sources */,
 				E74608531FC518E100951AEF /* UIColor+FitHub.swift in Sources */,
 				E746084F1FC5117B00951AEF /* UIImage+FitHub.swift in Sources */,
 				E746085B1FC541FF00951AEF /* NetworkManager.swift in Sources */,
+				E782AD511FCFA04C0054DA20 /* PayloadModel.swift in Sources */,
 				E767470C1FC7F4530087A2DF /* LanguageViewController.swift in Sources */,
 				E76746E91FC697560087A2DF /* UserDetailHeaderView.swift in Sources */,
 				E746084D1FC510B800951AEF /* UICollectionView+FitHub.swift in Sources */,
@@ -537,9 +557,13 @@
 				E73789841FC65C05003373B7 /* UserDetailViewController1.swift in Sources */,
 				E74608551FC51B1500951AEF /* UIImageView+FitHub.swift in Sources */,
 				E79645821FCD56E9006C9C1B /* RepositoryViewController.swift in Sources */,
+				E782AD551FCFA70D0054DA20 /* CommentModel.swift in Sources */,
+				E782AD531FCFA5310054DA20 /* PullRequestModel.swift in Sources */,
 				E796457E1FCD56BB006C9C1B /* FollowerViewController.swift in Sources */,
 				E79645801FCD56D8006C9C1B /* FollowingViewController.swift in Sources */,
+				E782AD571FCFA7510054DA20 /* DeploymentModel.swift in Sources */,
 				E727C65E1FCEA8DA00DC0BB7 /* EventModel.swift in Sources */,
+				E782AD4F1FCF9BBA0054DA20 /* OrgModel.swift in Sources */,
 				E7403E071FC3FD8D003054D7 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
