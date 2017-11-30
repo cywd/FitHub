@@ -9,5 +9,9 @@
 import UIKit
 
 class TeamModel: NSObject {
-
+    var id: Int = 0
+    var login: String?
+    var gravatar_id: String?
+    var url: String?
+    var avatar_url: String?
 }

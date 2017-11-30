@@ -9,5 +9,12 @@
 import UIKit
 
 class CommentModel: NSObject {
-
+    var id: Int = 0
+    var url: String?
+    var html_url: String?
+    var issue_url: String?
+    var user: UserModel?
+    var created_at: String?
+    var updated_at: String?
+    var body: String?
 }
