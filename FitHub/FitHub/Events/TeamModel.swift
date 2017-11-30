@@ -10,8 +10,10 @@ import UIKit
 
 class TeamModel: NSObject {
     var id: Int = 0
-    var login: String?
-    var gravatar_id: String?
+    var name: String?
+    var slug: String?
+    var permission: String?
     var url: String?
-    var avatar_url: String?
+    var members_url: String?
+    var repositories_url: String?
 }
