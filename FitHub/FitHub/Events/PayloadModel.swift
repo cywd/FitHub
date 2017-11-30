@@ -38,7 +38,7 @@ class PayloadModel: NSObject {
     // Deployment
     var deployment: DeploymentModel?
     
-    var deployment_status: [String: Any]?
+    var deployment_status: DeploymentStatusModel?
     
     
     // push
