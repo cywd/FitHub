@@ -181,17 +181,17 @@ Label</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tN8-GF-O8X" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="IhM-Rg-PAZ">
                     <connections>
-                        <segue destination="3r6-Bf-xpI" kind="push" identifier="follower" id="uNl-HQ-duZ"/>
+                        <segue destination="3r6-Bf-xpI" kind="show" identifier="follower" id="cp2-Uo-Ip9"/>
                     </connections>
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="JcI-42-IGY">
                     <connections>
-                        <segue destination="sKy-n7-aud" kind="push" identifier="repository" id="K4t-1e-cH3"/>
+                        <segue destination="sKy-n7-aud" kind="show" identifier="repository" id="sGY-Ed-rr7"/>
                     </connections>
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="5Om-Lz-Ta1">
                     <connections>
-                        <segue destination="cPs-Cc-ZRg" kind="push" identifier="following" id="NJF-sc-mDt"/>
+                        <segue destination="cPs-Cc-ZRg" kind="show" identifier="following" id="rmU-XG-gJh"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -200,7 +200,7 @@ Label</string>
         <!--FollowerViewController-->
         <scene sceneID="1IH-15-58h">
             <objects>
-                <viewControllerPlaceholder storyboardName="FollowerViewController" referencedIdentifier="FollowerViewController" id="3r6-Bf-xpI" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="FollowerViewController" id="3r6-Bf-xpI" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="9si-Bi-eFS"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FpU-al-A7h" userLabel="First Responder" sceneMemberID="firstResponder"/>
