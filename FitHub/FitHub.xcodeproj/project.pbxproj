@@ -49,6 +49,7 @@
 		E782AD551FCFA70D0054DA20 /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E782AD541FCFA70D0054DA20 /* CommentModel.swift */; };
 		E782AD571FCFA7510054DA20 /* DeploymentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E782AD561FCFA7510054DA20 /* DeploymentModel.swift */; };
 		E782AD591FCFA9460054DA20 /* TeamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E782AD581FCFA9460054DA20 /* TeamModel.swift */; };
+		E782AD5C1FCFDB160054DA20 /* CityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E782AD5A1FCFDB160054DA20 /* CityViewController.swift */; };
 		E796457B1FCD2E77006C9C1B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79645791FCD2E77006C9C1B /* LoginViewController.swift */; };
 		E796457C1FCD2E77006C9C1B /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E796457A1FCD2E77006C9C1B /* LoginViewController.xib */; };
 		E796457E1FCD56BB006C9C1B /* FollowerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E796457D1FCD56BB006C9C1B /* FollowerViewController.swift */; };
@@ -128,6 +129,7 @@
 		E782AD541FCFA70D0054DA20 /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
 		E782AD561FCFA7510054DA20 /* DeploymentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeploymentModel.swift; sourceTree = "<group>"; };
 		E782AD581FCFA9460054DA20 /* TeamModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamModel.swift; sourceTree = "<group>"; };
+		E782AD5A1FCFDB160054DA20 /* CityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewController.swift; sourceTree = "<group>"; };
 		E79645791FCD2E77006C9C1B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E796457A1FCD2E77006C9C1B /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		E796457D1FCD56BB006C9C1B /* FollowerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerViewController.swift; sourceTree = "<group>"; };
@@ -297,6 +299,7 @@
 				E77CE5461FBEC04500A120B2 /* Main.storyboard */,
 				E767470B1FC7F4530087A2DF /* LanguageViewController.swift */,
 				E767470D1FC7F4760087A2DF /* LanguageViewController.storyboard */,
+				E782AD5A1FCFDB160054DA20 /* CityViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -557,6 +560,7 @@
 				E73789841FC65C05003373B7 /* UserDetailViewController1.swift in Sources */,
 				E74608551FC51B1500951AEF /* UIImageView+FitHub.swift in Sources */,
 				E79645821FCD56E9006C9C1B /* RepositoryViewController.swift in Sources */,
+				E782AD5C1FCFDB160054DA20 /* CityViewController.swift in Sources */,
 				E782AD551FCFA70D0054DA20 /* CommentModel.swift in Sources */,
 				E782AD531FCFA5310054DA20 /* PullRequestModel.swift in Sources */,
 				E796457E1FCD56BB006C9C1B /* FollowerViewController.swift in Sources */,
