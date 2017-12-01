@@ -98,6 +98,9 @@ class HomeViewController: BaseViewController {
     
     @IBAction func cityItemTap(_ sender: UIBarButtonItem) {
         print("cityItemTap")
+        
+        let vc = CityViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func languageItemTap(_ sender: UIBarButtonItem) {

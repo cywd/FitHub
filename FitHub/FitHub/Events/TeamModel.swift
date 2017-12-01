@@ -9,5 +9,11 @@
 import UIKit
 
 class TeamModel: NSObject {
-
+    var id: Int = 0
+    var name: String?
+    var slug: String?
+    var permission: String?
+    var url: String?
+    var members_url: String?
+    var repositories_url: String?
 }
