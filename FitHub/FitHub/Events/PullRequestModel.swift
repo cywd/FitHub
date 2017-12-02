@@ -50,6 +50,23 @@ class PullRequestModel: NSObject {
     var changed_files: Int = 0
     var user: UserModel?
     
+    init(dict: [String: AnyObject]) {
+        super.init()
+        setValuesForKeys(dict)
+    }
     
+    override func setValue(_ value: Any?, forKey key: String) {
+        if value == nil { return }
+        super.setValue(value, forKey: key)
+        if key == "user" {
+            self.user = UserModel(dict: value as! [String : AnyObject])
+        }
+        
+    }
+    
+    override func setValue(_ value: Any?, forUndefinedKey key: String) {
+        print(key)
+        
+    }
     
 }

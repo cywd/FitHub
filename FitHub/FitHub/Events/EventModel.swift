@@ -16,7 +16,7 @@ class EventModel: NSObject {
     var actor: UserModel?
     var repo: RepositoryModel?
     // -------------------------
-    var payload : [String: Any?]?
+    var payload : PayloadModel?
     var isPublic: Bool = false
     var created_at: String?
     // -----------------------
@@ -35,8 +35,11 @@ class EventModel: NSObject {
             self.actor = UserModel(dict: value as! [String : AnyObject])
         } else if key == "repo" {
             self.repo = RepositoryModel(dict: value as! [String : AnyObject])
+        } else if key == "org" {
+            self.org = OrgModel(dict: value as! [String: AnyObject])
+        } else if key == "payload" {
+            self.payload = PayloadModel(dict: value as! [String: AnyObject])
         }
-        
     }
     
     override func setValue(_ value: Any?, forUndefinedKey key: String) {

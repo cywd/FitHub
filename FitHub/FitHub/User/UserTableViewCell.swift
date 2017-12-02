@@ -8,6 +8,7 @@
 
 import UIKit
 import Kingfisher
+import CoreGraphics
 
 class UserTableViewCell: UITableViewCell, RegisterCellOrNib {
 

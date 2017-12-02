@@ -16,4 +16,21 @@ class TeamModel: NSObject {
     var url: String?
     var members_url: String?
     var repositories_url: String?
+    
+    init(dict: [String: AnyObject]) {
+        super.init()
+        setValuesForKeys(dict)
+    }
+    
+    override func setValue(_ value: Any?, forKey key: String) {
+        if value == nil { return }
+        super.setValue(value, forKey: key)
+        
+    }
+    
+    override func setValue(_ value: Any?, forUndefinedKey key: String) {
+        print(key)
+        
+    }
+    
 }
