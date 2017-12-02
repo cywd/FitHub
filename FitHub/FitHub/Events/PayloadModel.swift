@@ -55,4 +55,40 @@ class PayloadModel: NSObject {
     
     var pusher: UserModel?
     
+    
+    
+    init(dict: [String: AnyObject]) {
+        super.init()
+        setValuesForKeys(dict)
+    }
+    
+    override func setValue(_ value: Any?, forKey key: String) {
+        if value == nil { return }
+        super.setValue(value, forKey: key)
+        if key == "organization" {
+            self.organization = OrgModel(dict: value as! [String : AnyObject])
+        } else if key == "forkee" {
+            self.forkee = RepositoryModel(dict: value as! [String: AnyObject])
+        } else if key == "member" {
+            self.member = UserModel(dict: value as! [String: AnyObject])
+        } else if key == "team" {
+            self.team = TeamModel(dict: value as! [String: AnyObject])
+        } else if key == "pull_request" {
+            self.pull_request = PullRequestModel(dict: value as! [String: AnyObject])
+        } else if key == "comment" {
+            self.comment = CommentModel(dict: value as! [String: AnyObject])
+        } else if key == "deployment" {
+            self.deployment = DeploymentModel(dict: value as! [String: AnyObject])
+        } else if key == "deployment_status" {
+            self.deployment_status = DeploymentStatusModel(dict: value as! [String: AnyObject])
+        } else if key == "pusher" {
+            self.pusher = UserModel(dict: value as! [String: AnyObject])
+        }
+    }
+    
+    override func setValue(_ value: Any?, forUndefinedKey key: String) {
+        print(key)
+        
+    }
+    
 }

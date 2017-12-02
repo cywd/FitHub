@@ -54,7 +54,7 @@ class RepositoryViewController: BaseViewController {
             
             self.tableView.reloadData()
             
-            if items.count == 0 {
+            if items.count < 30 {
                 self.tableView.fr.footerView = nil;
             } else {
                 self.tableView.fr.footerView = FRAutoNormalFooter(ComponentRefreshingClosure: {

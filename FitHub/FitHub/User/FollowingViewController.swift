@@ -47,7 +47,7 @@ class FollowingViewController: BaseViewController {
     
     func requestData() {
         
-        NetworkManager.loadUserFollowersDataWith(page: self.page, userName: name) { (items) in
+        NetworkManager.loadUserFollowingDataWith(page: self.page, userName: name) { (items) in
             self.tableView.fr.headerView?.endRefreshing()
             self.tableView.fr.footerView?.endRefreshing()
             
@@ -58,7 +58,7 @@ class FollowingViewController: BaseViewController {
             }
             self.tableView.reloadData()
             
-            if items.count == 0 {
+            if items.count < 30 {
                 self.tableView.fr.footerView?.isHidden = true
             } else {
                 self.tableView.fr.footerView?.isHidden = false
@@ -87,7 +87,7 @@ class FollowingViewController: BaseViewController {
 extension FollowingViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        self.tableView.fr.footerView?.isHidden = (items.count == 0)
+        self.tableView.fr.footerView?.isHidden = (items.count < 30)
         return self.items.count
     }
     

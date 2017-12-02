@@ -128,7 +128,7 @@ class HomeViewController: BaseViewController {
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        self.tableView.fr.footerView?.isHidden = (items.count == 0)
+        self.tableView.fr.footerView?.isHidden = (items.count < 30)
         return self.items.count
     }
     
