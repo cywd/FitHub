@@ -272,7 +272,7 @@ class NetworkManager: NetworkManagerProtocol {
                     
                     var models = [EventModel]()
                     for dict in items {
-                        models.append(EventModel(dict: dict as! [String : AnyObject]))
+                        models.append(EventModel(dict: dict as! [String : AnyObject]).eventWrap())
                     }
                     completionHandler(models)
                 }

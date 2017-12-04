@@ -12,65 +12,7 @@ import UIKit
 class EventModel: NSObject {
     
     var id: Int = 0
-    var type: String? {
-        didSet {
-            
-            switch type {
-            case EventModel.CommitCommentEvent?:
-                desc = " commented on commit"
-                break
-            case EventModel.CreateEvent?:
-                desc = " create"
-                break
-            case EventModel.DeleteEvent?:
-                desc = " delete"
-                break
-            case EventModel.DeploymentEvent?:
-                desc = " deployment"
-                break
-            case EventModel.DeploymentStatusEvent?:
-                desc = " commented on commit"
-                break
-            case EventModel.IssueCommentEvent?:
-                desc = " comment on issue"
-                break
-            case EventModel.IssuesEvent?:
-                desc = " issue"
-                break
-            case EventModel.MemberEvent?:
-                desc = " member"
-                break
-            case EventModel.MembershipEvent?:
-                desc = " membership"
-                break
-            case EventModel.PullRequestEvent?:
-                desc = " PullRequestEvent"
-                break
-            case EventModel.PullRequestReviewCommentEvent?:
-                desc = " pull request review comment"
-                break
-
-            case EventModel.PushEvent?:
-                desc = " push to"
-                break
-            case EventModel.RepositoryEvent?:
-                desc = " repository"
-                break
-            case EventModel.TeamAddEvent?:
-                desc = " team add"
-                break
-            case EventModel.WatchEvent?:
-                desc = " "
-                break
-            case EventModel.ForkEvent?:
-                desc = " forked"
-                break
-            default:
-                desc = " unspport event item"
-                break
-            }
-        }
-    }
+    var type: String?
     
     var actor: UserModel?
     var repo: RepositoryModel?
@@ -82,6 +24,8 @@ class EventModel: NSObject {
     var org: OrgModel?
     
     var desc: String?
+    
+    var finDesc: String?
     
     
     // ---------------------------
@@ -129,4 +73,76 @@ class EventModel: NSObject {
         
     }
 
+}
+
+extension EventModel {
+    
+    func eventWrap() -> EventModel {
+        let login = self.actor?.login
+        let repoName = self.repo?.name
+
+        if let ttype = self.type {
+            switch ttype {
+            case EventModel.CommitCommentEvent:
+                desc = " commented on commit "
+                break
+            case EventModel.CreateEvent:
+                desc = " created a repository "
+                break
+            case EventModel.DeleteEvent:
+                desc = " delete "
+                break
+            case EventModel.DeploymentEvent:
+                desc = " deployment "
+                break
+            case EventModel.DeploymentStatusEvent:
+                desc = " commented on commit "
+                break
+            case EventModel.IssueCommentEvent:
+                desc = " comment on issue "
+                break
+            case EventModel.IssuesEvent:
+                desc = " issue "
+                break
+            case EventModel.MemberEvent:
+                desc = " member "
+                break
+            case EventModel.MembershipEvent:
+                desc = " membership "
+                break
+            case EventModel.PullRequestEvent:
+                desc = " PullRequestEvent "
+                break
+            case EventModel.PullRequestReviewCommentEvent:
+                desc = " pull request review comment "
+                break
+                
+            case EventModel.PushEvent:
+                desc = " push to "
+                break
+            case EventModel.RepositoryEvent:
+                desc = " repository "
+                break
+            case EventModel.TeamAddEvent:
+                desc = " team add "
+                break
+            case EventModel.WatchEvent:
+                desc = " started "
+                break
+            case EventModel.ForkEvent:
+                let ttt = self.payload!.forkee!.full_name!
+                desc = " forked " + ttt + " from "
+                break
+            default:
+                desc = " unspport event item "
+                break
+            }
+        }
+        
+        finDesc = login! + desc! + repoName!
+        
+        return self
+    }
+    
+    
 }

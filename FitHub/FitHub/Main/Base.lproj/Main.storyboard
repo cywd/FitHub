@@ -50,10 +50,29 @@
                     <view key="view" contentMode="scaleToFill" id="LuA-xa-Syf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tuf-UN-fQ1">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="6og-NV-5Df" id="INA-XN-g82"/>
+                                    <outlet property="delegate" destination="6og-NV-5Df" id="ngj-Q3-pN3"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="tuf-UN-fQ1" firstAttribute="leading" secondItem="nHV-zh-ta7" secondAttribute="leading" id="CzP-vi-eNx"/>
+                            <constraint firstItem="tuf-UN-fQ1" firstAttribute="top" secondItem="nHV-zh-ta7" secondAttribute="top" id="I2t-LQ-dXk"/>
+                            <constraint firstItem="nHV-zh-ta7" firstAttribute="trailing" secondItem="tuf-UN-fQ1" secondAttribute="trailing" id="b6M-qW-4K6"/>
+                            <constraint firstItem="nHV-zh-ta7" firstAttribute="bottom" secondItem="tuf-UN-fQ1" secondAttribute="bottom" id="o82-os-vvZ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="nHV-zh-ta7"/>
                     </view>
                     <navigationItem key="navigationItem" id="E8N-62-xR1"/>
+                    <connections>
+                        <outlet property="tableView" destination="tuf-UN-fQ1" id="5f4-2n-dkI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fh0-rM-NpB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
