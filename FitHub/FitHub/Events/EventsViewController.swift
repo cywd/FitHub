@@ -45,7 +45,7 @@ class EventsViewController: BaseViewController {
     
     fileprivate func requestData() {
         
-        NetworkManager.getRepositoriesEventsWith(page: 1, username: name) { (items) in
+        NetworkManager.getRepositoriesEventsWith(page: self.page, username: name) { (items) in
             
             self.tableView.fr.headerView?.endRefreshing()
             self.tableView.fr.footerView?.endRefreshing()

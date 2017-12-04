@@ -99,10 +99,13 @@ extension EventModel {
                 desc = " commented on commit "
                 break
             case EventModel.IssueCommentEvent:
-                desc = " comment on issue "
+                let issue = "#" + "\(self.payload?.issue?.number ?? 0)"
+                desc = " comment on issue " + issue + " in "
                 break
             case EventModel.IssuesEvent:
-                desc = " issue "
+                let action = (self.payload?.action ?? "")
+                let issue = "#" + "\(self.payload?.issue?.number ?? 0)"
+                desc = " " + action + " issue " + issue + " in "
                 break
             case EventModel.MemberEvent:
                 desc = " member "
@@ -111,7 +114,11 @@ extension EventModel {
                 desc = " membership "
                 break
             case EventModel.PullRequestEvent:
-                desc = " PullRequestEvent "
+                var action = self.payload?.action ?? ""
+                if "closed" == self.payload?.action {
+                    action = "merged"
+                }
+                desc = " \(action) "
                 break
             case EventModel.PullRequestReviewCommentEvent:
                 desc = " pull request review comment "
@@ -127,7 +134,7 @@ extension EventModel {
                 desc = " team add "
                 break
             case EventModel.WatchEvent:
-                desc = " started "
+                desc = " " + (self.payload?.action ?? "") + " "
                 break
             case EventModel.ForkEvent:
                 let ttt = self.payload!.forkee!.full_name!

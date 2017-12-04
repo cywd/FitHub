@@ -62,6 +62,7 @@
 		E7A6DF3B1FD1463D00EA3449 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A6DF3A1FD1463D00EA3449 /* View.swift */; };
 		E7A6DF401FD5276C00EA3449 /* EventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A6DF3E1FD5276C00EA3449 /* EventsTableViewCell.swift */; };
 		E7A6DF411FD5276C00EA3449 /* EventsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7A6DF3F1FD5276C00EA3449 /* EventsTableViewCell.xib */; };
+		E7A6DF431FD5466600EA3449 /* IssueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A6DF421FD5466600EA3449 /* IssueModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,6 +146,7 @@
 		E7A6DF3A1FD1463D00EA3449 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		E7A6DF3E1FD5276C00EA3449 /* EventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTableViewCell.swift; sourceTree = "<group>"; };
 		E7A6DF3F1FD5276C00EA3449 /* EventsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventsTableViewCell.xib; sourceTree = "<group>"; };
+		E7A6DF421FD5466600EA3449 /* IssueModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -332,6 +334,7 @@
 				E782AD521FCFA5310054DA20 /* PullRequestModel.swift */,
 				E782AD541FCFA70D0054DA20 /* CommentModel.swift */,
 				E782AD561FCFA7510054DA20 /* DeploymentModel.swift */,
+				E7A6DF421FD5466600EA3449 /* IssueModel.swift */,
 				E782AD581FCFA9460054DA20 /* TeamModel.swift */,
 			);
 			path = Events;
@@ -555,6 +558,7 @@
 				E782AD511FCFA04C0054DA20 /* PayloadModel.swift in Sources */,
 				E767470C1FC7F4530087A2DF /* LanguageViewController.swift in Sources */,
 				E76746E91FC697560087A2DF /* UserDetailHeaderView.swift in Sources */,
+				E7A6DF431FD5466600EA3449 /* IssueModel.swift in Sources */,
 				E746084D1FC510B800951AEF /* UICollectionView+FitHub.swift in Sources */,
 				E74608511FC5151E00951AEF /* UIView+FitHub.swift in Sources */,
 				E7403E091FC3FDAC003054D7 /* MeViewController.swift in Sources */,

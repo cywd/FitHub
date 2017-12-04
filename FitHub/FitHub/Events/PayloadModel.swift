@@ -34,7 +34,7 @@ class PayloadModel: NSObject {
     
     // issue
     var comment: CommentModel?
-    var issue: [String: Any]?
+    var issue: IssueModel?
     
     // Deployment
     var deployment: DeploymentModel?
@@ -84,6 +84,8 @@ class PayloadModel: NSObject {
             self.deployment_status = DeploymentStatusModel(dict: value as! [String: AnyObject])
         } else if key == "pusher" {
             self.pusher = UserModel(dict: value as! [String: AnyObject])
+        } else if key == "issue" {
+            self.issue = IssueModel(dict: value as! [String: AnyObject])
         }
     }
     
