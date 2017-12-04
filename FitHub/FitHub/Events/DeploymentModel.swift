@@ -8,6 +8,7 @@
 
 import UIKit
 
+@objcMembers
 class DeploymentModel: NSObject {
     var id: Int = 0
     var url: String?

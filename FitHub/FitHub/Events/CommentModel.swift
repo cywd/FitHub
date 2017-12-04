@@ -8,6 +8,7 @@
 
 import UIKit
 
+@objcMembers
 class CommentModel: NSObject {
     var id: Int = 0
     var url: String?

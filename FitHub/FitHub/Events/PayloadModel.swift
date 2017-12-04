@@ -8,6 +8,7 @@
 
 import UIKit
 
+@objcMembers
 class PayloadModel: NSObject {
     
     var action: String?
