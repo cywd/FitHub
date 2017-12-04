@@ -1,7 +1,7 @@
 PODS:
-  - Alamofire (4.5.1)
-  - FitRefresh (2.3.0)
-  - Kingfisher (4.3.1)
+  - Alamofire (4.6.0)
+  - FitRefresh (2.3.2)
+  - Kingfisher (4.4.0)
   - SnapKit (4.0.0)
   - SwiftyJSON (4.0.0)
 
@@ -13,9 +13,9 @@ DEPENDENCIES:
   - SwiftyJSON
 
 SPEC CHECKSUMS:
-  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
-  FitRefresh: 5a929f4b48d0169023678a59853834cb2c4e5344
-  Kingfisher: 75541c4b62f02e1fde6f9772303de3d9ebe8f5b3
+  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  FitRefresh: 7a6f81eb514fb6abaf41335937cf83e5394bf6ec
+  Kingfisher: 62a43e03047a1ac5159d0be3ac62673ef4b99cc3
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 

@@ -8,6 +8,7 @@
 
 import UIKit
 
+@objcMembers
 class TeamModel: NSObject {
     var id: Int = 0
     var name: String?

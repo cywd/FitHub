@@ -60,6 +60,9 @@
 		E79645881FCD572D006C9C1B /* FollowingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E79645871FCD572D006C9C1B /* FollowingViewController.storyboard */; };
 		E7A3AA511FCE9E1A007AE295 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A3AA501FCE9E1A007AE295 /* EventsViewController.swift */; };
 		E7A6DF3B1FD1463D00EA3449 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A6DF3A1FD1463D00EA3449 /* View.swift */; };
+		E7A6DF401FD5276C00EA3449 /* EventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A6DF3E1FD5276C00EA3449 /* EventsTableViewCell.swift */; };
+		E7A6DF411FD5276C00EA3449 /* EventsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7A6DF3F1FD5276C00EA3449 /* EventsTableViewCell.xib */; };
+		E7A6DF431FD5466600EA3449 /* IssueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A6DF421FD5466600EA3449 /* IssueModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +144,9 @@
 		E79645871FCD572D006C9C1B /* FollowingViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FollowingViewController.storyboard; sourceTree = "<group>"; };
 		E7A3AA501FCE9E1A007AE295 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		E7A6DF3A1FD1463D00EA3449 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		E7A6DF3E1FD5276C00EA3449 /* EventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTableViewCell.swift; sourceTree = "<group>"; };
+		E7A6DF3F1FD5276C00EA3449 /* EventsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventsTableViewCell.xib; sourceTree = "<group>"; };
+		E7A6DF421FD5466600EA3449 /* IssueModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -320,12 +326,15 @@
 			children = (
 				E727C65D1FCEA8DA00DC0BB7 /* EventModel.swift */,
 				E7A3AA501FCE9E1A007AE295 /* EventsViewController.swift */,
+				E7A6DF3E1FD5276C00EA3449 /* EventsTableViewCell.swift */,
+				E7A6DF3F1FD5276C00EA3449 /* EventsTableViewCell.xib */,
 				E7A6DF3A1FD1463D00EA3449 /* View.swift */,
 				E782AD4E1FCF9BBA0054DA20 /* OrgModel.swift */,
 				E782AD501FCFA04C0054DA20 /* PayloadModel.swift */,
 				E782AD521FCFA5310054DA20 /* PullRequestModel.swift */,
 				E782AD541FCFA70D0054DA20 /* CommentModel.swift */,
 				E782AD561FCFA7510054DA20 /* DeploymentModel.swift */,
+				E7A6DF421FD5466600EA3449 /* IssueModel.swift */,
 				E782AD581FCFA9460054DA20 /* TeamModel.swift */,
 			);
 			path = Events;
@@ -461,6 +470,7 @@
 				E77CE5481FBEC04500A120B2 /* Main.storyboard in Resources */,
 				E767470E1FC7F4760087A2DF /* LanguageViewController.storyboard in Resources */,
 				E76746EB1FC6975D0087A2DF /* UserDetailHeaderView.xib in Resources */,
+				E7A6DF411FD5276C00EA3449 /* EventsTableViewCell.xib in Resources */,
 				E74608611FC5769800951AEF /* UserTableViewCell.xib in Resources */,
 				E79645841FCD56F3006C9C1B /* FollowerViewController.storyboard in Resources */,
 			);
@@ -548,6 +558,7 @@
 				E782AD511FCFA04C0054DA20 /* PayloadModel.swift in Sources */,
 				E767470C1FC7F4530087A2DF /* LanguageViewController.swift in Sources */,
 				E76746E91FC697560087A2DF /* UserDetailHeaderView.swift in Sources */,
+				E7A6DF431FD5466600EA3449 /* IssueModel.swift in Sources */,
 				E746084D1FC510B800951AEF /* UICollectionView+FitHub.swift in Sources */,
 				E74608511FC5151E00951AEF /* UIView+FitHub.swift in Sources */,
 				E7403E091FC3FDAC003054D7 /* MeViewController.swift in Sources */,
@@ -563,6 +574,7 @@
 				E7403E031FC3FCF5003054D7 /* TabBar.swift in Sources */,
 				E73789841FC65C05003373B7 /* UserDetailViewController1.swift in Sources */,
 				E74608551FC51B1500951AEF /* UIImageView+FitHub.swift in Sources */,
+				E7A6DF401FD5276C00EA3449 /* EventsTableViewCell.swift in Sources */,
 				E79645821FCD56E9006C9C1B /* RepositoryViewController.swift in Sources */,
 				E782AD5C1FCFDB160054DA20 /* CityViewController.swift in Sources */,
 				E782AD551FCFA70D0054DA20 /* CommentModel.swift in Sources */,

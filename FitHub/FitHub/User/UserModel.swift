@@ -49,6 +49,10 @@ class UserModel: NSObject {
     var disk_usage: Int = 0
     var collaborators: Int = 0
     var two_factor_authentication: Bool = false
+    
+    
+    // actor
+    var display_login: String?
 
 
     init(dict: [String: AnyObject]) {

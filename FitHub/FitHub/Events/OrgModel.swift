@@ -8,6 +8,7 @@
 
 import UIKit
 
+@objcMembers
 class OrgModel: NSObject {
     
     var id: Int = 0

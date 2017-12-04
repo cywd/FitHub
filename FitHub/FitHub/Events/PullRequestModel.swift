@@ -8,6 +8,7 @@
 
 import UIKit
 
+@objcMembers
 class PullRequestModel: NSObject {
 
     var id: Int = 0
