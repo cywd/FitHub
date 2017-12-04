@@ -125,7 +125,7 @@ extension EventModel {
                 break
                 
             case EventModel.PushEvent:
-                desc = " push to master at " 
+                desc = " push to master at "
                 break
             case EventModel.RepositoryEvent:
                 desc = " repository "
