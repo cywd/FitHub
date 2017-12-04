@@ -20,6 +20,8 @@ protocol NetworkManagerProtocol {
     static func repositoryDetailWith(userName: String, repositoryName: String, completionHandler: @escaping (RepositoryModel) -> ())
     
     static func login(name: String, pwd: String, completionHandler: @escaping ()->())
+    
+    static func getRepositoriesEventsWith(page: Int, username: String, completionHandler: @escaping ([EventModel]) -> ())
 }
 
 class NetworkManager: NetworkManagerProtocol {
@@ -250,6 +252,35 @@ class NetworkManager: NetworkManagerProtocol {
             }
         }
     }
+    
+    static func getRepositoriesEventsWith(page: Int, username: String, completionHandler: @escaping ([EventModel]) -> ()) {
+        
+        let baseUrl = "https://api.github.com"
+        let string = "/users/\(username)/received_events?page=\(page)"
+        let url = baseUrl + string
+        
+        let header = self.getHeader()
+        Alamofire.request(url, method: HTTPMethod.get, parameters: nil, headers: header).responseJSON { (response) in
+            guard response.result.isSuccess else {
+                return
+            }
+            
+            if let value = response.result.value {
+                let json = JSON(value)
+                
+                if let items = json.arrayObject {
+                    
+                    var models = [EventModel]()
+                    for dict in items {
+                        models.append(EventModel(dict: dict as! [String : AnyObject]))
+                    }
+                    completionHandler(models)
+                }
+
+            }
+        }
+    }
+    
     
     // MARK: - private
     class func isLogin() -> Bool {

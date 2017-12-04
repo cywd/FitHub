@@ -9,12 +9,20 @@
 import UIKit
 
 class EventsViewController: BaseViewController {
-
+    var name =  UserDefaults.standard.value(forKey: "username") as? String ?? ""
+    
+    var items = [EventModel]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
+        NetworkManager.getRepositoriesEventsWith(page: 1, username: name) { (items) in
+            
+            self.items = items
+            
+        }
         
     }
 
