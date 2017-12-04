@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,7 +17,29 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FitHubLogo" translatesAutoresizingMaskIntoConstraints="NO" id="0hz-8u-OWH">
+                                <rect key="frame" x="112" y="311" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="OhB-wX-CAe"/>
+                                    <constraint firstAttribute="width" secondItem="0hz-8u-OWH" secondAttribute="height" multiplier="1:1" id="Xx9-mT-hVi"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FitHub" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPL-gU-0H5">
+                                <rect key="frame" x="112" y="461" width="150" height="20"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="cPL-gU-0H5" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Erf-f4-k05"/>
+                            <constraint firstItem="0hz-8u-OWH" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-20" id="LW4-dK-ySa"/>
+                            <constraint firstItem="0hz-8u-OWH" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="aqB-tq-dui"/>
+                            <constraint firstItem="cPL-gU-0H5" firstAttribute="top" secondItem="0hz-8u-OWH" secondAttribute="bottom" id="ny4-Qr-SsJ"/>
+                            <constraint firstItem="cPL-gU-0H5" firstAttribute="width" secondItem="0hz-8u-OWH" secondAttribute="width" id="u94-vf-Xe8"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -25,4 +48,7 @@
             <point key="canvasLocation" x="52" y="374.6305418719212"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="FitHubLogo" width="512" height="512"/>
+    </resources>
 </document>
