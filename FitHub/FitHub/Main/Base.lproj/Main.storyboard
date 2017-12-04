@@ -9,11 +9,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Me-->
+        <!--Setting-->
         <scene sceneID="90f-Hf-Ae5">
             <objects>
                 <navigationController id="KoM-w1-RLY" customClass="NavigationController" customModule="FitHub" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Me" image="setting" id="Szu-IL-gYZ"/>
+                    <tabBarItem key="tabBarItem" title="Setting" image="setting" id="Szu-IL-gYZ"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VPf-y0-zo7" customClass="NavigationBar" customModule="FitHub" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -43,7 +43,7 @@
             </objects>
             <point key="canvasLocation" x="-834" y="-114"/>
         </scene>
-        <!--Events View Controller-->
+        <!--Events-->
         <scene sceneID="lql-fP-SIf">
             <objects>
                 <viewController id="6og-NV-5Df" customClass="EventsViewController" customModule="FitHub" customModuleProvider="target" sceneMemberID="viewController">
@@ -69,7 +69,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nHV-zh-ta7"/>
                     </view>
-                    <navigationItem key="navigationItem" id="E8N-62-xR1"/>
+                    <navigationItem key="navigationItem" title="Events" largeTitleDisplayMode="always" id="E8N-62-xR1"/>
                     <connections>
                         <outlet property="tableView" destination="tuf-UN-fQ1" id="5f4-2n-dkI"/>
                     </connections>
@@ -78,7 +78,7 @@
             </objects>
             <point key="canvasLocation" x="116" y="-114"/>
         </scene>
-        <!--Me View Controller-->
+        <!--Setting-->
         <scene sceneID="WRN-Jq-s6E">
             <objects>
                 <viewController id="SO1-rX-qkk" customClass="MeViewController" customModule="FitHub" customModuleProvider="target" sceneMemberID="viewController">
@@ -88,7 +88,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="S0k-XW-GXg"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Jro-Kj-vKj"/>
+                    <navigationItem key="navigationItem" title="Setting" id="Jro-Kj-vKj"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Dm-KN-gz1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -230,7 +230,7 @@
             </objects>
             <point key="canvasLocation" x="-834" y="605"/>
         </scene>
-        <!--View Controller-->
+        <!--Discovery-->
         <scene sceneID="ULJ-yk-jXG">
             <objects>
                 <viewController id="TQ5-fz-OaR" sceneMemberID="viewController">
@@ -240,7 +240,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="ha8-U5-kAx"/>
                     </view>
-                    <navigationItem key="navigationItem" id="N0Z-bU-yXl"/>
+                    <navigationItem key="navigationItem" title="Discovery" id="N0Z-bU-yXl"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cnX-ge-sjZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
