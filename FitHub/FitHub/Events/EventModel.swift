@@ -60,7 +60,7 @@ class EventModel: NSObject {
                 desc = " team add"
                 break
             case EventModel.WatchEvent?:
-                desc = " star"
+                desc = " "
                 break
             case EventModel.ForkEvent?:
                 desc = " forked"
