@@ -21,7 +21,6 @@ class AboutViewController: BaseViewController, StoryboardLoadable {
     @IBAction func pan(_ sender: UIPanGestureRecognizer) {
         self.commitTranslation(sender.translation(in: self.view))
     }
-    
    
     func commitTranslation(_ translation: CGPoint) {
     
@@ -33,19 +32,15 @@ class AboutViewController: BaseViewController, StoryboardLoadable {
 
         if (absX > absY) {
             if (translation.x < 0) {
-
-            //向左滑动
+                // 向左滑动
             } else {
-
-            //向右滑动
+                // 向右滑动
             }
         } else if (absY > absX) {
             if (translation.y < 0) {
-            //向上滑动
-                
+                // 向上滑动
             } else {
-            //向下滑动
-                
+                // 向下滑动
                 self.dismiss(animated: true, completion: nil)
             }
         }
