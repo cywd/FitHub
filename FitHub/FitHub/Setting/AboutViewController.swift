@@ -16,6 +16,7 @@ class AboutViewController: BaseViewController, StoryboardLoadable {
         // Do any additional setup after loading the view.
         
         self.view.backgroundColor = #colorLiteral(red: 0.2666666667, green: 0.2666666667, blue: 0.2666666667, alpha: 1)
+        
     }
     
     @IBAction func pan(_ sender: UIPanGestureRecognizer) {

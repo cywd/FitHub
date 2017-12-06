@@ -63,6 +63,9 @@
 		E7A6DF401FD5276C00EA3449 /* EventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A6DF3E1FD5276C00EA3449 /* EventsTableViewCell.swift */; };
 		E7A6DF411FD5276C00EA3449 /* EventsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7A6DF3F1FD5276C00EA3449 /* EventsTableViewCell.xib */; };
 		E7A6DF431FD5466600EA3449 /* IssueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A6DF421FD5466600EA3449 /* IssueModel.swift */; };
+		E7B0F2B21FD7ED5200DE2E3F /* Logo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B0F2B11FD7ED5200DE2E3F /* Logo.swift */; };
+		E7B0F2B41FD7EF4700DE2E3F /* DarkLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B0F2B31FD7EF4700DE2E3F /* DarkLogoView.swift */; };
+		E7B0F2B61FD7F0E600DE2E3F /* LightLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B0F2B51FD7F0E600DE2E3F /* LightLogoView.swift */; };
 		E7D3CD6A1FD69CF500F96B99 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D3CD691FD69CF500F96B99 /* AboutViewController.swift */; };
 		E7D3CD6C1FD69D0300F96B99 /* AboutViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7D3CD6B1FD69D0300F96B99 /* AboutViewController.storyboard */; };
 /* End PBXBuildFile section */
@@ -149,6 +152,9 @@
 		E7A6DF3E1FD5276C00EA3449 /* EventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTableViewCell.swift; sourceTree = "<group>"; };
 		E7A6DF3F1FD5276C00EA3449 /* EventsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventsTableViewCell.xib; sourceTree = "<group>"; };
 		E7A6DF421FD5466600EA3449 /* IssueModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueModel.swift; sourceTree = "<group>"; };
+		E7B0F2B11FD7ED5200DE2E3F /* Logo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logo.swift; sourceTree = "<group>"; };
+		E7B0F2B31FD7EF4700DE2E3F /* DarkLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkLogoView.swift; sourceTree = "<group>"; };
+		E7B0F2B51FD7F0E600DE2E3F /* LightLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightLogoView.swift; sourceTree = "<group>"; };
 		E7D3CD691FD69CF500F96B99 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		E7D3CD6B1FD69D0300F96B99 /* AboutViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AboutViewController.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -190,6 +196,9 @@
 		E727C65C1FCEA5ED00DC0BB7 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				E7B0F2B11FD7ED5200DE2E3F /* Logo.swift */,
+				E7B0F2B31FD7EF4700DE2E3F /* DarkLogoView.swift */,
+				E7B0F2B51FD7F0E600DE2E3F /* LightLogoView.swift */,
 				E746085A1FC541FF00951AEF /* NetworkManager.swift */,
 			);
 			name = Tool;
@@ -582,6 +591,7 @@
 				E74608571FC51D1300951AEF /* UITableView+FitHub.swift in Sources */,
 				E74608601FC5769800951AEF /* UserTableViewCell.swift in Sources */,
 				E77CE5431FBEC04500A120B2 /* AppDelegate.swift in Sources */,
+				E7B0F2B21FD7ED5200DE2E3F /* Logo.swift in Sources */,
 				E7403E051FC3FD08003054D7 /* TabBarController.swift in Sources */,
 				E7403E0D1FC4001D003054D7 /* NavigationBar.swift in Sources */,
 				E7403DFF1FC3FCB0003054D7 /* BaseViewController.swift in Sources */,
@@ -597,8 +607,10 @@
 				E7D3CD6A1FD69CF500F96B99 /* AboutViewController.swift in Sources */,
 				E796457E1FCD56BB006C9C1B /* FollowerViewController.swift in Sources */,
 				E79645801FCD56D8006C9C1B /* FollowingViewController.swift in Sources */,
+				E7B0F2B61FD7F0E600DE2E3F /* LightLogoView.swift in Sources */,
 				E782AD571FCFA7510054DA20 /* DeploymentModel.swift in Sources */,
 				E727C65E1FCEA8DA00DC0BB7 /* EventModel.swift in Sources */,
+				E7B0F2B41FD7EF4700DE2E3F /* DarkLogoView.swift in Sources */,
 				E782AD4F1FCF9BBA0054DA20 /* OrgModel.swift in Sources */,
 				E7403E071FC3FD8D003054D7 /* HomeViewController.swift in Sources */,
 			);
