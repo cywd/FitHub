@@ -89,6 +89,9 @@ extension MeViewController: UITableViewDataSource, UITableViewDelegate {
                     
                 })
             }
+        } else if indexPath.row == 1 {
+            let vc = AboutViewController.loadStoryboard()
+            self.present(vc, animated: true, completion: nil)
         }
     }
 }

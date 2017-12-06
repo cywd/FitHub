@@ -40,7 +40,7 @@ class View: UIView {
         
         //        path.fill()
         
-        //        let context = UIGraphicsGetCurrentContext()
+        //        let context = UIGraphics        GetCurrentContext()
         //        context?.setLineCap(CGLineCap.square)
         //        context?.setLineWidth(1.0)
         //        context?.setStrokeColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0)
