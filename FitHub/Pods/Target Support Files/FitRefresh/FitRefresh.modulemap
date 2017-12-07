@@ -1,6 +1,0 @@
-framework module FitRefresh {
-  umbrella header "FitRefresh-umbrella.h"
-
-  export *
-  module * { export * }
-}
