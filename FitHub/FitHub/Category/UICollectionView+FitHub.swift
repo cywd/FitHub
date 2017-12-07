@@ -9,7 +9,7 @@
 import UIKit
 
 extension UICollectionView {
-    
+
     /// 注册cell 自定义cell需要遵守RegisterCellOrNib
     ///
     /// - Parameter cell: cell.self
@@ -20,8 +20,8 @@ extension UICollectionView {
             register(cell, forCellWithReuseIdentifier: T.identifier)
         }
     }
-    
-    
+
+
     /// 复用cell 自定义cell需要遵守RegisterCellOrNib
     ///
     /// - Parameter indexPath: indexPath
@@ -29,7 +29,7 @@ extension UICollectionView {
     func fit_dequeueReusableCell<T: UICollectionViewCell>(indexPath: IndexPath) -> T where T: RegisterCellOrNib {
         return dequeueReusableCell(withReuseIdentifier: T.identifier, for: indexPath) as! T
     }
-    
+
     /// 注册头部
     func fit_registerSupplementaryHeaderView<T: UICollectionReusableView>(reusableView: T.Type) where T: RegisterCellOrNib {
         if let xib = T.xib {
@@ -38,7 +38,7 @@ extension UICollectionView {
             register(reusableView, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: T.identifier)
         }
     }
-    
+
     /// 获取可重用的头部
     func fit_dequeueReusableSupplementaryHeaderView<T: UICollectionReusableView>(indexPath: IndexPath) -> T where T: RegisterCellOrNib {
         return dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: T.identifier, for: indexPath) as! T

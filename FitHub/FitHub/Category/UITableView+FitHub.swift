@@ -1,4 +1,3 @@
-
 //
 //  UITableView+FitHub.swift
 //  FitHub
@@ -10,7 +9,7 @@
 import UIKit
 
 extension UITableView {
-    
+
     /// 注册cell 自定义cell需要遵守RegisterCellOrNib
     ///
     /// - Parameter cell: cell.self
@@ -21,7 +20,7 @@ extension UITableView {
             register(cell, forCellReuseIdentifier: T.identifier)
         }
     }
-    
+
     /// 复用cell 自定义cell需要遵守RegisterCellOrNib
     ///
     /// - Parameter indexPath: indexPath

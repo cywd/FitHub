@@ -7,20 +7,26 @@
 //
 
 import UIKit
- 
+
 class LanguageViewController: BaseViewController, StoryboardLoadable {
     @IBOutlet weak var tableView: UITableView!
-    
+
     var backHandler: (()->())?
-    
+
     var items: [String] {
         get {
 //            let allLanguageStr = NSLocalizedString("ALL_LANGUAGE", comment: "所有语言")
             let allLanguageStr = "All Language"
-            return [allLanguageStr, "JavaScript", "Java" , "PHP", "Ruby", "Python", "CSS", "CPP", "C", "Objective-C", "Swift", "Shell", "R", "Perl", "Lua", "HTML", "Scala", "Go", "C#", "Kotlin", "Haskell", "Matlab", "R", "AppleScript"]
+            return [allLanguageStr,
+                "JavaScript", "Java", "PHP", "Ruby", "Python", "CSS",
+                "CPP", "C", "Objective-C",
+                "Swift", "Shell", "R", "Perl",
+                "Lua", "HTML", "Scala", "Go", "C#",
+                "Kotlin", "Haskell", "Matlab", "R",
+                "AppleScript"]
         }
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,7 +37,7 @@ class LanguageViewController: BaseViewController, StoryboardLoadable {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
 
     /*
     // MARK: - Navigation
@@ -46,22 +52,22 @@ class LanguageViewController: BaseViewController, StoryboardLoadable {
 }
 
 extension LanguageViewController: UITableViewDataSource, UITableViewDelegate {
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
+
         return self.items.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+
         let cell = tableView.dequeueReusableCell(withIdentifier: "languageCell")
         cell?.textLabel?.text = items[indexPath.row]
         return cell!
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
+
         var str = ""
         if indexPath.row != 0 {
             str = items[indexPath.row]
@@ -69,6 +75,6 @@ extension LanguageViewController: UITableViewDataSource, UITableViewDelegate {
         UserDefaults.standard.set(str, forKey: "language")
         self.backHandler!()
         self.navigationController?.popViewController(animated: true)
-        
+
     }
 }

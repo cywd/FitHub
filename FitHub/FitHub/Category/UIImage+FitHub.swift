@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIImage {
-    
+
     /// 颜色生成图片 color to image
     ///
     /// - Parameter color: color

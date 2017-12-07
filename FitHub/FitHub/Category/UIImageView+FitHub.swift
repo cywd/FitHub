@@ -1,4 +1,3 @@
-
 //
 //  UIImageView+FitHub.swift
 //  FitHub
@@ -10,7 +9,7 @@
 import UIKit
 
 extension UIImageView {
-    
+
     /// 将图片变成圆形
     func circleImage() {
         UIGraphicsBeginImageContextWithOptions(self.frame.size, false, 0)
