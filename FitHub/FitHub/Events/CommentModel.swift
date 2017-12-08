@@ -18,23 +18,22 @@ class CommentModel: NSObject {
     var created_at: String?
     var updated_at: String?
     var body: String?
-    
+
     init(dict: [String: AnyObject]) {
         super.init()
         setValuesForKeys(dict)
     }
-    
+
     override func setValue(_ value: Any?, forKey key: String) {
         if value == nil { return }
         super.setValue(value, forKey: key)
         if key == "user" {
             self.user = UserModel(dict: value as! [String : AnyObject])
         }
-        
     }
-    
+
     override func setValue(_ value: Any?, forUndefinedKey key: String) {
         print(key)
-       
+
     }
 }

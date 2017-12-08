@@ -4,6 +4,7 @@ use_frameworks!
 
 target 'FitHub' do
     
+    pod 'Moya'
     pod 'SnapKit'
     pod 'Alamofire'
     pod 'Kingfisher'

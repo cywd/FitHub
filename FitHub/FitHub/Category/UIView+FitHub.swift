@@ -11,7 +11,7 @@ import UIKit
 protocol StoryboardLoadable {}
 
 extension StoryboardLoadable where Self: UIViewController {
-    
+
     /// load storyboard
     ///
     /// - Parameter name: storyboardname
@@ -25,7 +25,7 @@ extension StoryboardLoadable where Self: UIViewController {
 protocol LoadNibProtocol {}
 
 extension LoadNibProtocol {
-    
+
     /// load nib
     ///
     /// - Parameter name: nib name [
@@ -41,7 +41,7 @@ extension RegisterCellOrNib {
     static var identifier: String {
         return "\(self)"
     }
-    
+
     static var xib: UINib? {
         return UINib(nibName: "\(self)", bundle: nil)
     }
@@ -59,7 +59,7 @@ extension UIView {
             frame                 = tempFrame
         }
     }
-    
+
     /// y
     var y: CGFloat {
         get {
@@ -71,7 +71,7 @@ extension UIView {
             frame                 = tempFrame
         }
     }
-    
+
     /// height
     var height: CGFloat {
         get {
@@ -83,7 +83,7 @@ extension UIView {
             frame                 = tempFrame
         }
     }
-    
+
     /// width
     var width: CGFloat {
         get {
@@ -95,7 +95,7 @@ extension UIView {
             frame = tempFrame
         }
     }
-    
+
     /// size
     var size: CGSize {
         get {
@@ -107,7 +107,7 @@ extension UIView {
             frame = tempFrame
         }
     }
-    
+
     /// centerX
     var centerX: CGFloat {
         get {
@@ -119,7 +119,7 @@ extension UIView {
             center = tempCenter
         }
     }
-    
+
     /// centerY
     var centerY: CGFloat {
         get {

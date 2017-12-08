@@ -13,37 +13,37 @@ class UserDetailViewController: BaseViewController, StoryboardLoadable {
 
     var name: String = ""
     var model: UserModel?
-    
+
     @IBOutlet weak var headImageView: UIImageView!
-    
+
     @IBOutlet weak var nameLabel: UILabel!
-    
+
     @IBOutlet weak var loginLabel: UILabel!
-    
+
     @IBOutlet weak var bioLabel: UILabel!
-    
+
     @IBOutlet weak var followersLabel: UILabel!
     @IBOutlet weak var repositoryLabel: UILabel!
     @IBOutlet weak var followingLabel: UILabel!
-    
+
     @IBOutlet weak var companyLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var blogLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
+
         self.requestUserData()
     }
 
     fileprivate func requestUserData() {
         NetworkManager.loadUserDetailDataWith(userName: name, completionHandler: { (userModel) in
             self.model = userModel
-            
+
             if let name = self.model?.name {
                 self.nameLabel.isHidden = false
                 self.nameLabel.text = name
@@ -56,11 +56,11 @@ class UserDetailViewController: BaseViewController, StoryboardLoadable {
             } else {
                 self.loginLabel.isHidden = true
             }
-            
+
             self.followersLabel.text = "\(self.model?.followers ?? 0)\nFollowers"
             self.repositoryLabel.text = "\(self.model?.public_repos ?? 0)\nRepository"
             self.followingLabel.text = "\(self.model?.following ?? 0)\nFollowing"
-            
+
             if let company = self.model?.company {
                 self.companyLabel.isHidden = company==""
                 self.companyLabel.text = "🏢 "+company
@@ -92,27 +92,25 @@ class UserDetailViewController: BaseViewController, StoryboardLoadable {
             } else {
                 self.timeLabel.isHidden = true
             }
-            
+
             if let des = self.model?.bio {
                 self.bioLabel.text = des
             } else {
                 self.bioLabel.text = ""
             }
-            
+
             if let imageName = self.model?.avatar_url {
                 self.headImageView.kf.setImage(with: URL(string: imageName))
             }
-            
+
         })
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "follower" {
             let vc = segue.destination as! FollowerViewController
@@ -124,7 +122,7 @@ class UserDetailViewController: BaseViewController, StoryboardLoadable {
             let vc = segue.destination as! FollowingViewController
             vc.name = self.name
         } else {
-            
+
         }
     }
 

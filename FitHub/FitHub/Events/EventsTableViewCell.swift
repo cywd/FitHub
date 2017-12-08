@@ -9,9 +9,9 @@
 import UIKit
 
 class EventsTableViewCell: UITableViewCell, RegisterCellOrNib {
-    
+
     @IBOutlet weak var label: UILabel!
-    
+
     var model: EventModel? {
         didSet {
             self.label?.text = model!.finDesc ?? " "
@@ -28,5 +28,5 @@ class EventsTableViewCell: UITableViewCell, RegisterCellOrNib {
 
         // Configure the view for the selected state
     }
-    
+
 }
