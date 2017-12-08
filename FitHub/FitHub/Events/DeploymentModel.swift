@@ -23,25 +23,23 @@ class DeploymentModel: NSObject {
     var repository_url: String?
     var payload: String?
     var creator: UserModel?
-    
-    
+
     init(dict: [String: AnyObject]) {
         super.init()
         setValuesForKeys(dict)
     }
-    
+
     override func setValue(_ value: Any?, forKey key: String) {
         if value == nil { return }
         super.setValue(value, forKey: key)
         if key == "creator" {
             self.creator = UserModel(dict: value as! [String : AnyObject])
         }
-        
     }
-    
+
     override func setValue(_ value: Any?, forUndefinedKey key: String) {
         print(key)
-        
+
         if key == "description" {
             self.desc = value as? String
         }
@@ -60,28 +58,28 @@ class DeploymentStatusModel: NSObject {
     var repository_url: String?
     var deployment_url: String?
     var creator: UserModel?
-    
-    
+
+
     init(dict: [String: AnyObject]) {
         super.init()
         setValuesForKeys(dict)
     }
-    
+
     override func setValue(_ value: Any?, forKey key: String) {
         if value == nil { return }
         super.setValue(value, forKey: key)
         if key == "creator" {
             self.creator = UserModel(dict: value as! [String : AnyObject])
         }
-        
+
     }
-    
+
     override func setValue(_ value: Any?, forUndefinedKey key: String) {
         print(key)
-        
+
         if key == "description" {
             self.desc = value as? String
         }
     }
-    
+
 }

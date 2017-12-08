@@ -2,6 +2,12 @@ PODS:
   - Alamofire (4.6.0)
   - FitRefresh (2.3.2)
   - Kingfisher (4.4.0)
+  - Moya (10.0.1):
+    - Moya/Core (= 10.0.1)
+  - Moya/Core (10.0.1):
+    - Alamofire (~> 4.1)
+    - Result (~> 3.0)
+  - Result (3.2.4)
   - SnapKit (4.0.0)
   - SwiftyJSON (4.0.0)
 
@@ -9,6 +15,7 @@ DEPENDENCIES:
   - Alamofire
   - FitRefresh
   - Kingfisher
+  - Moya
   - SnapKit
   - SwiftyJSON
 
@@ -16,9 +23,11 @@ SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
   FitRefresh: 7a6f81eb514fb6abaf41335937cf83e5394bf6ec
   Kingfisher: 62a43e03047a1ac5159d0be3ac62673ef4b99cc3
+  Moya: 9e621707ff754eeb51ff3ec51a3d54e517c0733a
+  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: be76aa32b19ed34c52d906d9b21be76b4c969402
+PODFILE CHECKSUM: 78463bb9f3f8cdb72e232b1529e7ab149e9ed5c9
 
 COCOAPODS: 1.2.1

@@ -9,7 +9,7 @@
 import UIKit
 
 class EventsTableViewCell: UITableViewCell, RegisterCellOrNib {
-    
+
     @IBOutlet weak var label: UILabel!
 
     var model: EventModel? {

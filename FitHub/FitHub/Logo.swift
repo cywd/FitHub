@@ -9,32 +9,28 @@
 //  http://www.paintcodeapp.com
 //
 
-
-
 import UIKit
 
 public class Logo : NSObject {
-
     //// Drawing Methods
-    
-    @objc public dynamic class func drawDarkLogo(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 430, height: 345), color: UIColor = UIColor(red: 0.103, green: 0.075, blue: 0.068, alpha: 1.000), resizing: ResizingBehavior = .aspectFit) {
-        self.drawLogo(frame: targetFrame, color: color, resizing: resizing)
+
+    @objc public dynamic class func drawDarkLogo(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 430, height: 345), resizing: ResizingBehavior = .aspectFit) {
+        self.drawLogo(frame: targetFrame, color: UIColor(red: 0.103, green: 0.075, blue: 0.068, alpha: 1.000), resizing: resizing)
     }
-    
-    @objc public dynamic class func drawLightLogo(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 430, height: 345), color: UIColor = UIColor.white, resizing: ResizingBehavior = .aspectFit) {
-        self.drawLogo(frame: targetFrame, color: color, resizing: resizing)
+
+    @objc public dynamic class func drawLightLogo(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 430, height: 345), resizing: ResizingBehavior = .aspectFit) {
+        self.drawLogo(frame: targetFrame, color: UIColor.white, resizing: resizing)
     }
 
     @objc public dynamic class func drawLogo(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 430, height: 345), color: UIColor, resizing: ResizingBehavior = .aspectFit) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
-        
+
         //// Resize to Target Frame
         context.saveGState()
         let resizedFrame: CGRect = resizing.apply(rect: CGRect(x: 0, y: 0, width: 430, height: 345), target: targetFrame)
         context.translateBy(x: resizedFrame.minX, y: resizedFrame.minY)
         context.scaleBy(x: resizedFrame.width / 430, y: resizedFrame.height / 345)
-
 
         //// Color Declarations
         let fillColor = color
@@ -47,7 +43,6 @@ public class Logo : NSObject {
         //// Clip Clip
         let clipPath = UIBezierPath(rect: CGRect(x: -0.02, y: -0.02, width: 429.85, height: 344.9))
         clipPath.addClip()
-
 
         //// Bezier Drawing
         let bezierPath = UIBezierPath()
@@ -102,22 +97,16 @@ public class Logo : NSObject {
         fillColor.setFill()
         bezierPath.fill()
 
-
         context.endTransparencyLayer()
         context.restoreGState()
-
 
         //// Rectangle 2 Drawing
         let rectangle2Path = UIBezierPath(roundedRect: CGRect(x: 179.63, y: 192.9, width: 70.65, height: 19.65), cornerRadius: 9.8)
         fillColor.setFill()
         rectangle2Path.fill()
-        
+
         context.restoreGState()
-
     }
-
-
-
 
     @objc public enum ResizingBehavior: Int {
         case aspectFit /// The content is proportionally resized to fit into the target rectangle.
