@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11F41AE71FDC3BE700DD047E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 11F41AE91FDC3BE700DD047E /* Localizable.strings */; };
 		3D56D4B60E8D8CD0ECEEEF14 /* Pods_FitHub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 684B0EFC6A9D30F55DF1A218 /* Pods_FitHub.framework */; };
 		E727C65E1FCEA8DA00DC0BB7 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E727C65D1FCEA8DA00DC0BB7 /* EventModel.swift */; };
 		E73789841FC65C05003373B7 /* UserDetailViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73789831FC65C05003373B7 /* UserDetailViewController1.swift */; };
@@ -88,6 +89,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		11F41AE81FDC3BE700DD047E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		11F41AEA1FDC3BF200DD047E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		684B0EFC6A9D30F55DF1A218 /* Pods_FitHub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FitHub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6997D6C2A0F99CAC8347C059 /* Pods-FitHub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitHub.release.xcconfig"; path = "Pods/Target Support Files/Pods-FitHub/Pods-FitHub.release.xcconfig"; sourceTree = "<group>"; };
 		89905B76143CFD45D9D78DE2 /* Pods-FitHub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitHub.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FitHub/Pods-FitHub.debug.xcconfig"; sourceTree = "<group>"; };
@@ -253,6 +256,7 @@
 				E77CE5421FBEC04500A120B2 /* AppDelegate.swift */,
 				E77CE5491FBEC04500A120B2 /* Assets.xcassets */,
 				E77CE54B1FBEC04500A120B2 /* LaunchScreen.storyboard */,
+				11F41AE91FDC3BE700DD047E /* Localizable.strings */,
 				E77CE54E1FBEC04500A120B2 /* Info.plist */,
 			);
 			path = FitHub;
@@ -490,6 +494,7 @@
 				E77CE54A1FBEC04500A120B2 /* Assets.xcassets in Resources */,
 				E79645881FCD572D006C9C1B /* FollowingViewController.storyboard in Resources */,
 				E742A5B91FCBB190002E8C0A /* UserDetailViewController.storyboard in Resources */,
+				11F41AE71FDC3BE700DD047E /* Localizable.strings in Resources */,
 				E76746F11FC6CBB30087A2DF /* RepositoryTableViewCell.xib in Resources */,
 				E77CE5481FBEC04500A120B2 /* Main.storyboard in Resources */,
 				E767470E1FC7F4760087A2DF /* LanguageViewController.storyboard in Resources */,
@@ -648,6 +653,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		11F41AE91FDC3BE700DD047E /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				11F41AE81FDC3BE700DD047E /* zh-Hans */,
+				11F41AEA1FDC3BF200DD047E /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		E77CE5461FBEC04500A120B2 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

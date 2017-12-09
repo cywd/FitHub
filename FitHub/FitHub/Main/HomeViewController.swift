@@ -20,8 +20,7 @@ class HomeViewController: BaseViewController {
     
     var total_count: Int = 0 {
         didSet {
-//            let localStr = NSLocalizedString("HOME_TOTAL", comment: "总数描述");
-            let localStr = "Total"
+            let localStr = NSLocalizedString("HOME_TOTAL", comment: "总数描述");
             self.totalLabel.text = "\(localStr):\(total_count)"
         }
     }
@@ -68,7 +67,7 @@ class HomeViewController: BaseViewController {
         
         self.navigationItem.title = language
         if language == "" {
-//            self.navigationItem.title = NSLocalizedString("ALL_LANGUAGE", comment: "所有语言")
+            self.navigationItem.title = NSLocalizedString("ALL_LANGUAGE", comment: "所有语言")
         }
         
         NetworkManager.loadUserDataWith(page: self.page, location: location!, language: language!) { (items, total_count) in
