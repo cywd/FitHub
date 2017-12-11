@@ -31,7 +31,6 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         self.tableView.fit_registerCell(cell: UserTableViewCell.self)
         
         self.page = 1
@@ -55,7 +54,6 @@ class HomeViewController: BaseViewController {
     }
 
     func requestData() {
-        
         var location = UserDefaults.standard.object(forKey: "location") as? String
         if location == nil {
             location = "beijing"
@@ -96,15 +94,11 @@ class HomeViewController: BaseViewController {
     }
     
     @IBAction func cityItemTap(_ sender: UIBarButtonItem) {
-        print("cityItemTap")
-        
         let vc = CityViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func languageItemTap(_ sender: UIBarButtonItem) {
-        print("languageItemTap")
-        
         let vc = LanguageViewController.loadStoryboard()
         vc.backHandler = {
             self.tableView.fr.headerView?.beginRefreshing()
