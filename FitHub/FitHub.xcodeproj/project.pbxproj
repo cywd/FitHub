@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		11F41AE71FDC3BE700DD047E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 11F41AE91FDC3BE700DD047E /* Localizable.strings */; };
 		3D56D4B60E8D8CD0ECEEEF14 /* Pods_FitHub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 684B0EFC6A9D30F55DF1A218 /* Pods_FitHub.framework */; };
+		E70357641FE11163007571A3 /* DownArrowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70357631FE11163007571A3 /* DownArrowView.swift */; };
 		E727C65E1FCEA8DA00DC0BB7 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E727C65D1FCEA8DA00DC0BB7 /* EventModel.swift */; };
 		E73789841FC65C05003373B7 /* UserDetailViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73789831FC65C05003373B7 /* UserDetailViewController1.swift */; };
 		E73789861FC666FA003373B7 /* RepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73789851FC666FA003373B7 /* RepositoryModel.swift */; };
@@ -94,6 +95,7 @@
 		684B0EFC6A9D30F55DF1A218 /* Pods_FitHub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FitHub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6997D6C2A0F99CAC8347C059 /* Pods-FitHub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitHub.release.xcconfig"; path = "Pods/Target Support Files/Pods-FitHub/Pods-FitHub.release.xcconfig"; sourceTree = "<group>"; };
 		89905B76143CFD45D9D78DE2 /* Pods-FitHub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitHub.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FitHub/Pods-FitHub.debug.xcconfig"; sourceTree = "<group>"; };
+		E70357631FE11163007571A3 /* DownArrowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownArrowView.swift; sourceTree = "<group>"; };
 		E727C65D1FCEA8DA00DC0BB7 /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 		E73789831FC65C05003373B7 /* UserDetailViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController1.swift; sourceTree = "<group>"; };
 		E73789851FC666FA003373B7 /* RepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryModel.swift; sourceTree = "<group>"; };
@@ -363,6 +365,7 @@
 				E7403E081FC3FDAC003054D7 /* MeViewController.swift */,
 				E7D3CD691FD69CF500F96B99 /* AboutViewController.swift */,
 				E7D3CD6B1FD69D0300F96B99 /* AboutViewController.storyboard */,
+				E70357631FE11163007571A3 /* DownArrowView.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -608,6 +611,7 @@
 				E7A6DF431FD5466600EA3449 /* IssueModel.swift in Sources */,
 				E746084D1FC510B800951AEF /* UICollectionView+FitHub.swift in Sources */,
 				E74608511FC5151E00951AEF /* UIView+FitHub.swift in Sources */,
+				E70357641FE11163007571A3 /* DownArrowView.swift in Sources */,
 				E7403E091FC3FDAC003054D7 /* MeViewController.swift in Sources */,
 				E746085D1FC551D100951AEF /* UserModel.swift in Sources */,
 				E796457B1FCD2E77006C9C1B /* LoginViewController.swift in Sources */,
