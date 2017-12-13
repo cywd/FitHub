@@ -11,11 +11,8 @@ import UIKit
 class LoginViewController: BaseViewController {
 
     @IBOutlet weak var nameTextField: UITextField!
-    
     @IBOutlet weak var pwdTextField: UITextField!
-    
     @IBOutlet weak var loginButton: UIButton!
-    
     
     
     override func viewDidLoad() {
@@ -23,6 +20,7 @@ class LoginViewController: BaseViewController {
 
         // Do any additional setup after loading the view.
     }
+    
     @IBAction func loginTap(_ sender: UIButton) {
         
         let name = self.nameTextField.text!
@@ -36,7 +34,6 @@ class LoginViewController: BaseViewController {
     @IBAction func back(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
