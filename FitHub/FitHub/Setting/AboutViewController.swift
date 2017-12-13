@@ -10,12 +10,18 @@ import UIKit
 
 class AboutViewController: BaseViewController, StoryboardLoadable {
     
+    
+    @IBOutlet weak var arrowView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-        self.view.backgroundColor = #colorLiteral(red: 0.2666666667, green: 0.2666666667, blue: 0.2666666667, alpha: 1)
+        self.view.backgroundColor = #colorLiteral(red: 0.2666336298, green: 0.2666856647, blue: 0.2666303515, alpha: 1)
+        
+        let v = DownArrowView(frame: CGRect(x: 0, y: 0, width: 50, height: 10))
+        self.arrowView.addSubview(v)
         
     }
     
