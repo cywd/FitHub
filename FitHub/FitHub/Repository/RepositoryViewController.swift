@@ -40,9 +40,8 @@ class RepositoryViewController: BaseViewController {
     }
 
     fileprivate func requestData() {
-
         NetworkManager.loadUserRepositoriesDataWith(page: self.page, userName: name) { (items) in
-
+            
             self.tableView.fr.headerView?.endRefreshing()
             self.tableView.fr.footerView?.endRefreshing()
 
