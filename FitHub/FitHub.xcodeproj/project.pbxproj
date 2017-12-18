@@ -11,6 +11,8 @@
 		3D56D4B60E8D8CD0ECEEEF14 /* Pods_FitHub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 684B0EFC6A9D30F55DF1A218 /* Pods_FitHub.framework */; };
 		E70357641FE11163007571A3 /* DownArrowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70357631FE11163007571A3 /* DownArrowView.swift */; };
 		E727C65E1FCEA8DA00DC0BB7 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E727C65D1FCEA8DA00DC0BB7 /* EventModel.swift */; };
+		E72A3B431FE7B2E2005DCC90 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72A3B421FE7B2E2005DCC90 /* LaunchViewController.swift */; };
+		E72A3B451FE7B2F5005DCC90 /* LaunchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E72A3B441FE7B2F5005DCC90 /* LaunchViewController.storyboard */; };
 		E73789841FC65C05003373B7 /* UserDetailViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73789831FC65C05003373B7 /* UserDetailViewController1.swift */; };
 		E73789861FC666FA003373B7 /* RepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73789851FC666FA003373B7 /* RepositoryModel.swift */; };
 		E7403DFF1FC3FCB0003054D7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7403DFE1FC3FCB0003054D7 /* BaseViewController.swift */; };
@@ -96,6 +98,8 @@
 		89905B76143CFD45D9D78DE2 /* Pods-FitHub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitHub.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FitHub/Pods-FitHub.debug.xcconfig"; sourceTree = "<group>"; };
 		E70357631FE11163007571A3 /* DownArrowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownArrowView.swift; sourceTree = "<group>"; };
 		E727C65D1FCEA8DA00DC0BB7 /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
+		E72A3B421FE7B2E2005DCC90 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		E72A3B441FE7B2F5005DCC90 /* LaunchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchViewController.storyboard; sourceTree = "<group>"; };
 		E73789831FC65C05003373B7 /* UserDetailViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController1.swift; sourceTree = "<group>"; };
 		E73789851FC666FA003373B7 /* RepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryModel.swift; sourceTree = "<group>"; };
 		E7403DFE1FC3FCB0003054D7 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -325,6 +329,8 @@
 				E767470B1FC7F4530087A2DF /* LanguageViewController.swift */,
 				E767470D1FC7F4760087A2DF /* LanguageViewController.storyboard */,
 				E782AD5A1FCFDB160054DA20 /* CityViewController.swift */,
+				E72A3B421FE7B2E2005DCC90 /* LaunchViewController.swift */,
+				E72A3B441FE7B2F5005DCC90 /* LaunchViewController.storyboard */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -487,6 +493,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E72A3B451FE7B2F5005DCC90 /* LaunchViewController.storyboard in Resources */,
 				E79645861FCD5717006C9C1B /* RepositoryViewController.storyboard in Resources */,
 				E77CE54D1FBEC04500A120B2 /* LaunchScreen.storyboard in Resources */,
 				E796457C1FCD2E77006C9C1B /* LoginViewController.xib in Resources */,
@@ -608,6 +615,7 @@
 				E746084D1FC510B800951AEF /* UICollectionView+FitHub.swift in Sources */,
 				E74608511FC5151E00951AEF /* UIView+FitHub.swift in Sources */,
 				E70357641FE11163007571A3 /* DownArrowView.swift in Sources */,
+				E72A3B431FE7B2E2005DCC90 /* LaunchViewController.swift in Sources */,
 				E7403E091FC3FDAC003054D7 /* MeViewController.swift in Sources */,
 				E746085D1FC551D100951AEF /* UserModel.swift in Sources */,
 				E796457B1FCD2E77006C9C1B /* LoginViewController.swift in Sources */,
@@ -813,6 +821,7 @@
 			baseConfigurationReference = 89905B76143CFD45D9D78DE2 /* Pods-FitHub.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JXJV99SFC3;
 				INFOPLIST_FILE = FitHub/Info.plist;
@@ -820,6 +829,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cyrill.FitHub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -830,6 +840,7 @@
 			baseConfigurationReference = 6997D6C2A0F99CAC8347C059 /* Pods-FitHub.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JXJV99SFC3;
 				INFOPLIST_FILE = FitHub/Info.plist;
@@ -837,6 +848,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cyrill.FitHub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

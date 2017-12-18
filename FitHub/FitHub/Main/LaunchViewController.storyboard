@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9Mq-wa-YeT">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Launch View Controller-->
+        <scene sceneID="GhD-s5-LU3">
+            <objects>
+                <viewController id="9Mq-wa-YeT" customClass="LaunchViewController" customModule="FitHub" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Weu-IK-cUE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FitHubLogo" translatesAutoresizingMaskIntoConstraints="NO" id="LNF-3A-BZI">
+                                <rect key="frame" x="112" y="238.5" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="dOa-y4-sWK"/>
+                                    <constraint firstAttribute="width" secondItem="LNF-3A-BZI" secondAttribute="height" multiplier="1:1" id="lKC-rJ-NVf"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FitHub" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="djG-98-Q7d">
+                                <rect key="frame" x="112" y="388.5" width="150" height="20"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="djG-98-Q7d" firstAttribute="top" secondItem="LNF-3A-BZI" secondAttribute="bottom" id="EGm-uT-FM5"/>
+                            <constraint firstItem="LNF-3A-BZI" firstAttribute="centerX" secondItem="Weu-IK-cUE" secondAttribute="centerX" id="M7W-hk-y9x"/>
+                            <constraint firstItem="LNF-3A-BZI" firstAttribute="centerY" secondItem="Weu-IK-cUE" secondAttribute="centerY" constant="-20" id="RIg-nr-z3k"/>
+                            <constraint firstItem="djG-98-Q7d" firstAttribute="centerX" secondItem="Weu-IK-cUE" secondAttribute="centerX" id="mhl-Dz-IkJ"/>
+                            <constraint firstItem="djG-98-Q7d" firstAttribute="width" secondItem="LNF-3A-BZI" secondAttribute="width" id="xow-An-1Uq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="7M9-Gt-Yhr"/>
+                    </view>
+                    <connections>
+                        <outlet property="fitLabel" destination="djG-98-Q7d" id="Y4i-Hi-Tn4"/>
+                        <outlet property="logoImageView" destination="LNF-3A-BZI" id="TLq-jB-VdL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YzY-Wv-Mu4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52" y="374.6305418719212"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="FitHubLogo" width="512" height="512"/>
+    </resources>
+</document>
