@@ -30,7 +30,7 @@ class HomeViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         self.tableView.fit_registerCell(cell: UserTableViewCell.self)
         
         self.page = 1

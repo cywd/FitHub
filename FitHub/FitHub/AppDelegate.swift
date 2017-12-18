@@ -16,7 +16,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+
+        // 调试的私有API 不知道为什么不好使了
+//        let overlayClass = NSClassFromString("UIDebuggingInformationOverlay") as? UIWindow.Type
+//        _ = overlayClass?.perform(NSSelectorFromString("prepareDebuggingOverlay"))
+
         return true
+    }
+    
+    func getTheLaunchImage() -> UIImage? {
+        
+        let viewSize = UIScreen.main.bounds.size;
+
+        var viewOrientation: String?
+        if ((UIApplication.shared.statusBarOrientation == UIInterfaceOrientation.portraitUpsideDown) || (UIApplication.shared.statusBarOrientation == UIInterfaceOrientation.portrait)) {
+            viewOrientation = "Portrait";
+        } else {
+            viewOrientation = "Landscape";
+        }
+        
+        var launchImage: String! = ""
+
+        let imagesDict = Bundle.main.infoDictionary!["UILaunchImages"] as! [Any]
+
+        for dic in imagesDict {
+
+            let dict = dic as! [String : Any]
+
+            let imageSize = CGSizeFromString(dict["UILaunchImageSize"] as! String)
+
+            if (imageSize.equalTo(viewSize) && (viewOrientation == dict["UILaunchImageOrientation"] as? String))
+            {
+                launchImage = dict["UILaunchImageName"] as! String
+            }
+        }
+        return UIImage(named: launchImage)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

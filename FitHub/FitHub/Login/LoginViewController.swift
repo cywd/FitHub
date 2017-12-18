@@ -23,6 +23,8 @@ class LoginViewController: BaseViewController {
     
     @IBAction func loginTap(_ sender: UIButton) {
         
+        self.view.endEditing(true)
+        
         let name = self.nameTextField.text!
         let pwd = self.pwdTextField.text!
         
