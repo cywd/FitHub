@@ -12,16 +12,84 @@ import SwiftyJSON
 
 protocol NetworkManagerProtocol {
     
+    /// <#Description#>
+    ///
+    /// - Parameters:
+    ///   - page: <#page description#>
+    ///   - location: <#location description#>
+    ///   - language: <#language description#>
+    ///   - success: <#success description#>
+    ///   - failure: <#failure description#>
+    /// - Returns: <#return value description#>
     static func loadUserDataWith(page: Int, location: String, language: String, success: @escaping (_ items: [UserModel], _ total_count: Int) -> (), failure: @escaping (Error) -> ())
-    static func loadUserDetailDataWith(userName: String, completionHandler: @escaping (UserModel) -> ())
-    static func loadUserRepositoriesDataWith(page: Int, userName: String, completionHandler: @escaping (_ items: [RepositoryModel]) -> ())
-    static func loadUserFollowersDataWith(page: Int, userName: String, completionHandler: @escaping ([UserModel]) -> ())
-    static func loadUserFollowingDataWith(page: Int, userName: String, completionHandler: @escaping ([UserModel]) -> ())
-    static func repositoryDetailWith(userName: String, repositoryName: String, completionHandler: @escaping (RepositoryModel) -> ())
     
-    static func login(name: String, pwd: String, completionHandler: @escaping ()->())
+    /// <#Description#>
+    ///
+    /// - Parameters:
+    ///   - userName: <#userName description#>
+    ///   - success: <#success description#>
+    ///   - failure: <#failure description#>
+    /// - Returns: <#return value description#>
+    static func loadUserDetailDataWith(userName: String, success: @escaping (UserModel) -> (), failure: @escaping (Error) -> ())
     
-    static func getRepositoriesEventsWith(page: Int, username: String, completionHandler: @escaping ([EventModel]) -> ())
+    /// <#Description#>
+    ///
+    /// - Parameters:
+    ///   - page: <#page description#>
+    ///   - userName: <#userName description#>
+    ///   - success: <#success description#>
+    ///   - failure: <#failure description#>
+    /// - Returns: <#return value description#>
+    static func loadUserRepositoriesDataWith(page: Int, userName: String, success: @escaping (_ items: [RepositoryModel]) -> (), failure: @escaping (Error) -> ())
+    
+    /// <#Description#>
+    ///
+    /// - Parameters:
+    ///   - page: <#page description#>
+    ///   - userName: <#userName description#>
+    ///   - success: <#success description#>
+    ///   - failure: <#failure description#>
+    /// - Returns: <#return value description#>
+    static func loadUserFollowersDataWith(page: Int, userName: String, success: @escaping ([UserModel]) -> (), failure: @escaping (Error) -> ())
+    
+    /// <#Description#>
+    ///
+    /// - Parameters:
+    ///   - page: <#page description#>
+    ///   - userName: <#userName description#>
+    ///   - success: <#success description#>
+    ///   - failure: <#failure description#>
+    /// - Returns: <#return value description#>
+    static func loadUserFollowingDataWith(page: Int, userName: String, success: @escaping ([UserModel]) -> (), failure: @escaping (Error) -> ())
+    
+    /// <#Description#>
+    ///
+    /// - Parameters:
+    ///   - userName: <#userName description#>
+    ///   - repositoryName: <#repositoryName description#>
+    ///   - success: <#success description#>
+    ///   - failure: <#failure description#>
+    /// - Returns: <#return value description#>
+    static func repositoryDetailWith(userName: String, repositoryName: String, success: @escaping (RepositoryModel) -> (), failure: @escaping (Error) -> ())
+    
+    /// <#Description#>
+    ///
+    /// - Parameters:
+    ///   - name: <#name description#>
+    ///   - pwd: <#pwd description#>
+    ///   - success: <#success description#>
+    ///   - failure: <#failure description#>
+    /// - Returns: <#return value description#>
+    static func login(name: String, pwd: String, success: @escaping ()->(), failure: @escaping (Error) -> ())
+    
+    /// <#Description#>
+    ///
+    /// - Parameters:
+    ///   - page: <#page description#>
+    ///   - username: <#username description#>
+    ///   - success: <#success description#>
+    ///   - failure: <#failure description#>
+    static func getRepositoriesEventsWith(page: Int, username: String, success: @escaping ([EventModel]) -> (), failure: @escaping (Error) -> ())
 }
 
 class NetworkManager: NetworkManagerProtocol {
@@ -80,32 +148,35 @@ class NetworkManager: NetworkManagerProtocol {
         }
     }
 
-    static func loadUserDetailDataWith(userName: String, completionHandler: @escaping (UserModel) -> ()) {
+    static func loadUserDetailDataWith(userName: String, success: @escaping (UserModel) -> (), failure: @escaping (Error) -> ()) {
         let baseUrl = "https://api.github.com"
         let string = "/users/\(userName)"
         
         let url = baseUrl + string
         let header = self.getHeader()
         Alamofire.request(url, method: .get, headers:header).responseJSON { (response) in
-            guard response.result.isSuccess else {
-                return
-            }
-            if let value = response.result.value {
-                
+            switch response.result {
+            case .success(let value):
                 let json = JSON(value)
                 
                 if let dataDict = json.dictionaryObject {
                     let model = UserModel(dict: dataDict as [String : AnyObject])
-                    completionHandler(model)
+                    success(model)
                 }
+                
+                break
+            case .failure(let error):
+                failure(error)
+                break
             }
+           
         }
     }
     
     //https://developer.github.com/v3/repos/#list-user-repositories
     //List user repositories
     //GET /users/:username/repos
-    static func loadUserRepositoriesDataWith(page: Int, userName: String, completionHandler: @escaping ([RepositoryModel]) -> ()) {
+    static func loadUserRepositoriesDataWith(page: Int, userName: String, success: @escaping ([RepositoryModel]) -> (), failure: @escaping (Error) -> ()) {
 
         let baseUrl = "https://api.github.com"
         let string = "/users/\(userName)/repos?sort=updated&page=\(page)"
@@ -113,10 +184,8 @@ class NetworkManager: NetworkManagerProtocol {
         let url = baseUrl + string
         let header = self.getHeader()
         Alamofire.request(url, method: .get, headers:header).responseJSON { (response) in
-            guard response.result.isSuccess else {
-                return
-            }
-            if let value = response.result.value {
+            switch response.result {
+            case .success(let value):
                 
                 let json = JSON(value)
                 
@@ -128,29 +197,31 @@ class NetworkManager: NetworkManagerProtocol {
                         models.append(model)
                     }
                     
-                    completionHandler(models)
+                    success(models)
                 }
                 
+                break
+            case .failure(let error):
+                failure(error)
+                break
             }
+           
         }
     }
     
     //List followers of a user
     //https://developer.github.com/v3/users/followers/#list-followers-of-a-user
     //GET /users/:username/followers
-    static func loadUserFollowersDataWith(page: Int, userName: String, completionHandler: @escaping ([UserModel]) -> ()) {
+    static func loadUserFollowersDataWith(page: Int, userName: String, success: @escaping ([UserModel]) -> (), failure: @escaping (Error) -> ()) {
         let baseUrl = "https://api.github.com"
         let string = "/users/\(userName)/followers?page=\(page)"
         
         let url = baseUrl + string
         let header = self.getHeader()
         Alamofire.request(url, method: .get, headers:header).responseJSON { (response) in
-            guard response.result.isSuccess else {
-                return
-            }
             
-            if let value = response.result.value {
-                
+            switch response.result {
+            case .success(let value):
                 let json = JSON(value)
                 
                 if let items = json.arrayObject {
@@ -160,26 +231,27 @@ class NetworkManager: NetworkManagerProtocol {
                         models.append(UserModel(dict: dict as! [String : AnyObject]))
                     }
                     
-                    completionHandler(models)
+                    success(models)
                 }
+                
+                break
+            case .failure(let error):
+                failure(error)
+                break
             }
         }
     }
     
     
-    static func loadUserFollowingDataWith(page: Int, userName: String, completionHandler: @escaping ([UserModel]) -> ()) {
+    static func loadUserFollowingDataWith(page: Int, userName: String, success: @escaping ([UserModel]) -> (), failure: @escaping (Error) -> ()) {
         let baseUrl = "https://api.github.com"
         let string = "/users/\(userName)/following?page=\(page)"
         
         let url = baseUrl + string
         let header = self.getHeader()
         Alamofire.request(url, method: .get, headers:header).responseJSON { (response) in
-            guard response.result.isSuccess else {
-                return
-            }
-            
-            if let value = response.result.value {
-                
+            switch response.result {
+            case .success(let value):
                 let json = JSON(value)
                 
                 if let items = json.arrayObject {
@@ -189,36 +261,48 @@ class NetworkManager: NetworkManagerProtocol {
                         models.append(UserModel(dict: dict as! [String : AnyObject]))
                     }
                     
-                    completionHandler(models)
+                    success(models)
                 }
+                
+                break
+            case .failure(let error):
+                failure(error)
+                break
             }
+            
         }
     }
     
-    static func repositoryDetailWith(userName: String, repositoryName: String, completionHandler: @escaping (RepositoryModel) -> ()) {
+    static func repositoryDetailWith(userName: String, repositoryName: String, success: @escaping (RepositoryModel) -> (), failure: @escaping (Error) -> ()) {
+        
         let baseUrl = "https://api.github.com"
         let string = "/repos/\(userName)/\(repositoryName)"
         
         let url = baseUrl + string
         let header = self.getHeader()
         Alamofire.request(url, method: .get, headers:header).responseJSON { (response) in
-            guard response.result.isSuccess else {
-                return
-            }
             
-            if let value = response.result.value {
+            switch response.result {
+            case .success(let value):
                 
                 let json = JSON(value)
                 
                 if let dataDict = json.dictionaryObject {
                     let model = RepositoryModel(dict: dataDict as [String : AnyObject])
-                    completionHandler(model)
+                    success(model)
                 }
+                
+                break
+            case .failure(let error):
+                failure(error)
+                break
             }
+            
         }
     }
     
-    static func login(name: String, pwd: String, completionHandler:@escaping ()->()) {
+    static func login(name: String, pwd: String, success: @escaping () -> (), failure: @escaping (Error) -> ()) {
+        
         let baseUrl = "https://api.github.com"
         let string = "/authorizations"
         let url = baseUrl + string
@@ -237,25 +321,27 @@ class NetworkManager: NetworkManagerProtocol {
         let header = self.addAuthorizationHead(username: name, pwd: pwd)
         UserDefaults.standard.set(header, forKey: "header")
         
-        Alamofire.request(url, method: .post, parameters: dic, encoding: JSONEncoding.default, headers:
-            header).responseJSON { (response) in
-            guard response.result.isSuccess else {
-                return
-            }
+        Alamofire.request(url, method: .post, parameters: dic, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
 
-            if let value = response.result.value {
+            switch response.result {
+            case .success(let value):
                 let json = JSON(value)
                 let token = json["token"].string
                 
                 UserDefaults.standard.set(true, forKey: "isLogin")
                 UserDefaults.standard.set(token, forKey: "token")
                 UserDefaults.standard.set(name, forKey: "username")
-                completionHandler()
+                success()
+                break
+            case .failure(let error):
+                failure(error)
+                break
             }
+
         }
     }
     
-    static func getRepositoriesEventsWith(page: Int, username: String, completionHandler: @escaping ([EventModel]) -> ()) {
+    static func getRepositoriesEventsWith(page: Int, username: String, success: @escaping ([EventModel]) -> (), failure: @escaping (Error) -> ()) {
         
         let baseUrl = "https://api.github.com"
         let string = "/users/\(username)/received_events?page=\(page)"
@@ -263,11 +349,10 @@ class NetworkManager: NetworkManagerProtocol {
         
         let header = self.getHeader()
         Alamofire.request(url, method: HTTPMethod.get, parameters: nil, headers: header).responseJSON { (response) in
-            guard response.result.isSuccess else {
-                return
-            }
             
-            if let value = response.result.value {
+            switch response.result {
+            case .success(let value):
+                
                 let json = JSON(value)
                 
                 if let items = json.arrayObject {
@@ -276,10 +361,18 @@ class NetworkManager: NetworkManagerProtocol {
                     for dict in items {
                         models.append(EventModel(dict: dict as! [String : AnyObject]).eventWrap())
                     }
-                    completionHandler(models)
+                    success(models)
                 }
-
+                
+                break
+            case .failure(let error):
+                
+                failure(error)
+                
+                break
             }
+            
+
         }
     }
     

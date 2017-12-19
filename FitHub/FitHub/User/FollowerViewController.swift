@@ -47,21 +47,27 @@ class FollowerViewController: BaseViewController {
 
     func requestData() {
 
-        NetworkManager.loadUserFollowersDataWith(page: self.page, userName: name) { (items) in
+        NetworkManager.loadUserFollowersDataWith(page: self.page, userName: name, success: { (items) in
             self.tableView.fr.headerView?.endRefreshing()
             self.tableView.fr.footerView?.endRefreshing()
-
+            
             if self.page == 1 {
                 self.items = items
             } else {
                 self.items += items
             }
             self.tableView.reloadData()
-
+            
             if items.count < 30 {
                 self.tableView.fr.footerView?.isHidden = true
             } else {
                 self.tableView.fr.footerView?.isHidden = false
+            }
+        }) { (error) in
+            self.tableView.fr.headerView?.endRefreshing()
+            self.tableView.fr.footerView?.endRefreshing()
+            if self.page > 1 {
+                self.page -= 1
             }
         }
     }
