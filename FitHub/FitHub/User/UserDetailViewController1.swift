@@ -52,7 +52,7 @@ class UserDetailViewController1: BaseViewController {
     }
     
     fileprivate func requestUserData() {
-        NetworkManager.loadUserDetailDataWith(userName: name, completionHandler: { (userModel) in
+        NetworkManager.loadUserDetailDataWith(userName: name, success: { (userModel) in
             self.model = userModel
             
             self.headerView = UserDetailHeaderView.defaultView()
@@ -62,13 +62,13 @@ class UserDetailViewController1: BaseViewController {
             
             self.requestData()
             
-        })
+        }) { (error) in
+            print("请求失败")
+        }
     }
     
     fileprivate func requestData() {
-        
-        NetworkManager.loadUserRepositoriesDataWith(page: self.page, userName: name) { (items) in
-            
+        NetworkManager.loadUserRepositoriesDataWith(page: self.page, userName: name, success: { (items) in
             self.tableView.fr.headerView?.endRefreshing()
             self.tableView.fr.footerView?.endRefreshing()
             
@@ -77,7 +77,7 @@ class UserDetailViewController1: BaseViewController {
             } else {
                 self.items = self.items + items
             }
-
+            
             self.tableView.reloadData()
             
             if items.count == 0 {
@@ -87,7 +87,14 @@ class UserDetailViewController1: BaseViewController {
                     self.loadMore()
                 })
             }
+        }) { (error) in
+            self.tableView.fr.headerView?.endRefreshing()
+            self.tableView.fr.footerView?.endRefreshing()
+            if self.page > 1 {
+                self.page -= 1
+            }
         }
+
     }
 
     fileprivate func refreshHeader() {

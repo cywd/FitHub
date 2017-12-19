@@ -28,8 +28,10 @@ class LoginViewController: BaseViewController {
         let name = self.nameTextField.text!
         let pwd = self.pwdTextField.text!
         
-        NetworkManager.login(name: name, pwd: pwd) {
+        NetworkManager.login(name: name, pwd: pwd, success: {
             self.dismiss(animated: true, completion: nil)
+        }) { (error) in
+            print("登录失败")
         }
     }
    

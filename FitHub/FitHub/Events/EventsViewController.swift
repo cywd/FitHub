@@ -45,25 +45,32 @@ class EventsViewController: BaseViewController {
 
     fileprivate func requestData() {
 
-        NetworkManager.getRepositoriesEventsWith(page: self.page, username: name) { (items) in
-
+        NetworkManager.getRepositoriesEventsWith(page: self.page, username: name, success: { (items) in
+            
             self.tableView.fr.headerView?.endRefreshing()
             self.tableView.fr.footerView?.endRefreshing()
-
+            
             if self.page == 1 {
                 self.items = items
             } else {
                 self.items += items
             }
-
+            
             self.tableView.reloadData()
-
+            
             if items.count < 30 {
                 self.tableView.fr.footerView = nil;
             } else {
                 self.tableView.fr.footerView = FRAutoNormalFooter(ComponentRefreshingClosure: {
                     self.loadMore()
                 })
+            }
+        }) { (error) in
+            self.tableView.fr.headerView?.endRefreshing()
+            self.tableView.fr.footerView?.endRefreshing()
+            
+            if self.page > 1 {
+                self.page -= 1
             }
         }
     }

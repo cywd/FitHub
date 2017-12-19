@@ -41,9 +41,9 @@ class UserDetailViewController: BaseViewController, StoryboardLoadable {
     }
 
     fileprivate func requestUserData() {
-        NetworkManager.loadUserDetailDataWith(userName: name, completionHandler: { (userModel) in
+        NetworkManager.loadUserDetailDataWith(userName: name, success: { (userModel) in
             self.model = userModel
-
+            
             if let name = self.model?.name {
                 self.nameLabel.isHidden = false
                 self.nameLabel.text = name
@@ -56,11 +56,11 @@ class UserDetailViewController: BaseViewController, StoryboardLoadable {
             } else {
                 self.loginLabel.isHidden = true
             }
-
+            
             self.followersLabel.text = "\(self.model?.followers ?? 0)\nFollowers"
             self.repositoryLabel.text = "\(self.model?.public_repos ?? 0)\nRepository"
             self.followingLabel.text = "\(self.model?.following ?? 0)\nFollowing"
-
+            
             if let company = self.model?.company {
                 self.companyLabel.isHidden = company==""
                 self.companyLabel.text = "🏢 "+company
@@ -92,18 +92,19 @@ class UserDetailViewController: BaseViewController, StoryboardLoadable {
             } else {
                 self.timeLabel.isHidden = true
             }
-
+            
             if let des = self.model?.bio {
                 self.bioLabel.text = des
             } else {
                 self.bioLabel.text = ""
             }
-
+            
             if let imageName = self.model?.avatar_url {
                 self.headImageView.kf.setImage(with: URL(string: imageName))
             }
-
-        })
+        }) { (error) in
+            print("请求失败")
+        }
     }
 
     override func didReceiveMemoryWarning() {
