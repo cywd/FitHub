@@ -12,7 +12,7 @@ import SwiftyJSON
 
 protocol NetworkManagerProtocol {
     
-    static func loadUserDataWith(page: Int, location: String, language: String, completionHandler: @escaping (_ items: [UserModel], _ total_count: Int) -> ())
+    static func loadUserDataWith(page: Int, location: String, language: String, success: @escaping (_ items: [UserModel], _ total_count: Int) -> (), failure: @escaping (Error) -> ())
     static func loadUserDetailDataWith(userName: String, completionHandler: @escaping (UserModel) -> ())
     static func loadUserRepositoriesDataWith(page: Int, userName: String, completionHandler: @escaping (_ items: [RepositoryModel]) -> ())
     static func loadUserFollowersDataWith(page: Int, userName: String, completionHandler: @escaping ([UserModel]) -> ())
@@ -27,7 +27,7 @@ protocol NetworkManagerProtocol {
 class NetworkManager: NetworkManagerProtocol {
     
     
-    static func loadUserDataWith(page: Int, location: String, language: String, completionHandler: @escaping (_ items: [UserModel], _ total_count: Int) -> ()) {
+    static func loadUserDataWith(page: Int, location: String, language: String, success: @escaping (_ items: [UserModel], _ total_count: Int) -> (), failure: @escaping (Error) -> ()) {
         
         var locationStr = ""
         if location != "" {
@@ -54,11 +54,8 @@ class NetworkManager: NetworkManagerProtocol {
         let header = self.getHeader()
         
         Alamofire.request(url, method: .get, headers:header).responseJSON { (response) in
-            guard response.result.isSuccess else {
-                return
-            }
-            if let value = response.result.value {
-                
+            switch response.result {
+            case .success(let value):
                 let json = JSON(value)
                 
                 let total_count = json["total_count"].int
@@ -70,11 +67,16 @@ class NetworkManager: NetworkManagerProtocol {
                         models.append(UserModel(dict: dict as! [String : AnyObject]))
                     }
                     
-                    completionHandler(models, total_count!)
+                    success(models, total_count!)
                     
                 }
-
-            }   
+                break
+            case .failure(let error):
+                
+                failure(error)
+                
+                break
+            }
         }
     }
 
