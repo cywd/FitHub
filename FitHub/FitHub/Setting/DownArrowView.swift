@@ -13,7 +13,7 @@ class DownArrowView: UIView {
     override func draw(_ rect: CGRect) {
         
         let context = UIGraphicsGetCurrentContext()
-        context?.setFillColor(#colorLiteral(red: 0.2666336298, green: 0.2666856647, blue: 0.2666303515, alpha: 1))
+        context?.setFillColor(#colorLiteral(red: 0.2666666667, green: 0.2666666667, blue: 0.2666666667, alpha: 1))
         context?.fill(rect)
         context?.setLineCap(CGLineCap.round)
         context?.setLineWidth(2.0)

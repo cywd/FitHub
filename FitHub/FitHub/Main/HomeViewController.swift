@@ -68,10 +68,10 @@ class HomeViewController: BaseViewController {
             self.navigationItem.title = NSLocalizedString("ALL_LANGUAGE", comment: "所有语言")
         }
         
-        NetworkManager.loadUserDataWith(page: self.page, location: location!, language: language!) { (items, total_count) in
+        NetworkManager.loadUserDataWith(page: self.page, location: location!, language: language!, success: { (items, total_count) in
             self.tableView.fr.headerView?.endRefreshing()
             self.tableView.fr.footerView?.endRefreshing()
-
+            
             if self.page == 1 {
                 self.items = items
             } else {
@@ -84,6 +84,13 @@ class HomeViewController: BaseViewController {
                 self.tableView.fr.footerView?.isHidden = true
             } else {
                 self.tableView.fr.footerView?.isHidden = false
+            }
+        }) { (error) in
+            self.tableView.fr.headerView?.endRefreshing()
+            self.tableView.fr.footerView?.endRefreshing()
+            
+            if self.page > 1 {
+                self.page -= 1
             }
         }
     }
