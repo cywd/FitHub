@@ -30,7 +30,9 @@ class HomeViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
+        self.title = "Users"
+        
         self.tableView.fit_registerCell(cell: UserTableViewCell.self)
         
         self.page = 1
@@ -55,17 +57,19 @@ class HomeViewController: BaseViewController {
 
     func requestData() {
         var location = UserDefaults.standard.object(forKey: "location") as? String
-        if location == nil {
-            location = "beijing"
+        if location == nil || location == "" {
+            location = "China"
         }
         var language = UserDefaults.standard.object(forKey: "language") as? String
         if language == nil {
             language = ""
         }
         
-        self.navigationItem.title = language
+        self.navigationItem.leftBarButtonItem?.title = location
+        
+        self.navigationItem.rightBarButtonItem?.title = language
         if language == "" {
-            self.navigationItem.title = NSLocalizedString("ALL_LANGUAGE", comment: "所有语言")
+            self.navigationItem.rightBarButtonItem?.title = NSLocalizedString("ALL_LANGUAGE", comment: "所有语言")
         }
         
         NetworkManager.loadUserDataWith(page: self.page, location: location!, language: language!, success: { (items, total_count) in
@@ -102,6 +106,9 @@ class HomeViewController: BaseViewController {
     
     @IBAction func cityItemTap(_ sender: UIBarButtonItem) {
         let vc = CityViewController()
+        vc.backHandler = {
+            self.tableView.fr.headerView?.beginRefreshing()
+        }
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

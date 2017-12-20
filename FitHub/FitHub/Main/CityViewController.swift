@@ -10,10 +10,39 @@ import UIKit
 
 class CityViewController: BaseViewController {
 
+    
+    var backHandler: (()->())?
+    
+    var items: [String] {
+        get {
+            
+            return ["China",
+                    "Beijing", "Shanghai", "Shenzhen",
+                    "Hangzhou", "Guangzhou", "Chengdu",
+                    "Nanjing", "Wuhan", "Xiamen",
+                    "Tianjin", "Chongqing", "Changsha", "Shenyang"]
+        }
+    }
+    
+    // MARK: -
+    lazy var tableView: UITableView = {
+        let tableView = UITableView(frame: CGRect.zero, style: .plain)
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.rowHeight = 44;
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+        return tableView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.view.backgroundColor = UIColor.white
+        self.view.addSubview(self.tableView)
+        self.tableView.frame = self.view.bounds
+        
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "locationCell")
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,4 +61,31 @@ class CityViewController: BaseViewController {
     }
     */
 
+}
+
+extension CityViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return self.items.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "locationCell")
+        cell?.textLabel?.text = items[indexPath.row]
+        return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        var str = ""
+        if indexPath.row != 0 {
+            str = items[indexPath.row]
+        }
+        UserDefaults.standard.set(str, forKey: "location")
+        self.backHandler?()
+        self.navigationController?.popViewController(animated: true)
+        
+    }
 }
