@@ -368,11 +368,8 @@ class NetworkManager: NetworkManagerProtocol {
             case .failure(let error):
                 
                 failure(error)
-                
                 break
             }
-            
-
         }
     }
     
