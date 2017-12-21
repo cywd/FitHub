@@ -57,7 +57,8 @@ extension MeViewController: UITableViewDataSource, UITableViewDelegate {
         case 0:
             name = "Login"
         case 1:
-            name = "About"
+            let aboutStr = NSLocalizedString("ABOUT", comment: "关于")
+            name = aboutStr
         default:
             name = ""
         }
