@@ -20,8 +20,8 @@ class HomeViewController: BaseViewController {
     
     var total_count: Int = 0 {
         didSet {
-            let localStr = NSLocalizedString("HOME_TOTAL", comment: "总数描述");
-            self.totalLabel.text = "\(localStr):\(total_count)"
+//            let localStr = NSLocalizedString("HOME_TOTAL", comment: "总数描述");
+//            self.totalLabel.text = "\(localStr):\(total_count)"
         }
     }
     
@@ -84,7 +84,7 @@ class HomeViewController: BaseViewController {
             self.total_count = total_count
             self.tableView.reloadData()
             
-            if items.count == 0 {
+            if items.count < 30 {
                 self.tableView.fr.footerView?.isHidden = true
             } else {
                 self.tableView.fr.footerView?.isHidden = false

@@ -38,6 +38,10 @@ class CityViewController: BaseViewController {
         super.viewDidLoad()
 
         self.view.backgroundColor = UIColor.white
+        
+        let locationStr = NSLocalizedString("LOCATION", comment: "地理位置")
+        self.title = locationStr
+        
         self.view.addSubview(self.tableView)
         self.tableView.frame = self.view.bounds
         

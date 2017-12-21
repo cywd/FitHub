@@ -30,6 +30,9 @@ class LanguageViewController: BaseViewController, StoryboardLoadable {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        let allLanguageStr = NSLocalizedString("CODE_LANGUAGE", comment: "编程语言")
+        self.title = allLanguageStr
     }
 
     override func didReceiveMemoryWarning() {
