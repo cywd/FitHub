@@ -6,5 +6,7 @@
   Copyright © 2017年 Cyrill. All rights reserved.
 */
 
+"LOCATION" = "Location";
+"CODE_LANGUAGE" = "Code Language";
 "ALL_LANGUAGE" = "All Language";
 "HOME_TOTAL" = "Total";

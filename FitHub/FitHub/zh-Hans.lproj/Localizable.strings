@@ -6,5 +6,7 @@
   Copyright © 2017年 Cyrill. All rights reserved.
 */
 
+"LOCATION" = "地理位置";
+"CODE_LANGUAGE" = "编程语言";
 "ALL_LANGUAGE" = "所有语言";
 "HOME_TOTAL" = "总数";
