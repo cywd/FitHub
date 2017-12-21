@@ -21,8 +21,9 @@ class AboutViewController: BaseViewController, StoryboardLoadable {
         self.view.backgroundColor = #colorLiteral(red: 0.2666666667, green: 0.2666666667, blue: 0.2666666667, alpha: 1)
         self.arrowView.backgroundColor = #colorLiteral(red: 0.2666666667, green: 0.2666666667, blue: 0.2666666667, alpha: 1)
         
-        let v = DownArrowView(frame: CGRect(x: 0, y: 0, width: 50, height: 10))
-        self.arrowView.addSubview(v)
+        let arrowDrawView = DownArrowView(frame: CGRect(x: 0, y: 0, width: 50, height: 10))
+        arrowDrawView.backgroundColor = #colorLiteral(red: 0.2666666667, green: 0.2666666667, blue: 0.2666666667, alpha: 1)
+        self.arrowView.addSubview(arrowDrawView)
         
     }
     

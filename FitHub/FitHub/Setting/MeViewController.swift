@@ -38,6 +38,11 @@ class MeViewController: BaseViewController {
         return tableView
     }()
     
+    @objc func rightTap() {
+        NetworkManager.logout()
+        self.tableView.reloadData()
+    }
+    
     // MARK: -
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -67,6 +72,10 @@ extension MeViewController: UITableViewDataSource, UITableViewDelegate {
             if indexPath.row == 0 {
                 name = UserDefaults.standard.value(forKey: "username") as! String
             }
+            
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(rightTap))
+        } else {
+            self.navigationItem.rightBarButtonItem = nil
         }
         
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "MeTableViewCell")
@@ -85,8 +94,8 @@ extension MeViewController: UITableViewDataSource, UITableViewDelegate {
                 vc.name = UserDefaults.standard.value(forKey: "username") as! String
                 self.navigationController?.pushViewController(vc, animated: true)
             } else {
-                let vc11 = LoginViewController()
-                self.navigationController?.present(vc11, animated: true, completion: {
+                let loginVC = LoginViewController()
+                self.navigationController?.present(loginVC, animated: true, completion: {
                     
                 })
             }
