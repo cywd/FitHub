@@ -30,7 +30,14 @@ class EventsViewController: BaseViewController {
             self.loadData()
         })
 
-        self.tableView.fr.headerView?.beginRefreshing()
+        if NetworkManager.isLogin() {
+            let loginVC = LoginViewController()
+            self.navigationController?.present(loginVC, animated: true, completion: {
+                
+            })
+        } else {
+            self.tableView.fr.headerView?.beginRefreshing()
+        }
     }
 
     fileprivate func loadData() {

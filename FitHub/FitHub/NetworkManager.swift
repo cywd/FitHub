@@ -374,16 +374,19 @@ class NetworkManager: NetworkManagerProtocol {
     }
     
     
-    // MARK: - private
     class func isLogin() -> Bool {
         if let isLogin = UserDefaults.standard.value(forKey: "isLogin") {
             return isLogin as! Bool
         } else {
             return false
         }
-        
     }
     
+    class func logout() {
+        self.removeLoginInfo()
+    }
+    
+    // MARK: - private
     fileprivate class func getHeader() -> [String: String]! {
         var header = [String: String]()
         header["headers"] = "application/vnd.github.v3+json"
@@ -396,6 +399,13 @@ class NetworkManager: NetworkManagerProtocol {
             }
         }
         return header
+    }
+    
+    private class func removeLoginInfo() {
+        UserDefaults.standard.removeObject(forKey: "header")
+        UserDefaults.standard.removeObject(forKey: "isLogin")
+        UserDefaults.standard.removeObject(forKey: "token")
+        UserDefaults.standard.removeObject(forKey: "username")
     }
     
     fileprivate class func addAuthorizationHead(base64UsernameAndPwd: String) -> [String: String] {
