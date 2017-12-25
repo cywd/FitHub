@@ -8,7 +8,90 @@
 
 import UIKit
 
-class FitHud: UIView {
+private var hud: FitHud?
+
+class FitHud {
+    open var hudBackgroundView: UIView { get { return self._hudBackgroundView } }
+    fileprivate(set) var _hudBackgroundView: UIView
+    open var loadingView: FitHudView? { get { return self._loadingView } }
+    fileprivate(set) var _loadingView: FitHudView
+    
+    open class func show() -> FitHud {
+        let view: UIView? = UIApplication.shared.keyWindow?.rootViewController?.view
+        assert(view != nil, "must init window rootViewController")
+        return self.show(view: view!)
+    }
+    
+    open class func show(view: UIView) -> FitHud {
+        return self.show(view: view, after: 0)
+    }
+    
+    open class func show(view: UIView, after: TimeInterval) -> FitHud {
+        return FitHud(view: view, after: after)
+    }
+    
+    open func hide() {
+        return self.hide(after: 0)
+    }
+    
+    open func hide(after: TimeInterval) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(after * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: {
+            UIView.animate(withDuration: 1, animations: {
+                self._hudBackgroundView.alpha = 0
+            }, completion: { (completion) in
+                self.hudBackgroundView.removeFromSuperview()
+            })
+        })
+    }
+    
+    required public init(view: UIView, after: TimeInterval) {
+        
+        if hud != nil && hud!.hudBackgroundView.superview != nil {
+            hud!.hudBackgroundView.removeFromSuperview()
+        }
+        
+//        let screenWidth = UIScreen.main.bounds.width
+//        let screenHeight = UIScreen.main.bounds.height
+//        let width = view.bounds.width
+//        let height = view.bounds.height
+//
+//        var centerX = width / 2
+//        var centerY = height / 2
+//
+//        if width < screenWidth {
+//            let margin = screenWidth - width
+//            centerX -= margin/2
+//        }
+//
+//        if height < screenHeight {
+//            let margin = screenHeight - height
+//            centerY -= margin/2
+//        }
+        
+        self._hudBackgroundView = UIView(frame: view.bounds)
+//        self._hudBackgroundView.backgroundColor = UIColor(white: 0, alpha: 1)
+        self._hudBackgroundView.backgroundColor = #colorLiteral(red: 0.2666666667, green: 0.2666666667, blue: 0.2666666667, alpha: 1)
+        self._hudBackgroundView.layer.masksToBounds = true
+//        self._hudBackgroundView.layer.cornerRadius = 5
+        view.addSubview(self._hudBackgroundView)
+        
+        self._loadingView = FitHudView(frame: CGRect(x: view.bounds.size.width/2, y: view.bounds.size.height/2, width: 100, height: 100))
+//        self._loadingView.center = CGPoint(x: centerX, y:centerY)
+        self._loadingView.center = self._hudBackgroundView.center
+        self._hudBackgroundView.addSubview(self._loadingView)
+        
+        if after > 0 {
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(after * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: {
+                self.hide()
+            })
+        }
+        
+        hud = self
+    }
+    
+}
+
+class FitHudView: UIView {
 
     var backLayer = CAShapeLayer()
     var graLayer: CAGradientLayer!
@@ -40,7 +123,7 @@ class FitHud: UIView {
         gradientLayer.mask = backLayer
         self.layer.addSublayer(gradientLayer)
         
-        let timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(change), userInfo: nil, repeats: true)
+        let timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(change), userInfo: nil, repeats: true)
         timer.fire()
     }
     
@@ -50,7 +133,7 @@ class FitHud: UIView {
             let animation = CABasicAnimation(keyPath: "locations")
             animation.fromValue = [-0.1, -0.15, 0]
             animation.toValue = [1.0, 1.1, 1.15]
-            animation.duration = 1
+            animation.duration = 0.5
             self.graLayer.add(animation, forKey: nil)
         }
     }
