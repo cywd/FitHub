@@ -69,6 +69,7 @@
 		E7B0F2B21FD7ED5200DE2E3F /* Logo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B0F2B11FD7ED5200DE2E3F /* Logo.swift */; };
 		E7B0F2B41FD7EF4700DE2E3F /* DarkLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B0F2B31FD7EF4700DE2E3F /* DarkLogoView.swift */; };
 		E7B0F2B61FD7F0E600DE2E3F /* LightLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B0F2B51FD7F0E600DE2E3F /* LightLogoView.swift */; };
+		E7B347A11FECF1B500A114E9 /* FitHud.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B347A01FECF1B500A114E9 /* FitHud.swift */; };
 		E7D3CD6A1FD69CF500F96B99 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D3CD691FD69CF500F96B99 /* AboutViewController.swift */; };
 		E7D3CD6C1FD69D0300F96B99 /* AboutViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7D3CD6B1FD69D0300F96B99 /* AboutViewController.storyboard */; };
 /* End PBXBuildFile section */
@@ -162,6 +163,7 @@
 		E7B0F2B11FD7ED5200DE2E3F /* Logo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logo.swift; sourceTree = "<group>"; };
 		E7B0F2B31FD7EF4700DE2E3F /* DarkLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkLogoView.swift; sourceTree = "<group>"; };
 		E7B0F2B51FD7F0E600DE2E3F /* LightLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightLogoView.swift; sourceTree = "<group>"; };
+		E7B347A01FECF1B500A114E9 /* FitHud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitHud.swift; sourceTree = "<group>"; };
 		E7D3CD691FD69CF500F96B99 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		E7D3CD6B1FD69D0300F96B99 /* AboutViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AboutViewController.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -207,6 +209,7 @@
 				E7B0F2B31FD7EF4700DE2E3F /* DarkLogoView.swift */,
 				E7B0F2B51FD7F0E600DE2E3F /* LightLogoView.swift */,
 				E746085A1FC541FF00951AEF /* NetworkManager.swift */,
+				E7B347A01FECF1B500A114E9 /* FitHud.swift */,
 			);
 			name = Tool;
 			sourceTree = "<group>";
@@ -622,6 +625,7 @@
 				E74608571FC51D1300951AEF /* UITableView+FitHub.swift in Sources */,
 				E74608601FC5769800951AEF /* UserTableViewCell.swift in Sources */,
 				E77CE5431FBEC04500A120B2 /* AppDelegate.swift in Sources */,
+				E7B347A11FECF1B500A114E9 /* FitHud.swift in Sources */,
 				E7B0F2B21FD7ED5200DE2E3F /* Logo.swift in Sources */,
 				E7403E051FC3FD08003054D7 /* TabBarController.swift in Sources */,
 				E7403E0D1FC4001D003054D7 /* NavigationBar.swift in Sources */,
