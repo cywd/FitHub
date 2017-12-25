@@ -25,14 +25,14 @@ class LaunchViewController: UIViewController, StoryboardLoadable {
             self.fitLabel.alpha = 0
             
         }) { (complete) in
-            if complete {
-//                self.logoImageView.isHidden = true
-                
-//                self.fitLabel.alpha = 1
-//                self.fitLabel.text = "Wecome"
-                
-                self.changeVC()
-            }
+            
+//            self.logoImageView.isHidden = true
+//        
+//            self.fitLabel.alpha = 1
+//            self.fitLabel.text = "Wecome"
+            
+            self.changeVC()
+        
         }
     }
     
