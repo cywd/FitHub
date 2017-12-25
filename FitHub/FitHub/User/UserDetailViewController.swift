@@ -31,6 +31,8 @@ class UserDetailViewController: BaseViewController, StoryboardLoadable {
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var blogLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
+    
+    var hud: FitHud?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +43,11 @@ class UserDetailViewController: BaseViewController, StoryboardLoadable {
     }
 
     fileprivate func requestUserData() {
+        self.hud = FitHud.show(view: self.view)
         NetworkManager.loadUserDetailDataWith(userName: name, success: { (userModel) in
+            
+            self.hud?.hide()
+            
             self.model = userModel
             
             if let name = self.model?.name {
@@ -103,6 +109,7 @@ class UserDetailViewController: BaseViewController, StoryboardLoadable {
                 self.headImageView.kf.setImage(with: URL(string: imageName))
             }
         }) { (error) in
+            self.hud?.hide()
             print("请求失败")
         }
     }

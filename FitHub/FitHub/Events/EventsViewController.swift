@@ -12,17 +12,14 @@ import FitRefresh
 class EventsViewController: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
-
+    @IBOutlet weak var loginView: UIView!
+    
     var page: Int = 1
-
     var name =  UserDefaults.standard.value(forKey: "username") as? String ?? ""
-
     var items = [EventModel]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
 
         tableView.fit_registerCell(cell: EventsTableViewCell.self)
 
@@ -30,13 +27,23 @@ class EventsViewController: BaseViewController {
             self.loadData()
         })
 
-        if NetworkManager.isLogin() {
+        if !NetworkManager.isLogin() {
             let loginVC = LoginViewController()
             self.navigationController?.present(loginVC, animated: true, completion: {
                 
             })
         } else {
             self.tableView.fr.headerView?.beginRefreshing()
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if !NetworkManager.isLogin() {
+            self.loginView.isHidden = false
+        } else {
+            self.loginView.isHidden = true
         }
     }
 
@@ -82,6 +89,13 @@ class EventsViewController: BaseViewController {
         }
     }
 
+    @IBAction func tapToLogin(_ sender: Any) {
+        let loginVC = LoginViewController()
+        self.navigationController?.present(loginVC, animated: true, completion: {
+            
+        })
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

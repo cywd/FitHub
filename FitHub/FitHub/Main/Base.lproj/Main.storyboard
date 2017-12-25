@@ -72,18 +72,40 @@
                                     <outlet property="delegate" destination="6og-NV-5Df" id="ngj-Q3-pN3"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="djS-f7-wuj">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7GA-Cq-HlO">
+                                        <rect key="frame" x="150" y="160" width="74" height="34"/>
+                                        <state key="normal" title="请先登录"/>
+                                        <connections>
+                                            <action selector="tapToLogin:" destination="6og-NV-5Df" eventType="touchUpInside" id="Z3Q-m1-pFt"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="7GA-Cq-HlO" firstAttribute="centerX" secondItem="djS-f7-wuj" secondAttribute="centerX" id="KST-qW-W7j"/>
+                                    <constraint firstItem="7GA-Cq-HlO" firstAttribute="centerY" secondItem="djS-f7-wuj" secondAttribute="centerY" constant="-100" id="URr-IY-acF"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="tuf-UN-fQ1" firstAttribute="leading" secondItem="nHV-zh-ta7" secondAttribute="leading" id="CzP-vi-eNx"/>
                             <constraint firstItem="tuf-UN-fQ1" firstAttribute="top" secondItem="nHV-zh-ta7" secondAttribute="top" id="I2t-LQ-dXk"/>
+                            <constraint firstItem="djS-f7-wuj" firstAttribute="top" secondItem="nHV-zh-ta7" secondAttribute="top" id="JhQ-jV-uGa"/>
                             <constraint firstItem="nHV-zh-ta7" firstAttribute="trailing" secondItem="tuf-UN-fQ1" secondAttribute="trailing" id="b6M-qW-4K6"/>
+                            <constraint firstItem="djS-f7-wuj" firstAttribute="leading" secondItem="nHV-zh-ta7" secondAttribute="leading" id="c10-eY-iBM"/>
+                            <constraint firstItem="djS-f7-wuj" firstAttribute="trailing" secondItem="nHV-zh-ta7" secondAttribute="trailing" id="gYg-at-fCV"/>
                             <constraint firstItem="nHV-zh-ta7" firstAttribute="bottom" secondItem="tuf-UN-fQ1" secondAttribute="bottom" id="o82-os-vvZ"/>
+                            <constraint firstItem="nHV-zh-ta7" firstAttribute="bottom" secondItem="djS-f7-wuj" secondAttribute="bottom" id="xsX-64-pWT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nHV-zh-ta7"/>
                     </view>
                     <navigationItem key="navigationItem" title="Events" largeTitleDisplayMode="always" id="E8N-62-xR1"/>
                     <connections>
+                        <outlet property="loginView" destination="djS-f7-wuj" id="gcs-R5-z2y"/>
                         <outlet property="tableView" destination="tuf-UN-fQ1" id="5f4-2n-dkI"/>
                     </connections>
                 </viewController>
