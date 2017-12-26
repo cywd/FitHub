@@ -20,19 +20,33 @@ class EventsTableViewCell: UITableViewCell, RegisterCellOrNib {
         didSet {
             let str = model!.finDesc ?? " "
             
-            self.label?.text = str
             
-            do {
-                let srtData = str.data(using: String.Encoding.unicode, allowLossyConversion: true)!
-                let attrStr = try NSAttributedString(data: srtData, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil)
-                label.attributedText = attrStr
-                
-            } catch let error as NSError {
-                print(error.localizedDescription)
+            let strData = str.data(using: String.Encoding.unicode, allowLossyConversion: true)!
+            // FIXME: fix code
+            if let attrStr = try? NSAttributedString(data: strData, options: [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil) {
+//                self.label.text = str
+                self.label.attributedText = attrStr
             }
+            
+//            do {
+//                DispatchQueue.global().async {
+//                    let strData = str.data(using: String.Encoding.unicode, allowLossyConversion: true)!
+//
+//                    if let attrStr = try? NSAttributedString(data: strData, options: [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil) {
+//
+//                        DispatchQueue.main.async {
+//                            self.label.text = str
+//                            self.label.attributedText = attrStr
+//                        }
+//                    }
+//                }
+//            } catch _ {
+//
+//            }
             
         }
     }
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
