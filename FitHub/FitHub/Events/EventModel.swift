@@ -27,6 +27,8 @@ class EventModel: NSObject {
     
     var finDesc: String?
     
+//    var finAttributeString: NSAttributedString?
+//    var finAttributeData: Data?
     
     // ---------------------------
     static let CommitCommentEvent = "CommitCommentEvent"
@@ -138,7 +140,8 @@ extension EventModel {
                 break
             case EventModel.ForkEvent:
                 let ttt = self.payload!.forkee!.full_name!
-                desc = " forked " + ttt + " from "
+                let repoUrl = "<a href='fithub-repo://\(ttt)' style='text-decoration:none; color: #0066B3;'>"
+                desc = " forked " + repoUrl + ttt + "</a>" + " from "
                 break
             default:
                 desc = " unspport event item "
@@ -146,7 +149,14 @@ extension EventModel {
             }
         }
         
-        finDesc = login! + desc! + repoName!
+        let div = "<div style='font-size: 16.0'>"
+        
+        let loginUrl = "<a  href='fithub-name://\(login!)' style='text-decoration:none; color: #0066B3;'>"
+        let repoUrl = "<a href='fithub-repo://\(repoName!)' style='text-decoration:none; color: #0066B3;'>"
+        
+        finDesc = div + loginUrl + login! + "</a>" + desc! + repoUrl + repoName! + "</a>" + "</div>"
+        
+//        finAttributeData = finDesc?.data(using: String.Encoding.unicode, allowLossyConversion: true)
         
         return self
     }
