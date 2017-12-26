@@ -123,6 +123,7 @@ extension EventsViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.fit_dequeueReusableCell(indexPath: indexPath) as EventsTableViewCell
+        cell.delegate = self
         cell.model = items[indexPath.row]
         return cell
     }
@@ -132,4 +133,18 @@ extension EventsViewController: UITableViewDataSource, UITableViewDelegate {
 
     }
 
+}
+
+extension EventsViewController: EventsTableViewCellDelegate {
+    
+    func userTap(name: String) {
+        let vc = UserDetailViewController.loadStoryboard()
+        vc.name = name
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func repositoryTap(name: String) {
+        
+    }
+    
 }
