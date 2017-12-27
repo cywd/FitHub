@@ -18,15 +18,18 @@ class EventsTableViewCell: UITableViewCell, RegisterCellOrNib {
     
     var model: EventModel? {
         didSet {
-            let str = model!.finDesc ?? " "
+//            let str = model!.finDesc ?? " "
             
+            let str = model!.finAttributeString
             
-            let strData = str.data(using: String.Encoding.unicode, allowLossyConversion: true)!
-            // FIXME: fix code
-            if let attrStr = try? NSAttributedString(data: strData, options: [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil) {
-//                self.label.text = str
-                self.label.attributedText = attrStr
-            }
+            self.label.attributedText = str
+            
+//            let strData = str.data(using: String.Encoding.unicode, allowLossyConversion: true)!
+//            // FIXME: fix code
+//            if let attrStr = try? NSAttributedString(data: strData, options: [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil) {
+////                self.label.text = str
+//                self.label.attributedText = str
+//            }
             
 //            do {
 //                DispatchQueue.global().async {
