@@ -35,6 +35,8 @@
 		E746085D1FC551D100951AEF /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E746085C1FC551D100951AEF /* UserModel.swift */; };
 		E74608601FC5769800951AEF /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E746085E1FC5769800951AEF /* UserTableViewCell.swift */; };
 		E74608611FC5769800951AEF /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E746085F1FC5769800951AEF /* UserTableViewCell.xib */; };
+		E74A4E651FF25B1B00AF8589 /* NSString+FitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A4E641FF25B1B00AF8589 /* NSString+FitHub.swift */; };
+		E74A4E671FF32FDE00AF8589 /* FontInfomation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A4E661FF32FDE00AF8589 /* FontInfomation.swift */; };
 		E76746E91FC697560087A2DF /* UserDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76746E81FC697560087A2DF /* UserDetailHeaderView.swift */; };
 		E76746EB1FC6975D0087A2DF /* UserDetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E76746EA1FC6975D0087A2DF /* UserDetailHeaderView.xib */; };
 		E76746F01FC6CBB30087A2DF /* RepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76746EE1FC6CBB30087A2DF /* RepositoryTableViewCell.swift */; };
@@ -123,6 +125,8 @@
 		E746085C1FC551D100951AEF /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		E746085E1FC5769800951AEF /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		E746085F1FC5769800951AEF /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
+		E74A4E641FF25B1B00AF8589 /* NSString+FitHub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSString+FitHub.swift"; sourceTree = "<group>"; };
+		E74A4E661FF32FDE00AF8589 /* FontInfomation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontInfomation.swift; sourceTree = "<group>"; };
 		E76746E81FC697560087A2DF /* UserDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailHeaderView.swift; sourceTree = "<group>"; };
 		E76746EA1FC6975D0087A2DF /* UserDetailHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailHeaderView.xib; sourceTree = "<group>"; };
 		E76746EE1FC6CBB30087A2DF /* RepositoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewCell.swift; sourceTree = "<group>"; };
@@ -208,6 +212,7 @@
 				E7B0F2B11FD7ED5200DE2E3F /* Logo.swift */,
 				E7B0F2B31FD7EF4700DE2E3F /* DarkLogoView.swift */,
 				E7B0F2B51FD7F0E600DE2E3F /* LightLogoView.swift */,
+				E74A4E661FF32FDE00AF8589 /* FontInfomation.swift */,
 				E746085A1FC541FF00951AEF /* NetworkManager.swift */,
 				E7B347A01FECF1B500A114E9 /* FitHud.swift */,
 			);
@@ -223,6 +228,7 @@
 				E74608501FC5151E00951AEF /* UIView+FitHub.swift */,
 				E74608521FC518E100951AEF /* UIColor+FitHub.swift */,
 				E74608541FC51B1500951AEF /* UIImageView+FitHub.swift */,
+				E74A4E641FF25B1B00AF8589 /* NSString+FitHub.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -628,12 +634,14 @@
 				E7B347A11FECF1B500A114E9 /* FitHud.swift in Sources */,
 				E7B0F2B21FD7ED5200DE2E3F /* Logo.swift in Sources */,
 				E7403E051FC3FD08003054D7 /* TabBarController.swift in Sources */,
+				E74A4E671FF32FDE00AF8589 /* FontInfomation.swift in Sources */,
 				E7403E0D1FC4001D003054D7 /* NavigationBar.swift in Sources */,
 				E7403DFF1FC3FCB0003054D7 /* BaseViewController.swift in Sources */,
 				E76746F01FC6CBB30087A2DF /* RepositoryTableViewCell.swift in Sources */,
 				E7403E031FC3FCF5003054D7 /* TabBar.swift in Sources */,
 				E73789841FC65C05003373B7 /* UserDetailViewController1.swift in Sources */,
 				E74608551FC51B1500951AEF /* UIImageView+FitHub.swift in Sources */,
+				E74A4E651FF25B1B00AF8589 /* NSString+FitHub.swift in Sources */,
 				E7A6DF401FD5276C00EA3449 /* EventsTableViewCell.swift in Sources */,
 				E79645821FCD56E9006C9C1B /* RepositoryViewController.swift in Sources */,
 				E782AD5C1FCFDB160054DA20 /* CityViewController.swift in Sources */,
