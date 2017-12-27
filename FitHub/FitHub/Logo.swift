@@ -145,4 +145,5 @@ public class Logo : NSObject {
             return result
         }
     }
+    
 }

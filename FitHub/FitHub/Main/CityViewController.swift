@@ -90,6 +90,6 @@ extension CityViewController: UITableViewDataSource, UITableViewDelegate {
         UserDefaults.standard.set(str, forKey: "location")
         self.backHandler?()
         self.navigationController?.popViewController(animated: true)
-        
     }
+    
 }

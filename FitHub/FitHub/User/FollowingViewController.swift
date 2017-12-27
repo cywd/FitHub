@@ -100,7 +100,6 @@ extension FollowingViewController: UITableViewDataSource, UITableViewDelegate {
 
         let cell = tableView.fit_dequeueReusableCell(indexPath: indexPath) as UserTableViewCell
         cell.model = self.items[indexPath.row]
-        cell.indexPath = indexPath
         return cell
     }
 
@@ -110,4 +109,5 @@ extension FollowingViewController: UITableViewDataSource, UITableViewDelegate {
         vc.name = self.items[indexPath.row].login!
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
 }

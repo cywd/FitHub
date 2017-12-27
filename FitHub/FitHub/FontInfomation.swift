@@ -18,4 +18,5 @@ class FontInfomation: NSObject {
         }
         return systemFontDictionary
     }
+    
 }

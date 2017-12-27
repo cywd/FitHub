@@ -143,7 +143,6 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         
         let cell = tableView.fit_dequeueReusableCell(indexPath: indexPath) as UserTableViewCell
         cell.model = self.items[indexPath.row]
-        cell.indexPath = indexPath
         return cell
     }
     

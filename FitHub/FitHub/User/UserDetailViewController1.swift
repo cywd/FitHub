@@ -136,4 +136,5 @@ extension UserDetailViewController1: UITableViewDataSource, UITableViewDelegate 
         tableView.deselectRow(at: indexPath, animated: true)
         
     }
+    
 }

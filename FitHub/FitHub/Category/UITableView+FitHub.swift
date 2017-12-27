@@ -28,4 +28,5 @@ extension UITableView {
     func fit_dequeueReusableCell<T: UITableViewCell>(indexPath: IndexPath) -> T where T: RegisterCellOrNib {
         return dequeueReusableCell(withIdentifier: T.identifier, for: indexPath) as! T
     }
+    
 }
