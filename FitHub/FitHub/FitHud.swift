@@ -201,4 +201,5 @@ class FitHudView: UIView {
         let scale = self.width <= self.height ? (self.width / 430.0) : (self.height / 345.0)
         return CGPoint(x: x*scale, y: y*scale)
     }
+    
 }

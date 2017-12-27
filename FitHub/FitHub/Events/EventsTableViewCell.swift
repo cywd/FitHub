@@ -10,52 +10,22 @@ import UIKit
 
 class EventsTableViewCell: UITableViewCell, RegisterCellOrNib {
 
-//    @IBOutlet weak var label: UILabel!
-
     var delegate: EventsTableViewCellDelegate?
     
-    @IBOutlet weak var label: UITextView!
+    @IBOutlet weak var textView: UITextView!
     
     var model: EventModel? {
         didSet {
-//            let str = model!.finDesc ?? " "
-            
             let str = model!.finAttributeString
-            
-            self.label.attributedText = str
-            
-//            let strData = str.data(using: String.Encoding.unicode, allowLossyConversion: true)!
-//            // FIXME: fix code
-//            if let attrStr = try? NSAttributedString(data: strData, options: [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil) {
-////                self.label.text = str
-//                self.label.attributedText = str
-//            }
-            
-//            do {
-//                DispatchQueue.global().async {
-//                    let strData = str.data(using: String.Encoding.unicode, allowLossyConversion: true)!
-//
-//                    if let attrStr = try? NSAttributedString(data: strData, options: [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil) {
-//
-//                        DispatchQueue.main.async {
-//                            self.label.text = str
-//                            self.label.attributedText = attrStr
-//                        }
-//                    }
-//                }
-//            } catch _ {
-//
-//            }
-            
+            self.textView.attributedText = str
         }
     }
-    
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
@@ -90,9 +60,21 @@ extension EventsTableViewCell: UITextViewDelegate {
             }
         }
         
-        
-        
         return false
+    }
+    
+}
+
+extension EventsTableViewCell {
+    
+    func show() {
+        UIView.animate(withDuration: 0.3) {
+            self.textView.alpha = 1
+        }
+    }
+    
+    func hide() {
+        self.textView.alpha = 0
     }
     
 }

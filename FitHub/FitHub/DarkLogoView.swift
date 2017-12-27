@@ -27,4 +27,5 @@ class DarkLogoView: UIView {
     override func draw(_ rect: CGRect) {
         Logo.drawDarkLogo(frame: rect)
     }
+    
 }

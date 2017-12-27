@@ -101,7 +101,6 @@ extension FollowerViewController: UITableViewDataSource, UITableViewDelegate {
 
         let cell = tableView.fit_dequeueReusableCell(indexPath: indexPath) as UserTableViewCell
         cell.model = self.items[indexPath.row]
-        cell.indexPath = indexPath
         return cell
     }
 
@@ -111,4 +110,5 @@ extension FollowerViewController: UITableViewDataSource, UITableViewDelegate {
         vc.name = self.items[indexPath.row].login!
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
 }

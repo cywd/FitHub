@@ -27,4 +27,5 @@ class LightLogoView: UIView {
     override func draw(_ rect: CGRect) {
         Logo.drawLightLogo(frame: rect)
     }
+    
 }

@@ -77,6 +77,6 @@ extension LanguageViewController: UITableViewDataSource, UITableViewDelegate {
         UserDefaults.standard.set(str, forKey: "language")
         self.backHandler!()
         self.navigationController?.popViewController(animated: true)
-
     }
+    
 }
