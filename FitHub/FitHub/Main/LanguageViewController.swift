@@ -19,9 +19,8 @@ class LanguageViewController: BaseViewController, StoryboardLoadable {
             return [allLanguageStr,
                 "JavaScript", "Java", "PHP", "Ruby", "Python", "CSS",
                 "CPP", "C", "Objective-C",
-                "Swift", "Shell", "R", "Perl",
-                "Lua", "HTML", "Scala", "Go", "C#",
-                "Kotlin", "Haskell", "Matlab", "R",
+                "Swift", "Shell", "Lua", "HTML", "Scala", "Go", "C#",
+                "Kotlin", "Haskell", "Matlab", "R", "Perl",
                 "AppleScript"]
         }
     }

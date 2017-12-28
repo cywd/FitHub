@@ -50,24 +50,6 @@ class FitHud {
             hud!.hudBackgroundView.removeFromSuperview()
         }
         
-//        let screenWidth = UIScreen.main.bounds.width
-//        let screenHeight = UIScreen.main.bounds.height
-//        let width = view.bounds.width
-//        let height = view.bounds.height
-//
-//        var centerX = width / 2
-//        var centerY = height / 2
-//
-//        if width < screenWidth {
-//            let margin = screenWidth - width
-//            centerX -= margin/2
-//        }
-//
-//        if height < screenHeight {
-//            let margin = screenHeight - height
-//            centerY -= margin/2
-//        }
-        
         self._hudBackgroundView = UIView(frame: view.bounds)
 //        self._hudBackgroundView.backgroundColor = UIColor(white: 0, alpha: 1)
         self._hudBackgroundView.backgroundColor = #colorLiteral(red: 0.2666666667, green: 0.2666666667, blue: 0.2666666667, alpha: 1)
@@ -103,14 +85,15 @@ class FitHudView: UIView {
         
         let path = self.logoPath()
         backLayer.frame = self.bounds
-//        backLayer.lineWidth = 8
-//        backLayer.fillColor = UIColor.white.cgColor;
-//        backLayer.strokeColor = UIColor.blue.cgColor
-//        backLayer.lineCap = kCALineCapRound
+        backLayer.lineWidth = 5
+        backLayer.fillColor = UIColor.clear.cgColor
+//        backLayer.fillColor = UIColor.randomColor().cgColor
+        backLayer.strokeColor = UIColor.white.cgColor
+        backLayer.lineCap = kCALineCapRound
 //        backLayer.lineJoin = kCALineJoinRound
         backLayer.path = path.cgPath
-//        self.layer.addSublayer(backLayer)
-        
+        self.startAnimation(layerParam: self.backLayer)
+        self.layer.addSublayer(backLayer)
         
         let gradientLayer = CAGradientLayer()
         let randomColor = UIColor.randomColor().cgColor
@@ -125,6 +108,14 @@ class FitHudView: UIView {
         
         let timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(change), userInfo: nil, repeats: true)
         timer.fire()
+    }
+    
+    func startAnimation(layerParam: CAShapeLayer) {
+        let animation = CABasicAnimation(keyPath: "strokeEnd")
+        animation.fromValue = 0
+        animation.toValue = 1
+        animation.duration = 0.5
+        layerParam.add(animation, forKey: "ShapeLayerKey")
     }
     
     @objc func change(){
@@ -177,22 +168,23 @@ class FitHudView: UIView {
         bezierPath.addCurve(to: SCPoint(x: 410.21, y: 250.35), controlPoint1: SCPoint(x: 389.43, y: 210.67), controlPoint2: SCPoint(x: 410.21, y: 228.47))
         bezierPath.addCurve(to: SCPoint(x: 363.86, y: 290.04), controlPoint1: SCPoint(x: 410.21, y: 272.24), controlPoint2: SCPoint(x: 389.41, y: 290.04))
         bezierPath.close()
-        bezierPath.move(to: SCPoint(x: 373.99, y: 191.72))
-        bezierPath.addCurve(to: SCPoint(x: 381.66, y: 147.39), controlPoint1: SCPoint(x: 379.07, y: 177.49), controlPoint2: SCPoint(x: 381.67, y: 162.5))
-        bezierPath.addCurve(to: SCPoint(x: 216.22, y: 0.37), controlPoint1: SCPoint(x: 381.66, y: 66.32), controlPoint2: SCPoint(x: 307.44, y: 0.37))
-        bezierPath.addCurve(to: SCPoint(x: 50.78, y: 147.39), controlPoint1: SCPoint(x: 125, y: 0.37), controlPoint2: SCPoint(x: 50.78, y: 66.32))
-        bezierPath.addCurve(to: SCPoint(x: 58.35, y: 191.42), controlPoint1: SCPoint(x: 50.78, y: 162.47), controlPoint2: SCPoint(x: 53.32, y: 177.21))
-        bezierPath.addCurve(to: SCPoint(x: 0, y: 250.36), controlPoint1: SCPoint(x: 25.55, y: 194.83), controlPoint2: SCPoint(x: 0, y: 219.96))
-        bezierPath.addCurve(to: SCPoint(x: 65.99, y: 309.7), controlPoint1: SCPoint(x: 0, y: 283.08), controlPoint2: SCPoint(x: 29.6, y: 309.7))
-        bezierPath.addCurve(to: SCPoint(x: 105.02, y: 298.13), controlPoint1: SCPoint(x: 80.31, y: 309.7), controlPoint2: SCPoint(x: 93.84, y: 305.61))
-        bezierPath.addCurve(to: SCPoint(x: 167.13, y: 337.55), controlPoint1: SCPoint(x: 114.03, y: 321.26), controlPoint2: SCPoint(x: 138.33, y: 337.55))
-        bezierPath.addCurve(to: SCPoint(x: 213.67, y: 320.12), controlPoint1: SCPoint(x: 184.86, y: 337.55), controlPoint2: SCPoint(x: 201.45, y: 331.21))
-        bezierPath.addCurve(to: SCPoint(x: 266.53, y: 343.92), controlPoint1: SCPoint(x: 225.95, y: 334.9), controlPoint2: SCPoint(x: 245.43, y: 343.92))
-        bezierPath.addCurve(to: SCPoint(x: 329.89, y: 301.16), controlPoint1: SCPoint(x: 296.52, y: 343.92), controlPoint2: SCPoint(x: 321.9, y: 325.84))
-        bezierPath.addCurve(to: SCPoint(x: 363.86, y: 309.71), controlPoint1: SCPoint(x: 340.05, y: 306.74), controlPoint2: SCPoint(x: 351.68, y: 309.71))
-        bezierPath.addCurve(to: SCPoint(x: 429.85, y: 250.37), controlPoint1: SCPoint(x: 400.25, y: 309.71), controlPoint2: SCPoint(x: 429.85, y: 283.09))
-        bezierPath.addCurve(to: SCPoint(x: 373.99, y: 191.72), controlPoint1: SCPoint(x: 429.85, y: 220.74), controlPoint2: SCPoint(x: 405.58, y: 196.12))
-        bezierPath.close()
+        
+//        bezierPath.move(to: SCPoint(x: 373.99, y: 191.72))
+//        bezierPath.addCurve(to: SCPoint(x: 381.66, y: 147.39), controlPoint1: SCPoint(x: 379.07, y: 177.49), controlPoint2: SCPoint(x: 381.67, y: 162.5))
+//        bezierPath.addCurve(to: SCPoint(x: 216.22, y: 0.37), controlPoint1: SCPoint(x: 381.66, y: 66.32), controlPoint2: SCPoint(x: 307.44, y: 0.37))
+//        bezierPath.addCurve(to: SCPoint(x: 50.78, y: 147.39), controlPoint1: SCPoint(x: 125, y: 0.37), controlPoint2: SCPoint(x: 50.78, y: 66.32))
+//        bezierPath.addCurve(to: SCPoint(x: 58.35, y: 191.42), controlPoint1: SCPoint(x: 50.78, y: 162.47), controlPoint2: SCPoint(x: 53.32, y: 177.21))
+//        bezierPath.addCurve(to: SCPoint(x: 0, y: 250.36), controlPoint1: SCPoint(x: 25.55, y: 194.83), controlPoint2: SCPoint(x: 0, y: 219.96))
+//        bezierPath.addCurve(to: SCPoint(x: 65.99, y: 309.7), controlPoint1: SCPoint(x: 0, y: 283.08), controlPoint2: SCPoint(x: 29.6, y: 309.7))
+//        bezierPath.addCurve(to: SCPoint(x: 105.02, y: 298.13), controlPoint1: SCPoint(x: 80.31, y: 309.7), controlPoint2: SCPoint(x: 93.84, y: 305.61))
+//        bezierPath.addCurve(to: SCPoint(x: 167.13, y: 337.55), controlPoint1: SCPoint(x: 114.03, y: 321.26), controlPoint2: SCPoint(x: 138.33, y: 337.55))
+//        bezierPath.addCurve(to: SCPoint(x: 213.67, y: 320.12), controlPoint1: SCPoint(x: 184.86, y: 337.55), controlPoint2: SCPoint(x: 201.45, y: 331.21))
+//        bezierPath.addCurve(to: SCPoint(x: 266.53, y: 343.92), controlPoint1: SCPoint(x: 225.95, y: 334.9), controlPoint2: SCPoint(x: 245.43, y: 343.92))
+//        bezierPath.addCurve(to: SCPoint(x: 329.89, y: 301.16), controlPoint1: SCPoint(x: 296.52, y: 343.92), controlPoint2: SCPoint(x: 321.9, y: 325.84))
+//        bezierPath.addCurve(to: SCPoint(x: 363.86, y: 309.71), controlPoint1: SCPoint(x: 340.05, y: 306.74), controlPoint2: SCPoint(x: 351.68, y: 309.71))
+//        bezierPath.addCurve(to: SCPoint(x: 429.85, y: 250.37), controlPoint1: SCPoint(x: 400.25, y: 309.71), controlPoint2: SCPoint(x: 429.85, y: 283.09))
+//        bezierPath.addCurve(to: SCPoint(x: 373.99, y: 191.72), controlPoint1: SCPoint(x: 429.85, y: 220.74), controlPoint2: SCPoint(x: 405.58, y: 196.12))
+//        bezierPath.close()
 
         return bezierPath
     }

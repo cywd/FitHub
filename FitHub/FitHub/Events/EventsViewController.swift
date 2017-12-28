@@ -15,7 +15,7 @@ class EventsViewController: BaseViewController {
     @IBOutlet weak var loginView: UIView!
     
     var page: Int = 1
-    var name =  UserDefaults.standard.value(forKey: "username") as? String ?? ""
+    var name: String { return UserDefaults.standard.value(forKey: "username") as? String ?? "" }
     var items = [EventModel]()
 
     override func viewDidLoad() {
