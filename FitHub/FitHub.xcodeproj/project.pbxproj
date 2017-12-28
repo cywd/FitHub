@@ -74,6 +74,8 @@
 		E7B347A11FECF1B500A114E9 /* FitHud.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B347A01FECF1B500A114E9 /* FitHud.swift */; };
 		E7D3CD6A1FD69CF500F96B99 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D3CD691FD69CF500F96B99 /* AboutViewController.swift */; };
 		E7D3CD6C1FD69D0300F96B99 /* AboutViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7D3CD6B1FD69D0300F96B99 /* AboutViewController.storyboard */; };
+		E7F064E21FF4EA9700E3C7A8 /* SVGImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F064E11FF4EA9700E3C7A8 /* SVGImage.swift */; };
+		E7F064E41FF4F51A00E3C7A8 /* LanguageColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F064E31FF4F51A00E3C7A8 /* LanguageColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -170,6 +172,8 @@
 		E7B347A01FECF1B500A114E9 /* FitHud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitHud.swift; sourceTree = "<group>"; };
 		E7D3CD691FD69CF500F96B99 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		E7D3CD6B1FD69D0300F96B99 /* AboutViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AboutViewController.storyboard; sourceTree = "<group>"; };
+		E7F064E11FF4EA9700E3C7A8 /* SVGImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGImage.swift; sourceTree = "<group>"; };
+		E7F064E31FF4F51A00E3C7A8 /* LanguageColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +219,8 @@
 				E74A4E661FF32FDE00AF8589 /* FontInfomation.swift */,
 				E746085A1FC541FF00951AEF /* NetworkManager.swift */,
 				E7B347A01FECF1B500A114E9 /* FitHud.swift */,
+				E7F064E11FF4EA9700E3C7A8 /* SVGImage.swift */,
+				E7F064E31FF4F51A00E3C7A8 /* LanguageColor.swift */,
 			);
 			name = Tool;
 			sourceTree = "<group>";
@@ -617,6 +623,7 @@
 				E74608531FC518E100951AEF /* UIColor+FitHub.swift in Sources */,
 				E746084F1FC5117B00951AEF /* UIImage+FitHub.swift in Sources */,
 				E746085B1FC541FF00951AEF /* NetworkManager.swift in Sources */,
+				E7F064E41FF4F51A00E3C7A8 /* LanguageColor.swift in Sources */,
 				E782AD511FCFA04C0054DA20 /* PayloadModel.swift in Sources */,
 				E767470C1FC7F4530087A2DF /* LanguageViewController.swift in Sources */,
 				E76746E91FC697560087A2DF /* UserDetailHeaderView.swift in Sources */,
@@ -646,6 +653,7 @@
 				E79645821FCD56E9006C9C1B /* RepositoryViewController.swift in Sources */,
 				E782AD5C1FCFDB160054DA20 /* CityViewController.swift in Sources */,
 				E782AD551FCFA70D0054DA20 /* CommentModel.swift in Sources */,
+				E7F064E21FF4EA9700E3C7A8 /* SVGImage.swift in Sources */,
 				E782AD531FCFA5310054DA20 /* PullRequestModel.swift in Sources */,
 				E7D3CD6A1FD69CF500F96B99 /* AboutViewController.swift in Sources */,
 				E796457E1FCD56BB006C9C1B /* FollowerViewController.swift in Sources */,
