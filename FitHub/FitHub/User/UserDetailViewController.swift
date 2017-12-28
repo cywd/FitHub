@@ -39,6 +39,7 @@ class UserDetailViewController: BaseViewController, StoryboardLoadable {
 
         // Do any additional setup after loading the view.
 
+        self.title = name
         self.requestUserData()
     }
 
