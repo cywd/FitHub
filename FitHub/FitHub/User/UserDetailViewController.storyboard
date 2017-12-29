@@ -95,7 +95,7 @@ Repositories</string>
                                                         <color key="textColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                         <connections>
-                                                            <outletCollection property="gestureRecognizers" destination="JcI-42-IGY" appends="YES" id="g1P-Qf-bn6"/>
+                                                            <outletCollection property="gestureRecognizers" destination="hqT-Ma-q5T" appends="YES" id="jQW-3A-cHZ"/>
                                                         </connections>
                                                     </label>
                                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Trs-Yz-lDL">
@@ -107,7 +107,7 @@ Followers</string>
                                                         <color key="textColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                         <connections>
-                                                            <outletCollection property="gestureRecognizers" destination="IhM-Rg-PAZ" appends="YES" id="V8n-6c-KtQ"/>
+                                                            <outletCollection property="gestureRecognizers" destination="vr3-m7-7MQ" appends="YES" id="ncn-Db-iFZ"/>
                                                         </connections>
                                                     </label>
                                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p60-t7-JIH">
@@ -119,7 +119,7 @@ Following</string>
                                                         <color key="textColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                         <connections>
-                                                            <outletCollection property="gestureRecognizers" destination="IhM-Rg-PAZ" appends="YES" id="vOb-Q3-ZmH"/>
+                                                            <outletCollection property="gestureRecognizers" destination="GWy-6q-aaC" appends="YES" id="oFX-Hq-s3c"/>
                                                         </connections>
                                                     </label>
                                                 </subviews>
@@ -211,19 +211,19 @@ Following</string>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tN8-GF-O8X" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="5Om-Lz-Ta1">
+                <tapGestureRecognizer id="hqT-Ma-q5T">
                     <connections>
-                        <segue destination="sKy-n7-aud" kind="show" id="SqD-V1-WSI"/>
+                        <segue destination="sKy-n7-aud" kind="show" identifier="repositories" id="CIa-mB-wwO"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer id="JcI-42-IGY">
+                <tapGestureRecognizer id="vr3-m7-7MQ">
                     <connections>
-                        <segue destination="3r6-Bf-xpI" kind="show" id="RDQ-xM-u81"/>
+                        <segue destination="3r6-Bf-xpI" kind="show" identifier="followers" id="vVO-oc-tvB"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer id="IhM-Rg-PAZ">
+                <tapGestureRecognizer id="GWy-6q-aaC">
                     <connections>
-                        <segue destination="cPs-Cc-ZRg" kind="show" id="lhv-Af-beA"/>
+                        <segue destination="cPs-Cc-ZRg" kind="show" identifier="following" id="nrS-Ow-ABU"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
