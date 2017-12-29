@@ -15,21 +15,19 @@ class UserDetailViewController: BaseViewController, StoryboardLoadable {
     var model: UserModel?
 
     @IBOutlet weak var headImageView: UIImageView!
-
     @IBOutlet weak var nameLabel: UILabel!
-
     @IBOutlet weak var loginLabel: UILabel!
-
     @IBOutlet weak var bioLabel: UILabel!
 
+    @IBOutlet weak var starsLabel: UILabel!
+    @IBOutlet weak var repositoriesLabel: UILabel!
     @IBOutlet weak var followersLabel: UILabel!
-    @IBOutlet weak var repositoryLabel: UILabel!
     @IBOutlet weak var followingLabel: UILabel!
 
-    @IBOutlet weak var companyLabel: UILabel!
-    @IBOutlet weak var locationLabel: UILabel!
-    @IBOutlet weak var emailLabel: UILabel!
-    @IBOutlet weak var blogLabel: UILabel!
+    @IBOutlet weak var companyButton: UIButton!
+    @IBOutlet weak var locationButton: UIButton!
+    @IBOutlet weak var emailButton: UIButton!
+    @IBOutlet weak var blogButton: UIButton!
     @IBOutlet weak var timeLabel: UILabel!
     
     var hud: FitHud?
@@ -64,38 +62,38 @@ class UserDetailViewController: BaseViewController, StoryboardLoadable {
                 self.loginLabel.isHidden = true
             }
             
+            self.repositoriesLabel.text = "\(self.model?.public_repos ?? 0)\nRepository"
             self.followersLabel.text = "\(self.model?.followers ?? 0)\nFollowers"
-            self.repositoryLabel.text = "\(self.model?.public_repos ?? 0)\nRepository"
             self.followingLabel.text = "\(self.model?.following ?? 0)\nFollowing"
             
             if let company = self.model?.company {
-                self.companyLabel.isHidden = company==""
-                self.companyLabel.text = "🏢 "+company
+                self.companyButton.isHidden = company==""
+                self.companyButton.setTitle(company, for: UIControlState.normal)
             } else {
-                self.companyLabel.isHidden = true
+                self.companyButton.isHidden = true
             }
             if let location = self.model!.location {
-                self.locationLabel.isHidden = location==""
-                self.locationLabel.text = "🏠 "+location
+                self.locationButton.isHidden = location==""
+                self.locationButton.setTitle(location, for: UIControlState.normal)
             } else {
-                self.locationLabel.isHidden = true
+                self.locationButton.isHidden = true
             }
             if let email = self.model!.email {
-                self.emailLabel.isHidden = email==""
-                self.emailLabel.text = "📧 "+email
+                self.emailButton.isHidden = email==""
+                self.emailButton.setTitle(email, for: UIControlState.normal)
             } else {
-                self.emailLabel.isHidden = true
+                self.emailButton.isHidden = true
             }
             if let blog = self.model!.blog {
-                self.blogLabel.isHidden = blog==""
-                self.blogLabel.text = "🔗 "+blog
+                self.blogButton.isHidden = blog==""
+                self.blogButton.setTitle(blog, for: UIControlState.normal)
             } else {
-                self.blogLabel.isHidden = true
+                self.blogButton.isHidden = true
             }
             if let time = self.model!.created_at {
                 self.timeLabel.isHidden = false
                 let subString = time.prefix(10)
-                self.timeLabel.text = "⏳ "+String(subString)
+                self.timeLabel.text = "on "+String(subString)
             } else {
                 self.timeLabel.isHidden = true
             }
@@ -105,7 +103,7 @@ class UserDetailViewController: BaseViewController, StoryboardLoadable {
             } else {
                 self.bioLabel.text = ""
             }
-            
+
             if let imageName = self.model?.avatar_url {
                 self.headImageView.kf.setImage(with: URL(string: imageName))
             }
@@ -121,10 +119,10 @@ class UserDetailViewController: BaseViewController, StoryboardLoadable {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "follower" {
+        if segue.identifier == "followers" {
             let vc = segue.destination as! FollowerViewController
             vc.name = self.name
-        } else if segue.identifier == "repository" {
+        } else if segue.identifier == "repositories" {
             let vc = segue.destination as! RepositoryViewController
             vc.name = self.name
         } else if segue.identifier == "following" {
