@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,11 +15,11 @@
             <objects>
                 <viewController storyboardIdentifier="UserDetailViewController" id="wbe-Ar-haS" customClass="UserDetailViewController" customModule="FitHub" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6eT-mi-ePo">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="56b-6H-sqT">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xbo-Mh-cc5">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
@@ -31,13 +31,13 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vnx-MZ-Khh">
-                                                <rect key="frame" x="126" y="10" width="239" height="20.5"/>
+                                                <rect key="frame" x="126" y="9.9999999999999982" width="239" height="20.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lxR-4w-Qa1">
-                                                <rect key="frame" x="126" y="35.5" width="239" height="17"/>
+                                                <rect key="frame" x="126" y="35.333333333333329" width="239" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -87,7 +87,7 @@
                                                 <rect key="frame" x="10" y="23" width="355" height="60"/>
                                                 <subviews>
                                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W0a-vN-MRB">
-                                                        <rect key="frame" x="0.0" y="0.0" width="118.5" height="60"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="118.33333333333333" height="60"/>
                                                         <gestureRecognizers/>
                                                         <string key="text">12
 Repositories</string>
@@ -99,7 +99,7 @@ Repositories</string>
                                                         </connections>
                                                     </label>
                                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Trs-Yz-lDL">
-                                                        <rect key="frame" x="118.5" y="0.0" width="118" height="60"/>
+                                                        <rect key="frame" x="118.33333333333334" y="0.0" width="119" height="60"/>
                                                         <gestureRecognizers/>
                                                         <string key="text">12
 Followers</string>
@@ -111,7 +111,7 @@ Followers</string>
                                                         </connections>
                                                     </label>
                                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p60-t7-JIH">
-                                                        <rect key="frame" x="236.5" y="0.0" width="118.5" height="60"/>
+                                                        <rect key="frame" x="237.33333333333334" y="0.0" width="117.66666666666666" height="60"/>
                                                         <gestureRecognizers/>
                                                         <string key="text">12
 Following</string>
@@ -189,8 +189,8 @@ Following</string>
                         <constraints>
                             <constraint firstItem="56b-6H-sqT" firstAttribute="bottom" secondItem="BV5-er-ixM" secondAttribute="bottom" id="6WM-wK-gR9"/>
                             <constraint firstItem="56b-6H-sqT" firstAttribute="top" secondItem="BV5-er-ixM" secondAttribute="top" id="GUr-jO-59v"/>
-                            <constraint firstAttribute="trailing" secondItem="56b-6H-sqT" secondAttribute="trailing" id="c3r-ZC-Yer"/>
-                            <constraint firstItem="56b-6H-sqT" firstAttribute="leading" secondItem="6eT-mi-ePo" secondAttribute="leading" id="j2Y-AO-FfP"/>
+                            <constraint firstItem="56b-6H-sqT" firstAttribute="leading" secondItem="BV5-er-ixM" secondAttribute="leading" id="ddg-Ho-2dS"/>
+                            <constraint firstItem="56b-6H-sqT" firstAttribute="trailing" secondItem="BV5-er-ixM" secondAttribute="trailing" id="gir-B6-0h8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BV5-er-ixM"/>
                     </view>
