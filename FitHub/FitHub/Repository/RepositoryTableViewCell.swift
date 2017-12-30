@@ -11,27 +11,27 @@ import UIKit
 class RepositoryTableViewCell: UITableViewCell, RegisterCellOrNib {
 
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var starLabel: UILabel!
     @IBOutlet weak var desLabel: UILabel!
     @IBOutlet weak var languageLabel: UILabel!
-    @IBOutlet weak var forkLabel: UILabel!
+    @IBOutlet weak var starButton: UIButton!
+    @IBOutlet weak var forkButton: UIButton!
     
     var model: RepositoryModel? {
         didSet {
             self.nameLabel.text = model!.full_name
             if let starCount = model?.stargazers_count {
-                self.starLabel.text = "⭐️\(starCount)"
+                self.starButton.setTitle("\(starCount)", for: .normal)
             }
             
             self.desLabel.text = model!.repositoryDescription
             
             if let fork = model?.forks_count {
-                self.forkLabel.text = "📎\(fork)"
+                self.forkButton.setTitle("\(fork)", for: .normal)
             }
             
             if let language = model?.language {
                 self.languageLabel.isHidden = false
-                self.languageLabel.text = "🌐\(language)"
+                self.languageLabel.text = "\(language)"
             } else {
                 self.languageLabel.isHidden = true
             }
