@@ -62,7 +62,7 @@ class UserDetailViewController: BaseViewController, StoryboardLoadable {
                 self.loginLabel.isHidden = true
             }
             
-            self.repositoriesLabel.text = "\(self.model?.public_repos ?? 0)\nRepository"
+            self.repositoriesLabel.text = "\(self.model?.public_repos ?? 0)\nRepositories"
             self.followersLabel.text = "\(self.model?.followers ?? 0)\nFollowers"
             self.followingLabel.text = "\(self.model?.following ?? 0)\nFollowing"
             
