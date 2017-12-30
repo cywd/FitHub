@@ -123,7 +123,7 @@ class UserDetailViewController: BaseViewController, StoryboardLoadable {
             let vc = segue.destination as! FollowerViewController
             vc.name = self.name
         } else if segue.identifier == "repositories" {
-            let vc = segue.destination as! RepositoryViewController
+            let vc = segue.destination as! RepositoriesViewController
             vc.name = self.name
         } else if segue.identifier == "following" {
             let vc = segue.destination as! FollowingViewController

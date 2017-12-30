@@ -249,10 +249,10 @@ Following</string>
             </objects>
             <point key="canvasLocation" x="-389" y="-348"/>
         </scene>
-        <!--RepositoryViewController-->
+        <!--RepositoriesViewController-->
         <scene sceneID="5Pd-hV-Hcf">
             <objects>
-                <viewControllerPlaceholder storyboardName="RepositoryViewController" id="sKy-n7-aud" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="RepositoriesViewController" id="sKy-n7-aud" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="NQx-El-GI9"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ar1-Dn-mf4" userLabel="First Responder" sceneMemberID="firstResponder"/>

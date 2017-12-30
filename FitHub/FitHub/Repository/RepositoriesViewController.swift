@@ -1,5 +1,5 @@
 //
-//  RepositoryViewController.swift
+//  RepositoriesViewController.swift
 //  FitHub
 //
 //  Created by Cyrill on 2017/11/28.
@@ -9,7 +9,7 @@
 import UIKit
 import FitRefresh
 
-class RepositoryViewController: BaseViewController {
+class RepositoriesViewController: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -90,7 +90,7 @@ class RepositoryViewController: BaseViewController {
 
 }
 
-extension RepositoryViewController: UITableViewDataSource, UITableViewDelegate {
+extension RepositoriesViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         self.tableView.fr.footerView?.isHidden = (items.count == 0)
