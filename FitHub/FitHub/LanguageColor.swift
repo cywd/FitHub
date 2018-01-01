@@ -27,6 +27,5 @@ class LanguageColor: NSObject {
     // makefile background-color:#427819;
     // swift background-color:#ffac45;
     // scala background-color:#c22d40;
-    // 
     
 }
