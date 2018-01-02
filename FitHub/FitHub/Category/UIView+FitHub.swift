@@ -30,7 +30,7 @@ extension LoadNibProtocol {
     ///
     /// - Parameter name: nib name [
     /// - Returns: view
-    static func loadViewFromNib(name: String?) -> Self {
+    static func loadViewFromNib(name: String? = nil) -> Self {
         return Bundle.main.loadNibNamed(name ?? "\(self)", owner: nil, options: nil)?.last as! Self
     }
 }

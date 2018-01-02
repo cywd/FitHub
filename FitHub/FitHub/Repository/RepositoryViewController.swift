@@ -8,16 +8,14 @@
 
 import UIKit
 
-class RepositoryViewController: BaseViewController {
-
-    @IBOutlet weak var tableView: UITableView!
+class RepositoryViewController: BaseViewController, StoryboardLoadable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -34,22 +32,4 @@ class RepositoryViewController: BaseViewController {
     }
     */
 
-}
-
-extension RepositoryViewController: UITableViewDataSource, UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        return UITableViewCell()
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        
-    }
-    
 }

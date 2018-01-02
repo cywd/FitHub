@@ -12,37 +12,18 @@
         <!--Repository View Controller-->
         <scene sceneID="fcI-tN-g6W">
             <objects>
-                <viewController id="Blh-pB-1lo" customClass="RepositoryViewController" customModule="FitHub" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="gtQ-lW-DZt">
+                <viewController storyboardIdentifier="RepositoryViewController" id="Blh-pB-1lo" customClass="RepositoryViewController" customModule="FitHub" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" tag="1" contentMode="scaleToFill" id="gtQ-lW-DZt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tfd-tU-Ehm">
-                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="Blh-pB-1lo" id="358-ds-6pk"/>
-                                    <outlet property="delegate" destination="Blh-pB-1lo" id="pME-zW-Hx5"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="9Ce-cw-Urg" firstAttribute="trailing" secondItem="tfd-tU-Ehm" secondAttribute="trailing" id="EFT-tC-wmj"/>
-                            <constraint firstItem="tfd-tU-Ehm" firstAttribute="top" secondItem="9Ce-cw-Urg" secondAttribute="top" id="F3f-84-ZSM"/>
-                            <constraint firstItem="9Ce-cw-Urg" firstAttribute="bottom" secondItem="tfd-tU-Ehm" secondAttribute="bottom" id="G0X-KJ-hos"/>
-                            <constraint firstItem="tfd-tU-Ehm" firstAttribute="leading" secondItem="9Ce-cw-Urg" secondAttribute="leading" id="xZ4-X2-JlQ"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="9Ce-cw-Urg"/>
                     </view>
                     <splitViewDetailSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <connections>
-                        <outlet property="tableView" destination="tfd-tU-Ehm" id="dPd-UI-jaa"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TmE-fe-L75" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-500" y="194"/>
+            <point key="canvasLocation" x="-500" y="193.5960591133005"/>
         </scene>
     </scenes>
 </document>
