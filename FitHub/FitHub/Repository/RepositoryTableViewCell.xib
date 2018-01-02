@@ -20,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cMp-a4-mEP">
-                        <rect key="frame" x="16" y="11" width="42" height="18"/>
+                        <rect key="frame" x="36" y="11" width="42" height="18"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="18" id="zOf-Ng-cjK"/>
                         </constraints>
@@ -29,13 +29,20 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DkP-qw-1X4">
-                        <rect key="frame" x="16" y="59" width="288" height="14.5"/>
+                        <rect key="frame" x="36" y="59" width="268" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="12"/>
                         <color key="textColor" red="0.34509803919999998" green="0.37647058820000001" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hwp-HD-8hf">
+                        <rect key="frame" x="16" y="11" width="20" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="lLh-aq-R2v"/>
+                            <constraint firstAttribute="height" constant="18" id="reJ-3O-ABX"/>
+                        </constraints>
+                    </imageView>
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Rnw-GN-SM8">
-                        <rect key="frame" x="16" y="37" width="128" height="14"/>
+                        <rect key="frame" x="36" y="37" width="128" height="14"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iul-TH-e6P">
                                 <rect key="frame" x="0.0" y="0.0" width="34" height="14"/>
@@ -64,14 +71,16 @@
                     </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="Rnw-GN-SM8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="02O-HZ-LeQ"/>
-                    <constraint firstItem="cMp-a4-mEP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="B0O-ME-cae"/>
+                    <constraint firstItem="DkP-qw-1X4" firstAttribute="leading" secondItem="cMp-a4-mEP" secondAttribute="leading" id="83Q-R3-kCl"/>
+                    <constraint firstItem="hwp-HD-8hf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="FRk-5n-T1K"/>
                     <constraint firstItem="Rnw-GN-SM8" firstAttribute="top" secondItem="cMp-a4-mEP" secondAttribute="bottom" constant="8" id="GLD-sH-En5"/>
                     <constraint firstItem="DkP-qw-1X4" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="GdR-39-XXc"/>
                     <constraint firstItem="DkP-qw-1X4" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="K3u-I6-hgn"/>
-                    <constraint firstItem="DkP-qw-1X4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="aL4-zi-trH"/>
+                    <constraint firstItem="Rnw-GN-SM8" firstAttribute="leading" secondItem="cMp-a4-mEP" secondAttribute="leading" id="Vca-oU-org"/>
                     <constraint firstItem="cMp-a4-mEP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="oCH-nV-WKO"/>
+                    <constraint firstItem="cMp-a4-mEP" firstAttribute="leading" secondItem="hwp-HD-8hf" secondAttribute="trailing" id="oxy-zD-Ex7"/>
                     <constraint firstItem="DkP-qw-1X4" firstAttribute="top" secondItem="Rnw-GN-SM8" secondAttribute="bottom" constant="8" id="plA-VW-6ma"/>
+                    <constraint firstItem="hwp-HD-8hf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="zg5-nT-jad"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -81,8 +90,9 @@
                 <outlet property="languageLabel" destination="iul-TH-e6P" id="GIa-nn-0fe"/>
                 <outlet property="nameLabel" destination="cMp-a4-mEP" id="kfe-a2-E1E"/>
                 <outlet property="starButton" destination="9Nt-rs-TVW" id="Upy-RX-dsf"/>
+                <outlet property="typeImageView" destination="hwp-HD-8hf" id="jK2-od-dns"/>
             </connections>
-            <point key="canvasLocation" x="1671" y="-153"/>
+            <point key="canvasLocation" x="1608" y="-202"/>
         </tableViewCell>
     </objects>
     <resources>

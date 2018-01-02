@@ -15,6 +15,7 @@ class RepositoryTableViewCell: UITableViewCell, RegisterCellOrNib {
     @IBOutlet weak var languageLabel: UILabel!
     @IBOutlet weak var starButton: UIButton!
     @IBOutlet weak var forkButton: UIButton!
+    @IBOutlet weak var typeImageView: UIImageView!
     
     var model: RepositoryModel? {
         didSet {
@@ -22,6 +23,9 @@ class RepositoryTableViewCell: UITableViewCell, RegisterCellOrNib {
             if let starCount = model?.stargazers_count {
                 self.starButton.setTitle("\(starCount)", for: .normal)
             }
+            
+            let isFork = model?.isFork
+            self.typeImageView.image = isFork! ? #imageLiteral(resourceName: "fork") : #imageLiteral(resourceName: "repository")
             
             self.desLabel.text = model!.repositoryDescription
             
