@@ -20,7 +20,7 @@ class RepositoriesViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.tableView.fit_registerCell(cell: RepositoryTableViewCell.self)
+        self.tableView.fit_registerCell(cell: RepositoriesTableViewCell.self)
 
         self.tableView.fr.headerView = FRNormalHeader(ComponentRefreshingClosure: {
             self.loadData()
@@ -98,7 +98,7 @@ extension RepositoriesViewController: UITableViewDataSource, UITableViewDelegate
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.fit_dequeueReusableCell(indexPath: indexPath) as RepositoryTableViewCell
+        let cell = tableView.fit_dequeueReusableCell(indexPath: indexPath) as RepositoriesTableViewCell
         cell.model = items[indexPath.row]
         return cell
     }

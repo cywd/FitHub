@@ -39,8 +39,8 @@
 		E74A4E671FF32FDE00AF8589 /* FontInfomation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A4E661FF32FDE00AF8589 /* FontInfomation.swift */; };
 		E76746E91FC697560087A2DF /* UserDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76746E81FC697560087A2DF /* UserDetailHeaderView.swift */; };
 		E76746EB1FC6975D0087A2DF /* UserDetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E76746EA1FC6975D0087A2DF /* UserDetailHeaderView.xib */; };
-		E76746F01FC6CBB30087A2DF /* RepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76746EE1FC6CBB30087A2DF /* RepositoryTableViewCell.swift */; };
-		E76746F11FC6CBB30087A2DF /* RepositoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E76746EF1FC6CBB30087A2DF /* RepositoryTableViewCell.xib */; };
+		E76746F01FC6CBB30087A2DF /* RepositoriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76746EE1FC6CBB30087A2DF /* RepositoriesTableViewCell.swift */; };
+		E76746F11FC6CBB30087A2DF /* RepositoriesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E76746EF1FC6CBB30087A2DF /* RepositoriesTableViewCell.xib */; };
 		E767470C1FC7F4530087A2DF /* LanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E767470B1FC7F4530087A2DF /* LanguageViewController.swift */; };
 		E767470E1FC7F4760087A2DF /* LanguageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E767470D1FC7F4760087A2DF /* LanguageViewController.storyboard */; };
 		E77CE5431FBEC04500A120B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77CE5421FBEC04500A120B2 /* AppDelegate.swift */; };
@@ -75,6 +75,8 @@
 		E7D3CD6A1FD69CF500F96B99 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D3CD691FD69CF500F96B99 /* AboutViewController.swift */; };
 		E7D3CD6C1FD69D0300F96B99 /* AboutViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7D3CD6B1FD69D0300F96B99 /* AboutViewController.storyboard */; };
 		E7E092371FFB2DD100AA18F6 /* String+FitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E092361FFB2DD100AA18F6 /* String+FitHub.swift */; };
+		E7E092391FFB30C000AA18F6 /* RepositoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E092381FFB30C000AA18F6 /* RepositoryViewController.swift */; };
+		E7E0923B1FFB30CB00AA18F6 /* RepositoryViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E0923A1FFB30CB00AA18F6 /* RepositoryViewController.storyboard */; };
 		E7F064E21FF4EA9700E3C7A8 /* SVGImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F064E11FF4EA9700E3C7A8 /* SVGImage.swift */; };
 		E7F064E41FF4F51A00E3C7A8 /* LanguageColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F064E31FF4F51A00E3C7A8 /* LanguageColor.swift */; };
 /* End PBXBuildFile section */
@@ -132,8 +134,8 @@
 		E74A4E661FF32FDE00AF8589 /* FontInfomation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontInfomation.swift; sourceTree = "<group>"; };
 		E76746E81FC697560087A2DF /* UserDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailHeaderView.swift; sourceTree = "<group>"; };
 		E76746EA1FC6975D0087A2DF /* UserDetailHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailHeaderView.xib; sourceTree = "<group>"; };
-		E76746EE1FC6CBB30087A2DF /* RepositoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewCell.swift; sourceTree = "<group>"; };
-		E76746EF1FC6CBB30087A2DF /* RepositoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryTableViewCell.xib; sourceTree = "<group>"; };
+		E76746EE1FC6CBB30087A2DF /* RepositoriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesTableViewCell.swift; sourceTree = "<group>"; };
+		E76746EF1FC6CBB30087A2DF /* RepositoriesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoriesTableViewCell.xib; sourceTree = "<group>"; };
 		E767470B1FC7F4530087A2DF /* LanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewController.swift; sourceTree = "<group>"; };
 		E767470D1FC7F4760087A2DF /* LanguageViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LanguageViewController.storyboard; sourceTree = "<group>"; };
 		E77CE53F1FBEC04500A120B2 /* FitHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -174,6 +176,8 @@
 		E7D3CD691FD69CF500F96B99 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		E7D3CD6B1FD69D0300F96B99 /* AboutViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AboutViewController.storyboard; sourceTree = "<group>"; };
 		E7E092361FFB2DD100AA18F6 /* String+FitHub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+FitHub.swift"; sourceTree = "<group>"; };
+		E7E092381FFB30C000AA18F6 /* RepositoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewController.swift; sourceTree = "<group>"; };
+		E7E0923A1FFB30CB00AA18F6 /* RepositoryViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RepositoryViewController.storyboard; sourceTree = "<group>"; };
 		E7F064E11FF4EA9700E3C7A8 /* SVGImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGImage.swift; sourceTree = "<group>"; };
 		E7F064E31FF4F51A00E3C7A8 /* LanguageColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -308,8 +312,10 @@
 				E73789851FC666FA003373B7 /* RepositoryModel.swift */,
 				E79645811FCD56E9006C9C1B /* RepositoriesViewController.swift */,
 				E79645851FCD5717006C9C1B /* RepositoriesViewController.storyboard */,
-				E76746EE1FC6CBB30087A2DF /* RepositoryTableViewCell.swift */,
-				E76746EF1FC6CBB30087A2DF /* RepositoryTableViewCell.xib */,
+				E76746EE1FC6CBB30087A2DF /* RepositoriesTableViewCell.swift */,
+				E76746EF1FC6CBB30087A2DF /* RepositoriesTableViewCell.xib */,
+				E7E092381FFB30C000AA18F6 /* RepositoryViewController.swift */,
+				E7E0923A1FFB30CB00AA18F6 /* RepositoryViewController.storyboard */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -514,12 +520,13 @@
 				E72A3B451FE7B2F5005DCC90 /* LaunchViewController.storyboard in Resources */,
 				E79645861FCD5717006C9C1B /* RepositoriesViewController.storyboard in Resources */,
 				E77CE54D1FBEC04500A120B2 /* LaunchScreen.storyboard in Resources */,
+				E7E0923B1FFB30CB00AA18F6 /* RepositoryViewController.storyboard in Resources */,
 				E796457C1FCD2E77006C9C1B /* LoginViewController.xib in Resources */,
 				E7D3CD6C1FD69D0300F96B99 /* AboutViewController.storyboard in Resources */,
 				E79645881FCD572D006C9C1B /* FollowingViewController.storyboard in Resources */,
 				E742A5B91FCBB190002E8C0A /* UserDetailViewController.storyboard in Resources */,
 				11F41AE71FDC3BE700DD047E /* Localizable.strings in Resources */,
-				E76746F11FC6CBB30087A2DF /* RepositoryTableViewCell.xib in Resources */,
+				E76746F11FC6CBB30087A2DF /* RepositoriesTableViewCell.xib in Resources */,
 				E77CE5481FBEC04500A120B2 /* Main.storyboard in Resources */,
 				E767470E1FC7F4760087A2DF /* LanguageViewController.storyboard in Resources */,
 				E76746EB1FC6975D0087A2DF /* UserDetailHeaderView.xib in Resources */,
@@ -621,6 +628,7 @@
 				E73789861FC666FA003373B7 /* RepositoryModel.swift in Sources */,
 				E782AD591FCFA9460054DA20 /* TeamModel.swift in Sources */,
 				E742A5B71FCBB180002E8C0A /* UserDetailViewController.swift in Sources */,
+				E7E092391FFB30C000AA18F6 /* RepositoryViewController.swift in Sources */,
 				E7A3AA511FCE9E1A007AE295 /* EventsViewController.swift in Sources */,
 				E7403E0B1FC3FE13003054D7 /* NavigationController.swift in Sources */,
 				E74608531FC518E100951AEF /* UIColor+FitHub.swift in Sources */,
@@ -648,7 +656,7 @@
 				E74A4E671FF32FDE00AF8589 /* FontInfomation.swift in Sources */,
 				E7403E0D1FC4001D003054D7 /* NavigationBar.swift in Sources */,
 				E7403DFF1FC3FCB0003054D7 /* BaseViewController.swift in Sources */,
-				E76746F01FC6CBB30087A2DF /* RepositoryTableViewCell.swift in Sources */,
+				E76746F01FC6CBB30087A2DF /* RepositoriesTableViewCell.swift in Sources */,
 				E7403E031FC3FCF5003054D7 /* TabBar.swift in Sources */,
 				E73789841FC65C05003373B7 /* UserDetailViewController1.swift in Sources */,
 				E74608551FC51B1500951AEF /* UIImageView+FitHub.swift in Sources */,

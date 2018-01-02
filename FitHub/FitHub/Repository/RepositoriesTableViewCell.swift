@@ -1,5 +1,5 @@
 //
-//  RepositoryTableViewCell.swift
+//  RepositoriesTableViewCell.swift
 //  FitHub
 //
 //  Created by Cyrill on 2017/11/23.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RepositoryTableViewCell: UITableViewCell, RegisterCellOrNib {
+class RepositoriesTableViewCell: UITableViewCell, RegisterCellOrNib {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var desLabel: UILabel!

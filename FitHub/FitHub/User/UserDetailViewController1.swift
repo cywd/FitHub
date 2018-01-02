@@ -58,7 +58,7 @@ class UserDetailViewController1: BaseViewController {
             self.headerView = UserDetailHeaderView.defaultView()
             self.tableView.tableHeaderView = self.headerView
             self.refreshHeader()
-            self.tableView.fit_registerCell(cell: RepositoryTableViewCell.self)
+            self.tableView.fit_registerCell(cell: RepositoriesTableViewCell.self)
             
             self.requestData()
             
@@ -127,7 +127,7 @@ extension UserDetailViewController1: UITableViewDataSource, UITableViewDelegate 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.fit_dequeueReusableCell(indexPath: indexPath) as RepositoryTableViewCell
+        let cell = tableView.fit_dequeueReusableCell(indexPath: indexPath) as RepositoriesTableViewCell
         cell.model = items[indexPath.row]
         return cell
     }
