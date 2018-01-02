@@ -93,7 +93,7 @@ class UserDetailViewController: BaseViewController, StoryboardLoadable {
             if let time = self.model!.created_at {
                 self.timeLabel.isHidden = false
                 let subString = time.prefix(10)
-                self.timeLabel.text = "on "+String(subString)
+                self.timeLabel.text = "on " + String(subString)
             } else {
                 self.timeLabel.isHidden = true
             }

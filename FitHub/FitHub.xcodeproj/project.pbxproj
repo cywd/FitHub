@@ -74,6 +74,7 @@
 		E7B347A11FECF1B500A114E9 /* FitHud.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B347A01FECF1B500A114E9 /* FitHud.swift */; };
 		E7D3CD6A1FD69CF500F96B99 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D3CD691FD69CF500F96B99 /* AboutViewController.swift */; };
 		E7D3CD6C1FD69D0300F96B99 /* AboutViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7D3CD6B1FD69D0300F96B99 /* AboutViewController.storyboard */; };
+		E7E092371FFB2DD100AA18F6 /* String+FitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E092361FFB2DD100AA18F6 /* String+FitHub.swift */; };
 		E7F064E21FF4EA9700E3C7A8 /* SVGImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F064E11FF4EA9700E3C7A8 /* SVGImage.swift */; };
 		E7F064E41FF4F51A00E3C7A8 /* LanguageColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F064E31FF4F51A00E3C7A8 /* LanguageColor.swift */; };
 /* End PBXBuildFile section */
@@ -172,6 +173,7 @@
 		E7B347A01FECF1B500A114E9 /* FitHud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitHud.swift; sourceTree = "<group>"; };
 		E7D3CD691FD69CF500F96B99 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		E7D3CD6B1FD69D0300F96B99 /* AboutViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AboutViewController.storyboard; sourceTree = "<group>"; };
+		E7E092361FFB2DD100AA18F6 /* String+FitHub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+FitHub.swift"; sourceTree = "<group>"; };
 		E7F064E11FF4EA9700E3C7A8 /* SVGImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGImage.swift; sourceTree = "<group>"; };
 		E7F064E31FF4F51A00E3C7A8 /* LanguageColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -235,6 +237,7 @@
 				E74608521FC518E100951AEF /* UIColor+FitHub.swift */,
 				E74608541FC51B1500951AEF /* UIImageView+FitHub.swift */,
 				E74A4E641FF25B1B00AF8589 /* NSString+FitHub.swift */,
+				E7E092361FFB2DD100AA18F6 /* String+FitHub.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -632,6 +635,7 @@
 				E74608511FC5151E00951AEF /* UIView+FitHub.swift in Sources */,
 				E70357641FE11163007571A3 /* DownArrowView.swift in Sources */,
 				E72A3B431FE7B2E2005DCC90 /* LaunchViewController.swift in Sources */,
+				E7E092371FFB2DD100AA18F6 /* String+FitHub.swift in Sources */,
 				E7403E091FC3FDAC003054D7 /* MeViewController.swift in Sources */,
 				E746085D1FC551D100951AEF /* UserModel.swift in Sources */,
 				E796457B1FCD2E77006C9C1B /* LoginViewController.swift in Sources */,
