@@ -43,6 +43,12 @@
 		E76746F11FC6CBB30087A2DF /* RepositoriesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E76746EF1FC6CBB30087A2DF /* RepositoriesTableViewCell.xib */; };
 		E767470C1FC7F4530087A2DF /* LanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E767470B1FC7F4530087A2DF /* LanguageViewController.swift */; };
 		E767470E1FC7F4760087A2DF /* LanguageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E767470D1FC7F4760087A2DF /* LanguageViewController.storyboard */; };
+		E77AA4801FFCBE0000812F45 /* StarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77AA47F1FFCBE0000812F45 /* StarViewController.swift */; };
+		E77AA4821FFCBE0D00812F45 /* StarViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E77AA4811FFCBE0D00812F45 /* StarViewController.storyboard */; };
+		E77AA4841FFCBE2100812F45 /* ForkViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E77AA4831FFCBE2100812F45 /* ForkViewController.storyboard */; };
+		E77AA4861FFCBE2B00812F45 /* ForkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77AA4851FFCBE2B00812F45 /* ForkViewController.swift */; };
+		E77AA4881FFCBE3900812F45 /* WatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77AA4871FFCBE3900812F45 /* WatchViewController.swift */; };
+		E77AA48A1FFCBE4100812F45 /* WatchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E77AA4891FFCBE4100812F45 /* WatchViewController.storyboard */; };
 		E77CE5431FBEC04500A120B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77CE5421FBEC04500A120B2 /* AppDelegate.swift */; };
 		E77CE5481FBEC04500A120B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E77CE5461FBEC04500A120B2 /* Main.storyboard */; };
 		E77CE54D1FBEC04500A120B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E77CE54B1FBEC04500A120B2 /* LaunchScreen.storyboard */; };
@@ -138,6 +144,12 @@
 		E76746EF1FC6CBB30087A2DF /* RepositoriesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoriesTableViewCell.xib; sourceTree = "<group>"; };
 		E767470B1FC7F4530087A2DF /* LanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewController.swift; sourceTree = "<group>"; };
 		E767470D1FC7F4760087A2DF /* LanguageViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LanguageViewController.storyboard; sourceTree = "<group>"; };
+		E77AA47F1FFCBE0000812F45 /* StarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarViewController.swift; sourceTree = "<group>"; };
+		E77AA4811FFCBE0D00812F45 /* StarViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StarViewController.storyboard; sourceTree = "<group>"; };
+		E77AA4831FFCBE2100812F45 /* ForkViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ForkViewController.storyboard; sourceTree = "<group>"; };
+		E77AA4851FFCBE2B00812F45 /* ForkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForkViewController.swift; sourceTree = "<group>"; };
+		E77AA4871FFCBE3900812F45 /* WatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchViewController.swift; sourceTree = "<group>"; };
+		E77AA4891FFCBE4100812F45 /* WatchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WatchViewController.storyboard; sourceTree = "<group>"; };
 		E77CE53F1FBEC04500A120B2 /* FitHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E77CE5421FBEC04500A120B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E77CE5471FBEC04500A120B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -316,6 +328,12 @@
 				E76746EF1FC6CBB30087A2DF /* RepositoriesTableViewCell.xib */,
 				E7E092381FFB30C000AA18F6 /* RepositoryViewController.swift */,
 				E7E0923A1FFB30CB00AA18F6 /* RepositoryViewController.storyboard */,
+				E77AA4871FFCBE3900812F45 /* WatchViewController.swift */,
+				E77AA4891FFCBE4100812F45 /* WatchViewController.storyboard */,
+				E77AA47F1FFCBE0000812F45 /* StarViewController.swift */,
+				E77AA4811FFCBE0D00812F45 /* StarViewController.storyboard */,
+				E77AA4851FFCBE2B00812F45 /* ForkViewController.swift */,
+				E77AA4831FFCBE2100812F45 /* ForkViewController.storyboard */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -517,6 +535,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E77AA4841FFCBE2100812F45 /* ForkViewController.storyboard in Resources */,
 				E72A3B451FE7B2F5005DCC90 /* LaunchViewController.storyboard in Resources */,
 				E79645861FCD5717006C9C1B /* RepositoriesViewController.storyboard in Resources */,
 				E77CE54D1FBEC04500A120B2 /* LaunchScreen.storyboard in Resources */,
@@ -524,8 +543,10 @@
 				E796457C1FCD2E77006C9C1B /* LoginViewController.xib in Resources */,
 				E7D3CD6C1FD69D0300F96B99 /* AboutViewController.storyboard in Resources */,
 				E79645881FCD572D006C9C1B /* FollowingViewController.storyboard in Resources */,
+				E77AA4821FFCBE0D00812F45 /* StarViewController.storyboard in Resources */,
 				E742A5B91FCBB190002E8C0A /* UserDetailViewController.storyboard in Resources */,
 				11F41AE71FDC3BE700DD047E /* Localizable.strings in Resources */,
+				E77AA48A1FFCBE4100812F45 /* WatchViewController.storyboard in Resources */,
 				E76746F11FC6CBB30087A2DF /* RepositoriesTableViewCell.xib in Resources */,
 				E77CE5481FBEC04500A120B2 /* Main.storyboard in Resources */,
 				E767470E1FC7F4760087A2DF /* LanguageViewController.storyboard in Resources */,
@@ -630,6 +651,8 @@
 				E742A5B71FCBB180002E8C0A /* UserDetailViewController.swift in Sources */,
 				E7E092391FFB30C000AA18F6 /* RepositoryViewController.swift in Sources */,
 				E7A3AA511FCE9E1A007AE295 /* EventsViewController.swift in Sources */,
+				E77AA4881FFCBE3900812F45 /* WatchViewController.swift in Sources */,
+				E77AA4861FFCBE2B00812F45 /* ForkViewController.swift in Sources */,
 				E7403E0B1FC3FE13003054D7 /* NavigationController.swift in Sources */,
 				E74608531FC518E100951AEF /* UIColor+FitHub.swift in Sources */,
 				E746084F1FC5117B00951AEF /* UIImage+FitHub.swift in Sources */,
@@ -644,6 +667,7 @@
 				E70357641FE11163007571A3 /* DownArrowView.swift in Sources */,
 				E72A3B431FE7B2E2005DCC90 /* LaunchViewController.swift in Sources */,
 				E7E092371FFB2DD100AA18F6 /* String+FitHub.swift in Sources */,
+				E77AA4801FFCBE0000812F45 /* StarViewController.swift in Sources */,
 				E7403E091FC3FDAC003054D7 /* MeViewController.swift in Sources */,
 				E746085D1FC551D100951AEF /* UserModel.swift in Sources */,
 				E796457B1FCD2E77006C9C1B /* LoginViewController.swift in Sources */,

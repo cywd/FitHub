@@ -60,7 +60,7 @@ class RepositoryViewController: BaseViewController, StoryboardLoadable {
                 self.forkView.isHidden = true
             }
             
-            self.watchLabel.text = "\(self.model?.watchers_count ?? 0)\nWatch"
+            self.watchLabel.text = "\(self.model?.subscribers_count ?? 0)\nWatch"
             self.starLabel.text = "\(self.model?.stargazers_count ?? 0)\nStar"
             self.forkLabel.text = "\(self.model?.forks_count ?? 0)\nFork"
             
@@ -92,15 +92,19 @@ class RepositoryViewController: BaseViewController, StoryboardLoadable {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "watch" {
+            let vc = segue.destination as! WatchViewController
+            vc.url = self.model!.subscribers_url!
+        } else if segue.identifier == "star" {
+            let vc = segue.destination as! StarViewController
+            vc.url = self.model!.stargazers_url!
+        } else if segue.identifier == "fork" {
+            let vc = segue.destination as! ForkViewController
+            vc.url = self.model!.forks_url!
+        } else {
+            
+        }
     }
-    */
 
 }
