@@ -45,12 +45,16 @@ extension UIColor {
         )
     }
     
-    convenience init(hex: String) {
-        var hexStr = hex
-        if hex.hasPrefix("#") {
-            hexStr = hex.substring(from: 1)
+    convenience init(hexString: String) {
+        var normalizedHexString = hexString
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+            .uppercased()
+        
+        if normalizedHexString.hasPrefix("#") {
+            normalizedHexString.remove(at: normalizedHexString.startIndex)
         }
-        let scanner = Scanner(string: hexStr)
+        
+        let scanner = Scanner(string: normalizedHexString)
         scanner.scanLocation = 0
         
         var rgbValue: UInt64 = 0
