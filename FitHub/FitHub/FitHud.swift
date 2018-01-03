@@ -51,6 +51,7 @@ class FitHud {
         }
         
         self._hudBackgroundView = UIView(frame: view.bounds)
+//        self._hudBackgroundView.backgroundColor = UIColor.clear
 //        self._hudBackgroundView.backgroundColor = UIColor(white: 0, alpha: 1)
         self._hudBackgroundView.backgroundColor = #colorLiteral(red: 0.2666666667, green: 0.2666666667, blue: 0.2666666667, alpha: 1)
         self._hudBackgroundView.layer.masksToBounds = true
@@ -59,7 +60,7 @@ class FitHud {
         
         self._loadingView = FitHudView(frame: CGRect(x: view.bounds.size.width/2, y: view.bounds.size.height/2, width: 100, height: 100))
 //        self._loadingView.center = CGPoint(x: centerX, y:centerY)
-        self._loadingView.center = self._hudBackgroundView.center
+        self._loadingView.center = view.center
         self._hudBackgroundView.addSubview(self._loadingView)
         
         if after > 0 {
