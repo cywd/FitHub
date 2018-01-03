@@ -153,8 +153,11 @@ extension EventsViewController: EventsTableViewCellDelegate {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    func repositoryTap(name: String) {
-        
+    func repositoryTap(userName: String, repositoryName: String) {
+        let vc = RepositoryViewController.loadStoryboard()
+        vc.userName = userName
+        vc.repositoryName = repositoryName
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }

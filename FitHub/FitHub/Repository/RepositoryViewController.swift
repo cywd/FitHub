@@ -80,6 +80,13 @@ class RepositoryViewController: BaseViewController, StoryboardLoadable {
         }
     }
     
+    @IBAction func forkButtonTap(_ sender: Any) {
+        let vc = RepositoryViewController.loadStoryboard()
+        vc.userName = self.model!.parent!.owner!.login!
+        vc.repositoryName = self.model!.name!
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

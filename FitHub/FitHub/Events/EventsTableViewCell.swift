@@ -36,7 +36,7 @@ class EventsTableViewCell: UITableViewCell, RegisterCellOrNib {
 
 protocol EventsTableViewCellDelegate {
     func userTap(name: String)
-    func repositoryTap(name: String)
+    func repositoryTap(userName: String, repositoryName: String)
 }
 
 extension EventsTableViewCell: UITextViewDelegate {
@@ -55,8 +55,9 @@ extension EventsTableViewCell: UITextViewDelegate {
         } else if str.hasPrefix("fithub-repo://") {
             let arr: [String] = str.components(separatedBy: "fithub-repo://")
             if arr.count > 1 {
-                let name = arr[1]
-                self.delegate?.repositoryTap(name: name)
+                let string = arr[1]
+                let array = string.split(separator: "/")
+                self.delegate?.repositoryTap(userName: String(array[0]), repositoryName: String(array[1]))
             }
         }
         

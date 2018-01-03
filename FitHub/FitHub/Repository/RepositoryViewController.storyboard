@@ -34,14 +34,20 @@
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forked from " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Blv-QP-YPG">
                                                         <rect key="frame" x="0.0" y="0.0" width="82.333333333333329" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="82.329999999999998" id="aM8-qe-d6Z"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" red="0.41568627450000001" green="0.45098039220000002" blue="0.49019607840000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J57-Aw-y69">
                                                         <rect key="frame" x="82.333333333333343" y="0.0" width="272.66666666666663" height="30"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <state key="normal" title="xxxx/xxxxxxxx"/>
+                                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                                                        <state key="normal" title="xxxx/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx1231232121"/>
+                                                        <connections>
+                                                            <action selector="forkButtonTap:" destination="Blh-pB-1lo" eventType="touchUpInside" id="UUc-7C-hZ9"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -111,14 +117,12 @@ Fork</string>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pij-5x-8Cp">
                                                 <rect key="frame" x="0.0" y="166" width="355" height="128"/>
-                                                <color key="backgroundColor" red="0.15686274510000001" green="0.65490196079999996" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="127.99999999999997" id="nKa-6e-toS"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OaQ-u7-BtB">
                                                 <rect key="frame" x="0.0" y="304" width="355" height="128"/>
-                                                <color key="backgroundColor" red="0.41568627450000001" green="0.45098039220000002" blue="0.49019607840000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="127.99999999999997" id="JxI-jL-UhM"/>
                                                 </constraints>
