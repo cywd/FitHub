@@ -16,6 +16,8 @@ class RepositoryModel: NSObject {
     var full_name: String?
     
     var owner: UserModel?
+    var parent: RepositoryModel?
+    var source: RepositoryModel?
     
     var isPrivate: Bool = false
     var html_url: String?
@@ -96,6 +98,10 @@ class RepositoryModel: NSObject {
         super.setValue(value, forKey: key)
         if key == "owner" {
             self.owner = UserModel(dict: value as! [String : AnyObject])
+        } else if key == "parent" {
+            self.parent = RepositoryModel(dict: value as! [String : AnyObject])
+        } else if key == "source" {
+            self.source = RepositoryModel(dict: value as! [String : AnyObject])
         }
         
     }

@@ -106,6 +106,10 @@ extension RepositoriesViewController: UITableViewDataSource, UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
 
+        let vc = RepositoryViewController.loadStoryboard()
+        vc.userName = items[indexPath.row].owner!.login!
+        vc.repositoryName = items[indexPath.row].name!
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }
