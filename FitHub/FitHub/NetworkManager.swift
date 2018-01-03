@@ -12,6 +12,9 @@ import SwiftyJSON
 
 protocol NetworkManagerProtocol {
     
+    static func loadCommonUsers(withUrl urlStr: String, page: Int, success: @escaping (_ items: [UserModel]) -> (), failure: @escaping (Error) -> ())
+    static func loadCommonRepos(withUrl urlStr: String, page: Int, success: @escaping (_ items: [RepositoryModel]) -> (), failure: @escaping (Error) -> ())
+    
     /// <#Description#>
     ///
     /// - Parameters:
@@ -94,6 +97,61 @@ protocol NetworkManagerProtocol {
 
 class NetworkManager: NetworkManagerProtocol {
     
+    static func loadCommonUsers(withUrl urlStr: String, page: Int, success: @escaping (_ items: [UserModel]) -> (), failure: @escaping (Error) -> ()) {
+        
+        let url = "\(urlStr)?page=\(page)"
+        let header = self.getHeader()
+        Alamofire.request(url, method: .get, headers:header).responseJSON { (response) in
+            
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                
+                if let items = json.arrayObject {
+                    
+                    var models = [UserModel]()
+                    for dict in items {
+                        models.append(UserModel(dict: dict as! [String : AnyObject]))
+                    }
+                    
+                    success(models)
+                }
+                
+                break
+            case .failure(let error):
+                failure(error)
+                break
+            }
+        }
+    }
+    
+    static func loadCommonRepos(withUrl urlStr: String, page: Int, success: @escaping (_ items: [RepositoryModel]) -> (), failure: @escaping (Error) -> ()) {
+        
+        let url = "\(urlStr)?page=\(page)"
+        let header = self.getHeader()
+        Alamofire.request(url, method: .get, headers:header).responseJSON { (response) in
+            
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                
+                if let items = json.arrayObject {
+                    
+                    var models = [RepositoryModel]()
+                    for dict in items {
+                        models.append(RepositoryModel(dict: dict as! [String : AnyObject]))
+                    }
+                    
+                    success(models)
+                }
+                
+                break
+            case .failure(let error):
+                failure(error)
+                break
+            }
+        }
+    }
     
     static func loadUserDataWith(page: Int, location: String, language: String, success: @escaping (_ items: [UserModel], _ total_count: Int) -> (), failure: @escaping (Error) -> ()) {
         

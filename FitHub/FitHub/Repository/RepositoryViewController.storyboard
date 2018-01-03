@@ -72,6 +72,9 @@ Watch</string>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <color key="textColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
+                                                        <connections>
+                                                            <outletCollection property="gestureRecognizers" destination="sjZ-oj-bhH" appends="YES" id="8ii-LV-ytK"/>
+                                                        </connections>
                                                     </label>
                                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T1F-0l-Prd">
                                                         <rect key="frame" x="118.33333333333334" y="0.0" width="118.33333333333334" height="60"/>
@@ -81,6 +84,9 @@ Star</string>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <color key="textColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
+                                                        <connections>
+                                                            <outletCollection property="gestureRecognizers" destination="xrp-HT-pQr" appends="YES" id="12N-Qa-7mE"/>
+                                                        </connections>
                                                     </label>
                                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Va6-ur-dwF">
                                                         <rect key="frame" x="236.66666666666666" y="0.0" width="118.33333333333334" height="60"/>
@@ -90,6 +96,9 @@ Fork</string>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <color key="textColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
+                                                        <connections>
+                                                            <outletCollection property="gestureRecognizers" destination="p32-cy-jyP" appends="YES" id="OGb-04-Vf0"/>
+                                                        </connections>
                                                     </label>
                                                 </subviews>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -168,8 +177,47 @@ Fork</string>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TmE-fe-L75" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="sjZ-oj-bhH">
+                    <connections>
+                        <segue destination="awa-fc-Qsn" kind="show" identifier="watch" id="NfL-dh-PNn"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="xrp-HT-pQr">
+                    <connections>
+                        <segue destination="NQq-DV-8v5" kind="show" identifier="star" id="u2X-GW-7TW"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="p32-cy-jyP">
+                    <connections>
+                        <segue destination="lcK-MR-Za3" kind="show" identifier="fork" id="yxj-xi-aUz"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-500" y="193.5960591133005"/>
+        </scene>
+        <!--WatchViewController-->
+        <scene sceneID="4QR-Rm-iRS">
+            <objects>
+                <viewControllerPlaceholder storyboardName="WatchViewController" id="awa-fc-Qsn" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u4G-xj-gD8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="27" y="-9"/>
+        </scene>
+        <!--StarViewController-->
+        <scene sceneID="nLO-AG-C5B">
+            <objects>
+                <viewControllerPlaceholder storyboardName="StarViewController" id="NQq-DV-8v5" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z7B-N0-RdQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="26" y="25"/>
+        </scene>
+        <!--ForkViewController-->
+        <scene sceneID="xJy-fG-X7B">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ForkViewController" id="lcK-MR-Za3" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7mi-6L-XlD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="26" y="61"/>
         </scene>
     </scenes>
 </document>
