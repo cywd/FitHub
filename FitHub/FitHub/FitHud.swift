@@ -58,7 +58,6 @@ class FitHud {
 //        self._hudBackgroundView.layer.cornerRadius = 5
         view.addSubview(self._hudBackgroundView)
         
-        
         self._hudBackgroundView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             NSLayoutConstraint(item: self._hudBackgroundView, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0),
