@@ -11,8 +11,6 @@ import Kingfisher
 
 class UserDetailViewController: BaseViewController, StoryboardLoadable {
 
-    
-    
     var name: String = ""
     var model: UserModel?
 
