@@ -100,7 +100,6 @@ class FitHudView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        
         let path = self.logoPath()
         backLayer.frame = self.bounds
         backLayer.lineWidth = 5
