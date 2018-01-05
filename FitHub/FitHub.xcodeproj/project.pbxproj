@@ -239,10 +239,10 @@
 				E7B0F2B31FD7EF4700DE2E3F /* DarkLogoView.swift */,
 				E7B0F2B51FD7F0E600DE2E3F /* LightLogoView.swift */,
 				E74A4E661FF32FDE00AF8589 /* FontInfomation.swift */,
-				E746085A1FC541FF00951AEF /* NetworkManager.swift */,
 				E7B347A01FECF1B500A114E9 /* FitHud.swift */,
 				E7F064E11FF4EA9700E3C7A8 /* SVGImage.swift */,
 				E7F064E31FF4F51A00E3C7A8 /* LanguageColor.swift */,
+				E746085A1FC541FF00951AEF /* NetworkManager.swift */,
 			);
 			name = Tool;
 			sourceTree = "<group>";
