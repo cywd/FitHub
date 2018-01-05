@@ -52,7 +52,7 @@ class UserDetailViewController: BaseViewController, StoryboardLoadable {
         self.hud = FitHud.show(view: self.view)
         NetworkManager.loadUserDetailDataWith(userName: name, success: { (userModel) in
             
-            self.hud?.hide()
+//            self.hud?.hide()
             
             self.model = userModel
             
