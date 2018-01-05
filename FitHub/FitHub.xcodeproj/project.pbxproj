@@ -78,6 +78,8 @@
 		E7B0F2B41FD7EF4700DE2E3F /* DarkLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B0F2B31FD7EF4700DE2E3F /* DarkLogoView.swift */; };
 		E7B0F2B61FD7F0E600DE2E3F /* LightLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B0F2B51FD7F0E600DE2E3F /* LightLogoView.swift */; };
 		E7B347A11FECF1B500A114E9 /* FitHud.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B347A01FECF1B500A114E9 /* FitHud.swift */; };
+		E7B635271FFF4E130085CF9A /* OrgsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B635261FFF4E130085CF9A /* OrgsViewController.swift */; };
+		E7B635291FFF4E1F0085CF9A /* OrgsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7B635281FFF4E1F0085CF9A /* OrgsViewController.storyboard */; };
 		E7D3CD6A1FD69CF500F96B99 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D3CD691FD69CF500F96B99 /* AboutViewController.swift */; };
 		E7D3CD6C1FD69D0300F96B99 /* AboutViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7D3CD6B1FD69D0300F96B99 /* AboutViewController.storyboard */; };
 		E7E092371FFB2DD100AA18F6 /* String+FitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E092361FFB2DD100AA18F6 /* String+FitHub.swift */; };
@@ -185,6 +187,8 @@
 		E7B0F2B31FD7EF4700DE2E3F /* DarkLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkLogoView.swift; sourceTree = "<group>"; };
 		E7B0F2B51FD7F0E600DE2E3F /* LightLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightLogoView.swift; sourceTree = "<group>"; };
 		E7B347A01FECF1B500A114E9 /* FitHud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitHud.swift; sourceTree = "<group>"; };
+		E7B635261FFF4E130085CF9A /* OrgsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrgsViewController.swift; sourceTree = "<group>"; };
+		E7B635281FFF4E1F0085CF9A /* OrgsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OrgsViewController.storyboard; sourceTree = "<group>"; };
 		E7D3CD691FD69CF500F96B99 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		E7D3CD6B1FD69D0300F96B99 /* AboutViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AboutViewController.storyboard; sourceTree = "<group>"; };
 		E7E092361FFB2DD100AA18F6 /* String+FitHub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+FitHub.swift"; sourceTree = "<group>"; };
@@ -353,6 +357,8 @@
 				E746085F1FC5769800951AEF /* UserTableViewCell.xib */,
 				E76746E81FC697560087A2DF /* UserDetailHeaderView.swift */,
 				E76746EA1FC6975D0087A2DF /* UserDetailHeaderView.xib */,
+				E7B635261FFF4E130085CF9A /* OrgsViewController.swift */,
+				E7B635281FFF4E1F0085CF9A /* OrgsViewController.storyboard */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -550,6 +556,7 @@
 				E76746F11FC6CBB30087A2DF /* RepositoriesTableViewCell.xib in Resources */,
 				E77CE5481FBEC04500A120B2 /* Main.storyboard in Resources */,
 				E767470E1FC7F4760087A2DF /* LanguageViewController.storyboard in Resources */,
+				E7B635291FFF4E1F0085CF9A /* OrgsViewController.storyboard in Resources */,
 				E76746EB1FC6975D0087A2DF /* UserDetailHeaderView.xib in Resources */,
 				E7A6DF411FD5276C00EA3449 /* EventsTableViewCell.xib in Resources */,
 				E74608611FC5769800951AEF /* UserTableViewCell.xib in Resources */,
@@ -674,6 +681,7 @@
 				E74608571FC51D1300951AEF /* UITableView+FitHub.swift in Sources */,
 				E74608601FC5769800951AEF /* UserTableViewCell.swift in Sources */,
 				E77CE5431FBEC04500A120B2 /* AppDelegate.swift in Sources */,
+				E7B635271FFF4E130085CF9A /* OrgsViewController.swift in Sources */,
 				E7B347A11FECF1B500A114E9 /* FitHud.swift in Sources */,
 				E7B0F2B21FD7ED5200DE2E3F /* Logo.swift in Sources */,
 				E7403E051FC3FD08003054D7 /* TabBarController.swift in Sources */,

@@ -58,10 +58,27 @@ class FitHud {
 //        self._hudBackgroundView.layer.cornerRadius = 5
         view.addSubview(self._hudBackgroundView)
         
+        
+        self._hudBackgroundView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            NSLayoutConstraint(item: self._hudBackgroundView, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0),
+            NSLayoutConstraint(item: self._hudBackgroundView, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1, constant: 0),
+            NSLayoutConstraint(item: self._hudBackgroundView, attribute: .height, relatedBy: .equal, toItem: view, attribute: .height, multiplier: 1, constant: 0),
+            NSLayoutConstraint(item: self._hudBackgroundView, attribute: .width, relatedBy: .equal, toItem: view, attribute: .width, multiplier: 1, constant: 0)
+            ])
+        
         self._loadingView = FitHudView(frame: CGRect(x: view.bounds.size.width/2, y: view.bounds.size.height/2, width: 100, height: 100))
-//        self._loadingView.center = CGPoint(x: centerX, y:centerY)
-        self._loadingView.center = view.center
         self._hudBackgroundView.addSubview(self._loadingView)
+        
+        
+        self._loadingView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            NSLayoutConstraint(item: self._loadingView, attribute: .centerX, relatedBy: .equal, toItem: self._hudBackgroundView, attribute: .centerX, multiplier: 1, constant: 0),
+            NSLayoutConstraint(item: self._loadingView, attribute: .centerY, relatedBy: .equal, toItem: self._hudBackgroundView, attribute: .centerY, multiplier: 1, constant: 0),
+            NSLayoutConstraint(item: self._loadingView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 100),
+            NSLayoutConstraint(item: self._loadingView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: 100)
+            ])
+        
         
         if after > 0 {
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(after * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: {

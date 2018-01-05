@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wbe-Ar-haS">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="PingFang.ttc">
+            <string>PingFangSC-Semibold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--User Detail View Controller-->
         <scene sceneID="dPK-XZ-aPo">
@@ -24,6 +29,12 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xbo-Mh-cc5">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
                                         <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1rg-tc-Fp6" customClass="User">
+                                                <rect key="frame" x="365" y="64" width="0.0" height="0.0"/>
+                                                <fontDescription key="fontDescription" name="PingFangSC-Semibold" family="PingFang SC" pointSize="50"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lYe-fk-OQX">
                                                 <rect key="frame" x="10" y="10" width="108" height="108"/>
                                                 <constraints>
@@ -64,18 +75,20 @@
                                             <constraint firstAttribute="bottom" secondItem="lYe-fk-OQX" secondAttribute="bottom" constant="10" id="MVL-t9-OIu"/>
                                             <constraint firstAttribute="trailing" secondItem="cZk-dx-0gB" secondAttribute="trailing" constant="10" id="NJN-r0-mcc"/>
                                             <constraint firstItem="lYe-fk-OQX" firstAttribute="leading" secondItem="xbo-Mh-cc5" secondAttribute="leading" constant="10" id="PY6-NR-Elr"/>
+                                            <constraint firstAttribute="trailing" secondItem="1rg-tc-Fp6" secondAttribute="trailing" constant="10" id="Phl-jD-Hif"/>
                                             <constraint firstItem="5eO-FQ-0H9" firstAttribute="leading" secondItem="cZk-dx-0gB" secondAttribute="leading" id="Sgl-g5-ZXo"/>
                                             <constraint firstItem="vnx-MZ-Khh" firstAttribute="top" secondItem="lYe-fk-OQX" secondAttribute="top" id="b5R-8e-E7X"/>
                                             <constraint firstAttribute="trailing" secondItem="lxR-4w-Qa1" secondAttribute="trailing" constant="10" id="eDe-dw-5QB"/>
                                             <constraint firstAttribute="trailing" secondItem="5eO-FQ-0H9" secondAttribute="trailing" constant="10" id="fv0-w1-DJp"/>
                                             <constraint firstItem="lYe-fk-OQX" firstAttribute="top" secondItem="xbo-Mh-cc5" secondAttribute="top" constant="10" id="kZg-pt-9Ys"/>
                                             <constraint firstItem="vnx-MZ-Khh" firstAttribute="leading" secondItem="lYe-fk-OQX" secondAttribute="trailing" constant="8" id="rsL-9O-8Fb"/>
+                                            <constraint firstItem="1rg-tc-Fp6" firstAttribute="centerY" secondItem="xbo-Mh-cc5" secondAttribute="centerY" id="s7O-Gn-ddg"/>
                                             <constraint firstItem="cZk-dx-0gB" firstAttribute="bottom" secondItem="lYe-fk-OQX" secondAttribute="bottom" id="wWY-sK-3WS"/>
                                             <constraint firstItem="lxR-4w-Qa1" firstAttribute="leading" secondItem="lYe-fk-OQX" secondAttribute="trailing" constant="8" id="yFm-vp-39j"/>
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="fHo-gs-zzb">
-                                        <rect key="frame" x="0.0" y="128" width="375" height="175"/>
+                                        <rect key="frame" x="0.0" y="128" width="375" height="210"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tBA-dL-HJa">
                                                 <rect key="frame" x="10" y="0.0" width="355" height="18"/>
@@ -99,7 +112,7 @@ Repositories</string>
                                                         </connections>
                                                     </label>
                                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Trs-Yz-lDL">
-                                                        <rect key="frame" x="118.33333333333334" y="0.0" width="119" height="60"/>
+                                                        <rect key="frame" x="118.33333333333334" y="0.0" width="118.66666666666666" height="60"/>
                                                         <gestureRecognizers/>
                                                         <string key="text">12
 Followers</string>
@@ -111,7 +124,7 @@ Followers</string>
                                                         </connections>
                                                     </label>
                                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p60-t7-JIH">
-                                                        <rect key="frame" x="237.33333333333334" y="0.0" width="117.66666666666666" height="60"/>
+                                                        <rect key="frame" x="237" y="0.0" width="118" height="60"/>
                                                         <gestureRecognizers/>
                                                         <string key="text">12
 Following</string>
@@ -164,7 +177,18 @@ Following</string>
                                                 <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 <state key="normal" title="button" image="link"/>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MbL-F7-xnm">
+                                                <rect key="frame" x="10" y="180" width="355" height="30"/>
+                                                <color key="tintColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Organizations"/>
+                                                <connections>
+                                                    <segue destination="oqt-c5-jET" kind="show" identifier="org" id="8Pg-WR-9vn"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="MbL-F7-xnm" firstAttribute="width" secondItem="ZJB-oM-hhF" secondAttribute="width" id="d5I-JI-GM9"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <constraints>
@@ -203,11 +227,14 @@ Following</string>
                         <outlet property="followersLabel" destination="Trs-Yz-lDL" id="Esh-bA-PXo"/>
                         <outlet property="followingLabel" destination="p60-t7-JIH" id="wfO-ZC-EwP"/>
                         <outlet property="headImageView" destination="lYe-fk-OQX" id="18W-s6-He5"/>
+                        <outlet property="headerView" destination="xbo-Mh-cc5" id="jHS-LH-HE6"/>
                         <outlet property="locationButton" destination="JTE-mu-mUO" id="vsp-yp-lng"/>
                         <outlet property="loginLabel" destination="lxR-4w-Qa1" id="84k-N0-aRo"/>
                         <outlet property="nameLabel" destination="vnx-MZ-Khh" id="2aQ-Oy-Kj6"/>
+                        <outlet property="orgButton" destination="MbL-F7-xnm" id="nf7-ud-CAy"/>
                         <outlet property="repositoriesLabel" destination="W0a-vN-MRB" id="0Jh-ha-wGD"/>
                         <outlet property="timeLabel" destination="cZk-dx-0gB" id="aCW-Ew-nBY"/>
+                        <outlet property="typeLabel" destination="1rg-tc-Fp6" id="qbf-nS-OYy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tN8-GF-O8X" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -248,6 +275,14 @@ Following</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IbC-SM-XLq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-389" y="-348"/>
+        </scene>
+        <!--OrgsViewController-->
+        <scene sceneID="gGl-QW-QGr">
+            <objects>
+                <viewControllerPlaceholder storyboardName="OrgsViewController" id="oqt-c5-jET" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="87C-wN-sl6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-390" y="-188"/>
         </scene>
         <!--RepositoriesViewController-->
         <scene sceneID="5Pd-hV-Hcf">

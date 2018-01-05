@@ -11,9 +11,14 @@ import Kingfisher
 
 class UserDetailViewController: BaseViewController, StoryboardLoadable {
 
+    
+    
     var name: String = ""
     var model: UserModel?
 
+    @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var typeLabel: UILabel!
+    
     @IBOutlet weak var headImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var loginLabel: UILabel!
@@ -29,6 +34,8 @@ class UserDetailViewController: BaseViewController, StoryboardLoadable {
     @IBOutlet weak var emailButton: UIButton!
     @IBOutlet weak var blogButton: UIButton!
     @IBOutlet weak var timeLabel: UILabel!
+    
+    @IBOutlet weak var orgButton: UIButton!
     
     var hud: FitHud?
 
@@ -48,6 +55,22 @@ class UserDetailViewController: BaseViewController, StoryboardLoadable {
             self.hud?.hide()
             
             self.model = userModel
+            
+            switch self.model?.type {
+                
+            case "Organization"?:
+                self.typeLabel.text = NSLocalizedString("ORG", comment: "org")
+                self.headerView.backgroundColor = #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 0.5018981074)
+                self.orgButton.isHidden = true
+                break
+            case "User"?:
+                self.typeLabel.text = NSLocalizedString("USER", comment: "user")
+                self.headerView.backgroundColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 0.5)
+                self.orgButton.isHidden = false
+                break
+            default:
+                break
+            }
             
             if let name = self.model?.name {
                 self.nameLabel.isHidden = false
@@ -128,8 +151,9 @@ class UserDetailViewController: BaseViewController, StoryboardLoadable {
         } else if segue.identifier == "following" {
             let vc = segue.destination as! FollowingViewController
             vc.name = self.name
-        } else {
-
+        } else if segue.identifier == "org" {
+            let vc = segue.destination as! OrgsViewController
+            vc.url = self.model!.organizations_url!
         }
     }
 
