@@ -138,8 +138,8 @@ class FitHudView: UIView {
         index += 1
         if (index % 2) == 0 {
             let animation = CABasicAnimation(keyPath: "locations")
-            animation.fromValue = [-0.1, -0.15, 0]
-            animation.toValue = [1.0, 1.1, 1.15]
+            animation.fromValue = [-0.2, -0.1, 0]
+            animation.toValue = [1.0, 1.1, 1.2]
             animation.duration = 0.5
             self.graLayer.add(animation, forKey: "locationsAnim")
         }
