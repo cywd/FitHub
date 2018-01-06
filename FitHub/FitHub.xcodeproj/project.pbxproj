@@ -13,7 +13,6 @@
 		E727C65E1FCEA8DA00DC0BB7 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E727C65D1FCEA8DA00DC0BB7 /* EventModel.swift */; };
 		E72A3B431FE7B2E2005DCC90 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72A3B421FE7B2E2005DCC90 /* LaunchViewController.swift */; };
 		E72A3B451FE7B2F5005DCC90 /* LaunchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E72A3B441FE7B2F5005DCC90 /* LaunchViewController.storyboard */; };
-		E73789841FC65C05003373B7 /* UserDetailViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73789831FC65C05003373B7 /* UserDetailViewController1.swift */; };
 		E73789861FC666FA003373B7 /* RepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73789851FC666FA003373B7 /* RepositoryModel.swift */; };
 		E7403DFF1FC3FCB0003054D7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7403DFE1FC3FCB0003054D7 /* BaseViewController.swift */; };
 		E7403E011FC3FCD4003054D7 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7403E001FC3FCD4003054D7 /* BaseNavigationController.swift */; };
@@ -37,8 +36,6 @@
 		E74608611FC5769800951AEF /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E746085F1FC5769800951AEF /* UserTableViewCell.xib */; };
 		E74A4E651FF25B1B00AF8589 /* NSString+FitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A4E641FF25B1B00AF8589 /* NSString+FitHub.swift */; };
 		E74A4E671FF32FDE00AF8589 /* FontInfomation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A4E661FF32FDE00AF8589 /* FontInfomation.swift */; };
-		E76746E91FC697560087A2DF /* UserDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76746E81FC697560087A2DF /* UserDetailHeaderView.swift */; };
-		E76746EB1FC6975D0087A2DF /* UserDetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E76746EA1FC6975D0087A2DF /* UserDetailHeaderView.xib */; };
 		E76746F01FC6CBB30087A2DF /* RepositoriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76746EE1FC6CBB30087A2DF /* RepositoriesTableViewCell.swift */; };
 		E76746F11FC6CBB30087A2DF /* RepositoriesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E76746EF1FC6CBB30087A2DF /* RepositoriesTableViewCell.xib */; };
 		E767470C1FC7F4530087A2DF /* LanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E767470B1FC7F4530087A2DF /* LanguageViewController.swift */; };
@@ -116,7 +113,6 @@
 		E727C65D1FCEA8DA00DC0BB7 /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 		E72A3B421FE7B2E2005DCC90 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		E72A3B441FE7B2F5005DCC90 /* LaunchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchViewController.storyboard; sourceTree = "<group>"; };
-		E73789831FC65C05003373B7 /* UserDetailViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController1.swift; sourceTree = "<group>"; };
 		E73789851FC666FA003373B7 /* RepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryModel.swift; sourceTree = "<group>"; };
 		E7403DFE1FC3FCB0003054D7 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		E7403E001FC3FCD4003054D7 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
@@ -140,8 +136,6 @@
 		E746085F1FC5769800951AEF /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
 		E74A4E641FF25B1B00AF8589 /* NSString+FitHub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSString+FitHub.swift"; sourceTree = "<group>"; };
 		E74A4E661FF32FDE00AF8589 /* FontInfomation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontInfomation.swift; sourceTree = "<group>"; };
-		E76746E81FC697560087A2DF /* UserDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailHeaderView.swift; sourceTree = "<group>"; };
-		E76746EA1FC6975D0087A2DF /* UserDetailHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailHeaderView.xib; sourceTree = "<group>"; };
 		E76746EE1FC6CBB30087A2DF /* RepositoriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesTableViewCell.swift; sourceTree = "<group>"; };
 		E76746EF1FC6CBB30087A2DF /* RepositoriesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoriesTableViewCell.xib; sourceTree = "<group>"; };
 		E767470B1FC7F4530087A2DF /* LanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewController.swift; sourceTree = "<group>"; };
@@ -352,11 +346,8 @@
 				E79645831FCD56F3006C9C1B /* FollowerViewController.storyboard */,
 				E796457F1FCD56D8006C9C1B /* FollowingViewController.swift */,
 				E79645871FCD572D006C9C1B /* FollowingViewController.storyboard */,
-				E73789831FC65C05003373B7 /* UserDetailViewController1.swift */,
 				E746085E1FC5769800951AEF /* UserTableViewCell.swift */,
 				E746085F1FC5769800951AEF /* UserTableViewCell.xib */,
-				E76746E81FC697560087A2DF /* UserDetailHeaderView.swift */,
-				E76746EA1FC6975D0087A2DF /* UserDetailHeaderView.xib */,
 				E7B635261FFF4E130085CF9A /* OrgsViewController.swift */,
 				E7B635281FFF4E1F0085CF9A /* OrgsViewController.storyboard */,
 			);
@@ -557,7 +548,6 @@
 				E77CE5481FBEC04500A120B2 /* Main.storyboard in Resources */,
 				E767470E1FC7F4760087A2DF /* LanguageViewController.storyboard in Resources */,
 				E7B635291FFF4E1F0085CF9A /* OrgsViewController.storyboard in Resources */,
-				E76746EB1FC6975D0087A2DF /* UserDetailHeaderView.xib in Resources */,
 				E7A6DF411FD5276C00EA3449 /* EventsTableViewCell.xib in Resources */,
 				E74608611FC5769800951AEF /* UserTableViewCell.xib in Resources */,
 				E7A3A8101FF6166900B98AB5 /* Assets.xcassets in Resources */,
@@ -667,7 +657,6 @@
 				E7F064E41FF4F51A00E3C7A8 /* LanguageColor.swift in Sources */,
 				E782AD511FCFA04C0054DA20 /* PayloadModel.swift in Sources */,
 				E767470C1FC7F4530087A2DF /* LanguageViewController.swift in Sources */,
-				E76746E91FC697560087A2DF /* UserDetailHeaderView.swift in Sources */,
 				E7A6DF431FD5466600EA3449 /* IssueModel.swift in Sources */,
 				E746084D1FC510B800951AEF /* UICollectionView+FitHub.swift in Sources */,
 				E74608511FC5151E00951AEF /* UIView+FitHub.swift in Sources */,
@@ -690,7 +679,6 @@
 				E7403DFF1FC3FCB0003054D7 /* BaseViewController.swift in Sources */,
 				E76746F01FC6CBB30087A2DF /* RepositoriesTableViewCell.swift in Sources */,
 				E7403E031FC3FCF5003054D7 /* TabBar.swift in Sources */,
-				E73789841FC65C05003373B7 /* UserDetailViewController1.swift in Sources */,
 				E74608551FC51B1500951AEF /* UIImageView+FitHub.swift in Sources */,
 				E74A4E651FF25B1B00AF8589 /* NSString+FitHub.swift in Sources */,
 				E7A6DF401FD5276C00EA3449 /* EventsTableViewCell.swift in Sources */,
