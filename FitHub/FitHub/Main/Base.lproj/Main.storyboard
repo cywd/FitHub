@@ -103,7 +103,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nHV-zh-ta7"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Events" largeTitleDisplayMode="always" id="E8N-62-xR1"/>
+                    <navigationItem key="navigationItem" title="Events" id="E8N-62-xR1"/>
                     <connections>
                         <outlet property="loginView" destination="djS-f7-wuj" id="gcs-R5-z2y"/>
                         <outlet property="tableView" destination="tuf-UN-fQ1" id="5f4-2n-dkI"/>
