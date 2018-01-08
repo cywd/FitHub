@@ -28,6 +28,8 @@ class HomeViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var totalLabel: UILabel!
     
+    var hud: FitHud?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,10 +41,14 @@ class HomeViewController: BaseViewController {
         self.tableView.fr.headerView = FRNormalHeader(ComponentRefreshingClosure: {
             self.loadData()
         })
-        self.tableView.fr.headerView?.beginRefreshing()
+//        self.tableView.fr.headerView?.beginRefreshing()
+
         self.tableView.fr.footerView = FRAutoNormalFooter(ComponentRefreshingClosure: {
             self.loadMore()
         })
+        
+        self.hud = FitHud.show(view: self.view)
+        self.loadData()
     }
     
     func loadData() {
@@ -76,6 +82,8 @@ class HomeViewController: BaseViewController {
             self.tableView.fr.headerView?.endRefreshing()
             self.tableView.fr.footerView?.endRefreshing()
             
+            self.hud?.hide()
+            
             if self.page == 1 {
                 self.items = items
             } else {
@@ -92,6 +100,8 @@ class HomeViewController: BaseViewController {
         }) { (error) in
             self.tableView.fr.headerView?.endRefreshing()
             self.tableView.fr.footerView?.endRefreshing()
+            
+            self.hud?.hide()
             
             if self.page > 1 {
                 self.page -= 1

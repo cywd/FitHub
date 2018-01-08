@@ -240,41 +240,21 @@ Following</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tN8-GF-O8X" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="hqT-Ma-q5T">
                     <connections>
-                        <segue destination="sKy-n7-aud" kind="show" identifier="repositories" id="CIa-mB-wwO"/>
+                        <segue destination="FAl-We-1HT" kind="show" identifier="repositories" id="kjR-xW-Ea2"/>
                     </connections>
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="vr3-m7-7MQ">
                     <connections>
-                        <segue destination="3r6-Bf-xpI" kind="show" identifier="followers" id="vVO-oc-tvB"/>
+                        <segue destination="sKy-n7-aud" kind="show" identifier="followers" id="gDr-mr-Coq"/>
                     </connections>
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="GWy-6q-aaC">
                     <connections>
-                        <segue destination="cPs-Cc-ZRg" kind="show" identifier="following" id="nrS-Ow-ABU"/>
+                        <segue destination="sKy-n7-aud" kind="show" identifier="following" id="FvV-4M-J0C"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-1106.4000000000001" y="-295.50224887556226"/>
-        </scene>
-        <!--FollowerViewController-->
-        <scene sceneID="1IH-15-58h">
-            <objects>
-                <viewControllerPlaceholder storyboardName="FollowerViewController" id="3r6-Bf-xpI" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="9si-Bi-eFS"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FpU-al-A7h" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-400" y="-423"/>
-        </scene>
-        <!--FollowingViewController-->
-        <scene sceneID="zCd-6Z-gFU">
-            <objects>
-                <viewControllerPlaceholder storyboardName="FollowingViewController" id="cPs-Cc-ZRg" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="Ykm-fY-U4K"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IbC-SM-XLq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-389" y="-348"/>
         </scene>
         <!--OrgsViewController-->
         <scene sceneID="gGl-QW-QGr">
@@ -282,17 +262,25 @@ Following</string>
                 <viewControllerPlaceholder storyboardName="OrgsViewController" id="oqt-c5-jET" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="87C-wN-sl6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-390" y="-188"/>
+            <point key="canvasLocation" x="-346" y="-182"/>
         </scene>
-        <!--RepositoriesViewController-->
+        <!--CommonReposTableViewController-->
+        <scene sceneID="u2O-Re-gxe">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CommonReposTableViewController" id="FAl-We-1HT" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sod-8m-W9d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-272" y="-399"/>
+        </scene>
+        <!--CommonUsersTableViewController-->
         <scene sceneID="5Pd-hV-Hcf">
             <objects>
-                <viewControllerPlaceholder storyboardName="RepositoriesViewController" id="sKy-n7-aud" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="CommonUsersTableViewController" id="sKy-n7-aud" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="NQx-El-GI9"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ar1-Dn-mf4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-389" y="-490"/>
+            <point key="canvasLocation" x="-274" y="-296"/>
         </scene>
     </scenes>
     <resources>
@@ -301,4 +289,7 @@ Following</string>
         <image name="mail" width="16" height="16"/>
         <image name="people" width="16" height="16"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="gDr-mr-Coq"/>
+    </inferredMetricsTieBreakers>
 </document>
