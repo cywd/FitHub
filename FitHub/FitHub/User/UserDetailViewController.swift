@@ -44,6 +44,17 @@ class UserDetailViewController: BaseViewController, StoryboardLoadable {
         self.requestUserData()
     }
 
+    // 大标题还不完善
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        self.navigationController?.navigationBar.prefersLargeTitles = true
+//    }
+//
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//        self.navigationController?.navigationBar.prefersLargeTitles = false
+//    }
+
     fileprivate func requestUserData() {
         self.hud = FitHud.show(view: self.view)
         NetworkManager.loadUserDetailDataWith(userName: name, success: { (userModel) in
