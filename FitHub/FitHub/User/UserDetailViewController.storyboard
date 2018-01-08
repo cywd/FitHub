@@ -218,7 +218,7 @@ Following</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BV5-er-ixM"/>
                     </view>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <splitViewDetailSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="bioLabel" destination="tBA-dL-HJa" id="t1T-Qz-XRa"/>
                         <outlet property="blogButton" destination="qTQ-g4-bzD" id="ccj-H1-HTh"/>
