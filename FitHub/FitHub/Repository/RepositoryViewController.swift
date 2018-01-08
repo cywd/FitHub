@@ -94,14 +94,17 @@ class RepositoryViewController: BaseViewController, StoryboardLoadable {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "watch" {
-            let vc = segue.destination as! WatchViewController
+            let vc = segue.destination as! CommonUsersTableViewController
             vc.url = self.model!.subscribers_url!
+            vc.title = "Watch"
         } else if segue.identifier == "star" {
-            let vc = segue.destination as! StarViewController
+            let vc = segue.destination as! CommonUsersTableViewController
             vc.url = self.model!.stargazers_url!
+            vc.title = "Star"
         } else if segue.identifier == "fork" {
-            let vc = segue.destination as! ForkViewController
+            let vc = segue.destination as! CommonReposTableViewController
             vc.url = self.model!.forks_url!
+            vc.title = "Fork"
         } else {
             
         }

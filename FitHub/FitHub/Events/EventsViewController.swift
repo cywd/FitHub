@@ -17,6 +17,7 @@ class EventsViewController: BaseViewController {
     var page: Int = 1
     var name: String { return UserDefaults.standard.value(forKey: "username") as? String ?? "" }
     var items = [EventModel]()
+    var hud: FitHud?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +34,9 @@ class EventsViewController: BaseViewController {
                 
             })
         } else {
-            self.tableView.fr.headerView?.beginRefreshing()
+//            self.tableView.fr.headerView?.beginRefreshing()
+            self.hud = FitHud.show(view: self.view)
+            self.loadData()
         }
     }
     
@@ -60,7 +63,7 @@ class EventsViewController: BaseViewController {
     fileprivate func requestData() {
 
         NetworkManager.getRepositoriesEventsWith(page: self.page, username: name, success: { (items) in
-            
+            self.hud?.hide()
             self.tableView.fr.headerView?.endRefreshing()
             self.tableView.fr.footerView?.endRefreshing()
             
@@ -80,6 +83,7 @@ class EventsViewController: BaseViewController {
                 })
             }
         }) { (error) in
+            self.hud?.hide()
             self.tableView.fr.headerView?.endRefreshing()
             self.tableView.fr.footerView?.endRefreshing()
             

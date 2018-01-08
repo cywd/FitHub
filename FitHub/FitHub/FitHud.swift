@@ -35,6 +35,7 @@ class FitHud {
     }
     
     open func hide(after: TimeInterval) {
+        if self.hudBackgroundView.superview == nil { return }
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(after * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: {
             UIView.animate(withDuration: 1, animations: {
                 self._hudBackgroundView.alpha = 0
