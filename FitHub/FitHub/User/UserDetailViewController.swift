@@ -40,8 +40,6 @@ class UserDetailViewController: BaseViewController, StoryboardLoadable {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-
         self.title = name
         self.requestUserData()
     }

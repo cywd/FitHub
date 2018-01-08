@@ -14,6 +14,7 @@ class NavigationController: BaseNavigationController {
         super.viewDidLoad()
         
         self.view.backgroundColor = UIColor.white
+//        self.navigationBar.prefersLargeTitles = true
         
     }
 
