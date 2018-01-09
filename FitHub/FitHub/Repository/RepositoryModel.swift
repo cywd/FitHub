@@ -18,6 +18,7 @@ class RepositoryModel: NSObject {
     var owner: UserModel?
     var parent: RepositoryModel?
     var source: RepositoryModel?
+    var license: LicenseModel?
     
     var isPrivate: Bool = false
     var html_url: String?
@@ -102,6 +103,8 @@ class RepositoryModel: NSObject {
             self.parent = RepositoryModel(dict: value as! [String : AnyObject])
         } else if key == "source" {
             self.source = RepositoryModel(dict: value as! [String : AnyObject])
+        } else if key == "license" {
+            self.license = LicenseModel(dict: value as! [String : AnyObject])
         }
         
     }

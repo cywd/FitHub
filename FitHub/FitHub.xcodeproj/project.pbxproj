@@ -13,6 +13,11 @@
 		E727C65E1FCEA8DA00DC0BB7 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E727C65D1FCEA8DA00DC0BB7 /* EventModel.swift */; };
 		E72A3B431FE7B2E2005DCC90 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72A3B421FE7B2E2005DCC90 /* LaunchViewController.swift */; };
 		E72A3B451FE7B2F5005DCC90 /* LaunchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E72A3B441FE7B2F5005DCC90 /* LaunchViewController.storyboard */; };
+		E72D4A0D200499BE00F2F0D0 /* LicenseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72D4A0C200499BE00F2F0D0 /* LicenseModel.swift */; };
+		E72D4A0F20049DA500F2F0D0 /* LicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72D4A0E20049DA500F2F0D0 /* LicenseViewController.swift */; };
+		E72D4A1320049DC400F2F0D0 /* LicenseViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E72D4A1220049DC400F2F0D0 /* LicenseViewController.storyboard */; };
+		E72D4A152004A8BF00F2F0D0 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72D4A142004A8BF00F2F0D0 /* WebViewController.swift */; };
+		E72D4A172004A8D700F2F0D0 /* WebViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E72D4A162004A8D700F2F0D0 /* WebViewController.storyboard */; };
 		E73789861FC666FA003373B7 /* RepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73789851FC666FA003373B7 /* RepositoryModel.swift */; };
 		E7403DFF1FC3FCB0003054D7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7403DFE1FC3FCB0003054D7 /* BaseViewController.swift */; };
 		E7403E011FC3FCD4003054D7 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7403E001FC3FCD4003054D7 /* BaseNavigationController.swift */; };
@@ -105,6 +110,11 @@
 		E727C65D1FCEA8DA00DC0BB7 /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 		E72A3B421FE7B2E2005DCC90 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		E72A3B441FE7B2F5005DCC90 /* LaunchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchViewController.storyboard; sourceTree = "<group>"; };
+		E72D4A0C200499BE00F2F0D0 /* LicenseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseModel.swift; sourceTree = "<group>"; };
+		E72D4A0E20049DA500F2F0D0 /* LicenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseViewController.swift; sourceTree = "<group>"; };
+		E72D4A1220049DC400F2F0D0 /* LicenseViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LicenseViewController.storyboard; sourceTree = "<group>"; };
+		E72D4A142004A8BF00F2F0D0 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		E72D4A162004A8D700F2F0D0 /* WebViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WebViewController.storyboard; sourceTree = "<group>"; };
 		E73789851FC666FA003373B7 /* RepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryModel.swift; sourceTree = "<group>"; };
 		E7403DFE1FC3FCB0003054D7 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		E7403E001FC3FCD4003054D7 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
@@ -225,6 +235,23 @@
 			name = Tool;
 			sourceTree = "<group>";
 		};
+		E72D4A0A2004939500F2F0D0 /* Issue */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Issue;
+			sourceTree = "<group>";
+		};
+		E72D4A0B2004998300F2F0D0 /* License */ = {
+			isa = PBXGroup;
+			children = (
+				E72D4A0C200499BE00F2F0D0 /* LicenseModel.swift */,
+				E72D4A0E20049DA500F2F0D0 /* LicenseViewController.swift */,
+				E72D4A1220049DC400F2F0D0 /* LicenseViewController.storyboard */,
+			);
+			path = License;
+			sourceTree = "<group>";
+		};
 		E746084B1FC50F9C00951AEF /* Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -271,6 +298,8 @@
 				E7A3AA4D1FCE99B1007AE295 /* User */,
 				E7A3AA4C1FCE998E007AE295 /* Repository */,
 				E7A3AA521FCE9E27007AE295 /* Events */,
+				E72D4A0A2004939500F2F0D0 /* Issue */,
+				E72D4A0B2004998300F2F0D0 /* License */,
 				E7A3AA4F1FCE99F4007AE295 /* Login */,
 				E7D3CD681FD69CB300F96B99 /* Setting */,
 				E77CE5421FBEC04500A120B2 /* AppDelegate.swift */,
@@ -346,6 +375,8 @@
 				E782AD5A1FCFDB160054DA20 /* CityViewController.swift */,
 				E72A3B421FE7B2E2005DCC90 /* LaunchViewController.swift */,
 				E72A3B441FE7B2F5005DCC90 /* LaunchViewController.storyboard */,
+				E72D4A142004A8BF00F2F0D0 /* WebViewController.swift */,
+				E72D4A162004A8D700F2F0D0 /* WebViewController.storyboard */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -508,11 +539,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E72D4A172004A8D700F2F0D0 /* WebViewController.storyboard in Resources */,
 				E75AC77320036A5E00EEBF05 /* CommonReposTableViewController.storyboard in Resources */,
 				E72A3B451FE7B2F5005DCC90 /* LaunchViewController.storyboard in Resources */,
 				E77CE54D1FBEC04500A120B2 /* LaunchScreen.storyboard in Resources */,
 				E7E0923B1FFB30CB00AA18F6 /* RepositoryViewController.storyboard in Resources */,
 				E796457C1FCD2E77006C9C1B /* LoginViewController.xib in Resources */,
+				E72D4A1320049DC400F2F0D0 /* LicenseViewController.storyboard in Resources */,
 				E7D3CD6C1FD69D0300F96B99 /* AboutViewController.storyboard in Resources */,
 				E742A5B91FCBB190002E8C0A /* UserDetailViewController.storyboard in Resources */,
 				11F41AE71FDC3BE700DD047E /* Localizable.strings in Resources */,
@@ -626,6 +659,7 @@
 				E746084F1FC5117B00951AEF /* UIImage+FitHub.swift in Sources */,
 				E746085B1FC541FF00951AEF /* NetworkManager.swift in Sources */,
 				E7F064E41FF4F51A00E3C7A8 /* LanguageColor.swift in Sources */,
+				E72D4A152004A8BF00F2F0D0 /* WebViewController.swift in Sources */,
 				E782AD511FCFA04C0054DA20 /* PayloadModel.swift in Sources */,
 				E767470C1FC7F4530087A2DF /* LanguageViewController.swift in Sources */,
 				E7A6DF431FD5466600EA3449 /* IssueModel.swift in Sources */,
@@ -634,9 +668,11 @@
 				E70357641FE11163007571A3 /* DownArrowView.swift in Sources */,
 				E72A3B431FE7B2E2005DCC90 /* LaunchViewController.swift in Sources */,
 				E7E092371FFB2DD100AA18F6 /* String+FitHub.swift in Sources */,
+				E72D4A0F20049DA500F2F0D0 /* LicenseViewController.swift in Sources */,
 				E7403E091FC3FDAC003054D7 /* MeViewController.swift in Sources */,
 				E746085D1FC551D100951AEF /* UserModel.swift in Sources */,
 				E796457B1FCD2E77006C9C1B /* LoginViewController.swift in Sources */,
+				E72D4A0D200499BE00F2F0D0 /* LicenseModel.swift in Sources */,
 				E74608571FC51D1300951AEF /* UITableView+FitHub.swift in Sources */,
 				E74608601FC5769800951AEF /* UserTableViewCell.swift in Sources */,
 				E77CE5431FBEC04500A120B2 /* AppDelegate.swift in Sources */,

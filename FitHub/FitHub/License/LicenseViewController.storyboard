@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nbt-P6-R1k">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--License View Controller-->
+        <scene sceneID="ni1-iA-erg">
+            <objects>
+                <viewController storyboardIdentifier="LicenseViewController" id="nbt-P6-R1k" customClass="LicenseViewController" customModule="FitHub" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tbV-ky-L0H">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hg7-Vz-UEm">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hg7-Vz-UEm" firstAttribute="leading" secondItem="Z0q-r1-ZLD" secondAttribute="leading" id="B30-qu-7Ze"/>
+                            <constraint firstItem="Z0q-r1-ZLD" firstAttribute="trailing" secondItem="hg7-Vz-UEm" secondAttribute="trailing" id="NUV-oQ-PCG"/>
+                            <constraint firstItem="Z0q-r1-ZLD" firstAttribute="bottom" secondItem="hg7-Vz-UEm" secondAttribute="bottom" id="QbD-c6-Evd"/>
+                            <constraint firstItem="hg7-Vz-UEm" firstAttribute="top" secondItem="Z0q-r1-ZLD" secondAttribute="top" id="dhW-HZ-LM4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Z0q-r1-ZLD"/>
+                    </view>
+                    <splitViewDetailSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="textView" destination="hg7-Vz-UEm" id="gfu-yI-flJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r6T-Py-j2X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="420" y="-136"/>
+        </scene>
+    </scenes>
+</document>

@@ -22,6 +22,8 @@ class RepositoryViewController: BaseViewController, StoryboardLoadable {
     @IBOutlet weak var forkLabel: UILabel!
     @IBOutlet weak var bioLabel: UILabel!
     
+    @IBOutlet weak var licenseButton: UIButton!
+    
     var model: RepositoryModel?
     
     var hud: FitHud?
@@ -71,6 +73,12 @@ class RepositoryViewController: BaseViewController, StoryboardLoadable {
                 self.bioLabel.text = ""
             }
             
+            if let license = self.model?.license {
+                self.licenseButton.isHidden = false
+                self.licenseButton .setTitle(license.name, for: .normal)
+            } else {
+                self.licenseButton.isHidden = true
+            }
             
             self.scrollView.isHidden = false
             
@@ -85,6 +93,36 @@ class RepositoryViewController: BaseViewController, StoryboardLoadable {
         vc.userName = self.model!.parent!.owner!.login!
         vc.repositoryName = self.model!.name!
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func licenseButtonTap(_ sender: Any) {
+        let vc = LicenseViewController.loadStoryboard()
+        vc.url = self.model!.license!.url!
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func ownerButtonTap(_ sender: Any) {
+        let vc = UserDetailViewController.loadStoryboard()
+        vc.name = self.model!.owner!.login!
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func sourceButtonTap(_ sender: Any) {
+        
+    }
+    
+    @IBAction func issuesButtonTap(_ sender: Any) {
+        
+    }
+    
+    @IBAction func readmeButtonTap(_ sender: Any) {
+        let vc = WebViewController.loadStoryboard()
+        vc.url = self.model!.html_url! + "/blob/master/README.md"
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func websiteButtonTap(_ sender: Any) {
+        
     }
     
     override func didReceiveMemoryWarning() {
