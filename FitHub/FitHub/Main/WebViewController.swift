@@ -13,12 +13,16 @@ class WebViewController: BaseViewController, StoryboardLoadable {
 
     var url: String? = ""
     @IBOutlet weak var webView: WKWebView!
+    var hud: FitHud?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let request = URLRequest(url: URL(string: url!)!)
         webView.load(request)
+        webView.navigationDelegate = self
+        
+        self.hud = FitHud.show(view: self.view)
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,4 +30,27 @@ class WebViewController: BaseViewController, StoryboardLoadable {
         // Dispose of any resources that can be recreated.
     }
     
+}
+
+extension WebViewController: WKNavigationDelegate {
+    
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        
+    }
+    
+    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+        
+    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        self.hud?.hide()
+    }
+    
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        self.hud?.hide()
+    }
+    
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        self.hud?.hide()
+    }
 }

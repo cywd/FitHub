@@ -117,7 +117,7 @@ class RepositoryViewController: BaseViewController, StoryboardLoadable {
     
     @IBAction func readmeButtonTap(_ sender: Any) {
         let vc = WebViewController.loadStoryboard()
-        vc.url = self.model!.html_url!
+        vc.url = self.model!.html_url! + "/blob/master/README.md"
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
