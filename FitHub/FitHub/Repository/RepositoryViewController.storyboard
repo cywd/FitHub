@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="88" width="375" height="690"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="A2q-Qx-ict">
-                                        <rect key="frame" x="10" y="20" width="355" height="296"/>
+                                        <rect key="frame" x="10" y="20" width="355" height="326"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KsB-OY-aUP">
                                                 <rect key="frame" x="0.0" y="0.0" width="355" height="21.666666666666668"/>
@@ -46,7 +46,7 @@
                                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
                                                         <state key="normal" title="xxxx/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx1231232121"/>
                                                         <connections>
-                                                            <action selector="forkButtonTap:" destination="Blh-pB-1lo" eventType="touchUpInside" id="UUc-7C-hZ9"/>
+                                                            <action selector="forkButtonTap:" destination="Blh-pB-1lo" eventType="touchUpInside" id="vIg-Nd-cwa"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -125,59 +125,79 @@ Fork</string>
                                                     <constraint firstItem="T1F-0l-Prd" firstAttribute="leading" secondItem="G1U-2U-AId" secondAttribute="trailing" id="yWV-aH-Y3X"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pij-5x-8Cp">
-                                                <rect key="frame" x="0.0" y="138" width="355" height="90"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ZbY-zr-j5y">
+                                                <rect key="frame" x="0.0" y="138" width="355" height="120"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFz-l6-v2l">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zRB-Q5-L1i">
                                                         <rect key="frame" x="0.0" y="0.0" width="355" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="jhR-mR-bJg"/>
+                                                        </constraints>
+                                                        <color key="tintColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        <state key="normal" image="license"/>
+                                                        <connections>
+                                                            <action selector="licenseButtonTap:" destination="Blh-pB-1lo" eventType="touchUpInside" id="JOB-79-LtF"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wIT-5W-pMV">
+                                                        <rect key="frame" x="0.0" y="30" width="355" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="YeS-xM-u9m"/>
+                                                        </constraints>
                                                         <color key="tintColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         <state key="normal" title="Owner" image="people"/>
+                                                        <connections>
+                                                            <action selector="ownerButtonTap:" destination="Blh-pB-1lo" eventType="touchUpInside" id="zfW-Xh-RSq"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YfE-v0-I1p">
-                                                        <rect key="frame" x="0.0" y="30" width="355" height="30"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nZ0-LY-0Gd">
+                                                        <rect key="frame" x="0.0" y="60" width="355" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="rZS-ia-usZ"/>
+                                                        </constraints>
                                                         <color key="tintColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         <state key="normal" title="Source" image="folder"/>
+                                                        <connections>
+                                                            <action selector="sourceButtonTap:" destination="Blh-pB-1lo" eventType="touchUpInside" id="9tj-CU-Tc3"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G7w-ul-qAM">
-                                                        <rect key="frame" x="0.0" y="60" width="355" height="30"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqL-Yt-Gi4">
+                                                        <rect key="frame" x="0.0" y="90" width="355" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="Qai-Zu-R7o"/>
+                                                        </constraints>
                                                         <color key="tintColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         <state key="normal" title="Issues" image="issue"/>
+                                                        <connections>
+                                                            <action selector="issuesButtonTap:" destination="Blh-pB-1lo" eventType="touchUpInside" id="ho8-su-bNF"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="G7w-ul-qAM" secondAttribute="trailing" id="1n2-XV-llu"/>
-                                                    <constraint firstItem="EFz-l6-v2l" firstAttribute="leading" secondItem="pij-5x-8Cp" secondAttribute="leading" id="3a8-dA-495"/>
-                                                    <constraint firstAttribute="trailing" secondItem="EFz-l6-v2l" secondAttribute="trailing" id="5FB-ta-VDZ"/>
-                                                    <constraint firstItem="G7w-ul-qAM" firstAttribute="top" secondItem="YfE-v0-I1p" secondAttribute="bottom" id="6kP-eE-XEf"/>
-                                                    <constraint firstItem="G7w-ul-qAM" firstAttribute="height" secondItem="EFz-l6-v2l" secondAttribute="height" id="OVC-iE-F26"/>
-                                                    <constraint firstItem="YfE-v0-I1p" firstAttribute="top" secondItem="EFz-l6-v2l" secondAttribute="bottom" id="Rz9-tE-30V"/>
-                                                    <constraint firstItem="EFz-l6-v2l" firstAttribute="top" secondItem="pij-5x-8Cp" secondAttribute="top" id="SjR-dJ-TQh"/>
-                                                    <constraint firstAttribute="trailing" secondItem="YfE-v0-I1p" secondAttribute="trailing" id="khY-sv-Zd9"/>
-                                                    <constraint firstItem="YfE-v0-I1p" firstAttribute="height" secondItem="EFz-l6-v2l" secondAttribute="height" id="mBQ-Qg-6iz"/>
-                                                    <constraint firstItem="G7w-ul-qAM" firstAttribute="leading" secondItem="pij-5x-8Cp" secondAttribute="leading" id="mBh-zX-bR2"/>
-                                                    <constraint firstAttribute="height" constant="90" id="nKa-6e-toS"/>
-                                                    <constraint firstAttribute="bottom" secondItem="G7w-ul-qAM" secondAttribute="bottom" id="poC-8a-tb4"/>
-                                                    <constraint firstItem="YfE-v0-I1p" firstAttribute="leading" secondItem="pij-5x-8Cp" secondAttribute="leading" id="xnZ-Zw-J2q"/>
-                                                </constraints>
-                                            </view>
+                                            </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OaQ-u7-BtB">
-                                                <rect key="frame" x="0.0" y="236" width="355" height="60"/>
+                                                <rect key="frame" x="0.0" y="266" width="355" height="60"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ihl-3B-MHo">
                                                         <rect key="frame" x="0.0" y="0.0" width="355" height="30"/>
                                                         <color key="tintColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         <state key="normal" title="Readme" image="file"/>
+                                                        <connections>
+                                                            <action selector="readmeButtonTap:" destination="Blh-pB-1lo" eventType="touchUpInside" id="ONU-Si-Rog"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pcb-a3-3h5">
                                                         <rect key="frame" x="0.0" y="30" width="355" height="30"/>
                                                         <color key="tintColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         <state key="normal" title="Website" image="book"/>
+                                                        <connections>
+                                                            <action selector="websiteButtonTap:" destination="Blh-pB-1lo" eventType="touchUpInside" id="LOE-Zt-tmT"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -198,7 +218,6 @@ Fork</string>
                                             <constraint firstItem="ScZ-JE-XWS" firstAttribute="width" secondItem="KsB-OY-aUP" secondAttribute="width" id="C4U-db-soz"/>
                                             <constraint firstItem="mc3-4t-2Z5" firstAttribute="width" secondItem="KsB-OY-aUP" secondAttribute="width" id="UgU-I4-Vnp"/>
                                             <constraint firstItem="JDv-u5-dHC" firstAttribute="width" secondItem="KsB-OY-aUP" secondAttribute="width" id="bSf-gO-hjH"/>
-                                            <constraint firstItem="pij-5x-8Cp" firstAttribute="width" secondItem="KsB-OY-aUP" secondAttribute="width" id="cFb-Gm-4qL"/>
                                             <constraint firstItem="OaQ-u7-BtB" firstAttribute="width" secondItem="KsB-OY-aUP" secondAttribute="width" id="mHv-aa-6f3"/>
                                         </constraints>
                                     </stackView>
@@ -227,6 +246,7 @@ Fork</string>
                         <outlet property="forkButton" destination="J57-Aw-y69" id="GSG-Rm-5Nf"/>
                         <outlet property="forkLabel" destination="Va6-ur-dwF" id="FK3-9u-6dp"/>
                         <outlet property="forkView" destination="ScZ-JE-XWS" id="arg-8c-MS1"/>
+                        <outlet property="licenseButton" destination="zRB-Q5-L1i" id="CNB-BB-mFg"/>
                         <outlet property="nameLabel" destination="KsB-OY-aUP" id="MKu-vZ-CUA"/>
                         <outlet property="scrollView" destination="VED-qe-aYZ" id="5dQ-Ia-woA"/>
                         <outlet property="starLabel" destination="T1F-0l-Prd" id="RHQ-jI-oi3"/>
@@ -282,6 +302,7 @@ Fork</string>
         <image name="file" width="16" height="16"/>
         <image name="folder" width="16" height="16"/>
         <image name="issue" width="16" height="16"/>
+        <image name="license" width="16" height="16"/>
         <image name="people" width="16" height="16"/>
     </resources>
 </document>
