@@ -14,6 +14,8 @@
 		E72A3B431FE7B2E2005DCC90 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72A3B421FE7B2E2005DCC90 /* LaunchViewController.swift */; };
 		E72A3B451FE7B2F5005DCC90 /* LaunchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E72A3B441FE7B2F5005DCC90 /* LaunchViewController.storyboard */; };
 		E72D4A0D200499BE00F2F0D0 /* LicenseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72D4A0C200499BE00F2F0D0 /* LicenseModel.swift */; };
+		E72D4A0F20049DA500F2F0D0 /* LicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72D4A0E20049DA500F2F0D0 /* LicenseViewController.swift */; };
+		E72D4A1320049DC400F2F0D0 /* LicenseViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E72D4A1220049DC400F2F0D0 /* LicenseViewController.storyboard */; };
 		E73789861FC666FA003373B7 /* RepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73789851FC666FA003373B7 /* RepositoryModel.swift */; };
 		E7403DFF1FC3FCB0003054D7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7403DFE1FC3FCB0003054D7 /* BaseViewController.swift */; };
 		E7403E011FC3FCD4003054D7 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7403E001FC3FCD4003054D7 /* BaseNavigationController.swift */; };
@@ -107,6 +109,8 @@
 		E72A3B421FE7B2E2005DCC90 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		E72A3B441FE7B2F5005DCC90 /* LaunchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchViewController.storyboard; sourceTree = "<group>"; };
 		E72D4A0C200499BE00F2F0D0 /* LicenseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseModel.swift; sourceTree = "<group>"; };
+		E72D4A0E20049DA500F2F0D0 /* LicenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseViewController.swift; sourceTree = "<group>"; };
+		E72D4A1220049DC400F2F0D0 /* LicenseViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LicenseViewController.storyboard; sourceTree = "<group>"; };
 		E73789851FC666FA003373B7 /* RepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryModel.swift; sourceTree = "<group>"; };
 		E7403DFE1FC3FCB0003054D7 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		E7403E001FC3FCD4003054D7 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
@@ -238,6 +242,8 @@
 			isa = PBXGroup;
 			children = (
 				E72D4A0C200499BE00F2F0D0 /* LicenseModel.swift */,
+				E72D4A0E20049DA500F2F0D0 /* LicenseViewController.swift */,
+				E72D4A1220049DC400F2F0D0 /* LicenseViewController.storyboard */,
 			);
 			path = License;
 			sourceTree = "<group>";
@@ -532,6 +538,7 @@
 				E77CE54D1FBEC04500A120B2 /* LaunchScreen.storyboard in Resources */,
 				E7E0923B1FFB30CB00AA18F6 /* RepositoryViewController.storyboard in Resources */,
 				E796457C1FCD2E77006C9C1B /* LoginViewController.xib in Resources */,
+				E72D4A1320049DC400F2F0D0 /* LicenseViewController.storyboard in Resources */,
 				E7D3CD6C1FD69D0300F96B99 /* AboutViewController.storyboard in Resources */,
 				E742A5B91FCBB190002E8C0A /* UserDetailViewController.storyboard in Resources */,
 				11F41AE71FDC3BE700DD047E /* Localizable.strings in Resources */,
@@ -653,6 +660,7 @@
 				E70357641FE11163007571A3 /* DownArrowView.swift in Sources */,
 				E72A3B431FE7B2E2005DCC90 /* LaunchViewController.swift in Sources */,
 				E7E092371FFB2DD100AA18F6 /* String+FitHub.swift in Sources */,
+				E72D4A0F20049DA500F2F0D0 /* LicenseViewController.swift in Sources */,
 				E7403E091FC3FDAC003054D7 /* MeViewController.swift in Sources */,
 				E746085D1FC551D100951AEF /* UserModel.swift in Sources */,
 				E796457B1FCD2E77006C9C1B /* LoginViewController.swift in Sources */,
