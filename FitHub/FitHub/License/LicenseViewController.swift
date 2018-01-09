@@ -10,7 +10,7 @@ import UIKit
 
 class LicenseViewController: BaseViewController, StoryboardLoadable {
 
-    var url: String?
+    var url: String? = ""
     var model: LicenseModel?
     @IBOutlet weak var textView: UITextView!
     var hud: FitHud?
@@ -24,8 +24,17 @@ class LicenseViewController: BaseViewController, StoryboardLoadable {
     func requestData() {
         self.hud = FitHud.show(view: self.view)
         
-        
-        
+        NetworkManager.loadLicenseData(withUrl: self.url!, success: { (model) in
+            
+            self.hud?.hide()
+            
+            self.model = model
+            self.textView.text = self.model?.body
+            
+        }) { (error) in
+            self.hud?.hide()
+            print("请求失败")
+        }
     }
 
     override func didReceiveMemoryWarning() {
