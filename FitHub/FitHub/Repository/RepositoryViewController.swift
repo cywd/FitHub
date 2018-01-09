@@ -87,6 +87,38 @@ class RepositoryViewController: BaseViewController, StoryboardLoadable {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    @IBAction func ownerButtonTap(_ sender: Any) {
+        let vc = RepositoryViewController.loadStoryboard()
+        vc.userName = self.model!.parent!.owner!.login!
+        vc.repositoryName = self.model!.name!
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func sourceButtonTap(_ sender: Any) {
+        let vc = RepositoryViewController.loadStoryboard()
+        vc.userName = self.model!.parent!.owner!.login!
+        vc.repositoryName = self.model!.name!
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func issuesButtonTap(_ sender: Any) {
+        let vc = RepositoryViewController.loadStoryboard()
+        vc.userName = self.model!.parent!.owner!.login!
+        vc.repositoryName = self.model!.name!
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func readmeButtonTap(_ sender: Any) {
+        let vc = RepositoryViewController.loadStoryboard()
+        vc.userName = self.model!.parent!.owner!.login!
+        vc.repositoryName = self.model!.name!
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func websiteButtonTap(_ sender: Any) {
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

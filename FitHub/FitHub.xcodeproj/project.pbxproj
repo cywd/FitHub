@@ -225,6 +225,13 @@
 			name = Tool;
 			sourceTree = "<group>";
 		};
+		E72D4A0A2004939500F2F0D0 /* Issue */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Issue;
+			sourceTree = "<group>";
+		};
 		E746084B1FC50F9C00951AEF /* Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -271,6 +278,7 @@
 				E7A3AA4D1FCE99B1007AE295 /* User */,
 				E7A3AA4C1FCE998E007AE295 /* Repository */,
 				E7A3AA521FCE9E27007AE295 /* Events */,
+				E72D4A0A2004939500F2F0D0 /* Issue */,
 				E7A3AA4F1FCE99F4007AE295 /* Login */,
 				E7D3CD681FD69CB300F96B99 /* Setting */,
 				E77CE5421FBEC04500A120B2 /* AppDelegate.swift */,
