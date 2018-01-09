@@ -73,6 +73,12 @@ class RepositoryViewController: BaseViewController, StoryboardLoadable {
                 self.bioLabel.text = ""
             }
             
+            if let license = self.model?.license {
+                self.licenseButton.isHidden = false
+                self.licenseButton .setTitle(license.name, for: .normal)
+            } else {
+                self.licenseButton.isHidden = true
+            }
             
             self.scrollView.isHidden = false
             
@@ -90,7 +96,7 @@ class RepositoryViewController: BaseViewController, StoryboardLoadable {
     }
     
     @IBAction func licenseButtonTap(_ sender: Any) {
-        
+        let url = self.model!.license!.url!
     }
     
     @IBAction func ownerButtonTap(_ sender: Any) {
