@@ -93,6 +93,10 @@ protocol NetworkManagerProtocol {
     ///   - success: <#success description#>
     ///   - failure: <#failure description#>
     static func getRepositoriesEventsWith(page: Int, username: String, success: @escaping ([EventModel]) -> (), failure: @escaping (Error) -> ())
+
+
+    static func loadLicenseData(withUrl urlStr: String, success: @escaping (_ model: LicenseModel) -> (), failure: @escaping (Error) -> ())
+    
 }
 
 class NetworkManager: NetworkManagerProtocol {
@@ -431,6 +435,29 @@ class NetworkManager: NetworkManagerProtocol {
         }
     }
     
+    static func loadLicenseData(withUrl urlStr: String, success: @escaping (_ model: LicenseModel) -> (), failure: @escaping (Error) -> ()) {
+        let url = urlStr
+        let header = self.getHeader()
+        Alamofire.request(url, method: .get, headers:header).responseJSON { (response) in
+            
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                
+                if let dataDict = json.dictionaryObject {
+                    let model = LicenseModel(dict: dataDict as [String : AnyObject])
+                    success(model)
+                }
+                
+                break
+            case .failure(let error):
+                failure(error)
+                break
+            }
+        }
+    }
+    
+    /// MARK: - tool
     
     class func isLogin() -> Bool {
         if let isLogin = UserDefaults.standard.value(forKey: "isLogin") {
