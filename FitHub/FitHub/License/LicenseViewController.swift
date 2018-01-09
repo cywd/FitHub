@@ -30,6 +30,7 @@ class LicenseViewController: BaseViewController, StoryboardLoadable {
             
             self.model = model
             self.textView.text = self.model?.body
+            self.title = self.model?.name
             
         }) { (error) in
             self.hud?.hide()
