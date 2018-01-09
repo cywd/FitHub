@@ -142,7 +142,13 @@ class UserDetailViewController: BaseViewController, StoryboardLoadable {
             print("请求失败")
         }
     }
-
+    
+    @IBAction func blogTap(_ sender: Any) {
+        let vc = WebViewController.loadStoryboard()
+        vc.url = self.model!.blog
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
