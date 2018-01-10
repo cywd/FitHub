@@ -377,7 +377,8 @@ class NetworkManager: NetworkManagerProtocol {
                 "gist"
             ],
             "client_id" : "8d53a809cf0b28bb1ff7",
-            "client_secret" : "ac0fbe152c8940c2bb1a71a80a849d1f5eba9aed"
+            "client_secret" : "ac0fbe152c8940c2bb1a71a80a849d1f5eba9aed",
+            "fingerprint" : name
         ] as [String : Any]
    
         let header = self.addAuthorizationHead(username: name, pwd: pwd)
@@ -390,10 +391,18 @@ class NetworkManager: NetworkManagerProtocol {
                 let json = JSON(value)
                 let token = json["token"].string
                 
+                if token == nil {
+                    failure(NSError())
+                    return
+                }
+                
                 UserDefaults.standard.set(true, forKey: "isLogin")
                 UserDefaults.standard.set(token, forKey: "token")
                 UserDefaults.standard.set(name, forKey: "username")
                 success()
+                
+                
+                
                 break
             case .failure(let error):
                 failure(error)
@@ -475,6 +484,7 @@ class NetworkManager: NetworkManagerProtocol {
     fileprivate class func getHeader() -> [String: String]! {
         var header = [String: String]()
         header["headers"] = "application/vnd.github.v3+json"
+        header["User-Agent"] = "FirHub"
         if self.isLogin() {
             if let tt = UserDefaults.standard.value(forKey: "header") {
                 let aa = tt as! [String : String]
