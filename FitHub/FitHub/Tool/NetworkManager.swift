@@ -97,6 +97,8 @@ protocol NetworkManagerProtocol {
 
     static func loadLicenseData(withUrl urlStr: String, success: @escaping (_ model: LicenseModel) -> (), failure: @escaping (Error) -> ())
     
+    static func loadContentsData(withUrl urlStr: String, success: @escaping (_ model: [ContentModel]) -> (), failure: @escaping (Error) -> ())
+    static func loadContentData(withUrl urlStr: String, success: @escaping (_ model: ContentModel) -> (), failure: @escaping (Error) -> ())
 }
 
 class NetworkManager: NetworkManagerProtocol {
@@ -377,7 +379,8 @@ class NetworkManager: NetworkManagerProtocol {
                 "gist"
             ],
             "client_id" : "8d53a809cf0b28bb1ff7",
-            "client_secret" : "ac0fbe152c8940c2bb1a71a80a849d1f5eba9aed"
+            "client_secret" : "ac0fbe152c8940c2bb1a71a80a849d1f5eba9aed",
+            "fingerprint" : name
         ] as [String : Any]
    
         let header = self.addAuthorizationHead(username: name, pwd: pwd)
@@ -390,10 +393,18 @@ class NetworkManager: NetworkManagerProtocol {
                 let json = JSON(value)
                 let token = json["token"].string
                 
+                if token == nil {
+                    failure(NSError())
+                    return
+                }
+                
                 UserDefaults.standard.set(true, forKey: "isLogin")
                 UserDefaults.standard.set(token, forKey: "token")
                 UserDefaults.standard.set(name, forKey: "username")
                 success()
+                
+                
+                
                 break
             case .failure(let error):
                 failure(error)
@@ -457,6 +468,59 @@ class NetworkManager: NetworkManagerProtocol {
         }
     }
     
+    static func loadContentsData(withUrl urlStr: String, success: @escaping (_ model: [ContentModel]) -> (), failure: @escaping (Error) -> ()) {
+        
+        let url = urlStr
+        let header = self.getHeader()
+        
+        Alamofire.request(url, method: HTTPMethod.get, parameters: nil, headers: header).responseJSON { (response) in
+            
+            switch response.result {
+            case .success(let value):
+                
+                let json = JSON(value)
+                
+                if let items = json.arrayObject {
+                    
+                    var models = [ContentModel]()
+                    for dict in items {
+                        models.append(ContentModel(dict: dict as! [String : AnyObject]))
+                    }
+                    success(models)
+                }
+                
+                break
+            case .failure(let error):
+                
+                failure(error)
+                break
+            }
+        }
+    }
+    
+    static func loadContentData(withUrl urlStr: String, success: @escaping (_ model: ContentModel) -> (), failure: @escaping (Error) -> ()) {
+        let url = urlStr
+        let header = self.getHeader()
+        Alamofire.request(url, method: .get, headers:header).responseJSON { (response) in
+            
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                
+                if let dataDict = json.dictionaryObject {
+                    let model = ContentModel(dict: dataDict as [String : AnyObject])
+                    success(model)
+                }
+                
+                break
+            case .failure(let error):
+                failure(error)
+                break
+            }
+        }
+    }
+
+    
     /// MARK: - tool
     
     class func isLogin() -> Bool {
@@ -475,6 +539,7 @@ class NetworkManager: NetworkManagerProtocol {
     fileprivate class func getHeader() -> [String: String]! {
         var header = [String: String]()
         header["headers"] = "application/vnd.github.v3+json"
+        header["User-Agent"] = "FirHub"
         if self.isLogin() {
             if let tt = UserDefaults.standard.value(forKey: "header") {
                 let aa = tt as! [String : String]

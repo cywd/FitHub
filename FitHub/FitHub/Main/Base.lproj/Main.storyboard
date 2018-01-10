@@ -103,7 +103,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nHV-zh-ta7"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Events" id="E8N-62-xR1"/>
+                    <navigationItem key="navigationItem" title="Events" id="E8N-62-xR1">
+                        <barButtonItem key="backBarButtonItem" title=" " id="7mZ-fL-pGD"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="loginView" destination="djS-f7-wuj" id="gcs-R5-z2y"/>
                         <outlet property="tableView" destination="tuf-UN-fQ1" id="5f4-2n-dkI"/>
@@ -123,7 +125,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="S0k-XW-GXg"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Setting" id="Jro-Kj-vKj"/>
+                    <navigationItem key="navigationItem" title="Setting" id="Jro-Kj-vKj">
+                        <barButtonItem key="backBarButtonItem" title=" " id="f7R-uM-WR2"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Dm-KN-gz1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -208,6 +212,7 @@
                         <viewLayoutGuide key="safeArea" id="6Uh-O7-cdL"/>
                     </view>
                     <navigationItem key="navigationItem" title="Users" id="T9N-Qv-DLh">
+                        <barButtonItem key="backBarButtonItem" title=" " id="xu3-1x-2Ks"/>
                         <barButtonItem key="leftBarButtonItem" title="City" id="bSM-dj-c1y">
                             <connections>
                                 <action selector="cityItemTap:" destination="lhj-BX-qy3" id="ALR-wt-Urf"/>
@@ -261,7 +266,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="ha8-U5-kAx"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Discovery" id="N0Z-bU-yXl"/>
+                    <navigationItem key="navigationItem" title="Discovery" id="N0Z-bU-yXl">
+                        <barButtonItem key="backBarButtonItem" title=" " id="5MN-Pf-hzY"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cnX-ge-sjZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

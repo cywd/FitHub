@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import SafariServices
+
+private let loginUrl = URL(string: "https://github.com/login/oauth/authorize?client_id=\("8d53a809cf0b28bb1ff7")&scope=user+repo+notifications")!
+private let callbackURLScheme = "fithub://"
 
 class LoginViewController: BaseViewController {
 
@@ -14,6 +18,16 @@ class LoginViewController: BaseViewController {
     @IBOutlet weak var pwdTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     
+    private var authSession: SFAuthenticationSession? {
+        get {
+            return _authSession as? SFAuthenticationSession
+        }
+        set {
+            _authSession = newValue
+        }
+    }
+    
+    private var _authSession: Any?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,13 +42,32 @@ class LoginViewController: BaseViewController {
         let name = self.nameTextField.text!
         let pwd = self.pwdTextField.text!
         
+//        if #available(iOS 11.0, *) {
+//            self.authSession = SFAuthenticationSession(url: loginUrl, callbackURLScheme: callbackURLScheme, completionHandler: { [weak self] (callBackUrl, error) in
+//                guard error == nil, let callBackUrl = callBackUrl else {
+//                    switch error! {
+//                    case SFAuthenticationError.canceledLogin: break
+//                    default: print("error")
+//                    }
+//                    return
+//                }
+//                self?.receivedCodeRedirect(url: callBackUrl)
+//            })
+//            self.authSession?.start()
+//        }
+        
         NetworkManager.login(name: name, pwd: pwd, success: {
             self.dismiss(animated: true, completion: nil)
         }) { (error) in
+            
             print("登录失败")
         }
     }
-   
+    
+//    func receivedCodeRedirect(url: URL) {
+//        guard let code = url.absoluteString.valueForQuery(key: "code") else { return }
+//    }
+    
     @IBAction func back(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
