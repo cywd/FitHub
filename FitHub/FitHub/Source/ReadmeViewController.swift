@@ -7,30 +7,48 @@
 //
 
 import UIKit
+import MarkdownView
+import SnapKit
 
 class ReadmeViewController: BaseViewController {
 
     var url: String? = ""
     var model: ContentModel?
+    var md: MarkdownView!
+    var hud: FitHud?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.view.backgroundColor = UIColor.white
+        
+        md = MarkdownView()
+        self.view.addSubview(md)
+        
+        md.snp.makeConstraints { (make) in
+            make.edges.equalTo(self.view)
+        }
+        
         requestData()
     }
     
     func requestData() {
-        NetworkManager.loadContentData(withUrl: url!, success: { (model) in
-            self.model = model
+        
+        self.hud = FitHud.show(view: self.view)
+        
+        NetworkManager.loadContentData(withUrl: url!, success: { (contentModel) in
             
+            self.hud?.hide()
+            
+            self.model = contentModel
             if let content = self.model?.content {
-                let data = Data(base64Encoded: content, options: [.ignoreUnknownCharacters])
-                let text = String(data: data!, encoding: .utf8)
+                let data = Data(base64Encoded: content, options: [.ignoreUnknownCharacters])!
+                let text = String(data: data, encoding: .utf8)
                 
-                
+                self.md.load(markdown: text)
             }
             
         }) { (error) in
+            self.hud?.hide()
             print(error)
         }
     }
