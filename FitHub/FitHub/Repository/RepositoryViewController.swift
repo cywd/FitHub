@@ -32,6 +32,7 @@ class RepositoryViewController: BaseViewController, StoryboardLoadable {
         super.viewDidLoad()
         
         scrollView.isHidden = true
+        self.title = repositoryName
         
         self.requestUserData()
     }
@@ -108,7 +109,10 @@ class RepositoryViewController: BaseViewController, StoryboardLoadable {
     }
     
     @IBAction func sourceButtonTap(_ sender: Any) {
-        
+        let vc = SourceTableViewController.loadStoryboard()
+        vc.url = self.model!.url! + "/contents"
+        vc.title = "Source"
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func issuesButtonTap(_ sender: Any) {
@@ -118,6 +122,7 @@ class RepositoryViewController: BaseViewController, StoryboardLoadable {
     @IBAction func readmeButtonTap(_ sender: Any) {
         let vc = WebViewController.loadStoryboard()
         vc.url = self.model!.html_url! + "/blob/master/README.md"
+        vc.title = "Readme"
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

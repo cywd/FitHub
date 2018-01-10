@@ -97,6 +97,8 @@ protocol NetworkManagerProtocol {
 
     static func loadLicenseData(withUrl urlStr: String, success: @escaping (_ model: LicenseModel) -> (), failure: @escaping (Error) -> ())
     
+    static func loadContentsData(withUrl urlStr: String, success: @escaping (_ model: [ContentModel]) -> (), failure: @escaping (Error) -> ())
+    static func loadContentData(withUrl urlStr: String, success: @escaping (_ model: ContentModel) -> (), failure: @escaping (Error) -> ())
 }
 
 class NetworkManager: NetworkManagerProtocol {
@@ -465,6 +467,59 @@ class NetworkManager: NetworkManagerProtocol {
             }
         }
     }
+    
+    static func loadContentsData(withUrl urlStr: String, success: @escaping (_ model: [ContentModel]) -> (), failure: @escaping (Error) -> ()) {
+        
+        let url = urlStr
+        let header = self.getHeader()
+        
+        Alamofire.request(url, method: HTTPMethod.get, parameters: nil, headers: header).responseJSON { (response) in
+            
+            switch response.result {
+            case .success(let value):
+                
+                let json = JSON(value)
+                
+                if let items = json.arrayObject {
+                    
+                    var models = [ContentModel]()
+                    for dict in items {
+                        models.append(ContentModel(dict: dict as! [String : AnyObject]))
+                    }
+                    success(models)
+                }
+                
+                break
+            case .failure(let error):
+                
+                failure(error)
+                break
+            }
+        }
+    }
+    
+    static func loadContentData(withUrl urlStr: String, success: @escaping (_ model: ContentModel) -> (), failure: @escaping (Error) -> ()) {
+        let url = urlStr
+        let header = self.getHeader()
+        Alamofire.request(url, method: .get, headers:header).responseJSON { (response) in
+            
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                
+                if let dataDict = json.dictionaryObject {
+                    let model = ContentModel(dict: dataDict as [String : AnyObject])
+                    success(model)
+                }
+                
+                break
+            case .failure(let error):
+                failure(error)
+                break
+            }
+        }
+    }
+
     
     /// MARK: - tool
     
