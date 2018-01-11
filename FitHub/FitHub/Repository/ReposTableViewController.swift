@@ -1,5 +1,5 @@
 //
-//  CommonReposTableViewController.swift
+//  ReposTableViewController.swift
 //  FitHub
 //
 //  Created by cyrill on 2018/1/8.
@@ -9,7 +9,7 @@
 import UIKit
 import FitRefresh
 
-class CommonReposTableViewController: UITableViewController, StoryboardLoadable {
+class ReposTableViewController: UITableViewController, StoryboardLoadable {
     
     var url: String? = ""
     var page: Int = 1

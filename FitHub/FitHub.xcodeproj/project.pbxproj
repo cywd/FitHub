@@ -47,10 +47,10 @@
 		E74608611FC5769800951AEF /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E746085F1FC5769800951AEF /* UserTableViewCell.xib */; };
 		E74A4E651FF25B1B00AF8589 /* NSString+FitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A4E641FF25B1B00AF8589 /* NSString+FitHub.swift */; };
 		E74A4E671FF32FDE00AF8589 /* FontInfomation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A4E661FF32FDE00AF8589 /* FontInfomation.swift */; };
-		E75AC76D2003668400EEBF05 /* CommonUsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75AC76C2003668400EEBF05 /* CommonUsersTableViewController.swift */; };
-		E75AC76F200366A500EEBF05 /* CommonUsersTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E75AC76E200366A500EEBF05 /* CommonUsersTableViewController.storyboard */; };
-		E75AC77120036A5400EEBF05 /* CommonReposTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75AC77020036A5400EEBF05 /* CommonReposTableViewController.swift */; };
-		E75AC77320036A5E00EEBF05 /* CommonReposTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E75AC77220036A5E00EEBF05 /* CommonReposTableViewController.storyboard */; };
+		E75AC76D2003668400EEBF05 /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75AC76C2003668400EEBF05 /* UsersTableViewController.swift */; };
+		E75AC76F200366A500EEBF05 /* UsersTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E75AC76E200366A500EEBF05 /* UsersTableViewController.storyboard */; };
+		E75AC77120036A5400EEBF05 /* ReposTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75AC77020036A5400EEBF05 /* ReposTableViewController.swift */; };
+		E75AC77320036A5E00EEBF05 /* ReposTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E75AC77220036A5E00EEBF05 /* ReposTableViewController.storyboard */; };
 		E76746F01FC6CBB30087A2DF /* RepositoriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76746EE1FC6CBB30087A2DF /* RepositoriesTableViewCell.swift */; };
 		E76746F11FC6CBB30087A2DF /* RepositoriesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E76746EF1FC6CBB30087A2DF /* RepositoriesTableViewCell.xib */; };
 		E767470C1FC7F4530087A2DF /* LanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E767470B1FC7F4530087A2DF /* LanguageViewController.swift */; };
@@ -153,10 +153,10 @@
 		E746085F1FC5769800951AEF /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
 		E74A4E641FF25B1B00AF8589 /* NSString+FitHub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSString+FitHub.swift"; sourceTree = "<group>"; };
 		E74A4E661FF32FDE00AF8589 /* FontInfomation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontInfomation.swift; sourceTree = "<group>"; };
-		E75AC76C2003668400EEBF05 /* CommonUsersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonUsersTableViewController.swift; sourceTree = "<group>"; };
-		E75AC76E200366A500EEBF05 /* CommonUsersTableViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CommonUsersTableViewController.storyboard; sourceTree = "<group>"; };
-		E75AC77020036A5400EEBF05 /* CommonReposTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonReposTableViewController.swift; sourceTree = "<group>"; };
-		E75AC77220036A5E00EEBF05 /* CommonReposTableViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CommonReposTableViewController.storyboard; sourceTree = "<group>"; };
+		E75AC76C2003668400EEBF05 /* UsersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewController.swift; sourceTree = "<group>"; };
+		E75AC76E200366A500EEBF05 /* UsersTableViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UsersTableViewController.storyboard; sourceTree = "<group>"; };
+		E75AC77020036A5400EEBF05 /* ReposTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposTableViewController.swift; sourceTree = "<group>"; };
+		E75AC77220036A5E00EEBF05 /* ReposTableViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReposTableViewController.storyboard; sourceTree = "<group>"; };
 		E76746EE1FC6CBB30087A2DF /* RepositoriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesTableViewCell.swift; sourceTree = "<group>"; };
 		E76746EF1FC6CBB30087A2DF /* RepositoriesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoriesTableViewCell.xib; sourceTree = "<group>"; };
 		E767470B1FC7F4530087A2DF /* LanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewController.swift; sourceTree = "<group>"; };
@@ -368,8 +368,8 @@
 			isa = PBXGroup;
 			children = (
 				E73789851FC666FA003373B7 /* RepositoryModel.swift */,
-				E75AC77020036A5400EEBF05 /* CommonReposTableViewController.swift */,
-				E75AC77220036A5E00EEBF05 /* CommonReposTableViewController.storyboard */,
+				E75AC77020036A5400EEBF05 /* ReposTableViewController.swift */,
+				E75AC77220036A5E00EEBF05 /* ReposTableViewController.storyboard */,
 				E76746EE1FC6CBB30087A2DF /* RepositoriesTableViewCell.swift */,
 				E76746EF1FC6CBB30087A2DF /* RepositoriesTableViewCell.xib */,
 				E7E092381FFB30C000AA18F6 /* RepositoryViewController.swift */,
@@ -382,14 +382,14 @@
 			isa = PBXGroup;
 			children = (
 				E746085C1FC551D100951AEF /* UserModel.swift */,
+				E75AC76C2003668400EEBF05 /* UsersTableViewController.swift */,
+				E75AC76E200366A500EEBF05 /* UsersTableViewController.storyboard */,
 				E742A5B61FCBB180002E8C0A /* UserDetailViewController.swift */,
 				E742A5B81FCBB190002E8C0A /* UserDetailViewController.storyboard */,
 				E746085E1FC5769800951AEF /* UserTableViewCell.swift */,
 				E746085F1FC5769800951AEF /* UserTableViewCell.xib */,
 				E7B635261FFF4E130085CF9A /* OrgsViewController.swift */,
 				E7B635281FFF4E1F0085CF9A /* OrgsViewController.storyboard */,
-				E75AC76C2003668400EEBF05 /* CommonUsersTableViewController.swift */,
-				E75AC76E200366A500EEBF05 /* CommonUsersTableViewController.storyboard */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -575,7 +575,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E72D4A172004A8D700F2F0D0 /* WebViewController.storyboard in Resources */,
-				E75AC77320036A5E00EEBF05 /* CommonReposTableViewController.storyboard in Resources */,
+				E75AC77320036A5E00EEBF05 /* ReposTableViewController.storyboard in Resources */,
 				E72A3B451FE7B2F5005DCC90 /* LaunchViewController.storyboard in Resources */,
 				E77CE54D1FBEC04500A120B2 /* LaunchScreen.storyboard in Resources */,
 				E7E0923B1FFB30CB00AA18F6 /* RepositoryViewController.storyboard in Resources */,
@@ -591,7 +591,7 @@
 				E7B635291FFF4E1F0085CF9A /* OrgsViewController.storyboard in Resources */,
 				E7A6DF411FD5276C00EA3449 /* EventsTableViewCell.xib in Resources */,
 				E72D4A282004B6F400F2F0D0 /* SourceTableViewCell.xib in Resources */,
-				E75AC76F200366A500EEBF05 /* CommonUsersTableViewController.storyboard in Resources */,
+				E75AC76F200366A500EEBF05 /* UsersTableViewController.storyboard in Resources */,
 				E74608611FC5769800951AEF /* UserTableViewCell.xib in Resources */,
 				E7A3A8101FF6166900B98AB5 /* Assets.xcassets in Resources */,
 			);
@@ -691,7 +691,7 @@
 				E782AD591FCFA9460054DA20 /* TeamModel.swift in Sources */,
 				E742A5B71FCBB180002E8C0A /* UserDetailViewController.swift in Sources */,
 				E7E092391FFB30C000AA18F6 /* RepositoryViewController.swift in Sources */,
-				E75AC76D2003668400EEBF05 /* CommonUsersTableViewController.swift in Sources */,
+				E75AC76D2003668400EEBF05 /* UsersTableViewController.swift in Sources */,
 				E7A3AA511FCE9E1A007AE295 /* EventsViewController.swift in Sources */,
 				E7403E0B1FC3FE13003054D7 /* NavigationController.swift in Sources */,
 				E74608531FC518E100951AEF /* UIColor+FitHub.swift in Sources */,
@@ -733,7 +733,7 @@
 				E7A6DF401FD5276C00EA3449 /* EventsTableViewCell.swift in Sources */,
 				E782AD5C1FCFDB160054DA20 /* CityViewController.swift in Sources */,
 				E782AD551FCFA70D0054DA20 /* CommentModel.swift in Sources */,
-				E75AC77120036A5400EEBF05 /* CommonReposTableViewController.swift in Sources */,
+				E75AC77120036A5400EEBF05 /* ReposTableViewController.swift in Sources */,
 				E72D4A222004B6B200F2F0D0 /* SourceTableViewController.swift in Sources */,
 				E7F064E21FF4EA9700E3C7A8 /* SVGImage.swift in Sources */,
 				E78F4C142005F9E900CD35E6 /* ContentModel.swift in Sources */,

@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Common Repos Table View Controller-->
+        <!--Repos Table View Controller-->
         <scene sceneID="ZLJ-nd-6R7">
             <objects>
-                <tableViewController storyboardIdentifier="CommonReposTableViewController" id="ytS-C1-F4g" customClass="CommonReposTableViewController" customModule="FitHub" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ReposTableViewController" id="ytS-C1-F4g" customClass="ReposTableViewController" customModule="FitHub" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="FpP-uE-AGh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

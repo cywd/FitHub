@@ -88,7 +88,7 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="fHo-gs-zzb">
-                                        <rect key="frame" x="0.0" y="128" width="375" height="210"/>
+                                        <rect key="frame" x="0.0" y="128" width="375" height="233"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tBA-dL-HJa">
                                                 <rect key="frame" x="10" y="0.0" width="355" height="18"/>
@@ -153,26 +153,35 @@ Following</string>
                                                     <constraint firstAttribute="bottom" secondItem="p60-t7-JIH" secondAttribute="bottom" id="tsJ-F9-Qeo"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzz-VU-chG">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JIU-Mb-5zs">
                                                 <rect key="frame" x="10" y="88" width="355" height="18"/>
+                                                <color key="tintColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" title="Stared" image="star"/>
+                                                <connections>
+                                                    <action selector="staredTap:" destination="wbe-Ar-haS" eventType="touchUpInside" id="hPG-Un-8eX"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzz-VU-chG">
+                                                <rect key="frame" x="10" y="111" width="355" height="18"/>
                                                 <color key="tintColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 <state key="normal" title="button" image="people"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JTE-mu-mUO">
-                                                <rect key="frame" x="10" y="111" width="355" height="18"/>
+                                                <rect key="frame" x="10" y="134" width="355" height="18"/>
                                                 <color key="tintColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 <state key="normal" title="button" image="location"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UPN-1v-M8B">
-                                                <rect key="frame" x="10" y="134" width="355" height="18"/>
+                                                <rect key="frame" x="10" y="157" width="355" height="18"/>
                                                 <color key="tintColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 <state key="normal" title="button" image="mail"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qTQ-g4-bzD">
-                                                <rect key="frame" x="10" y="157" width="355" height="18"/>
+                                                <rect key="frame" x="10" y="180" width="355" height="18"/>
                                                 <color key="tintColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 <state key="normal" title="button" image="link"/>
@@ -181,7 +190,7 @@ Following</string>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MbL-F7-xnm">
-                                                <rect key="frame" x="10" y="180" width="355" height="30"/>
+                                                <rect key="frame" x="10" y="203" width="355" height="30"/>
                                                 <color key="tintColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Organizations"/>
                                                 <connections>
@@ -190,6 +199,7 @@ Following</string>
                                             </button>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstItem="JIU-Mb-5zs" firstAttribute="width" secondItem="ZJB-oM-hhF" secondAttribute="width" id="Qux-bX-A21"/>
                                             <constraint firstItem="MbL-F7-xnm" firstAttribute="width" secondItem="ZJB-oM-hhF" secondAttribute="width" id="d5I-JI-GM9"/>
                                         </constraints>
                                     </stackView>
@@ -267,18 +277,18 @@ Following</string>
             </objects>
             <point key="canvasLocation" x="-346" y="-182"/>
         </scene>
-        <!--CommonReposTableViewController-->
+        <!--ReposTableViewController-->
         <scene sceneID="u2O-Re-gxe">
             <objects>
-                <viewControllerPlaceholder storyboardName="CommonReposTableViewController" id="FAl-We-1HT" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="ReposTableViewController" id="FAl-We-1HT" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sod-8m-W9d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-272" y="-399"/>
         </scene>
-        <!--CommonUsersTableViewController-->
+        <!--UsersTableViewController-->
         <scene sceneID="5Pd-hV-Hcf">
             <objects>
-                <viewControllerPlaceholder storyboardName="CommonUsersTableViewController" id="sKy-n7-aud" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="UsersTableViewController" id="sKy-n7-aud" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="NQx-El-GI9"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ar1-Dn-mf4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -291,6 +301,7 @@ Following</string>
         <image name="location" width="16" height="16"/>
         <image name="mail" width="16" height="16"/>
         <image name="people" width="16" height="16"/>
+        <image name="star" width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="gDr-mr-Coq"/>
