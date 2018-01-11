@@ -519,7 +519,6 @@ class NetworkManager: NetworkManagerProtocol {
             }
         }
     }
-
     
     /// MARK: - tool
     
