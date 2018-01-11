@@ -1,5 +1,5 @@
 //
-//  CommonUsersTableViewController.swift
+//  UsersTableViewController.swift
 //  FitHub
 //
 //  Created by cyrill on 2018/1/8.
@@ -9,7 +9,7 @@
 import UIKit
 import FitRefresh
 
-class CommonUsersTableViewController: UITableViewController, StoryboardLoadable {
+class UsersTableViewController: UITableViewController, StoryboardLoadable {
 
     var url: String? = ""
     

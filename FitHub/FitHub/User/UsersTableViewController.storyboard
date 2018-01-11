@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Common Users Table View Controller-->
+        <!--Users Table View Controller-->
         <scene sceneID="nOO-eB-3Bf">
             <objects>
-                <tableViewController storyboardIdentifier="CommonUsersTableViewController" id="FKg-QX-uff" customClass="CommonUsersTableViewController" customModule="FitHub" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="UsersTableViewController" id="FKg-QX-uff" customClass="UsersTableViewController" customModule="FitHub" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="ywy-c1-C3f">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

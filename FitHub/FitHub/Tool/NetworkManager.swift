@@ -344,7 +344,7 @@ class NetworkManager: NetworkManagerProtocol {
         
         let url = baseUrl + string
         let header = self.getHeader()
-        Alamofire.request(url, method: .get, headers:header).responseJSON { (response) in
+        Alamofire.request(url, method: .get, headers: header).responseJSON { (response) in
             
             switch response.result {
             case .success(let value):
@@ -402,8 +402,6 @@ class NetworkManager: NetworkManagerProtocol {
                 UserDefaults.standard.set(token, forKey: "token")
                 UserDefaults.standard.set(name, forKey: "username")
                 success()
-                
-                
                 
                 break
             case .failure(let error):
@@ -519,7 +517,6 @@ class NetworkManager: NetworkManagerProtocol {
             }
         }
     }
-
     
     /// MARK: - tool
     

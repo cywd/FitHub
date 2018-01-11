@@ -149,6 +149,13 @@ class UserDetailViewController: BaseViewController, StoryboardLoadable {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    @IBAction func staredTap(_ sender: Any) {
+        let vc = ReposTableViewController.loadStoryboard()
+        vc.url = self.model!.url! + "/starred"
+        vc.title = "Stared"
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -156,15 +163,15 @@ class UserDetailViewController: BaseViewController, StoryboardLoadable {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "followers" {
-            let vc = segue.destination as! CommonUsersTableViewController
+            let vc = segue.destination as! UsersTableViewController
             vc.url = self.model!.followers_url
             vc.title = "Followers"
         } else if segue.identifier == "repositories" {
-            let vc = segue.destination as! CommonReposTableViewController
+            let vc = segue.destination as! ReposTableViewController
             vc.url = self.model!.repos_url
             vc.title = "Repositories"
         } else if segue.identifier == "following" {
-            let vc = segue.destination as! CommonUsersTableViewController
+            let vc = segue.destination as! UsersTableViewController
             vc.url = self.model!.url! + "/following"
             vc.title = "Following"
         } else if segue.identifier == "org" {
