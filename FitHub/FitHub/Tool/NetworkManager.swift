@@ -394,8 +394,17 @@ class NetworkManager: NetworkManagerProtocol {
                 let token = json["token"].string
                 
                 if token == nil {
-                    failure(NSError())
-                    return
+                    if let status = response.response?.statusCode {
+                        
+                        guard status == 422 else {
+                            failure(NSError())
+                            return
+                        }
+                    } else {
+                        failure(NSError())
+                        return
+                    }
+                    
                 }
                 
                 UserDefaults.standard.set(true, forKey: "isLogin")
