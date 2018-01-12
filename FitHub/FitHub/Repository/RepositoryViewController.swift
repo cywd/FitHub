@@ -97,9 +97,11 @@ class RepositoryViewController: BaseViewController, StoryboardLoadable {
     }
     
     @IBAction func licenseButtonTap(_ sender: Any) {
-        let vc = LicenseViewController.loadStoryboard()
-        vc.url = self.model!.license!.url!
-        self.navigationController?.pushViewController(vc, animated: true)
+        if let url = self.model?.license?.url {
+            let vc = LicenseViewController.loadStoryboard()
+            vc.url = url
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     @IBAction func ownerButtonTap(_ sender: Any) {

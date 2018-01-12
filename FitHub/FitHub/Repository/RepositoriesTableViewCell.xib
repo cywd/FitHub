@@ -19,11 +19,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="92.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cMp-a4-mEP">
-                        <rect key="frame" x="36" y="11" width="42" height="18"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="18" id="zOf-Ng-cjK"/>
-                        </constraints>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cMp-a4-mEP">
+                        <rect key="frame" x="36" y="11" width="268" height="18"/>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -80,6 +77,7 @@
                 <constraints>
                     <constraint firstItem="DkP-qw-1X4" firstAttribute="leading" secondItem="cMp-a4-mEP" secondAttribute="leading" id="83Q-R3-kCl"/>
                     <constraint firstItem="hwp-HD-8hf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="FRk-5n-T1K"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="cMp-a4-mEP" secondAttribute="trailing" id="FdV-Ht-9ff"/>
                     <constraint firstItem="Rnw-GN-SM8" firstAttribute="top" secondItem="cMp-a4-mEP" secondAttribute="bottom" constant="8" id="GLD-sH-En5"/>
                     <constraint firstItem="DkP-qw-1X4" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="GdR-39-XXc"/>
                     <constraint firstItem="DkP-qw-1X4" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="K3u-I6-hgn"/>
@@ -100,7 +98,7 @@
                 <outlet property="starButton" destination="9Nt-rs-TVW" id="Upy-RX-dsf"/>
                 <outlet property="typeImageView" destination="hwp-HD-8hf" id="jK2-od-dns"/>
             </connections>
-            <point key="canvasLocation" x="1608" y="-202"/>
+            <point key="canvasLocation" x="1596" y="-205"/>
         </tableViewCell>
     </objects>
     <resources>
