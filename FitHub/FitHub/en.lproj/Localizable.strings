@@ -15,3 +15,7 @@
 
 "USER" = "User";
 "ORG" = "Org";
+
+"LOGIN" = "Login";
+"USERNAME" = "User Name";
+"PASSWORD" = "Password";
