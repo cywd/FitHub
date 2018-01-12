@@ -31,6 +31,7 @@ class RepositoriesTableViewCell: UITableViewCell, RegisterCellOrNib {
             self.desLabel.text = model!.repositoryDescription
             
             if let fork = model?.forks_count {
+                self.forkButton.isHidden = fork == 0
                 self.forkButton.setTitle("\(fork)", for: .normal)
             }
             
