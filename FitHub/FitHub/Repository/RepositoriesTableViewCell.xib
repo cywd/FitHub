@@ -42,7 +42,7 @@
                         </constraints>
                     </imageView>
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Rnw-GN-SM8">
-                        <rect key="frame" x="36" y="37" width="128" height="14"/>
+                        <rect key="frame" x="36" y="37" width="175" height="14"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iul-TH-e6P">
                                 <rect key="frame" x="0.0" y="0.0" width="34" height="14"/>
@@ -61,6 +61,13 @@
                                 <rect key="frame" x="91" y="0.0" width="37" height="14"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <state key="normal" title="123" image="fork">
+                                    <color key="titleColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="djH-Fu-Z6X" userLabel="License Button">
+                                <rect key="frame" x="138" y="0.0" width="37" height="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="123" image="license">
                                     <color key="titleColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
@@ -88,6 +95,7 @@
                 <outlet property="desLabel" destination="DkP-qw-1X4" id="Igw-KT-Zf3"/>
                 <outlet property="forkButton" destination="5XO-w2-0Dn" id="SNC-Do-nAn"/>
                 <outlet property="languageLabel" destination="iul-TH-e6P" id="GIa-nn-0fe"/>
+                <outlet property="licenseButton" destination="djH-Fu-Z6X" id="IRr-PP-weW"/>
                 <outlet property="nameLabel" destination="cMp-a4-mEP" id="kfe-a2-E1E"/>
                 <outlet property="starButton" destination="9Nt-rs-TVW" id="Upy-RX-dsf"/>
                 <outlet property="typeImageView" destination="hwp-HD-8hf" id="jK2-od-dns"/>
@@ -97,6 +105,7 @@
     </objects>
     <resources>
         <image name="fork" width="16" height="16"/>
+        <image name="license" width="16" height="16"/>
         <image name="star" width="16" height="16"/>
     </resources>
 </document>

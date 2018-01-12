@@ -41,6 +41,7 @@ class UserDetailViewController: BaseViewController, StoryboardLoadable {
         super.viewDidLoad()
 
         self.title = name
+//        self.orgButton.setTitle(NSLocalizedString("ORGS", comment: "组织"), for: .normal)
         self.requestUserData()
     }
 

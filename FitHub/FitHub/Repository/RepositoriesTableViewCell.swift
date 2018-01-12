@@ -15,6 +15,7 @@ class RepositoriesTableViewCell: UITableViewCell, RegisterCellOrNib {
     @IBOutlet weak var languageLabel: UILabel!
     @IBOutlet weak var starButton: UIButton!
     @IBOutlet weak var forkButton: UIButton!
+    @IBOutlet weak var licenseButton: UIButton!
     @IBOutlet weak var typeImageView: UIImageView!
     
     var model: RepositoryModel? {
@@ -31,6 +32,13 @@ class RepositoriesTableViewCell: UITableViewCell, RegisterCellOrNib {
             
             if let fork = model?.forks_count {
                 self.forkButton.setTitle("\(fork)", for: .normal)
+            }
+            
+            if let license = model?.license?.name {
+                self.licenseButton.isHidden = false
+                self.licenseButton.setTitle("\(license)", for: .normal)
+            } else {
+                self.licenseButton.isHidden = true
             }
             
             if let language = model?.language {
