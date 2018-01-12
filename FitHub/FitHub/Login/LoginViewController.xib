@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="FitHub" customModuleProvider="target">
             <connections>
                 <outlet property="loginButton" destination="kKT-hL-b3c" id="Ms3-aG-a7F"/>
+                <outlet property="logoImageView" destination="z3Q-Rk-HNz" id="V5P-Cc-y1v"/>
                 <outlet property="nameTextField" destination="nJA-xy-zb1" id="LVC-dI-s73"/>
                 <outlet property="pwdTextField" destination="W2i-YQ-jqL" id="mnw-pd-m8i"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -24,29 +25,44 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nJA-xy-zb1" userLabel="username">
-                    <rect key="frame" x="20" y="148" width="335" height="30"/>
+                    <rect key="frame" x="20" y="228" width="335" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="8I3-eh-Vho"/>
+                    </constraints>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="username"/>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W2i-YQ-jqL" userLabel="pwd">
-                    <rect key="frame" x="20" y="186" width="335" height="30"/>
+                    <rect key="frame" x="20" y="280" width="335" height="44"/>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="alert" secureTextEntry="YES" textContentType="password"/>
                 </textField>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kKT-hL-b3c">
-                    <rect key="frame" x="20" y="224" width="335" height="30"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <state key="normal" title="登录">
-                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </state>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kKT-hL-b3c">
+                    <rect key="frame" x="20" y="332" width="335" height="44"/>
+                    <color key="backgroundColor" red="0.15686274510000001" green="0.65490196079999996" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="登录"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <action selector="loginTap:" destination="-1" eventType="touchUpInside" id="gLq-7Y-RJm"/>
                     </connections>
                 </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FitHubLogo" translatesAutoresizingMaskIntoConstraints="NO" id="z3Q-Rk-HNz">
+                    <rect key="frame" x="137" y="120" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="z3Q-Rk-HNz" secondAttribute="height" multiplier="1:1" id="nuu-7E-ma4"/>
+                        <constraint firstAttribute="width" constant="100" id="wV0-or-uPV"/>
+                    </constraints>
+                </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OLw-ah-66O">
-                    <rect key="frame" x="8" y="20" width="31" height="30"/>
+                    <rect key="frame" x="20" y="40" width="31" height="30"/>
                     <state key="normal" title="取消">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
@@ -54,32 +70,27 @@
                         <action selector="back:" destination="-1" eventType="touchUpInside" id="yj9-FJ-Ccf"/>
                     </connections>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FitHubLogo" translatesAutoresizingMaskIntoConstraints="NO" id="z3Q-Rk-HNz">
-                    <rect key="frame" x="137" y="40" width="100" height="100"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="z3Q-Rk-HNz" secondAttribute="height" multiplier="1:1" id="nuu-7E-ma4"/>
-                        <constraint firstAttribute="width" constant="100" id="wV0-or-uPV"/>
-                    </constraints>
-                </imageView>
             </subviews>
             <color key="backgroundColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="kKT-hL-b3c" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="FWH-hI-GgL"/>
-                <constraint firstItem="OLw-ah-66O" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="M4f-Al-t1u"/>
-                <constraint firstItem="OLw-ah-66O" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="NiK-Ra-myz"/>
+                <constraint firstItem="kKT-hL-b3c" firstAttribute="height" secondItem="nJA-xy-zb1" secondAttribute="height" id="Izd-ZK-6Q8"/>
+                <constraint firstItem="OLw-ah-66O" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="M4f-Al-t1u"/>
+                <constraint firstItem="W2i-YQ-jqL" firstAttribute="height" secondItem="nJA-xy-zb1" secondAttribute="height" id="MbO-6x-Oa1"/>
+                <constraint firstItem="OLw-ah-66O" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="NiK-Ra-myz"/>
                 <constraint firstItem="kKT-hL-b3c" firstAttribute="top" secondItem="W2i-YQ-jqL" secondAttribute="bottom" constant="8" id="O9w-tQ-ewc"/>
                 <constraint firstItem="W2i-YQ-jqL" firstAttribute="trailing" secondItem="nJA-xy-zb1" secondAttribute="trailing" id="dh0-lK-a5u"/>
                 <constraint firstItem="W2i-YQ-jqL" firstAttribute="leading" secondItem="nJA-xy-zb1" secondAttribute="leading" id="fvm-pD-5Zf"/>
                 <constraint firstItem="nJA-xy-zb1" firstAttribute="top" secondItem="z3Q-Rk-HNz" secondAttribute="bottom" constant="8" id="gZf-MS-6qT"/>
                 <constraint firstItem="nJA-xy-zb1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="i1M-2f-eh5"/>
-                <constraint firstItem="z3Q-Rk-HNz" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="jrS-w8-A1X"/>
+                <constraint firstItem="z3Q-Rk-HNz" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="100" id="jrS-w8-A1X"/>
                 <constraint firstItem="W2i-YQ-jqL" firstAttribute="top" secondItem="nJA-xy-zb1" secondAttribute="bottom" constant="8" id="kjJ-G4-qe2"/>
                 <constraint firstItem="z3Q-Rk-HNz" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="myh-Mb-6Co"/>
                 <constraint firstItem="kKT-hL-b3c" firstAttribute="width" secondItem="W2i-YQ-jqL" secondAttribute="width" id="qtC-1r-jBy"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="nJA-xy-zb1" secondAttribute="trailing" constant="20" id="tOV-UN-xqj"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="-599.5" y="169.5"/>
+            <point key="canvasLocation" x="-666" y="-7"/>
         </view>
     </objects>
     <resources>

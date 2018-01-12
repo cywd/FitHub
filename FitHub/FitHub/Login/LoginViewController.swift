@@ -14,6 +14,7 @@ private let callbackURLScheme = "fithub://"
 
 class LoginViewController: BaseViewController {
 
+    @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var pwdTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
@@ -32,7 +33,12 @@ class LoginViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.nameTextField.placeholder = NSLocalizedString("USERNAME", comment: "用户名")
+        self.pwdTextField.placeholder = NSLocalizedString("PASSWORD", comment: "密码")
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     @IBAction func loginTap(_ sender: UIButton) {
@@ -41,6 +47,14 @@ class LoginViewController: BaseViewController {
         
         let name = self.nameTextField.text!
         let pwd = self.pwdTextField.text!
+        
+        if name == "" {
+            
+            return
+        }
+        if pwd == "" {
+            return
+        }
         
 //        if #available(iOS 11.0, *) {
 //            self.authSession = SFAuthenticationSession(url: loginUrl, callbackURLScheme: callbackURLScheme, completionHandler: { [weak self] (callBackUrl, error) in
@@ -69,6 +83,8 @@ class LoginViewController: BaseViewController {
 //    }
     
     @IBAction func back(_ sender: Any) {
+        
+        self.view.endEditing(true)
         self.dismiss(animated: true, completion: nil)
     }
     

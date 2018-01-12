@@ -60,7 +60,7 @@ extension MeViewController: UITableViewDataSource, UITableViewDelegate {
         var name: String = ""
         switch indexPath.row {
         case 0:
-            name = "Login"
+            name = NSLocalizedString("LOGIN", comment: "登录")
         case 1:
             let aboutStr = NSLocalizedString("ABOUT", comment: "关于")
             name = aboutStr

@@ -15,3 +15,8 @@
 
 "USER" = "用户";
 "ORG" = "组织";
+"ORGS" = "组织";
+
+"LOGIN" = "登录";
+"USERNAME" = "用户名";
+"PASSWORD" = "密码";
