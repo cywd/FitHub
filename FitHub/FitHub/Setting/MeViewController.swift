@@ -70,7 +70,9 @@ extension MeViewController: UITableViewDataSource, UITableViewDelegate {
         
         if NetworkManager.isLogin() {
             if indexPath.row == 0 {
-                name = UserDefaults.standard.value(forKey: "username") as! String
+                if let model = UserSessionManager.myself {
+                    name = model.login!
+                }
             }
             
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(rightTap))

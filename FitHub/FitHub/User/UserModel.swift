@@ -9,7 +9,7 @@
 import UIKit
 
 @objcMembers
-class UserModel: NSObject {
+class UserModel: NSObject, NSCoding {
     
     var login: String?
     var id: Int = 0
@@ -54,7 +54,10 @@ class UserModel: NSObject {
     // actor
     var display_login: String?
 
-
+    override init() {
+        super.init()
+    }
+    
     init(dict: [String: AnyObject]) {
         super.init()
         setValuesForKeys(dict)
@@ -67,6 +70,15 @@ class UserModel: NSObject {
     
     override func setValue(_ value: Any?, forUndefinedKey key: String) {
         print(key)
+    }
+    
+    func encode(with aCoder: NSCoder) {
+        encode(withCoder: aCoder)
+    }
+    
+    required convenience init?(coder aDecoder: NSCoder) {
+        self.init()
+        setup(withDecoder: aDecoder)
     }
     
 }

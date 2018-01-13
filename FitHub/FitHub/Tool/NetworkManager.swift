@@ -83,7 +83,7 @@ protocol NetworkManagerProtocol {
     ///   - success: <#success description#>
     ///   - failure: <#failure description#>
     /// - Returns: <#return value description#>
-    static func login(name: String, pwd: String, success: @escaping ()->(), failure: @escaping (Error) -> ())
+    static func login(name: String, pwd: String, success: @escaping ()->(), failure: @escaping (Int, Error) -> ())
     
     /// <#Description#>
     ///
@@ -365,7 +365,7 @@ class NetworkManager: NetworkManagerProtocol {
         }
     }
     
-    static func login(name: String, pwd: String, success: @escaping () -> (), failure: @escaping (Error) -> ()) {
+    static func login(name: String, pwd: String, success: @escaping () -> (), failure: @escaping (Int, Error) -> ()) {
         
         let baseUrl = "https://api.github.com"
         let string = "/authorizations"
@@ -397,24 +397,30 @@ class NetworkManager: NetworkManagerProtocol {
                     if let status = response.response?.statusCode {
                         
                         guard status == 422 else {
-                            failure(NSError())
+                            failure(status, NSError())
                             return
                         }
                     } else {
-                        failure(NSError())
+                        failure(0, NSError())
                         return
                     }
                     
                 }
                 
                 UserDefaults.standard.set(true, forKey: "isLogin")
-                UserDefaults.standard.set(token, forKey: "token")
-                UserDefaults.standard.set(name, forKey: "username")
-                success()
+                
+                UserSessionManager.save(token: token)
+                
+                self.loadUserDetailDataWith(userName: name, success: { (userModel) in
+                    UserSessionManager.save(user: userModel)
+                    success()
+                }, failure: { (err) in
+                    failure(0, err)
+                })
                 
                 break
             case .failure(let error):
-                failure(error)
+                failure(0, error)
                 break
             }
 
@@ -560,8 +566,9 @@ class NetworkManager: NetworkManagerProtocol {
     private class func removeLoginInfo() {
         UserDefaults.standard.removeObject(forKey: "header")
         UserDefaults.standard.removeObject(forKey: "isLogin")
-        UserDefaults.standard.removeObject(forKey: "token")
-        UserDefaults.standard.removeObject(forKey: "username")
+//        UserDefaults.standard.removeObject(forKey: "token")
+        UserSessionManager.removeToken()
+        UserSessionManager.removeUser()
     }
     
     fileprivate class func addAuthorizationHead(base64UsernameAndPwd: String) -> [String: String] {

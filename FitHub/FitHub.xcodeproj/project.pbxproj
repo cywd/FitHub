@@ -55,6 +55,10 @@
 		E76746F11FC6CBB30087A2DF /* RepositoriesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E76746EF1FC6CBB30087A2DF /* RepositoriesTableViewCell.xib */; };
 		E767470C1FC7F4530087A2DF /* LanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E767470B1FC7F4530087A2DF /* LanguageViewController.swift */; };
 		E767470E1FC7F4760087A2DF /* LanguageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E767470D1FC7F4760087A2DF /* LanguageViewController.storyboard */; };
+		E767ED4B2008892A00BEC867 /* DispatchQueue+FitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = E767ED4A2008892A00BEC867 /* DispatchQueue+FitHub.swift */; };
+		E767ED4D20088B3D00BEC867 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E767ED4C20088B3D00BEC867 /* UIViewController+Alert.swift */; };
+		E767ED512008A32C00BEC867 /* UserSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E767ED502008A32C00BEC867 /* UserSessionManager.swift */; };
+		E767ED532008A75100BEC867 /* FitCoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = E767ED522008A75100BEC867 /* FitCoding.swift */; };
 		E77CE5431FBEC04500A120B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77CE5421FBEC04500A120B2 /* AppDelegate.swift */; };
 		E77CE5481FBEC04500A120B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E77CE5461FBEC04500A120B2 /* Main.storyboard */; };
 		E77CE54D1FBEC04500A120B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E77CE54B1FBEC04500A120B2 /* LaunchScreen.storyboard */; };
@@ -161,6 +165,10 @@
 		E76746EF1FC6CBB30087A2DF /* RepositoriesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoriesTableViewCell.xib; sourceTree = "<group>"; };
 		E767470B1FC7F4530087A2DF /* LanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewController.swift; sourceTree = "<group>"; };
 		E767470D1FC7F4760087A2DF /* LanguageViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LanguageViewController.storyboard; sourceTree = "<group>"; };
+		E767ED4A2008892A00BEC867 /* DispatchQueue+FitHub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+FitHub.swift"; sourceTree = "<group>"; };
+		E767ED4C20088B3D00BEC867 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
+		E767ED502008A32C00BEC867 /* UserSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionManager.swift; sourceTree = "<group>"; };
+		E767ED522008A75100BEC867 /* FitCoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitCoding.swift; sourceTree = "<group>"; };
 		E77CE53F1FBEC04500A120B2 /* FitHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E77CE5421FBEC04500A120B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E77CE5471FBEC04500A120B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -265,6 +273,8 @@
 				E7B347A01FECF1B500A114E9 /* FitHud.swift */,
 				E7F064E11FF4EA9700E3C7A8 /* SVGImage.swift */,
 				E7F064E31FF4F51A00E3C7A8 /* LanguageColor.swift */,
+				E767ED502008A32C00BEC867 /* UserSessionManager.swift */,
+				E767ED522008A75100BEC867 /* FitCoding.swift */,
 				E746085A1FC541FF00951AEF /* NetworkManager.swift */,
 			);
 			path = Tool;
@@ -297,6 +307,8 @@
 				E7E092361FFB2DD100AA18F6 /* String+FitHub.swift */,
 				E72D4A292005AC5C00F2F0D0 /* UIViewController+Safari.swift */,
 				E72D4A2B2005DF5E00F2F0D0 /* String+QueryItemValue.swift */,
+				E767ED4A2008892A00BEC867 /* DispatchQueue+FitHub.swift */,
+				E767ED4C20088B3D00BEC867 /* UIViewController+Alert.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -700,6 +712,7 @@
 				E746085B1FC541FF00951AEF /* NetworkManager.swift in Sources */,
 				E7F064E41FF4F51A00E3C7A8 /* LanguageColor.swift in Sources */,
 				E72D4A152004A8BF00F2F0D0 /* WebViewController.swift in Sources */,
+				E767ED532008A75100BEC867 /* FitCoding.swift in Sources */,
 				E782AD511FCFA04C0054DA20 /* PayloadModel.swift in Sources */,
 				E767470C1FC7F4530087A2DF /* LanguageViewController.swift in Sources */,
 				E7A6DF431FD5466600EA3449 /* IssueModel.swift in Sources */,
@@ -719,6 +732,7 @@
 				E78F4C162005FA9000CD35E6 /* LinkModel.swift in Sources */,
 				E77CE5431FBEC04500A120B2 /* AppDelegate.swift in Sources */,
 				E72D4A2A2005AC5C00F2F0D0 /* UIViewController+Safari.swift in Sources */,
+				E767ED4D20088B3D00BEC867 /* UIViewController+Alert.swift in Sources */,
 				E7B635271FFF4E130085CF9A /* OrgsViewController.swift in Sources */,
 				E7B347A11FECF1B500A114E9 /* FitHud.swift in Sources */,
 				E7B0F2B21FD7ED5200DE2E3F /* Logo.swift in Sources */,
@@ -733,6 +747,7 @@
 				E7A6DF401FD5276C00EA3449 /* EventsTableViewCell.swift in Sources */,
 				E782AD5C1FCFDB160054DA20 /* CityViewController.swift in Sources */,
 				E782AD551FCFA70D0054DA20 /* CommentModel.swift in Sources */,
+				E767ED512008A32C00BEC867 /* UserSessionManager.swift in Sources */,
 				E75AC77120036A5400EEBF05 /* ReposTableViewController.swift in Sources */,
 				E72D4A222004B6B200F2F0D0 /* SourceTableViewController.swift in Sources */,
 				E7F064E21FF4EA9700E3C7A8 /* SVGImage.swift in Sources */,
@@ -744,6 +759,7 @@
 				E782AD571FCFA7510054DA20 /* DeploymentModel.swift in Sources */,
 				E727C65E1FCEA8DA00DC0BB7 /* EventModel.swift in Sources */,
 				E7B0F2B41FD7EF4700DE2E3F /* DarkLogoView.swift in Sources */,
+				E767ED4B2008892A00BEC867 /* DispatchQueue+FitHub.swift in Sources */,
 				E782AD4F1FCF9BBA0054DA20 /* OrgModel.swift in Sources */,
 				E7403E071FC3FD8D003054D7 /* HomeViewController.swift in Sources */,
 			);

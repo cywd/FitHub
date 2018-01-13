@@ -14,6 +14,13 @@ private let callbackURLScheme = "fithub://"
 
 class LoginViewController: BaseViewController {
 
+    enum State {
+        case idle
+        case logining
+    }
+    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var pwdTextField: UITextField!
@@ -30,8 +37,27 @@ class LoginViewController: BaseViewController {
     
     private var _authSession: Any?
     
+    var state: State = .idle {
+        didSet {
+            let hideSpinner: Bool
+            switch state {
+            case .idle: hideSpinner = true
+            case .logining: hideSpinner = false
+            }
+            loginButton.isEnabled = hideSpinner
+            activityIndicator.isHidden = hideSpinner
+            
+            let title = hideSpinner
+                ? NSLocalizedString("登录", comment: "")
+                : NSLocalizedString("登录中...", comment: "")
+            loginButton.setTitle(title, for: .normal)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        state = .idle
 
         self.nameTextField.placeholder = NSLocalizedString("USERNAME", comment: "用户名")
         self.pwdTextField.placeholder = NSLocalizedString("PASSWORD", comment: "密码")
@@ -48,11 +74,15 @@ class LoginViewController: BaseViewController {
         let name = self.nameTextField.text!
         let pwd = self.pwdTextField.text!
         
+        
         if name == "" {
-            
+            let desc = "您没有输入名字"
+            self.showMessage(message: desc)
             return
         }
         if pwd == "" {
+            let desc = "您没有输入密码"
+            self.showMessage(message: desc)
             return
         }
         
@@ -70,11 +100,21 @@ class LoginViewController: BaseViewController {
 //            self.authSession?.start()
 //        }
         
+        self.state = .logining
+        
         NetworkManager.login(name: name, pwd: pwd, success: {
             self.dismiss(animated: true, completion: nil)
-        }) { (error) in
+        }) { (statusCode, error) in
             
-            print("登录失败")
+            self.state = .idle
+            
+            if statusCode == 401 {
+                let desc = "用户名或密码错误"
+                self.showMessage(message: desc)
+            } else {
+                let desc = "登录失败"
+                self.showMessage(message: desc)
+            }
         }
     }
     
