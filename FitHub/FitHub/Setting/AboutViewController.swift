@@ -11,21 +11,13 @@ import UIKit
 class AboutViewController: BaseViewController, StoryboardLoadable {
     
     
-    @IBOutlet weak var arrowView: UIView!
+    @IBOutlet weak var arrowView: DownArrowView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        
-        self.view.backgroundColor = #colorLiteral(red: 0.2666666667, green: 0.2666666667, blue: 0.2666666667, alpha: 1)
-        self.arrowView.backgroundColor = #colorLiteral(red: 0.2666666667, green: 0.2666666667, blue: 0.2666666667, alpha: 1)
-        
-        let arrowDrawView = DownArrowView(frame: CGRect(x: 0, y: 0, width: 50, height: 10))
-        arrowDrawView.backgroundColor = #colorLiteral(red: 0.2666666667, green: 0.2666666667, blue: 0.2666666667, alpha: 1)
-        self.arrowView.addSubview(arrowDrawView)
     }
-    
+        
     @IBAction func pan(_ sender: UIPanGestureRecognizer) {
         self.commitTranslation(sender.translation(in: self.view))
     }
@@ -49,6 +41,16 @@ class AboutViewController: BaseViewController, StoryboardLoadable {
                 // 向上滑动
             } else {
                 // 向下滑动
+//                print(translation.y)
+//                self.modalPresentationStyle = UIModalPresentationStyle.formSheet
+//                self.view.y = translation.y
+//                if translation.y > 200 {
+//
+//                } else {
+//
+//                    self.view.y = 0
+//                }
+                
                 self.dismiss(animated: true, completion: nil)
             }
         }

@@ -10,24 +10,69 @@ import UIKit
 
 class DownArrowView: UIView {
 
-    override func draw(_ rect: CGRect) {
+    var _layerArrow: CAShapeLayer!
+    var _startArrowPath: UIBezierPath!
+    var _endArrowPath: UIBezierPath!
+    
+    // MARK: - public
+    public func startAnimation() {
+        let animation = CAKeyframeAnimation(keyPath: "path")
+        animation.values = [_startArrowPath.cgPath,  _endArrowPath.cgPath, _endArrowPath.cgPath]
+        animation.keyTimes = [0.45, 0.75, 0.95]
+        animation.autoreverses = true
+        animation.repeatCount = 1
+        animation.duration = 1
         
-        let context = UIGraphicsGetCurrentContext()
-        context?.setFillColor(#colorLiteral(red: 0.2666666667, green: 0.2666666667, blue: 0.2666666667, alpha: 1))
-        context?.fill(rect)
-        context?.setLineCap(CGLineCap.round)
-        context?.setLineWidth(2.0)
-        context?.setStrokeColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
+        _layerArrow.add(animation, forKey: "changePath")
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
 
-        let width = rect.size.width
-        let height = rect.size.height
-        
-        context?.beginPath()
-        context?.move(to: CGPoint(x: 1, y: 1))
-        context?.addLine(to: CGPoint(x: width*0.5, y: height-2))
-        context?.addLine(to: CGPoint(x: width-2, y: 1))
-        context?.strokePath()
+    func setup() {
+        self.backgroundColor = UIColor.clear
+//        self.backgroundColor = UIColor.white
+        setupLayer()
         
     }
     
+    func setupLayer() {
+        _layerArrow = CAShapeLayer()
+        _layerArrow.fillColor = UIColor.clear.cgColor
+        _layerArrow.strokeColor = UIColor.white.cgColor
+        _layerArrow.lineWidth = 3
+        _layerArrow.lineCap = kCALineCapRound
+        _layerArrow.contentsScale = UIScreen.main.scale
+        setPath()
+        
+        self.layer.addSublayer(_layerArrow)
+//        self.layer.mask = _layerArrow
+    }
+    
+    func setPath() {
+        let centerX = self.bounds.size.width * 0.5
+        let centerY = self.bounds.size.height * 0.5
+        
+        _startArrowPath = UIBezierPath()
+        _startArrowPath.move(to: CGPoint(x: centerX-15, y: centerY-5))
+        _startArrowPath.addLine(to: CGPoint(x: centerX, y: centerY+5))
+        _startArrowPath.addLine(to: CGPoint(x: centerX+15, y: centerY-5))
+        _layerArrow.path = _startArrowPath.cgPath
+        
+        _endArrowPath = UIBezierPath()
+        _endArrowPath.move(to: CGPoint(x: centerX-15, y: centerY+5))
+        _endArrowPath.addLine(to: CGPoint(x: centerX, y: centerY-5))
+        _endArrowPath.addLine(to: CGPoint(x: centerX+15, y: centerY+5))
+    }
 }

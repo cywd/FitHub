@@ -533,7 +533,7 @@ class NetworkManager: NetworkManagerProtocol {
         }
     }
     
-    /// MARK: - tool
+    // MARK: - tool
     
     class func isLogin() -> Bool {
         if let isLogin = UserDefaults.standard.value(forKey: "isLogin") {
