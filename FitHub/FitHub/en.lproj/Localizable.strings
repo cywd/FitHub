@@ -20,3 +20,5 @@
 "LOGIN" = "Login";
 "USERNAME" = "User Name";
 "PASSWORD" = "Password";
+
+"ABOUT_DESC" = "FitHub is a GitHub third party client.";

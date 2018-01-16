@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="PingFang.ttc">
+            <string>PingFangSC-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--About-->
         <scene sceneID="E1w-8F-zVz">
@@ -35,28 +40,24 @@
                                             <constraint firstAttribute="width" constant="100" id="PgN-1r-Jn2"/>
                                         </constraints>
                                     </imageView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTw-a2-dZz">
-                                        <rect key="frame" x="20" y="250" width="335" height="300"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="300" id="pSZ-A8-FFa"/>
-                                        </constraints>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pZC-yO-2gP">
+                                        <rect key="frame" x="20" y="250" width="335" height="24"/>
+                                        <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="R8N-Gm-VS8" firstAttribute="centerX" secondItem="aMg-Hv-AW9" secondAttribute="centerX" id="5AE-G5-7Du"/>
+                                    <constraint firstAttribute="bottom" secondItem="pZC-yO-2gP" secondAttribute="bottom" constant="20" id="5YW-7Z-iiH"/>
                                     <constraint firstItem="aZE-FI-sDI" firstAttribute="top" secondItem="R8N-Gm-VS8" secondAttribute="bottom" constant="20" id="99F-zC-K9u"/>
-                                    <constraint firstAttribute="trailing" secondItem="eTw-a2-dZz" secondAttribute="trailing" constant="20" id="CJ5-U8-LB9"/>
                                     <constraint firstItem="aZE-FI-sDI" firstAttribute="centerX" secondItem="aMg-Hv-AW9" secondAttribute="centerX" id="FdY-2o-t95"/>
-                                    <constraint firstItem="eTw-a2-dZz" firstAttribute="top" secondItem="aZE-FI-sDI" secondAttribute="bottom" constant="20" id="Ius-4q-p3p"/>
                                     <constraint firstItem="R8N-Gm-VS8" firstAttribute="leading" secondItem="aMg-Hv-AW9" secondAttribute="leading" constant="20" id="KYV-DL-7N4"/>
-                                    <constraint firstAttribute="bottom" secondItem="eTw-a2-dZz" secondAttribute="bottom" constant="10" id="NJC-8j-cFi"/>
+                                    <constraint firstAttribute="trailing" secondItem="pZC-yO-2gP" secondAttribute="trailing" constant="20" id="LTM-9E-eTQ"/>
+                                    <constraint firstItem="pZC-yO-2gP" firstAttribute="leading" secondItem="aMg-Hv-AW9" secondAttribute="leading" constant="20" id="RLK-Es-Vhi"/>
                                     <constraint firstAttribute="trailing" secondItem="R8N-Gm-VS8" secondAttribute="trailing" constant="20" id="SGG-n8-UQo"/>
-                                    <constraint firstItem="eTw-a2-dZz" firstAttribute="leading" secondItem="aMg-Hv-AW9" secondAttribute="leading" constant="20" id="WIo-dD-TnU"/>
+                                    <constraint firstItem="pZC-yO-2gP" firstAttribute="top" secondItem="aZE-FI-sDI" secondAttribute="bottom" constant="20" id="jdm-AA-QF2"/>
                                     <constraint firstItem="R8N-Gm-VS8" firstAttribute="top" secondItem="aMg-Hv-AW9" secondAttribute="top" constant="60" id="qc0-6q-WAB"/>
                                 </constraints>
                                 <connections>
@@ -75,6 +76,7 @@
                     </view>
                     <connections>
                         <outlet property="arrowView" destination="R8N-Gm-VS8" id="GJ6-Bn-5ic"/>
+                        <outlet property="label" destination="pZC-yO-2gP" id="pun-50-xOD"/>
                         <outlet property="scrollView" destination="aMg-Hv-AW9" id="BRo-7L-Mce"/>
                     </connections>
                 </viewController>

@@ -13,9 +13,12 @@ class AboutViewController: BaseViewController, StoryboardLoadable {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var arrowView: DownArrowView!
     
+    @IBOutlet weak var label: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        label.text = NSLocalizedString("ABOUT_DESC", comment: "APP desc")
     }
     
     override func didReceiveMemoryWarning() {
@@ -39,11 +42,15 @@ class AboutViewController: BaseViewController, StoryboardLoadable {
 extension AboutViewController: UIScrollViewDelegate {
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        self.arrowView.aaa()
+        if scrollView.contentOffset.y == -scrollView.adjustedContentInset.top {
+            self.arrowView.aaa()
+        }
     }
     
-    func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
-        self.arrowView.bbb()
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y == -scrollView.adjustedContentInset.top {
+            self.arrowView.bbb()
+        }
     }
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
