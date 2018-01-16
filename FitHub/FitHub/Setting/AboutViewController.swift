@@ -10,52 +10,14 @@ import UIKit
 
 class AboutViewController: BaseViewController, StoryboardLoadable {
     
-    
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var arrowView: DownArrowView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
-        
-    @IBAction func pan(_ sender: UIPanGestureRecognizer) {
-        self.commitTranslation(sender.translation(in: self.view))
-    }
-   
-    func commitTranslation(_ translation: CGPoint) {
     
-        let absX: CGFloat = fabs(translation.x)
-        let absY: CGFloat = fabs(translation.y)
-        
-        // 设置滑动有效距离
-        if max(absX, absY) < 10 { return };
-
-        if (absX > absY) {
-            if (translation.x < 0) {
-                // 向左滑动
-            } else {
-                // 向右滑动
-            }
-        } else if (absY > absX) {
-            if (translation.y < 0) {
-                // 向上滑动
-            } else {
-                // 向下滑动
-//                print(translation.y)
-//                self.modalPresentationStyle = UIModalPresentationStyle.formSheet
-//                self.view.y = translation.y
-//                if translation.y > 200 {
-//
-//                } else {
-//
-//                    self.view.y = 0
-//                }
-                
-                self.dismiss(animated: true, completion: nil)
-            }
-        }
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -72,4 +34,24 @@ class AboutViewController: BaseViewController, StoryboardLoadable {
     }
     */
 
+}
+
+extension AboutViewController: UIScrollViewDelegate {
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        self.arrowView.aaa()
+    }
+    
+    func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
+        self.arrowView.bbb()
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        
+        let offset = scrollView.contentOffset
+        if offset.y < -100 {
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
 }

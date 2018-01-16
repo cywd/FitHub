@@ -14,16 +14,22 @@ class DownArrowView: UIView {
     var _startArrowPath: UIBezierPath!
     var _endArrowPath: UIBezierPath!
     
+    var ani1: CABasicAnimation!
+    
+    var isStart = false
+    
     // MARK: - public
-    public func startAnimation() {
-        let animation = CAKeyframeAnimation(keyPath: "path")
-        animation.values = [_startArrowPath.cgPath,  _endArrowPath.cgPath, _endArrowPath.cgPath]
-        animation.keyTimes = [0.45, 0.75, 0.95]
-        animation.autoreverses = true
-        animation.repeatCount = 1
-        animation.duration = 1
-        
-        _layerArrow.add(animation, forKey: "changePath")
+
+    func aaa() {
+        ani1.fromValue = _startArrowPath.cgPath
+        ani1.toValue = _endArrowPath.cgPath
+        _layerArrow.add(ani1, forKey: "changePath")
+    }
+    
+    func bbb() {
+        ani1.fromValue = _endArrowPath.cgPath
+        ani1.toValue = _startArrowPath.cgPath
+        _layerArrow.add(ani1, forKey: "changePath")
     }
     
     override init(frame: CGRect) {
@@ -71,8 +77,15 @@ class DownArrowView: UIView {
         _layerArrow.path = _startArrowPath.cgPath
         
         _endArrowPath = UIBezierPath()
-        _endArrowPath.move(to: CGPoint(x: centerX-15, y: centerY+5))
-        _endArrowPath.addLine(to: CGPoint(x: centerX, y: centerY-5))
-        _endArrowPath.addLine(to: CGPoint(x: centerX+15, y: centerY+5))
+        _endArrowPath.move(to: CGPoint(x: centerX-15, y: centerY))
+        _endArrowPath.addLine(to: CGPoint(x: centerX, y: centerY))
+        _endArrowPath.addLine(to: CGPoint(x: centerX+15, y: centerY))
+        
+        ani1 = CABasicAnimation(keyPath: "path")
+        ani1.autoreverses = false
+        ani1.repeatCount = 1
+        ani1.isRemovedOnCompletion = false
+        ani1.fillMode = kCAFillModeForwards
+        _layerArrow.add(ani1, forKey: "changePath")
     }
 }

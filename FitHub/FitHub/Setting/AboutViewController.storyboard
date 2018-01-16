@@ -18,46 +18,67 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FitHubLogo" translatesAutoresizingMaskIntoConstraints="NO" id="aZE-FI-sDI">
-                                <rect key="frame" x="137" y="100" width="100" height="100"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMg-Hv-AW9">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R8N-Gm-VS8" customClass="DownArrowView" customModule="FitHub" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="60" width="335" height="50"/>
+                                        <color key="backgroundColor" red="0.15686274510000001" green="0.65490196079999996" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="9s4-mT-rvr"/>
+                                        </constraints>
+                                    </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FitHubLogo" translatesAutoresizingMaskIntoConstraints="NO" id="aZE-FI-sDI">
+                                        <rect key="frame" x="137" y="130" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="aZE-FI-sDI" secondAttribute="height" multiplier="1:1" id="7ZH-va-02F"/>
+                                            <constraint firstAttribute="width" constant="100" id="PgN-1r-Jn2"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTw-a2-dZz">
+                                        <rect key="frame" x="20" y="250" width="335" height="300"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="300" id="pSZ-A8-FFa"/>
+                                        </constraints>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="aZE-FI-sDI" secondAttribute="height" multiplier="1:1" id="7ZH-va-02F"/>
-                                    <constraint firstAttribute="width" constant="100" id="PgN-1r-Jn2"/>
+                                    <constraint firstItem="R8N-Gm-VS8" firstAttribute="centerX" secondItem="aMg-Hv-AW9" secondAttribute="centerX" id="5AE-G5-7Du"/>
+                                    <constraint firstItem="aZE-FI-sDI" firstAttribute="top" secondItem="R8N-Gm-VS8" secondAttribute="bottom" constant="20" id="99F-zC-K9u"/>
+                                    <constraint firstAttribute="trailing" secondItem="eTw-a2-dZz" secondAttribute="trailing" constant="20" id="CJ5-U8-LB9"/>
+                                    <constraint firstItem="aZE-FI-sDI" firstAttribute="centerX" secondItem="aMg-Hv-AW9" secondAttribute="centerX" id="FdY-2o-t95"/>
+                                    <constraint firstItem="eTw-a2-dZz" firstAttribute="top" secondItem="aZE-FI-sDI" secondAttribute="bottom" constant="20" id="Ius-4q-p3p"/>
+                                    <constraint firstItem="R8N-Gm-VS8" firstAttribute="leading" secondItem="aMg-Hv-AW9" secondAttribute="leading" constant="20" id="KYV-DL-7N4"/>
+                                    <constraint firstAttribute="bottom" secondItem="eTw-a2-dZz" secondAttribute="bottom" constant="10" id="NJC-8j-cFi"/>
+                                    <constraint firstAttribute="trailing" secondItem="R8N-Gm-VS8" secondAttribute="trailing" constant="20" id="SGG-n8-UQo"/>
+                                    <constraint firstItem="eTw-a2-dZz" firstAttribute="leading" secondItem="aMg-Hv-AW9" secondAttribute="leading" constant="20" id="WIo-dD-TnU"/>
+                                    <constraint firstItem="R8N-Gm-VS8" firstAttribute="top" secondItem="aMg-Hv-AW9" secondAttribute="top" constant="60" id="qc0-6q-WAB"/>
                                 </constraints>
-                            </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R8N-Gm-VS8" customClass="DownArrowView" customModule="FitHub" customModuleProvider="target">
-                                <rect key="frame" x="87" y="30" width="200" height="50"/>
-                                <color key="backgroundColor" red="0.15686274510000001" green="0.65490196079999996" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="9s4-mT-rvr"/>
-                                    <constraint firstAttribute="width" constant="200" id="JDM-AM-DA4"/>
-                                </constraints>
-                            </view>
+                                <connections>
+                                    <outlet property="delegate" destination="RWN-lT-C5k" id="plF-QM-0rW"/>
+                                </connections>
+                            </scrollView>
                         </subviews>
-                        <color key="backgroundColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="aZE-FI-sDI" firstAttribute="top" secondItem="B40-3R-9Gf" secondAttribute="top" constant="80" id="2PO-sf-Eyn"/>
-                            <constraint firstItem="aZE-FI-sDI" firstAttribute="centerX" secondItem="0Yh-TN-F16" secondAttribute="centerX" id="H7T-K1-2eA"/>
-                            <constraint firstItem="R8N-Gm-VS8" firstAttribute="top" secondItem="B40-3R-9Gf" secondAttribute="top" constant="10" id="qwE-zX-uvE"/>
-                            <constraint firstItem="R8N-Gm-VS8" firstAttribute="centerX" secondItem="0Yh-TN-F16" secondAttribute="centerX" id="v9F-zv-nej"/>
+                            <constraint firstItem="aMg-Hv-AW9" firstAttribute="leading" secondItem="B40-3R-9Gf" secondAttribute="leading" id="Lxd-ef-HQS"/>
+                            <constraint firstItem="aMg-Hv-AW9" firstAttribute="bottom" secondItem="B40-3R-9Gf" secondAttribute="bottom" id="NGR-Kf-aXh"/>
+                            <constraint firstItem="aMg-Hv-AW9" firstAttribute="trailing" secondItem="B40-3R-9Gf" secondAttribute="trailing" id="NIU-0X-xRX"/>
+                            <constraint firstItem="aMg-Hv-AW9" firstAttribute="top" secondItem="0Yh-TN-F16" secondAttribute="top" id="qrL-sf-6ey"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="B40-3R-9Gf"/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="czA-TN-VlZ" appends="YES" id="zxM-ob-NCB"/>
-                        </connections>
                     </view>
                     <connections>
                         <outlet property="arrowView" destination="R8N-Gm-VS8" id="GJ6-Bn-5ic"/>
+                        <outlet property="scrollView" destination="aMg-Hv-AW9" id="BRo-7L-Mce"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XwN-57-KlL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="czA-TN-VlZ">
-                    <connections>
-                        <action selector="pan:" destination="RWN-lT-C5k" id="lgF-5b-SKX"/>
-                        <outlet property="delegate" destination="RWN-lT-C5k" id="oj4-kp-bOS"/>
-                    </connections>
-                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="128.80000000000001" y="48.125937031484263"/>
         </scene>

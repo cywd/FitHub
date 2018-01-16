@@ -10,7 +10,7 @@ import UIKit
 
 class MeViewController: BaseViewController {
 
-    // MARK: -
+    // MARK: - lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
                 
@@ -26,9 +26,6 @@ class MeViewController: BaseViewController {
         self.tableView.reloadData()
     }
     
-    // MARK: -
-    
-    // MARK: -
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: CGRect.zero, style: .plain)
         tableView.dataSource = self
@@ -43,7 +40,7 @@ class MeViewController: BaseViewController {
         self.tableView.reloadData()
     }
     
-    // MARK: -
+    // MARK: - dealloc
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -92,9 +89,11 @@ extension MeViewController: UITableViewDataSource, UITableViewDelegate {
         
         if indexPath.row == 0 {
             if NetworkManager.isLogin() {
-                let vc = UserDetailViewController.loadStoryboard()
-                vc.name = UserDefaults.standard.value(forKey: "username") as! String
-                self.navigationController?.pushViewController(vc, animated: true)
+                if let model = UserSessionManager.myself {
+                    let vc = UserDetailViewController.loadStoryboard()
+                    vc.name = model.login!
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
             } else {
                 let loginVC = LoginViewController()
                 self.navigationController?.present(loginVC, animated: true, completion: {
@@ -103,7 +102,7 @@ extension MeViewController: UITableViewDataSource, UITableViewDelegate {
             }
         } else if indexPath.row == 1 {
             let vc = AboutViewController.loadStoryboard()
-            self.present(vc, animated: true, completion: nil)
+            self.tabBarController?.present(vc, animated: true, completion: nil)
         }
     }
     
