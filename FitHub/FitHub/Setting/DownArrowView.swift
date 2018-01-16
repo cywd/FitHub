@@ -20,13 +20,13 @@ class DownArrowView: UIView {
     
     // MARK: - public
 
-    func aaa() {
+    func lineAnimation() {
         ani1.fromValue = _startArrowPath.cgPath
         ani1.toValue = _endArrowPath.cgPath
         _layerArrow.add(ani1, forKey: "changePath")
     }
     
-    func bbb() {
+    func arrowAnimation() {
         ani1.fromValue = _endArrowPath.cgPath
         ani1.toValue = _startArrowPath.cgPath
         _layerArrow.add(ani1, forKey: "changePath")

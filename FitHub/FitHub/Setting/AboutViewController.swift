@@ -43,13 +43,13 @@ extension AboutViewController: UIScrollViewDelegate {
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         if scrollView.contentOffset.y == -scrollView.adjustedContentInset.top {
-            self.arrowView.aaa()
+            self.arrowView.lineAnimation()
         }
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         if scrollView.contentOffset.y == -scrollView.adjustedContentInset.top {
-            self.arrowView.bbb()
+            self.arrowView.arrowAnimation()
         }
     }
     
