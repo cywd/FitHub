@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="FitHub" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicator" destination="yL5-aw-EoB" id="tky-aH-eQN"/>
                 <outlet property="loginButton" destination="kKT-hL-b3c" id="Ms3-aG-a7F"/>
                 <outlet property="logoImageView" destination="z3Q-Rk-HNz" id="V5P-Cc-y1v"/>
                 <outlet property="nameTextField" destination="nJA-xy-zb1" id="LVC-dI-s73"/>
@@ -70,9 +71,14 @@
                         <action selector="back:" destination="-1" eventType="touchUpInside" id="yj9-FJ-Ccf"/>
                     </connections>
                 </button>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="yL5-aw-EoB">
+                    <rect key="frame" x="35" y="344" width="20" height="20"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="yL5-aw-EoB" firstAttribute="leading" secondItem="kKT-hL-b3c" secondAttribute="leading" constant="15" id="2kU-MQ-SGP"/>
+                <constraint firstItem="yL5-aw-EoB" firstAttribute="centerY" secondItem="kKT-hL-b3c" secondAttribute="centerY" id="6uL-A2-eoV"/>
                 <constraint firstItem="kKT-hL-b3c" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="FWH-hI-GgL"/>
                 <constraint firstItem="kKT-hL-b3c" firstAttribute="height" secondItem="nJA-xy-zb1" secondAttribute="height" id="Izd-ZK-6Q8"/>
                 <constraint firstItem="OLw-ah-66O" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="M4f-Al-t1u"/>

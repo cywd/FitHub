@@ -10,50 +10,17 @@ import UIKit
 
 class AboutViewController: BaseViewController, StoryboardLoadable {
     
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var arrowView: DownArrowView!
     
-    @IBOutlet weak var arrowView: UIView!
+    @IBOutlet weak var label: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         
-        self.view.backgroundColor = #colorLiteral(red: 0.2666666667, green: 0.2666666667, blue: 0.2666666667, alpha: 1)
-        self.arrowView.backgroundColor = #colorLiteral(red: 0.2666666667, green: 0.2666666667, blue: 0.2666666667, alpha: 1)
-        
-        let arrowDrawView = DownArrowView(frame: CGRect(x: 0, y: 0, width: 50, height: 10))
-        arrowDrawView.backgroundColor = #colorLiteral(red: 0.2666666667, green: 0.2666666667, blue: 0.2666666667, alpha: 1)
-        self.arrowView.addSubview(arrowDrawView)
+        label.text = NSLocalizedString("ABOUT_DESC", comment: "APP desc")
     }
     
-    @IBAction func pan(_ sender: UIPanGestureRecognizer) {
-        self.commitTranslation(sender.translation(in: self.view))
-    }
-   
-    func commitTranslation(_ translation: CGPoint) {
-    
-        let absX: CGFloat = fabs(translation.x)
-        let absY: CGFloat = fabs(translation.y)
-        
-        // 设置滑动有效距离
-        if max(absX, absY) < 10 { return };
-
-        if (absX > absY) {
-            if (translation.x < 0) {
-                // 向左滑动
-            } else {
-                // 向右滑动
-            }
-        } else if (absY > absX) {
-            if (translation.y < 0) {
-                // 向上滑动
-            } else {
-                // 向下滑动
-                self.dismiss(animated: true, completion: nil)
-            }
-        }
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -70,4 +37,28 @@ class AboutViewController: BaseViewController, StoryboardLoadable {
     }
     */
 
+}
+
+extension AboutViewController: UIScrollViewDelegate {
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y == -scrollView.adjustedContentInset.top {
+            self.arrowView.lineAnimation()
+        }
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y == -scrollView.adjustedContentInset.top {
+            self.arrowView.arrowAnimation()
+        }
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        
+        let offset = scrollView.contentOffset
+        if offset.y < -100 {
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
 }
