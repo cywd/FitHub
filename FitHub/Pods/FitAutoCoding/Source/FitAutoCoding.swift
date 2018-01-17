@@ -1,5 +1,5 @@
 //
-//  FitCoding.swift
+//  FitAutoCoding.swift
 //  FitHub
 //
 //  Created by cyrill on 2018/1/12.
@@ -31,14 +31,14 @@ extension NSObject {
         return mi.children.first?.value
     }
     
-    public func setup(withDecoder decoder: NSCoder) {
+    public func setup(withDecoder aDecoder: NSCoder) {
         for (key, _) in codableProperties() {
-            let object = decoder.decodeObject(forKey: key)
+            let object = aDecoder.decodeObject(forKey: key)
             setValue(object, forKey: key)
         }
     }
     
-    public func encode(withCoder aCoder: NSCoder) {
+    public func setup(withCoder aCoder: NSCoder) {
         for (key, value) in codableProperties() {
             switch value {
             case let property as AnyObject:
