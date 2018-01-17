@@ -14,6 +14,7 @@ protocol NetworkManagerProtocol {
     
     static func loadCommonUsers(withUrl urlStr: String, page: Int, success: @escaping (_ items: [UserModel]) -> (), failure: @escaping (Error) -> ())
     static func loadCommonRepos(withUrl urlStr: String, page: Int, success: @escaping (_ items: [RepositoryModel]) -> (), failure: @escaping (Error) -> ())
+    static func loadOrgs(withUrl urlStr: String, page: Int, success: @escaping (_ items: [OrgModel]) -> (), failure: @escaping (Error) -> ())
     
     /// <#Description#>
     ///
@@ -25,6 +26,8 @@ protocol NetworkManagerProtocol {
     ///   - failure: <#failure description#>
     /// - Returns: <#return value description#>
     static func loadUserDataWith(page: Int, location: String, language: String, success: @escaping (_ items: [UserModel], _ total_count: Int) -> (), failure: @escaping (Error) -> ())
+    
+    static func loadOrgDataWith(orgName: String, success: @escaping (OrgModel) -> (), failure: @escaping (Error) -> ())
     
     /// <#Description#>
     ///
@@ -159,6 +162,33 @@ class NetworkManager: NetworkManagerProtocol {
         }
     }
     
+    static func loadOrgs(withUrl urlStr: String, page: Int, success: @escaping (_ items: [OrgModel]) -> (), failure: @escaping (Error) -> ()) {
+        let url = "\(urlStr)?page=\(page)"
+        let header = self.getHeader()
+        Alamofire.request(url, method: .get, headers:header).responseJSON { (response) in
+            
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                
+                if let items = json.arrayObject {
+                    
+                    var models = [OrgModel]()
+                    for dict in items {
+                        models.append(OrgModel(dict: dict as! [String : AnyObject]))
+                    }
+                    
+                    success(models)
+                }
+                
+                break
+            case .failure(let error):
+                failure(error)
+                break
+            }
+        }
+    }
+    
     static func loadUserDataWith(page: Int, location: String, language: String, success: @escaping (_ items: [UserModel], _ total_count: Int) -> (), failure: @escaping (Error) -> ()) {
         
         var locationStr = ""
@@ -234,6 +264,31 @@ class NetworkManager: NetworkManagerProtocol {
                 break
             }
            
+        }
+    }
+    
+    static func loadOrgDataWith(orgName: String, success: @escaping (OrgModel) -> (), failure: @escaping (Error) -> ()) {
+        let baseUrl = "https://api.github.com"
+        let string = "/orgs/\(orgName)"
+        
+        let url = baseUrl + string
+        let header = self.getHeader()
+        Alamofire.request(url, method: .get, headers:header).responseJSON { (response) in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                
+                if let dataDict = json.dictionaryObject {
+                    let model = OrgModel(dict: dataDict as [String : AnyObject])
+                    success(model)
+                }
+                
+                break
+            case .failure(let error):
+                failure(error)
+                break
+            }
+            
         }
     }
     

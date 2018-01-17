@@ -24,6 +24,10 @@
 		E72D4A282004B6F400F2F0D0 /* SourceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E72D4A262004B6F400F2F0D0 /* SourceTableViewCell.xib */; };
 		E72D4A2A2005AC5C00F2F0D0 /* UIViewController+Safari.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72D4A292005AC5C00F2F0D0 /* UIViewController+Safari.swift */; };
 		E72D4A2C2005DF5E00F2F0D0 /* String+QueryItemValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72D4A2B2005DF5E00F2F0D0 /* String+QueryItemValue.swift */; };
+		E73011B3200F2B5E00B43C68 /* OrgViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73011B2200F2B5E00B43C68 /* OrgViewController.swift */; };
+		E73011B5200F2B8100B43C68 /* OrgViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E73011B4200F2B8100B43C68 /* OrgViewController.storyboard */; };
+		E73011BA200F301700B43C68 /* OrgsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73011B8200F301700B43C68 /* OrgsTableViewCell.swift */; };
+		E73011BB200F301700B43C68 /* OrgsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E73011B9200F301700B43C68 /* OrgsTableViewCell.xib */; };
 		E73789861FC666FA003373B7 /* RepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73789851FC666FA003373B7 /* RepositoryModel.swift */; };
 		E7403DFF1FC3FCB0003054D7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7403DFE1FC3FCB0003054D7 /* BaseViewController.swift */; };
 		E7403E011FC3FCD4003054D7 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7403E001FC3FCD4003054D7 /* BaseNavigationController.swift */; };
@@ -133,6 +137,10 @@
 		E72D4A262004B6F400F2F0D0 /* SourceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SourceTableViewCell.xib; sourceTree = "<group>"; };
 		E72D4A292005AC5C00F2F0D0 /* UIViewController+Safari.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Safari.swift"; sourceTree = "<group>"; };
 		E72D4A2B2005DF5E00F2F0D0 /* String+QueryItemValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+QueryItemValue.swift"; sourceTree = "<group>"; };
+		E73011B2200F2B5E00B43C68 /* OrgViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrgViewController.swift; sourceTree = "<group>"; };
+		E73011B4200F2B8100B43C68 /* OrgViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OrgViewController.storyboard; sourceTree = "<group>"; };
+		E73011B8200F301700B43C68 /* OrgsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrgsTableViewCell.swift; sourceTree = "<group>"; };
+		E73011B9200F301700B43C68 /* OrgsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrgsTableViewCell.xib; sourceTree = "<group>"; };
 		E73789851FC666FA003373B7 /* RepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryModel.swift; sourceTree = "<group>"; };
 		E7403DFE1FC3FCB0003054D7 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		E7403E001FC3FCD4003054D7 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
@@ -291,6 +299,20 @@
 			path = Source;
 			sourceTree = "<group>";
 		};
+		E73011BC200F380A00B43C68 /* Org */ = {
+			isa = PBXGroup;
+			children = (
+				E782AD4E1FCF9BBA0054DA20 /* OrgModel.swift */,
+				E7B635261FFF4E130085CF9A /* OrgsViewController.swift */,
+				E7B635281FFF4E1F0085CF9A /* OrgsViewController.storyboard */,
+				E73011B8200F301700B43C68 /* OrgsTableViewCell.swift */,
+				E73011B9200F301700B43C68 /* OrgsTableViewCell.xib */,
+				E73011B2200F2B5E00B43C68 /* OrgViewController.swift */,
+				E73011B4200F2B8100B43C68 /* OrgViewController.storyboard */,
+			);
+			path = Org;
+			sourceTree = "<group>";
+		};
 		E746084B1FC50F9C00951AEF /* Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -339,6 +361,7 @@
 				E72D4A192004B16B00F2F0D0 /* Tool */,
 				E7A3AA4E1FCE99DC007AE295 /* Main */,
 				E7A3AA4D1FCE99B1007AE295 /* User */,
+				E73011BC200F380A00B43C68 /* Org */,
 				E7A3AA4C1FCE998E007AE295 /* Repository */,
 				E7A3AA521FCE9E27007AE295 /* Events */,
 				E72D4A1C2004B65200F2F0D0 /* Source */,
@@ -397,8 +420,6 @@
 				E742A5B81FCBB190002E8C0A /* UserDetailViewController.storyboard */,
 				E746085E1FC5769800951AEF /* UserTableViewCell.swift */,
 				E746085F1FC5769800951AEF /* UserTableViewCell.xib */,
-				E7B635261FFF4E130085CF9A /* OrgsViewController.swift */,
-				E7B635281FFF4E1F0085CF9A /* OrgsViewController.storyboard */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -441,7 +462,6 @@
 				E7A3AA501FCE9E1A007AE295 /* EventsViewController.swift */,
 				E7A6DF3E1FD5276C00EA3449 /* EventsTableViewCell.swift */,
 				E7A6DF3F1FD5276C00EA3449 /* EventsTableViewCell.xib */,
-				E782AD4E1FCF9BBA0054DA20 /* OrgModel.swift */,
 				E782AD501FCFA04C0054DA20 /* PayloadModel.swift */,
 				E782AD521FCFA5310054DA20 /* PullRequestModel.swift */,
 				E782AD541FCFA70D0054DA20 /* CommentModel.swift */,
@@ -584,6 +604,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E72D4A172004A8D700F2F0D0 /* WebViewController.storyboard in Resources */,
+				E73011B5200F2B8100B43C68 /* OrgViewController.storyboard in Resources */,
 				E75AC77320036A5E00EEBF05 /* ReposTableViewController.storyboard in Resources */,
 				E72A3B451FE7B2F5005DCC90 /* LaunchViewController.storyboard in Resources */,
 				E77CE54D1FBEC04500A120B2 /* LaunchScreen.storyboard in Resources */,
@@ -596,6 +617,7 @@
 				E76746F11FC6CBB30087A2DF /* RepositoriesTableViewCell.xib in Resources */,
 				E77CE5481FBEC04500A120B2 /* Main.storyboard in Resources */,
 				E72D4A242004B6B900F2F0D0 /* SourceTableViewController.storyboard in Resources */,
+				E73011BB200F301700B43C68 /* OrgsTableViewCell.xib in Resources */,
 				E767470E1FC7F4760087A2DF /* LanguageViewController.storyboard in Resources */,
 				E7B635291FFF4E1F0085CF9A /* OrgsViewController.storyboard in Resources */,
 				E7A6DF411FD5276C00EA3449 /* EventsTableViewCell.xib in Resources */,
@@ -722,11 +744,13 @@
 				E7E092371FFB2DD100AA18F6 /* String+FitHub.swift in Sources */,
 				E72D4A0F20049DA500F2F0D0 /* LicenseViewController.swift in Sources */,
 				E7403E091FC3FDAC003054D7 /* MeViewController.swift in Sources */,
+				E73011B3200F2B5E00B43C68 /* OrgViewController.swift in Sources */,
 				E746085D1FC551D100951AEF /* UserModel.swift in Sources */,
 				E796457B1FCD2E77006C9C1B /* LoginViewController.swift in Sources */,
 				E72D4A0D200499BE00F2F0D0 /* LicenseModel.swift in Sources */,
 				E74608571FC51D1300951AEF /* UITableView+FitHub.swift in Sources */,
 				E74608601FC5769800951AEF /* UserTableViewCell.swift in Sources */,
+				E73011BA200F301700B43C68 /* OrgsTableViewCell.swift in Sources */,
 				E78F4C162005FA9000CD35E6 /* LinkModel.swift in Sources */,
 				E77CE5431FBEC04500A120B2 /* AppDelegate.swift in Sources */,
 				E72D4A2A2005AC5C00F2F0D0 /* UIViewController+Safari.swift in Sources */,
