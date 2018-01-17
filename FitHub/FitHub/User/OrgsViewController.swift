@@ -15,7 +15,7 @@ class OrgsViewController: BaseViewController {
     
     var page: Int = 1
     var scrollView: UIScrollView?
-    var items = [UserModel]()
+    var items = [OrgModel]()
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -24,7 +24,7 @@ class OrgsViewController: BaseViewController {
         
         // Do any additional setup after loading the view.
         
-        self.tableView.fit_registerCell(cell: UserTableViewCell.self)
+        self.tableView.fit_registerCell(cell: OrgsTableViewCell.self)
         self.page = 1
         self.tableView.fr.headerView = FRNormalHeader(ComponentRefreshingClosure: {
             self.loadData()
@@ -47,7 +47,7 @@ class OrgsViewController: BaseViewController {
     
     func requestData() {
         
-        NetworkManager.loadCommonUsers(withUrl: url, page: self.page, success: { (items) in
+        NetworkManager.loadOrgs(withUrl: url, page: self.page, success: { (items) in
             
             self.tableView.fr.headerView?.endRefreshing()
             self.tableView.fr.footerView?.endRefreshing()
@@ -99,14 +99,14 @@ extension OrgsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.fit_dequeueReusableCell(indexPath: indexPath) as UserTableViewCell
+        let cell = tableView.fit_dequeueReusableCell(indexPath: indexPath) as OrgsTableViewCell
         cell.model = self.items[indexPath.row]
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let vc = UserDetailViewController.loadStoryboard()
+        let vc = OrgViewController.loadStoryboard()
         vc.name = self.items[indexPath.row].login!
         self.navigationController?.pushViewController(vc, animated: true)
     }

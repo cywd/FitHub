@@ -1,20 +1,20 @@
 //
-//  UserTableViewCell.swift
+//  OrgsTableViewCell.swift
 //  FitHub
 //
-//  Created by Cyrill on 2017/11/22.
-//  Copyright © 2017年 Cyrill. All rights reserved.
+//  Created by cyrill on 2018/1/17.
+//  Copyright © 2018年 cyrill.win. All rights reserved.
 //
 
 import UIKit
 import Kingfisher
 
-class UserTableViewCell: UITableViewCell, RegisterCellOrNib {
-
+class OrgsTableViewCell: UITableViewCell, RegisterCellOrNib {
+    
     @IBOutlet weak var headImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     
-    var model: UserModel? {
+    var model: OrgModel? {
         didSet {
             
             if let headImageUrl = model!.avatar_url {
@@ -30,9 +30,10 @@ class UserTableViewCell: UITableViewCell, RegisterCellOrNib {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     
 }
+
