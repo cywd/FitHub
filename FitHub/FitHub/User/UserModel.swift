@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FitAutoCoding
 
 @objcMembers
 class UserModel: NSObject, NSCoding {
@@ -73,7 +74,7 @@ class UserModel: NSObject, NSCoding {
     }
     
     func encode(with aCoder: NSCoder) {
-        encode(withCoder: aCoder)
+        setup(withCoder: aCoder)
     }
     
     required convenience init?(coder aDecoder: NSCoder) {

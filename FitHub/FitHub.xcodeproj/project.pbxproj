@@ -58,7 +58,6 @@
 		E767ED4B2008892A00BEC867 /* DispatchQueue+FitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = E767ED4A2008892A00BEC867 /* DispatchQueue+FitHub.swift */; };
 		E767ED4D20088B3D00BEC867 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E767ED4C20088B3D00BEC867 /* UIViewController+Alert.swift */; };
 		E767ED512008A32C00BEC867 /* UserSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E767ED502008A32C00BEC867 /* UserSessionManager.swift */; };
-		E767ED532008A75100BEC867 /* FitCoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = E767ED522008A75100BEC867 /* FitCoding.swift */; };
 		E77CE5431FBEC04500A120B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77CE5421FBEC04500A120B2 /* AppDelegate.swift */; };
 		E77CE5481FBEC04500A120B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E77CE5461FBEC04500A120B2 /* Main.storyboard */; };
 		E77CE54D1FBEC04500A120B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E77CE54B1FBEC04500A120B2 /* LaunchScreen.storyboard */; };
@@ -168,7 +167,6 @@
 		E767ED4A2008892A00BEC867 /* DispatchQueue+FitHub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+FitHub.swift"; sourceTree = "<group>"; };
 		E767ED4C20088B3D00BEC867 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		E767ED502008A32C00BEC867 /* UserSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionManager.swift; sourceTree = "<group>"; };
-		E767ED522008A75100BEC867 /* FitCoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitCoding.swift; sourceTree = "<group>"; };
 		E77CE53F1FBEC04500A120B2 /* FitHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E77CE5421FBEC04500A120B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E77CE5471FBEC04500A120B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -274,7 +272,6 @@
 				E7F064E11FF4EA9700E3C7A8 /* SVGImage.swift */,
 				E7F064E31FF4F51A00E3C7A8 /* LanguageColor.swift */,
 				E767ED502008A32C00BEC867 /* UserSessionManager.swift */,
-				E767ED522008A75100BEC867 /* FitCoding.swift */,
 				E746085A1FC541FF00951AEF /* NetworkManager.swift */,
 			);
 			path = Tool;
@@ -667,6 +664,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-FitHub/Pods-FitHub-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/FitAutoCoding/FitAutoCoding.framework",
 				"${BUILT_PRODUCTS_DIR}/FitRefresh/FitRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MarkdownView/MarkdownView.framework",
@@ -678,6 +676,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FitAutoCoding.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FitRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MarkdownView.framework",
@@ -712,7 +711,6 @@
 				E746085B1FC541FF00951AEF /* NetworkManager.swift in Sources */,
 				E7F064E41FF4F51A00E3C7A8 /* LanguageColor.swift in Sources */,
 				E72D4A152004A8BF00F2F0D0 /* WebViewController.swift in Sources */,
-				E767ED532008A75100BEC867 /* FitCoding.swift in Sources */,
 				E782AD511FCFA04C0054DA20 /* PayloadModel.swift in Sources */,
 				E767470C1FC7F4530087A2DF /* LanguageViewController.swift in Sources */,
 				E7A6DF431FD5466600EA3449 /* IssueModel.swift in Sources */,

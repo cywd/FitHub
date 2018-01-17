@@ -1,7 +1,8 @@
 PODS:
   - Alamofire (4.6.0)
-  - FitRefresh (2.3.2)
-  - Kingfisher (4.4.0)
+  - FitAutoCoding (0.1.1)
+  - FitRefresh (2.4.0)
+  - Kingfisher (4.6.1)
   - MarkdownView (1.1.0)
   - Moya (10.0.1):
     - Moya/Core (= 10.0.1)
@@ -14,6 +15,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - FitAutoCoding
   - FitRefresh
   - Kingfisher
   - MarkdownView
@@ -23,14 +25,15 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
-  FitRefresh: 7a6f81eb514fb6abaf41335937cf83e5394bf6ec
-  Kingfisher: 62a43e03047a1ac5159d0be3ac62673ef4b99cc3
+  FitAutoCoding: fc0cf4812c494174526668736d1abae874b5d326
+  FitRefresh: 0701ad82a52c2f8de3c9d6736147e614c3fabc07
+  Kingfisher: 1f9157d9c02b380cbd0b7cc890161195164eb634
   MarkdownView: 80db8e9a27a6c6cc22615e644e3e85c06065bab7
   Moya: 9e621707ff754eeb51ff3ec51a3d54e517c0733a
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: cb8f7cfbbd8427d70787948f9aec9525f79ae7f5
+PODFILE CHECKSUM: c2be6ee3ca557276b3fb25d5a84b2e777a78d9a4
 
 COCOAPODS: 1.3.1
