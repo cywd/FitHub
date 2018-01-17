@@ -299,6 +299,20 @@
 			path = Source;
 			sourceTree = "<group>";
 		};
+		E73011BC200F380A00B43C68 /* Org */ = {
+			isa = PBXGroup;
+			children = (
+				E782AD4E1FCF9BBA0054DA20 /* OrgModel.swift */,
+				E7B635261FFF4E130085CF9A /* OrgsViewController.swift */,
+				E7B635281FFF4E1F0085CF9A /* OrgsViewController.storyboard */,
+				E73011B8200F301700B43C68 /* OrgsTableViewCell.swift */,
+				E73011B9200F301700B43C68 /* OrgsTableViewCell.xib */,
+				E73011B2200F2B5E00B43C68 /* OrgViewController.swift */,
+				E73011B4200F2B8100B43C68 /* OrgViewController.storyboard */,
+			);
+			path = Org;
+			sourceTree = "<group>";
+		};
 		E746084B1FC50F9C00951AEF /* Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -347,6 +361,7 @@
 				E72D4A192004B16B00F2F0D0 /* Tool */,
 				E7A3AA4E1FCE99DC007AE295 /* Main */,
 				E7A3AA4D1FCE99B1007AE295 /* User */,
+				E73011BC200F380A00B43C68 /* Org */,
 				E7A3AA4C1FCE998E007AE295 /* Repository */,
 				E7A3AA521FCE9E27007AE295 /* Events */,
 				E72D4A1C2004B65200F2F0D0 /* Source */,
@@ -405,12 +420,6 @@
 				E742A5B81FCBB190002E8C0A /* UserDetailViewController.storyboard */,
 				E746085E1FC5769800951AEF /* UserTableViewCell.swift */,
 				E746085F1FC5769800951AEF /* UserTableViewCell.xib */,
-				E7B635261FFF4E130085CF9A /* OrgsViewController.swift */,
-				E7B635281FFF4E1F0085CF9A /* OrgsViewController.storyboard */,
-				E73011B8200F301700B43C68 /* OrgsTableViewCell.swift */,
-				E73011B9200F301700B43C68 /* OrgsTableViewCell.xib */,
-				E73011B2200F2B5E00B43C68 /* OrgViewController.swift */,
-				E73011B4200F2B8100B43C68 /* OrgViewController.storyboard */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -453,7 +462,6 @@
 				E7A3AA501FCE9E1A007AE295 /* EventsViewController.swift */,
 				E7A6DF3E1FD5276C00EA3449 /* EventsTableViewCell.swift */,
 				E7A6DF3F1FD5276C00EA3449 /* EventsTableViewCell.xib */,
-				E782AD4E1FCF9BBA0054DA20 /* OrgModel.swift */,
 				E782AD501FCFA04C0054DA20 /* PayloadModel.swift */,
 				E782AD521FCFA5310054DA20 /* PullRequestModel.swift */,
 				E782AD541FCFA70D0054DA20 /* CommentModel.swift */,
