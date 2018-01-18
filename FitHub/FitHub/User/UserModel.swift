@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import FitAutoCoding
+import FitCoding
 
 @objcMembers
 class UserModel: NSObject, NSCoding {

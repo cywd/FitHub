@@ -259,14 +259,14 @@
         <!--Discovery-->
         <scene sceneID="ULJ-yk-jXG">
             <objects>
-                <viewController id="TQ5-fz-OaR" sceneMemberID="viewController">
+                <viewController id="TQ5-fz-OaR" customClass="DiscoveryViewController" customModule="FitHub" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CdQ-J6-oNy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="ha8-U5-kAx"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Discovery" id="N0Z-bU-yXl">
+                    <navigationItem key="navigationItem" title="Discovery" leftItemsSupplementBackButton="YES" id="N0Z-bU-yXl">
                         <barButtonItem key="backBarButtonItem" title=" " id="5MN-Pf-hzY"/>
                     </navigationItem>
                 </viewController>

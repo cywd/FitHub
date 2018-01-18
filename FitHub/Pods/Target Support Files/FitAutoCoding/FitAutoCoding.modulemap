@@ -1,6 +1,0 @@
-framework module FitAutoCoding {
-  umbrella header "FitAutoCoding-umbrella.h"
-
-  export *
-  module * { export * }
-}

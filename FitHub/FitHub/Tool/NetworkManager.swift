@@ -102,6 +102,13 @@ protocol NetworkManagerProtocol {
     
     static func loadContentsData(withUrl urlStr: String, success: @escaping (_ model: [ContentModel]) -> (), failure: @escaping (Error) -> ())
     static func loadContentData(withUrl urlStr: String, success: @escaping (_ model: ContentModel) -> (), failure: @escaping (Error) -> ())
+    
+    
+    static func isStared(username: String, repoName: String, success: @escaping () -> (), failure: @escaping (Error) -> ())
+    
+    static func star(username: String, repoName: String, success: @escaping () -> (), failure: @escaping (Error) -> ())
+    
+    static func unStar(username: String, repoName: String, success: @escaping () -> (), failure: @escaping (Error) -> ())
 }
 
 class NetworkManager: NetworkManagerProtocol {
@@ -134,6 +141,23 @@ class NetworkManager: NetworkManagerProtocol {
         }
     }
     
+    /*
+     Parameters
+     Name    Type    Description
+     visibility    string    Can be one of all, public, or private. Default: all
+     affiliation    string    Comma-separated list of values. Can include:
+     * owner: Repositories that are owned by the authenticated user.
+     * collaborator: Repositories that the user has been added to as a collaborator.
+     * organization_member: Repositories that the user has access to through being a member of an organization. This includes every repository on every team that the user is on.
+     
+     Default: owner,collaborator,organization_member
+     type    string    Can be one of all, owner, public, private, member. Default: all
+     
+     Will cause a 422 error if used in the same request as visibility or affiliation.
+     sort    string    Can be one of created, updated, pushed, full_name. Default: full_name
+     direction    string    Can be one of asc or desc. Default: when using full_name: asc; otherwise desc
+     
+     */
     static func loadCommonRepos(withUrl urlStr: String, page: Int, success: @escaping (_ items: [RepositoryModel]) -> (), failure: @escaping (Error) -> ()) {
         
         let url = "\(urlStr)?page=\(page)"
@@ -244,7 +268,12 @@ class NetworkManager: NetworkManagerProtocol {
 
     static func loadUserDetailDataWith(userName: String, success: @escaping (UserModel) -> (), failure: @escaping (Error) -> ()) {
         let baseUrl = "https://api.github.com"
-        let string = "/users/\(userName)"
+        var string = "/users/\(userName)"
+        
+        if userName == UserSessionManager.myself?.login {
+            string = "/user"
+        }
+        
         
         let url = baseUrl + string
         let header = self.getHeader()
@@ -582,6 +611,45 @@ class NetworkManager: NetworkManagerProtocol {
                 
                 break
             case .failure(let error):
+                failure(error)
+                break
+            }
+        }
+    }
+    
+    static func isStared(username: String, repoName: String, success: @escaping () -> (), failure: @escaping (Error) -> ()) {
+        self.starable(username: username, repoName: repoName, type: .get, success: success, failure: failure)
+    }
+    
+    static func star(username: String, repoName: String, success: @escaping () -> (), failure: @escaping (Error) -> ()) {
+        self.starable(username: username, repoName: repoName, type: .put, success: success, failure: failure)
+    }
+    
+    static func unStar(username: String, repoName: String, success: @escaping () -> (), failure: @escaping (Error) -> ()) {
+        self.starable(username: username, repoName: repoName, type: .delete, success: success, failure: failure)
+    }
+    
+    static func starable(username: String, repoName: String, type: HTTPMethod, success: @escaping () -> (), failure: @escaping (Error) -> ()) {
+        let baseUrl = "https://api.github.com"
+        let string = "/user/starred/\(username)/\(repoName)"
+        let url = baseUrl + string
+        
+        let header = self.getHeader()
+        Alamofire.request(url, method: type, parameters: nil, headers: header).responseJSON { (response) in
+            
+            switch response.result {
+            case .success(_):
+                
+                if response.response?.statusCode == 204 {
+                    success()
+                } else {
+                    let error = NSError()
+                    failure(error)
+                }
+                
+                break
+            case .failure(let error):
+                
                 failure(error)
                 break
             }
