@@ -15,7 +15,9 @@ class EventsViewController: BaseViewController {
     @IBOutlet weak var loginView: UIView!
     
     var page: Int = 1
-    var name: String { return UserDefaults.standard.value(forKey: "username") as? String ?? "" }
+    var name: String {
+        return UserSessionManager.myself?.login ?? ""
+    }
     var items = [EventModel]()
     var hud: FitHud?
 

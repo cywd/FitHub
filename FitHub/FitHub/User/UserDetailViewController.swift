@@ -169,7 +169,12 @@ class UserDetailViewController: BaseViewController, StoryboardLoadable {
             vc.title = "Followers"
         } else if segue.identifier == "repositories" {
             let vc = segue.destination as! ReposTableViewController
-            vc.url = self.model!.repos_url
+            if self.model?.login == UserSessionManager.myself?.login {
+                vc.url = "https://api.github.com/user/repos"
+            } else {
+                vc.url = self.model!.repos_url
+            }
+            
             vc.title = "Repositories"
         } else if segue.identifier == "following" {
             let vc = segue.destination as! UsersTableViewController

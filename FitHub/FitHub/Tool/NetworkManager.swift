@@ -134,6 +134,23 @@ class NetworkManager: NetworkManagerProtocol {
         }
     }
     
+    /*
+     Parameters
+     Name    Type    Description
+     visibility    string    Can be one of all, public, or private. Default: all
+     affiliation    string    Comma-separated list of values. Can include:
+     * owner: Repositories that are owned by the authenticated user.
+     * collaborator: Repositories that the user has been added to as a collaborator.
+     * organization_member: Repositories that the user has access to through being a member of an organization. This includes every repository on every team that the user is on.
+     
+     Default: owner,collaborator,organization_member
+     type    string    Can be one of all, owner, public, private, member. Default: all
+     
+     Will cause a 422 error if used in the same request as visibility or affiliation.
+     sort    string    Can be one of created, updated, pushed, full_name. Default: full_name
+     direction    string    Can be one of asc or desc. Default: when using full_name: asc; otherwise desc
+     
+     */
     static func loadCommonRepos(withUrl urlStr: String, page: Int, success: @escaping (_ items: [RepositoryModel]) -> (), failure: @escaping (Error) -> ()) {
         
         let url = "\(urlStr)?page=\(page)"
@@ -244,7 +261,12 @@ class NetworkManager: NetworkManagerProtocol {
 
     static func loadUserDetailDataWith(userName: String, success: @escaping (UserModel) -> (), failure: @escaping (Error) -> ()) {
         let baseUrl = "https://api.github.com"
-        let string = "/users/\(userName)"
+        var string = "/users/\(userName)"
+        
+        if userName == UserSessionManager.myself?.login {
+            string = "/user"
+        }
+        
         
         let url = baseUrl + string
         let header = self.getHeader()
