@@ -23,6 +23,10 @@ class RepositoryViewController: BaseViewController, StoryboardLoadable {
     @IBOutlet weak var bioLabel: UILabel!
     
     @IBOutlet weak var licenseButton: UIButton!
+    @IBOutlet weak var languageButton: UIButton!
+    
+    var isStared: Bool = false
+    var starItem: UIBarButtonItem!
     
     var model: RepositoryModel?
     
@@ -31,10 +35,16 @@ class RepositoryViewController: BaseViewController, StoryboardLoadable {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        starItem = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(starButtonTap(_:)))
+        self.navigationItem.rightBarButtonItem = starItem
+        starItem.isEnabled = false
+        
         scrollView.isHidden = true
         self.title = repositoryName
         
         self.requestUserData()
+        
+        self.requestSrared()
     }
     
     fileprivate func requestUserData() {
@@ -81,11 +91,48 @@ class RepositoryViewController: BaseViewController, StoryboardLoadable {
                 self.licenseButton.isHidden = true
             }
             
+            if let language = self.model?.language {
+                self.languageButton.isHidden = false
+                self.languageButton.setTitle(language, for: .normal)
+            } else {
+                self.languageButton.isHidden = true
+            }
+            
             self.scrollView.isHidden = false
             
         }) { (error) in
             self.hud?.hide()
             print("请求失败")
+        }
+    }
+    
+    func requestSrared() {
+        NetworkManager.isStared(username: userName, repoName: repositoryName, success: {
+            self.starItem.isEnabled = true
+            self.isStared = true
+            self.starItem.title = "stared"
+        }) { (_) in
+            self.starItem.isEnabled = true
+            self.isStared = false
+            self.starItem.title = "unstared"
+        }
+    }
+    
+    @objc func starButtonTap(_ sender: UIButton) {
+        if self.isStared {
+            NetworkManager.unStar(username: userName, repoName: repositoryName, success: {
+                self.isStared = false
+                self.starItem.title = "unstared"
+            }, failure: { (_) in
+                
+            })
+        } else {
+            NetworkManager.star(username: userName, repoName: repositoryName, success: {
+                self.isStared = true
+                self.starItem.title = "stared"
+            }, failure: { (_) in
+                
+            })
         }
     }
     
@@ -108,6 +155,10 @@ class RepositoryViewController: BaseViewController, StoryboardLoadable {
         let vc = UserDetailViewController.loadStoryboard()
         vc.name = self.model!.owner!.login!
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func languageButtonTap(_ sender: Any) {
+    
     }
     
     @IBAction func sourceButtonTap(_ sender: Any) {

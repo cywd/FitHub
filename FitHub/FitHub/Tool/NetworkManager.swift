@@ -102,6 +102,13 @@ protocol NetworkManagerProtocol {
     
     static func loadContentsData(withUrl urlStr: String, success: @escaping (_ model: [ContentModel]) -> (), failure: @escaping (Error) -> ())
     static func loadContentData(withUrl urlStr: String, success: @escaping (_ model: ContentModel) -> (), failure: @escaping (Error) -> ())
+    
+    
+    static func isStared(username: String, repoName: String, success: @escaping () -> (), failure: @escaping (Error) -> ())
+    
+    static func star(username: String, repoName: String, success: @escaping () -> (), failure: @escaping (Error) -> ())
+    
+    static func unStar(username: String, repoName: String, success: @escaping () -> (), failure: @escaping (Error) -> ())
 }
 
 class NetworkManager: NetworkManagerProtocol {
@@ -604,6 +611,45 @@ class NetworkManager: NetworkManagerProtocol {
                 
                 break
             case .failure(let error):
+                failure(error)
+                break
+            }
+        }
+    }
+    
+    static func isStared(username: String, repoName: String, success: @escaping () -> (), failure: @escaping (Error) -> ()) {
+        self.starable(username: username, repoName: repoName, type: .get, success: success, failure: failure)
+    }
+    
+    static func star(username: String, repoName: String, success: @escaping () -> (), failure: @escaping (Error) -> ()) {
+        self.starable(username: username, repoName: repoName, type: .put, success: success, failure: failure)
+    }
+    
+    static func unStar(username: String, repoName: String, success: @escaping () -> (), failure: @escaping (Error) -> ()) {
+        self.starable(username: username, repoName: repoName, type: .delete, success: success, failure: failure)
+    }
+    
+    static func starable(username: String, repoName: String, type: HTTPMethod, success: @escaping () -> (), failure: @escaping (Error) -> ()) {
+        let baseUrl = "https://api.github.com"
+        let string = "/user/starred/\(username)/\(repoName)"
+        let url = baseUrl + string
+        
+        let header = self.getHeader()
+        Alamofire.request(url, method: type, parameters: nil, headers: header).responseJSON { (response) in
+            
+            switch response.result {
+            case .success(_):
+                
+                if response.response?.statusCode == 204 {
+                    success()
+                } else {
+                    let error = NSError()
+                    failure(error)
+                }
+                
+                break
+            case .failure(let error):
+                
                 failure(error)
                 break
             }

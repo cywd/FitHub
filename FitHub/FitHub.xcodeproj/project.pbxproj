@@ -28,6 +28,7 @@
 		E73011B5200F2B8100B43C68 /* OrgViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E73011B4200F2B8100B43C68 /* OrgViewController.storyboard */; };
 		E73011BA200F301700B43C68 /* OrgsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73011B8200F301700B43C68 /* OrgsTableViewCell.swift */; };
 		E73011BB200F301700B43C68 /* OrgsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E73011B9200F301700B43C68 /* OrgsTableViewCell.xib */; };
+		E7360AEF201072CC00922898 /* DiscoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7360AEE201072CC00922898 /* DiscoveryViewController.swift */; };
 		E73789861FC666FA003373B7 /* RepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73789851FC666FA003373B7 /* RepositoryModel.swift */; };
 		E7403DFF1FC3FCB0003054D7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7403DFE1FC3FCB0003054D7 /* BaseViewController.swift */; };
 		E7403E011FC3FCD4003054D7 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7403E001FC3FCD4003054D7 /* BaseNavigationController.swift */; };
@@ -141,6 +142,7 @@
 		E73011B4200F2B8100B43C68 /* OrgViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OrgViewController.storyboard; sourceTree = "<group>"; };
 		E73011B8200F301700B43C68 /* OrgsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrgsTableViewCell.swift; sourceTree = "<group>"; };
 		E73011B9200F301700B43C68 /* OrgsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrgsTableViewCell.xib; sourceTree = "<group>"; };
+		E7360AEE201072CC00922898 /* DiscoveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryViewController.swift; sourceTree = "<group>"; };
 		E73789851FC666FA003373B7 /* RepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryModel.swift; sourceTree = "<group>"; };
 		E7403DFE1FC3FCB0003054D7 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		E7403E001FC3FCD4003054D7 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
@@ -313,6 +315,14 @@
 			path = Org;
 			sourceTree = "<group>";
 		};
+		E7360AED2010728B00922898 /* Discovery */ = {
+			isa = PBXGroup;
+			children = (
+				E7360AEE201072CC00922898 /* DiscoveryViewController.swift */,
+			);
+			path = Discovery;
+			sourceTree = "<group>";
+		};
 		E746084B1FC50F9C00951AEF /* Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -364,6 +374,7 @@
 				E73011BC200F380A00B43C68 /* Org */,
 				E7A3AA4C1FCE998E007AE295 /* Repository */,
 				E7A3AA521FCE9E27007AE295 /* Events */,
+				E7360AED2010728B00922898 /* Discovery */,
 				E72D4A1C2004B65200F2F0D0 /* Source */,
 				E72D4A0A2004939500F2F0D0 /* Issue */,
 				E72D4A0B2004998300F2F0D0 /* License */,
@@ -756,6 +767,7 @@
 				E72D4A2A2005AC5C00F2F0D0 /* UIViewController+Safari.swift in Sources */,
 				E767ED4D20088B3D00BEC867 /* UIViewController+Alert.swift in Sources */,
 				E7B635271FFF4E130085CF9A /* OrgsViewController.swift in Sources */,
+				E7360AEF201072CC00922898 /* DiscoveryViewController.swift in Sources */,
 				E7B347A11FECF1B500A114E9 /* FitHud.swift in Sources */,
 				E7B0F2B21FD7ED5200DE2E3F /* Logo.swift in Sources */,
 				E7403E051FC3FD08003054D7 /* TabBarController.swift in Sources */,
