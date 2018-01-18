@@ -10,7 +10,7 @@ target 'FitHub' do
     pod 'Kingfisher'
     pod 'SwiftyJSON'
     pod 'FitRefresh'
-    pod 'FitAutoCoding'
+    pod 'FitCoding'
     pod 'MarkdownView'
 
 end

@@ -1,4 +1,4 @@
-# FitRrefesh
+# FitRefresh
 <p align="left">
 <img src="https://github.com/cywd/FitRrefesh/blob/master/Resources/logo.png" alt="FitRefresh" title="FitRefresh" width="100"/>
 </p>
@@ -12,21 +12,23 @@
 
 ## 描述
 
-Swift 4+ 的 下拉刷新
+Swift 4+ 的下拉刷新 (The refresh use Swift4)
 
 ## 集成
 
+最简单也是推荐的方式
 The sample way.
 
 ```ruby
 pod 'FitRrefesh'
 ```
 
+另外一种
 else 
 
 You can also drop the `Sources` to your project.
 
-## 使用
+## 使用 Use
 
 ### Version 1.3 Later
 

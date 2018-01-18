@@ -1,0 +1,6 @@
+framework module FitCoding {
+  umbrella header "FitCoding-umbrella.h"
+
+  export *
+  module * { export * }
+}

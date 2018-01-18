@@ -10,8 +10,8 @@
 #endif
 #endif
 
-#import "FitAutoCoding.h"
+#import "FitCoding.h"
 
-FOUNDATION_EXPORT double FitAutoCodingVersionNumber;
-FOUNDATION_EXPORT const unsigned char FitAutoCodingVersionString[];
+FOUNDATION_EXPORT double FitCodingVersionNumber;
+FOUNDATION_EXPORT const unsigned char FitCodingVersionString[];
 

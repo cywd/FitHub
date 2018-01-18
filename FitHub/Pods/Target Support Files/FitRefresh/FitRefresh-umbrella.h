@@ -10,6 +10,7 @@
 #endif
 #endif
 
+#import "FitRefresh.h"
 
 FOUNDATION_EXPORT double FitRefreshVersionNumber;
 FOUNDATION_EXPORT const unsigned char FitRefreshVersionString[];

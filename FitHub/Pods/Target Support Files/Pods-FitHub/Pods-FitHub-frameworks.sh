@@ -103,7 +103,7 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/FitAutoCoding/FitAutoCoding.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/FitCoding/FitCoding.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/FitRefresh/FitRefresh.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MarkdownView/MarkdownView.framework"
@@ -114,7 +114,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/FitAutoCoding/FitAutoCoding.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/FitCoding/FitCoding.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/FitRefresh/FitRefresh.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MarkdownView/MarkdownView.framework"
