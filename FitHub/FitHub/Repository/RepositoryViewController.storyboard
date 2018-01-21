@@ -89,7 +89,7 @@ Watch</string>
                                                 </connections>
                                             </label>
                                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T1F-0l-Prd">
-                                                <rect key="frame" x="119.66666666666666" y="0.0" width="119.66666666666666" height="60"/>
+                                                <rect key="frame" x="119.66666666666669" y="0.0" width="120" height="60"/>
                                                 <gestureRecognizers/>
                                                 <string key="text">12
 Star</string>
@@ -101,7 +101,7 @@ Star</string>
                                                 </connections>
                                             </label>
                                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Va6-ur-dwF">
-                                                <rect key="frame" x="239.33333333333334" y="0.0" width="119.66666666666666" height="60"/>
+                                                <rect key="frame" x="239.66666666666666" y="0.0" width="119.33333333333334" height="60"/>
                                                 <gestureRecognizers/>
                                                 <string key="text">12
 Fork</string>
@@ -268,6 +268,7 @@ Fork</string>
                         <outlet property="languageButton" destination="zg0-0R-XOu" id="Vea-6T-AtZ"/>
                         <outlet property="licenseButton" destination="zRB-Q5-L1i" id="CNB-BB-mFg"/>
                         <outlet property="nameLabel" destination="KsB-OY-aUP" id="MKu-vZ-CUA"/>
+                        <outlet property="ownerButton" destination="wIT-5W-pMV" id="hLK-2A-sym"/>
                         <outlet property="scrollView" destination="VED-qe-aYZ" id="5dQ-Ia-woA"/>
                         <outlet property="starLabel" destination="T1F-0l-Prd" id="RHQ-jI-oi3"/>
                         <outlet property="watchLabel" destination="G1U-2U-AId" id="Nrh-i9-aa4"/>

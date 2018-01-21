@@ -109,6 +109,12 @@ protocol NetworkManagerProtocol {
     static func star(username: String, repoName: String, success: @escaping () -> (), failure: @escaping (Error) -> ())
     
     static func unStar(username: String, repoName: String, success: @escaping () -> (), failure: @escaping (Error) -> ())
+    
+    static func isFollowed(username: String, success: @escaping () -> (), failure: @escaping (Error) -> ())
+    
+    static func follow(username: String, success: @escaping () -> (), failure: @escaping (Error) -> ())
+    
+    static func unFollow(username: String, success: @escaping () -> (), failure: @escaping (Error) -> ())
 }
 
 class NetworkManager: NetworkManagerProtocol {
@@ -632,6 +638,47 @@ class NetworkManager: NetworkManagerProtocol {
     static func starable(username: String, repoName: String, type: HTTPMethod, success: @escaping () -> (), failure: @escaping (Error) -> ()) {
         let baseUrl = "https://api.github.com"
         let string = "/user/starred/\(username)/\(repoName)"
+        let url = baseUrl + string
+        
+        let header = self.getHeader()
+        Alamofire.request(url, method: type, parameters: nil, headers: header).responseJSON { (response) in
+            
+            switch response.result {
+            case .success(_):
+                
+                if response.response?.statusCode == 204 {
+                    success()
+                } else {
+                    let error = NSError()
+                    failure(error)
+                }
+                
+                break
+            case .failure(let error):
+                
+                failure(error)
+                break
+            }
+        }
+    }
+    
+    
+    /// Check if you are following a user
+    static func isFollowed(username: String, success: @escaping () -> (), failure: @escaping (Error) -> ()) {
+        self.followable(username: username, type: .get, success: success, failure: failure)
+    }
+    
+    static func follow(username: String, success: @escaping () -> (), failure: @escaping (Error) -> ()) {
+        self.followable(username: username, type: .put, success: success, failure: failure)
+    }
+    
+    static func unFollow(username: String, success: @escaping () -> (), failure: @escaping (Error) -> ()) {
+        self.followable(username: username, type: .delete, success: success, failure: failure)
+    }
+    
+    static func followable(username: String, type: HTTPMethod, success: @escaping () -> (), failure: @escaping (Error) -> ()) {
+        let baseUrl = "https://api.github.com"
+        let string = "/user/following/\(username)"
         let url = baseUrl + string
         
         let header = self.getHeader()

@@ -22,6 +22,7 @@ class RepositoryViewController: BaseViewController, StoryboardLoadable {
     @IBOutlet weak var forkLabel: UILabel!
     @IBOutlet weak var bioLabel: UILabel!
     
+    @IBOutlet weak var ownerButton: UIButton!
     @IBOutlet weak var licenseButton: UIButton!
     @IBOutlet weak var languageButton: UIButton!
     
@@ -84,9 +85,15 @@ class RepositoryViewController: BaseViewController, StoryboardLoadable {
                 self.bioLabel.text = ""
             }
             
+            if let owner = self.model?.owner?.login {
+                self.ownerButton.setTitle(owner, for: .normal)
+            } else {
+                self.ownerButton.setTitle("Owner", for: .normal)
+            }
+            
             if let license = self.model?.license {
                 self.licenseButton.isHidden = false
-                self.licenseButton .setTitle(license.name, for: .normal)
+                self.licenseButton.setTitle(license.name, for: .normal)
             } else {
                 self.licenseButton.isHidden = true
             }

@@ -35,14 +35,27 @@ class UserDetailViewController: BaseViewController, StoryboardLoadable {
     
     @IBOutlet weak var orgButton: UIButton!
     
+    var isFollowed: Bool = false
+    var followItem: UIBarButtonItem!
+    
     var hud: FitHud?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        followItem = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(followItemTap(_:)))
+        self.navigationItem.rightBarButtonItem = followItem
+        followItem.isEnabled = false
+        
         self.title = name
 //        self.orgButton.setTitle(NSLocalizedString("ORGS", comment: "组织"), for: .normal)
         self.requestUserData()
+        
+        if self.name != UserSessionManager.myself?.login {
+            self.requestFollowState()
+        }
+        
     }
 
     // 大标题还不完善
@@ -141,6 +154,36 @@ class UserDetailViewController: BaseViewController, StoryboardLoadable {
         }) { (error) in
             self.hud?.hide()
             print("请求失败")
+        }
+    }
+    
+    func requestFollowState() {
+        NetworkManager.isFollowed(username: self.name, success: {
+            self.followItem.isEnabled = true
+            self.isFollowed = true
+            self.followItem.title = "followed"
+        }) { (_) in
+            self.followItem.isEnabled = true
+            self.isFollowed = false
+            self.followItem.title = "unFollowed"
+        }
+    }
+    
+    @objc func followItemTap(_ sender: Any) {
+        if self.isFollowed {
+            NetworkManager.unFollow(username: name, success: {
+                self.isFollowed = false
+                self.followItem.title = "unFollowed"
+            }, failure: { (_) in
+                
+            })
+        } else {
+            NetworkManager.follow(username: self.name, success: {
+                self.isFollowed = true
+                self.followItem.title = "followed"
+            }, failure: { (_) in
+                
+            })
         }
     }
     
