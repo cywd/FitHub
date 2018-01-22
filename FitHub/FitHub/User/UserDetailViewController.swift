@@ -35,14 +35,27 @@ class UserDetailViewController: BaseViewController, StoryboardLoadable {
     
     @IBOutlet weak var orgButton: UIButton!
     
+    var isFollowed: Bool = false
+    var followItem: UIBarButtonItem!
+    
     var hud: FitHud?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        followItem = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(followItemTap(_:)))
+        self.navigationItem.rightBarButtonItem = followItem
+        followItem.isEnabled = false
+        
         self.title = name
 //        self.orgButton.setTitle(NSLocalizedString("ORGS", comment: "组织"), for: .normal)
         self.requestUserData()
+        
+        if self.name != UserSessionManager.myself?.login {
+            self.requestFollowState()
+        }
+        
     }
 
     // 大标题还不完善
@@ -144,6 +157,44 @@ class UserDetailViewController: BaseViewController, StoryboardLoadable {
         }
     }
     
+    func requestFollowState() {
+        NetworkManager.isFollowed(username: self.name, success: {
+            self.followItem.isEnabled = true
+            self.followState()
+        }) { (_) in
+            self.followItem.isEnabled = true
+            self.unfollowState()
+        }
+    }
+    
+    private func followState() {
+        self.isFollowed = true
+        self.followItem.tintColor = #colorLiteral(red: 1, green: 0.231372549, blue: 0.1882352941, alpha: 1)
+        self.followItem.title = "Unfollow"
+    }
+    
+    private func unfollowState() {
+        self.isFollowed = false
+        self.followItem.tintColor = #colorLiteral(red: 0.1690405011, green: 0.6988298297, blue: 0.3400650322, alpha: 1)
+        self.followItem.title = "Follow"
+    }
+    
+    @objc func followItemTap(_ sender: Any) {
+        if self.isFollowed {
+            NetworkManager.unFollow(username: name, success: {
+                self.unfollowState()
+            }, failure: { (_) in
+                
+            })
+        } else {
+            NetworkManager.follow(username: self.name, success: {
+                self.followState()
+            }, failure: { (_) in
+                
+            })
+        }
+    }
+    
     @IBAction func blogTap(_ sender: Any) {
         let vc = WebViewController.loadStoryboard()
         vc.url = self.model!.blog
@@ -153,7 +204,7 @@ class UserDetailViewController: BaseViewController, StoryboardLoadable {
     @IBAction func staredTap(_ sender: Any) {
         let vc = ReposTableViewController.loadStoryboard()
         vc.url = self.model!.url! + "/starred"
-        vc.title = "Stared"
+        vc.title = "Stars"
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
