@@ -160,27 +160,35 @@ class UserDetailViewController: BaseViewController, StoryboardLoadable {
     func requestFollowState() {
         NetworkManager.isFollowed(username: self.name, success: {
             self.followItem.isEnabled = true
-            self.isFollowed = true
-            self.followItem.title = "followed"
+            self.followState()
         }) { (_) in
             self.followItem.isEnabled = true
-            self.isFollowed = false
-            self.followItem.title = "unFollowed"
+            self.unfollowState()
         }
+    }
+    
+    private func followState() {
+        self.isFollowed = true
+        self.followItem.tintColor = #colorLiteral(red: 1, green: 0.231372549, blue: 0.1882352941, alpha: 1)
+        self.followItem.title = "Unfollow"
+    }
+    
+    private func unfollowState() {
+        self.isFollowed = false
+        self.followItem.tintColor = #colorLiteral(red: 0.1690405011, green: 0.6988298297, blue: 0.3400650322, alpha: 1)
+        self.followItem.title = "Follow"
     }
     
     @objc func followItemTap(_ sender: Any) {
         if self.isFollowed {
             NetworkManager.unFollow(username: name, success: {
-                self.isFollowed = false
-                self.followItem.title = "unFollowed"
+                self.unfollowState()
             }, failure: { (_) in
                 
             })
         } else {
             NetworkManager.follow(username: self.name, success: {
-                self.isFollowed = true
-                self.followItem.title = "followed"
+                self.followState()
             }, failure: { (_) in
                 
             })
@@ -196,7 +204,7 @@ class UserDetailViewController: BaseViewController, StoryboardLoadable {
     @IBAction func staredTap(_ sender: Any) {
         let vc = ReposTableViewController.loadStoryboard()
         vc.url = self.model!.url! + "/starred"
-        vc.title = "Stared"
+        vc.title = "Stars"
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
