@@ -243,6 +243,7 @@ Following</string>
                         <outlet property="headerView" destination="RiK-Ps-agZ" id="jeJ-AI-VJo"/>
                         <outlet property="locationButton" destination="xge-mS-wuV" id="s6x-g4-Bmo"/>
                         <outlet property="loginLabel" destination="Pp3-Ta-NkT" id="uoi-g7-d3S"/>
+                        <outlet property="membersButton" destination="DU4-7B-Ser" id="3pu-MZ-ckf"/>
                         <outlet property="nameLabel" destination="Erc-cq-lFf" id="Z9V-w0-PuB"/>
                         <outlet property="repositoriesLabel" destination="di5-QT-X5b" id="55H-5w-FBl"/>
                         <outlet property="timeLabel" destination="Ufw-bv-pQc" id="mrd-so-FDh"/>

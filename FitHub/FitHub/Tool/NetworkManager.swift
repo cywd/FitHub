@@ -16,6 +16,8 @@ protocol NetworkManagerProtocol {
     static func loadCommonRepos(withUrl urlStr: String, page: Int, success: @escaping (_ items: [RepositoryModel]) -> (), failure: @escaping (Error) -> ())
     static func loadOrgs(withUrl urlStr: String, page: Int, success: @escaping (_ items: [OrgModel]) -> (), failure: @escaping (Error) -> ())
     
+    static func searchUser(name: String, success: @escaping (_ items: [UserModel]) -> (), failure: @escaping (Error) -> ())
+    
     /// <#Description#>
     ///
     /// - Parameters:
@@ -97,7 +99,6 @@ protocol NetworkManagerProtocol {
     ///   - failure: <#failure description#>
     static func getRepositoriesEventsWith(page: Int, username: String, success: @escaping ([EventModel]) -> (), failure: @escaping (Error) -> ())
 
-
     static func loadLicenseData(withUrl urlStr: String, success: @escaping (_ model: LicenseModel) -> (), failure: @escaping (Error) -> ())
     
     static func loadContentsData(withUrl urlStr: String, success: @escaping (_ model: [ContentModel]) -> (), failure: @escaping (Error) -> ())
@@ -118,6 +119,37 @@ protocol NetworkManagerProtocol {
 }
 
 class NetworkManager: NetworkManagerProtocol {
+    
+    static func searchUser(name: String, success: @escaping (_ items: [UserModel]) -> (), failure: @escaping (Error) -> ()) {
+        
+        let url = "https://api.github.com/search/users?q=\(name)"
+        let header = self.getHeader()
+        Alamofire.request(url, method: .get, headers:header).responseJSON { (response) in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                
+                let total_count = json["total_count"].int
+                
+                if let items = json["items"].arrayObject {
+                    
+                    var models = [UserModel]()
+                    for dict in items {
+                        models.append(UserModel(dict: dict as! [String : AnyObject]))
+                    }
+                    
+                    success(models)
+                    
+                }
+                break
+            case .failure(let error):
+                
+                failure(error)
+                
+                break
+            }
+        }
+    }
     
     static func loadCommonUsers(withUrl urlStr: String, page: Int, success: @escaping (_ items: [UserModel]) -> (), failure: @escaping (Error) -> ()) {
         
