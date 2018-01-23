@@ -10,14 +10,19 @@ import UIKit
 
 class DiscoveryViewController: BaseViewController, UISearchControllerDelegate, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate {
 
+    var items = [RepositoryModel]()
     
+    @IBOutlet weak var tableView: UITableView!
     var searchController: UISearchController!
     var searchResultController: SearchViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tableView.fit_registerCell(cell: RepositoriesTableViewCell.self)
+        
         searchResultController = SearchViewController.loadStoryboard()
+        searchResultController.nav = self.navigationController
         
         searchController = UISearchController(searchResultsController: searchResultController)
         searchController.searchResultsUpdater = searchResultController
@@ -27,9 +32,22 @@ class DiscoveryViewController: BaseViewController, UISearchControllerDelegate, U
         searchController.searchBar.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         
         navigationItem.searchController = searchController
-        navigationItem.hidesSearchBarWhenScrolling = true
+        navigationItem.hidesSearchBarWhenScrolling = false
         
         definesPresentationContext = true
+        
+        self.requestData()
+    }
+    
+    fileprivate func requestData() {
+        NetworkManager.getTrendingRepository(success: { (items) in
+            
+            self.items = items
+            self.tableView.reloadData()
+            
+        }) { (_) in
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -56,12 +74,12 @@ class DiscoveryViewController: BaseViewController, UISearchControllerDelegate, U
 extension DiscoveryViewController {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
-        cell.textLabel?.text = "de"
+        let cell = tableView.fit_dequeueReusableCell(indexPath: indexPath) as RepositoriesTableViewCell
+        cell.model = items[indexPath.row]
         return cell
     }
     
@@ -72,20 +90,12 @@ extension DiscoveryViewController {
 extension DiscoveryViewController {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         
-    }
-    
-}
-
-
-// MARK: - UISearchBarDelegate
-
-extension DiscoveryViewController {
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
-        
-        
-        
+        let vc = RepositoryViewController.loadStoryboard()
+        vc.userName = self.items[indexPath.row].owner!.login!
+        vc.repositoryName = self.items[indexPath.row].name!
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }

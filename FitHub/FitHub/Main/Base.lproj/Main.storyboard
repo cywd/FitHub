@@ -263,16 +263,35 @@
                     <view key="view" contentMode="scaleToFill" id="CdQ-J6-oNy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5Xq-j1-1Xd">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="TQ5-fz-OaR" id="nbi-LZ-gZQ"/>
+                                    <outlet property="delegate" destination="TQ5-fz-OaR" id="sUQ-au-HmQ"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ha8-U5-kAx" firstAttribute="trailing" secondItem="5Xq-j1-1Xd" secondAttribute="trailing" id="TEo-AM-e4A"/>
+                            <constraint firstItem="ha8-U5-kAx" firstAttribute="bottom" secondItem="5Xq-j1-1Xd" secondAttribute="bottom" id="gWh-rk-HTr"/>
+                            <constraint firstItem="5Xq-j1-1Xd" firstAttribute="top" secondItem="ha8-U5-kAx" secondAttribute="top" id="kTF-DR-eAi"/>
+                            <constraint firstItem="5Xq-j1-1Xd" firstAttribute="leading" secondItem="ha8-U5-kAx" secondAttribute="leading" id="naq-Hp-LpZ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ha8-U5-kAx"/>
                     </view>
                     <navigationItem key="navigationItem" title="Discovery" leftItemsSupplementBackButton="YES" id="N0Z-bU-yXl">
                         <barButtonItem key="backBarButtonItem" title=" " id="5MN-Pf-hzY"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="5Xq-j1-1Xd" id="ycp-qS-USl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cnX-ge-sjZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="114" y="606"/>
+            <point key="canvasLocation" x="129" y="605"/>
         </scene>
     </scenes>
     <resources>

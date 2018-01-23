@@ -17,6 +17,9 @@ protocol NetworkManagerProtocol {
     static func loadOrgs(withUrl urlStr: String, page: Int, success: @escaping (_ items: [OrgModel]) -> (), failure: @escaping (Error) -> ())
     
     static func searchUser(name: String, success: @escaping (_ items: [UserModel]) -> (), failure: @escaping (Error) -> ())
+    static func searchRepos(name: String, success: @escaping (_ items: [RepositoryModel]) -> (), failure: @escaping (Error) -> ())
+    
+    static func getTrendingRepository(success: @escaping (_ items: [RepositoryModel]) -> (), failure: @escaping (Error) -> ())
     
     /// <#Description#>
     ///
@@ -149,6 +152,59 @@ class NetworkManager: NetworkManagerProtocol {
                 break
             }
         }
+    }
+    
+    static func searchRepos(name: String, success: @escaping (_ items: [RepositoryModel]) -> (), failure: @escaping (Error) -> ()) {
+        
+        let url = "https://api.github.com/search/repositories?q=\(name)"
+        let header = self.getHeader()
+        Alamofire.request(url, method: .get, headers:header).responseJSON { (response) in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                
+                let total_count = json["total_count"].int
+                
+                if let items = json["items"].arrayObject {
+                    
+                    var models = [RepositoryModel]()
+                    for dict in items {
+                        models.append(RepositoryModel(dict: dict as! [String : AnyObject]))
+                    }
+                    success(models)
+                }
+                break
+            case .failure(let error):
+                failure(error)
+                break
+            }
+        }
+    }
+    
+    static func getTrendingRepository(success: @escaping (_ items: [RepositoryModel]) -> (), failure: @escaping (Error) -> ()) {
+        
+        let url = "https://raw.githubusercontent.com/cywd/cywd.github.io/master/json/treding.json"
+        let header = self.getHeader()
+        Alamofire.request(url, method: .get, headers:header).responseJSON { (response) in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                
+                if let items = json.arrayObject {
+                    
+                    var models = [RepositoryModel]()
+                    for dict in items {
+                        models.append(RepositoryModel(dict: dict as! [String : AnyObject]))
+                    }
+                    success(models)
+                }
+                break
+            case .failure(let error):
+                failure(error)
+                break
+            }
+        }
+        
     }
     
     static func loadCommonUsers(withUrl urlStr: String, page: Int, success: @escaping (_ items: [UserModel]) -> (), failure: @escaping (Error) -> ()) {

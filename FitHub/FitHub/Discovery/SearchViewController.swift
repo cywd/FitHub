@@ -19,6 +19,8 @@ enum SearchType: String {
 
 class SearchViewController: UITableViewController, UISearchBarDelegate, StoryboardLoadable {
     
+    var nav: UINavigationController?
+    
     var text: String = ""
     
     var type: SearchType!
@@ -34,6 +36,13 @@ class SearchViewController: UITableViewController, UISearchBarDelegate, Storyboa
         tableView.register(UINib(nibName: "\(SearchSectionHeaderView.self)", bundle: nil), forHeaderFooterViewReuseIdentifier: "header")
         tableView.fit_registerCell(cell: UserTableViewCell.self)
         tableView.fit_registerCell(cell: RepositoriesTableViewCell.self)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        self.users.removeAll()
+        self.repos.removeAll()
     }
 
     override func didReceiveMemoryWarning() {
@@ -84,8 +93,8 @@ extension SearchViewController {
 extension SearchViewController {
     
     func searchRepos(name: String) {
-        NetworkManager.searchUser(name: name, success: { (items) in
-            self.users = items
+        NetworkManager.searchRepos(name: name, success: { (items) in
+            self.repos = items
             
             self.tableView.reloadData()
         }) { (_) in
@@ -147,13 +156,17 @@ extension SearchViewController {
         let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "header") as! SearchSectionHeaderView
         header.type = type
         header.reposBlock = {
-            self.searchRepos(name: self.text)
+            self.repos.removeAll()
             self.type = .repositories
+            self.tableView.reloadData()
+            self.searchRepos(name: self.text)
         }
         
         header.usersBlock = {
-            self.searchUsers(name: self.text)
+            self.users.removeAll()
             self.type = .users
+            self.tableView.reloadData()
+            self.searchUsers(name: self.text)
         }
         return header
     }
@@ -170,6 +183,32 @@ extension SearchViewController {
             return 60
         default:
             return 0
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        switch type {
+        case .repositories:
+            let vc = RepositoryViewController.loadStoryboard()
+            vc.userName = self.repos[indexPath.row].owner!.login!
+            vc.repositoryName = self.repos[indexPath.row].name!
+            self.nav?.pushViewController(vc, animated: true)
+        case .users:
+            
+            let model = self.users[indexPath.row]
+            if model.type == "User" {
+                let vc = UserDetailViewController.loadStoryboard()
+                vc.name = model.login!
+                self.nav?.pushViewController(vc, animated: true)
+            } else {
+                let vc = OrgViewController.loadStoryboard()
+                vc.name = model.login!
+                self.nav?.pushViewController(vc, animated: true)
+            }
+            
+        default:
+            break
         }
     }
 }
