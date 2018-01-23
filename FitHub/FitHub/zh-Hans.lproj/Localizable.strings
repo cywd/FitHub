@@ -21,4 +21,6 @@
 "USERNAME" = "用户名";
 "PASSWORD" = "密码";
 
+"MEMBERS" = "成员";
+
 "ABOUT_DESC" = "FitHub是一款第三方GitHub客户端。";

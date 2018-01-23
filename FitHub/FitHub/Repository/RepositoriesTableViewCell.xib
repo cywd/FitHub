@@ -98,7 +98,7 @@
                 <outlet property="starButton" destination="9Nt-rs-TVW" id="Upy-RX-dsf"/>
                 <outlet property="typeImageView" destination="hwp-HD-8hf" id="jK2-od-dns"/>
             </connections>
-            <point key="canvasLocation" x="1596" y="-205"/>
+            <point key="canvasLocation" x="1588" y="-225"/>
         </tableViewCell>
     </objects>
     <resources>

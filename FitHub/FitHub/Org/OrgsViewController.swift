@@ -9,7 +9,7 @@
 import UIKit
 import FitRefresh
 
-class OrgsViewController: BaseViewController {
+class OrgsViewController: BaseViewController, StoryboardLoadable {
 
     var url: String = ""
     

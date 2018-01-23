@@ -30,6 +30,8 @@ class OrgViewController: BaseViewController, StoryboardLoadable {
     @IBOutlet weak var emailButton: UIButton!
     @IBOutlet weak var blogButton: UIButton!
     @IBOutlet weak var timeLabel: UILabel!
+    
+    @IBOutlet weak var membersButton: UIButton!
 
     var hud: FitHud?
     
@@ -38,6 +40,9 @@ class OrgViewController: BaseViewController, StoryboardLoadable {
         
         self.title = name
         //        self.orgButton.setTitle(NSLocalizedString("ORGS", comment: "组织"), for: .normal)
+        
+        membersButton.setTitle(NSLocalizedString("MEMBERS", comment: "MEMBERS"), for: .normal)
+        
         self.requestUserData()
     }
     
