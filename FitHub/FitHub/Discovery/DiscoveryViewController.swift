@@ -32,7 +32,7 @@ class DiscoveryViewController: BaseViewController, UISearchControllerDelegate, U
         searchController.searchBar.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         
         navigationItem.searchController = searchController
-        navigationItem.hidesSearchBarWhenScrolling = false
+//        navigationItem.hidesSearchBarWhenScrolling = false
         
         definesPresentationContext = true
         

@@ -183,7 +183,7 @@ class NetworkManager: NetworkManagerProtocol {
     
     static func getTrendingRepository(success: @escaping (_ items: [RepositoryModel]) -> (), failure: @escaping (Error) -> ()) {
         
-        let url = "https://raw.githubusercontent.com/cywd/cywd.github.io/master/json/treding.json"
+        let url = "https://raw.githubusercontent.com/cywd/cywd.github.io/master/json/trending.json"
         let header = self.getHeader()
         Alamofire.request(url, method: .get, headers:header).responseJSON { (response) in
             switch response.result {

@@ -35,7 +35,7 @@ class RepositoriesTableViewCell: UITableViewCell, RegisterCellOrNib {
                 self.forkButton.setTitle("\(fork)", for: .normal)
             }
             
-            if let license = model?.license?.name {
+            if let license = model?.license?.spdx_id {
                 self.licenseButton.isHidden = false
                 self.licenseButton.setTitle("\(license)", for: .normal)
             } else {
