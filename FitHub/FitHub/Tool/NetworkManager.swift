@@ -330,7 +330,6 @@ class NetworkManager: NetworkManagerProtocol {
         
         let url = baseUrl + string
         
-        
         let header = self.getHeader()
         
         Alamofire.request(url, method: .get, headers:header).responseJSON { (response) in
