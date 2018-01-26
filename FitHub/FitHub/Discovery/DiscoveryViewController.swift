@@ -16,6 +16,8 @@ class DiscoveryViewController: BaseViewController, UISearchControllerDelegate, U
     var searchController: UISearchController!
     var searchResultController: SearchViewController!
     
+    var hud: FitHud?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,17 +38,20 @@ class DiscoveryViewController: BaseViewController, UISearchControllerDelegate, U
         
         definesPresentationContext = true
         
+        self.hud = FitHud.show(view: self.view)
         self.requestData()
     }
     
     fileprivate func requestData() {
         NetworkManager.getTrendingRepository(success: { (items) in
             
+            self.hud?.hide()
+            
             self.items = items
             self.tableView.reloadData()
             
         }) { (_) in
-            
+            self.hud?.hide()
         }
     }
 
