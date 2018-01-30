@@ -13,12 +13,16 @@ class AboutViewController: BaseViewController, StoryboardLoadable {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var arrowView: DownArrowView!
     
+    @IBOutlet weak var versionLabel: UILabel!
     @IBOutlet weak var label: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         label.text = NSLocalizedString("ABOUT_DESC", comment: "APP desc")
+        
+        let currentVersion = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
+        versionLabel.text = currentVersion
     }
     
     override func didReceiveMemoryWarning() {
