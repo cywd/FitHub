@@ -77,15 +77,16 @@ extension SearchViewController {
             return
         }
         
-        self.text = text!
-        
-        switch type {
-        case .repositories:
-            self.searchRepos(name: text!)
-        case .users:
-            self.searchUsers(name: text!)
-        default:
-            break
+        if let _ = text {
+            self.text = text!
+            switch type {
+            case .repositories:
+                self.searchRepos(name: text!)
+            case .users:
+                self.searchUsers(name: text!)
+            default:
+                break
+            }
         }
     }
 }

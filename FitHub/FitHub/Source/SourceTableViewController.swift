@@ -55,13 +55,13 @@ class SourceTableViewController: UITableViewController, StoryboardLoadable {
             
             self.tableView.reloadData()
             
-            if items.count < 30 {
-                self.tableView.fr.footerView = nil;
-            } else {
-                self.tableView.fr.footerView = FRAutoNormalFooter(ComponentRefreshingClosure: {
-                    self.loadMore()
-                })
-            }
+//            if items.count < 30 {
+//                self.tableView.fr.footerView = nil;
+//            } else {
+//                self.tableView.fr.footerView = FRAutoNormalFooter(ComponentRefreshingClosure: {
+//                    self.loadMore()
+//                })
+//            }
             
         }) { (error) in
             self.hud?.hide()
