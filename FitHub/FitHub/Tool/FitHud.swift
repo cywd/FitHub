@@ -48,7 +48,7 @@ class FitHud {
     required public init(view: UIView, after: TimeInterval) {
         
         if hud != nil && hud!.hudBackgroundView.superview != nil {
-            hud!.hudBackgroundView.removeFromSuperview()
+//            hud!.hudBackgroundView.removeFromSuperview()
         }
         
         self._hudBackgroundView = UIView(frame: view.bounds)

@@ -132,7 +132,7 @@ class NetworkManager: NetworkManagerProtocol {
             case .success(let value):
                 let json = JSON(value)
                 
-                let total_count = json["total_count"].int
+//                let total_count = json["total_count"].int
                 
                 if let items = json["items"].arrayObject {
                     
@@ -163,7 +163,7 @@ class NetworkManager: NetworkManagerProtocol {
             case .success(let value):
                 let json = JSON(value)
                 
-                let total_count = json["total_count"].int
+//                let total_count = json["total_count"].int
                 
                 if let items = json["items"].arrayObject {
                     
