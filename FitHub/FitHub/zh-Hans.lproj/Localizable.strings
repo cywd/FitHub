@@ -18,6 +18,7 @@
 "ORGS" = "组织";
 
 "LOGIN" = "登录";
+"LOGOUT" = "退出";
 "USERNAME" = "用户名";
 "PASSWORD" = "密码";
 
