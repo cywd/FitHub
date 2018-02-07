@@ -1,5 +1,7 @@
 PODS:
   - Alamofire (4.6.0)
+  - AlamofireNetworkActivityIndicator (2.2.0):
+    - Alamofire (~> 4.5)
   - FitCoding (1.0.1)
   - FitRefresh (2.4.1)
   - Kingfisher (4.6.1)
@@ -15,6 +17,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - AlamofireNetworkActivityIndicator
   - FitCoding
   - FitRefresh
   - Kingfisher
@@ -25,6 +28,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  AlamofireNetworkActivityIndicator: 81e1630e7cfed22a4e4e82a174c59e651dc4f8ca
   FitCoding: dcb277d68fbcae5081decf3ef8c4361d3ddf02ce
   FitRefresh: 6dd84a3186a39563729c408aa8ea11b5ed030588
   Kingfisher: 1f9157d9c02b380cbd0b7cc890161195164eb634
@@ -34,6 +38,6 @@ SPEC CHECKSUMS:
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: d004e67ed5d6f9ef36ffd7a22a64759f74d90bfa
+PODFILE CHECKSUM: 692cee5f2854fc48ae4311fdc71a8c1013d77a8d
 
 COCOAPODS: 1.3.1

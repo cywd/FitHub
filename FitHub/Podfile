@@ -12,5 +12,6 @@ target 'FitHub' do
     pod 'FitRefresh'
     pod 'FitCoding'
     pod 'MarkdownView'
-
+    pod 'AlamofireNetworkActivityIndicator'
+    
 end
