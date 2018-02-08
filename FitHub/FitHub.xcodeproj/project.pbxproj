@@ -97,6 +97,7 @@
 		E7B635291FFF4E1F0085CF9A /* OrgsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7B635281FFF4E1F0085CF9A /* OrgsViewController.storyboard */; };
 		E7D3CD6A1FD69CF500F96B99 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D3CD691FD69CF500F96B99 /* AboutViewController.swift */; };
 		E7D3CD6C1FD69D0300F96B99 /* AboutViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7D3CD6B1FD69D0300F96B99 /* AboutViewController.storyboard */; };
+		E7DB97A8202AE4C300948683 /* FitBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DB97A7202AE4C300948683 /* FitBadgeView.swift */; };
 		E7E092371FFB2DD100AA18F6 /* String+FitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E092361FFB2DD100AA18F6 /* String+FitHub.swift */; };
 		E7E092391FFB30C000AA18F6 /* RepositoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E092381FFB30C000AA18F6 /* RepositoryViewController.swift */; };
 		E7E0923B1FFB30CB00AA18F6 /* RepositoryViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E0923A1FFB30CB00AA18F6 /* RepositoryViewController.storyboard */; };
@@ -221,6 +222,7 @@
 		E7B635281FFF4E1F0085CF9A /* OrgsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OrgsViewController.storyboard; sourceTree = "<group>"; };
 		E7D3CD691FD69CF500F96B99 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		E7D3CD6B1FD69D0300F96B99 /* AboutViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AboutViewController.storyboard; sourceTree = "<group>"; };
+		E7DB97A7202AE4C300948683 /* FitBadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitBadgeView.swift; sourceTree = "<group>"; };
 		E7E092361FFB2DD100AA18F6 /* String+FitHub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+FitHub.swift"; sourceTree = "<group>"; };
 		E7E092381FFB30C000AA18F6 /* RepositoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewController.swift; sourceTree = "<group>"; };
 		E7E0923A1FFB30CB00AA18F6 /* RepositoryViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RepositoryViewController.storyboard; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 				E74A4E661FF32FDE00AF8589 /* FontInfomation.swift */,
 				E7B347A01FECF1B500A114E9 /* FitHud.swift */,
 				E7F064E11FF4EA9700E3C7A8 /* SVGImage.swift */,
+				E7DB97A7202AE4C300948683 /* FitBadgeView.swift */,
 				E7F064E31FF4F51A00E3C7A8 /* LanguageColor.swift */,
 				E767ED502008A32C00BEC867 /* UserSessionManager.swift */,
 				E746085A1FC541FF00951AEF /* NetworkManager.swift */,
@@ -783,6 +786,7 @@
 				E72D4A2A2005AC5C00F2F0D0 /* UIViewController+Safari.swift in Sources */,
 				E767ED4D20088B3D00BEC867 /* UIViewController+Alert.swift in Sources */,
 				E7B635271FFF4E130085CF9A /* OrgsViewController.swift in Sources */,
+				E7DB97A8202AE4C300948683 /* FitBadgeView.swift in Sources */,
 				E7360AEF201072CC00922898 /* DiscoveryViewController.swift in Sources */,
 				E7B347A11FECF1B500A114E9 /* FitHud.swift in Sources */,
 				E7B0F2B21FD7ED5200DE2E3F /* Logo.swift in Sources */,
