@@ -25,6 +25,12 @@ class WebViewController: BaseViewController, StoryboardLoadable {
         self.hud = FitHud.show(view: self.view)
     }
 
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -35,7 +41,7 @@ class WebViewController: BaseViewController, StoryboardLoadable {
 extension WebViewController: WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-        
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
     }
     
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
@@ -44,13 +50,19 @@ extension WebViewController: WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         self.hud?.hide()
+        
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
     
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
         self.hud?.hide()
+        
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
     
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
         self.hud?.hide()
+        
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
 }

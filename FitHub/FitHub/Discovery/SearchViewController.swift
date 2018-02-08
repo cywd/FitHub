@@ -74,6 +74,7 @@ extension SearchViewController {
         if text == "" {
             self.users.removeAll()
             self.repos.removeAll()
+            self.tableView.reloadData()
             return
         }
         
