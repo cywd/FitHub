@@ -73,7 +73,7 @@ extension MeViewController: UITableViewDataSource, UITableViewDelegate {
             }
             
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("LOGOUT", comment: "退出"), style: .plain, target: self, action: #selector(rightTap))
-            self.navigationItem.rightBarButtonItem?.tintColor = .red
+            self.navigationItem.rightBarButtonItem?.tintColor = #colorLiteral(red: 1, green: 0.231372549, blue: 0.1882352941, alpha: 1)
         } else {
             self.navigationItem.rightBarButtonItem = nil
         }
