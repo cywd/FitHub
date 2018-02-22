@@ -63,6 +63,7 @@
 		E767ED4B2008892A00BEC867 /* DispatchQueue+FitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = E767ED4A2008892A00BEC867 /* DispatchQueue+FitHub.swift */; };
 		E767ED4D20088B3D00BEC867 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E767ED4C20088B3D00BEC867 /* UIViewController+Alert.swift */; };
 		E767ED512008A32C00BEC867 /* UserSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E767ED502008A32C00BEC867 /* UserSessionManager.swift */; };
+		E771AAD1203E4F7B004CC2E3 /* IconManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E771AAD0203E4F7B004CC2E3 /* IconManager.swift */; };
 		E77CE5431FBEC04500A120B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77CE5421FBEC04500A120B2 /* AppDelegate.swift */; };
 		E77CE5481FBEC04500A120B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E77CE5461FBEC04500A120B2 /* Main.storyboard */; };
 		E77CE54D1FBEC04500A120B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E77CE54B1FBEC04500A120B2 /* LaunchScreen.storyboard */; };
@@ -182,6 +183,7 @@
 		E767ED4A2008892A00BEC867 /* DispatchQueue+FitHub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+FitHub.swift"; sourceTree = "<group>"; };
 		E767ED4C20088B3D00BEC867 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		E767ED502008A32C00BEC867 /* UserSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionManager.swift; sourceTree = "<group>"; };
+		E771AAD0203E4F7B004CC2E3 /* IconManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconManager.swift; sourceTree = "<group>"; };
 		E77CE53F1FBEC04500A120B2 /* FitHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E77CE5421FBEC04500A120B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E77CE5471FBEC04500A120B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 				E7B0F2B11FD7ED5200DE2E3F /* Logo.swift */,
 				E7B0F2B31FD7EF4700DE2E3F /* DarkLogoView.swift */,
 				E7B0F2B51FD7F0E600DE2E3F /* LightLogoView.swift */,
+				E771AAD0203E4F7B004CC2E3 /* IconManager.swift */,
 				E74A4E661FF32FDE00AF8589 /* FontInfomation.swift */,
 				E7B347A01FECF1B500A114E9 /* FitHud.swift */,
 				E7F064E11FF4EA9700E3C7A8 /* SVGImage.swift */,
@@ -785,6 +788,7 @@
 				E77CE5431FBEC04500A120B2 /* AppDelegate.swift in Sources */,
 				E72D4A2A2005AC5C00F2F0D0 /* UIViewController+Safari.swift in Sources */,
 				E767ED4D20088B3D00BEC867 /* UIViewController+Alert.swift in Sources */,
+				E771AAD1203E4F7B004CC2E3 /* IconManager.swift in Sources */,
 				E7B635271FFF4E130085CF9A /* OrgsViewController.swift in Sources */,
 				E7DB97A8202AE4C300948683 /* FitBadgeView.swift in Sources */,
 				E7360AEF201072CC00922898 /* DiscoveryViewController.swift in Sources */,
