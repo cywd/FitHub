@@ -94,6 +94,22 @@ class ReposTableViewController: UITableViewController, StoryboardLoadable {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    override func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)!
+        UIView.beginAnimations(nil, context: nil)
+        UIView.setAnimationDuration(0.2) //设置动画时间
+        cell.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+        UIView.commitAnimations()
+    }
+    
+    override func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)!
+        UIView.beginAnimations(nil, context: nil)
+        UIView.setAnimationDuration(0.2) //设置动画时间
+        cell.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+        UIView.commitAnimations()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -574,11 +574,11 @@ class NetworkManager: NetworkManagerProtocol {
                     if let status = response.response?.statusCode {
                         
                         guard status == 422 else {
-                            failure(status, NSError())
+                            failure(status, NSError(domain: "error", code: 999, userInfo: nil))
                             return
                         }
                     } else {
-                        failure(0, NSError())
+                        failure(0, NSError(domain: "error", code: 999, userInfo: nil))
                         return
                     }
                     
@@ -736,7 +736,7 @@ class NetworkManager: NetworkManagerProtocol {
                 if response.response?.statusCode == 204 {
                     success()
                 } else {
-                    let error = NSError()
+                    let error = NSError(domain: "error", code: 999, userInfo: nil)
                     failure(error)
                 }
                 
@@ -777,7 +777,7 @@ class NetworkManager: NetworkManagerProtocol {
                 if response.response?.statusCode == 204 {
                     success()
                 } else {
-                    let error = NSError()
+                    let error = NSError(domain: "error", code: 999, userInfo: nil)
                     failure(error)
                 }
                 
