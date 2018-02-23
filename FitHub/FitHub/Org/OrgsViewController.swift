@@ -112,4 +112,3 @@ extension OrgsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
 }
-

@@ -11,6 +11,10 @@
 		3D56D4B60E8D8CD0ECEEEF14 /* Pods_FitHub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 684B0EFC6A9D30F55DF1A218 /* Pods_FitHub.framework */; };
 		E70357641FE11163007571A3 /* DownArrowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70357631FE11163007571A3 /* DownArrowView.swift */; };
 		E720B75F203FA3C300286DAA /* Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E720B75E203FA3C300286DAA /* Themes.swift */; };
+		E720B765203FE2E500286DAA /* icon_whitebg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E720B763203FE2E400286DAA /* icon_whitebg@2x.png */; };
+		E720B766203FE2E500286DAA /* icon_whitebg@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E720B764203FE2E400286DAA /* icon_whitebg@3x.png */; };
+		E720B768203FE4D100286DAA /* ThemesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E720B767203FE4D100286DAA /* ThemesViewController.swift */; };
+		E720B76A203FE52600286DAA /* ThemesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E720B769203FE52600286DAA /* ThemesViewController.storyboard */; };
 		E727C65E1FCEA8DA00DC0BB7 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E727C65D1FCEA8DA00DC0BB7 /* EventModel.swift */; };
 		E72A3B431FE7B2E2005DCC90 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72A3B421FE7B2E2005DCC90 /* LaunchViewController.swift */; };
 		E72A3B451FE7B2F5005DCC90 /* LaunchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E72A3B441FE7B2F5005DCC90 /* LaunchViewController.storyboard */; };
@@ -132,6 +136,10 @@
 		89905B76143CFD45D9D78DE2 /* Pods-FitHub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitHub.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FitHub/Pods-FitHub.debug.xcconfig"; sourceTree = "<group>"; };
 		E70357631FE11163007571A3 /* DownArrowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownArrowView.swift; sourceTree = "<group>"; };
 		E720B75E203FA3C300286DAA /* Themes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Themes.swift; sourceTree = "<group>"; };
+		E720B763203FE2E400286DAA /* icon_whitebg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_whitebg@2x.png"; sourceTree = "<group>"; };
+		E720B764203FE2E400286DAA /* icon_whitebg@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_whitebg@3x.png"; sourceTree = "<group>"; };
+		E720B767203FE4D100286DAA /* ThemesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemesViewController.swift; sourceTree = "<group>"; };
+		E720B769203FE52600286DAA /* ThemesViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ThemesViewController.storyboard; sourceTree = "<group>"; };
 		E727C65D1FCEA8DA00DC0BB7 /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 		E72A3B421FE7B2E2005DCC90 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		E72A3B441FE7B2F5005DCC90 /* LaunchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchViewController.storyboard; sourceTree = "<group>"; };
@@ -266,6 +274,15 @@
 				684B0EFC6A9D30F55DF1A218 /* Pods_FitHub.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E720B762203FE2D400286DAA /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				E720B763203FE2E400286DAA /* icon_whitebg@2x.png */,
+				E720B764203FE2E400286DAA /* icon_whitebg@3x.png */,
+			);
+			path = icons;
 			sourceTree = "<group>";
 		};
 		E72D4A0A2004939500F2F0D0 /* Issue */ = {
@@ -405,6 +422,7 @@
 				E77CE54B1FBEC04500A120B2 /* LaunchScreen.storyboard */,
 				E7A3A80F1FF6166800B98AB5 /* Assets.xcassets */,
 				11F41AE91FDC3BE700DD047E /* Localizable.strings */,
+				E720B762203FE2D400286DAA /* icons */,
 				E77CE54E1FBEC04500A120B2 /* Info.plist */,
 			);
 			path = FitHub;
@@ -511,6 +529,8 @@
 				E7D3CD691FD69CF500F96B99 /* AboutViewController.swift */,
 				E7D3CD6B1FD69D0300F96B99 /* AboutViewController.storyboard */,
 				E70357631FE11163007571A3 /* DownArrowView.swift */,
+				E720B767203FE4D100286DAA /* ThemesViewController.swift */,
+				E720B769203FE52600286DAA /* ThemesViewController.storyboard */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -639,6 +659,7 @@
 				E73011B5200F2B8100B43C68 /* OrgViewController.storyboard in Resources */,
 				E75AC77320036A5E00EEBF05 /* ReposTableViewController.storyboard in Resources */,
 				E78BACCA201709D000ED740C /* SearchSectionHeaderView.xib in Resources */,
+				E720B76A203FE52600286DAA /* ThemesViewController.storyboard in Resources */,
 				E72A3B451FE7B2F5005DCC90 /* LaunchViewController.storyboard in Resources */,
 				E77CE54D1FBEC04500A120B2 /* LaunchScreen.storyboard in Resources */,
 				E7E0923B1FFB30CB00AA18F6 /* RepositoryViewController.storyboard in Resources */,
@@ -646,9 +667,11 @@
 				E72D4A1320049DC400F2F0D0 /* LicenseViewController.storyboard in Resources */,
 				E7D3CD6C1FD69D0300F96B99 /* AboutViewController.storyboard in Resources */,
 				E742A5B91FCBB190002E8C0A /* UserDetailViewController.storyboard in Resources */,
+				E720B765203FE2E500286DAA /* icon_whitebg@2x.png in Resources */,
 				11F41AE71FDC3BE700DD047E /* Localizable.strings in Resources */,
 				E76746F11FC6CBB30087A2DF /* RepositoriesTableViewCell.xib in Resources */,
 				E77CE5481FBEC04500A120B2 /* Main.storyboard in Resources */,
+				E720B766203FE2E500286DAA /* icon_whitebg@3x.png in Resources */,
 				E72D4A242004B6B900F2F0D0 /* SourceTableViewController.storyboard in Resources */,
 				E73011BB200F301700B43C68 /* OrgsTableViewCell.xib in Resources */,
 				E767470E1FC7F4760087A2DF /* LanguageViewController.storyboard in Resources */,
@@ -813,6 +836,7 @@
 				E782AD551FCFA70D0054DA20 /* CommentModel.swift in Sources */,
 				E767ED512008A32C00BEC867 /* UserSessionManager.swift in Sources */,
 				E75AC77120036A5400EEBF05 /* ReposTableViewController.swift in Sources */,
+				E720B768203FE4D100286DAA /* ThemesViewController.swift in Sources */,
 				E72D4A222004B6B200F2F0D0 /* SourceTableViewController.swift in Sources */,
 				E7F064E21FF4EA9700E3C7A8 /* SVGImage.swift in Sources */,
 				E78F4C142005F9E900CD35E6 /* ContentModel.swift in Sources */,

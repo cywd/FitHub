@@ -50,7 +50,7 @@ class MeViewController: BaseViewController {
 
 extension MeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -61,6 +61,8 @@ extension MeViewController: UITableViewDataSource, UITableViewDelegate {
         case 1:
             let aboutStr = NSLocalizedString("ABOUT", comment: "关于")
             name = aboutStr
+        case 2:
+            name = "更换图标"
         default:
             name = ""
         }
@@ -104,6 +106,9 @@ extension MeViewController: UITableViewDataSource, UITableViewDelegate {
         } else if indexPath.row == 1 {
             let vc = AboutViewController.loadStoryboard()
             self.tabBarController?.present(vc, animated: true, completion: nil)
+        } else if indexPath.row == 2 {
+            let vc = ThemesViewController.loadStoryboard()
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     
