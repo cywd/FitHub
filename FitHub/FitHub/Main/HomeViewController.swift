@@ -13,7 +13,7 @@ class HomeViewController: BaseViewController {
     
     @IBOutlet weak var cityItem: UIBarButtonItem!
     @IBOutlet weak var languageItem: UIBarButtonItem!
-
+    
     var page: Int = 1
     var scrollView: UIScrollView?
     var items = [UserModel]()
@@ -162,4 +162,22 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         vc.name = self.items[indexPath.row].login!
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    // 点击cell的动画
+    func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)!
+        UIView.beginAnimations(nil, context: nil)
+        UIView.setAnimationDuration(0.2) //设置动画时间
+        cell.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+        UIView.commitAnimations()
+    }
+    
+    func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)!
+        UIView.beginAnimations(nil, context: nil)
+        UIView.setAnimationDuration(0.2) //设置动画时间
+        cell.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+        UIView.commitAnimations()
+    }
+    
 }

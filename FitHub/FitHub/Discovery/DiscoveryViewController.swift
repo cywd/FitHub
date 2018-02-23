@@ -42,13 +42,32 @@ class DiscoveryViewController: BaseViewController, UISearchControllerDelegate, U
         self.requestData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+//        self.animateTable()
+    }
+    
+    func animateTable() {
+        let cells = self.tableView.visibleCells
+        let tableHeight = self.tableView.bounds.size.height
+        for (index, cell) in cells.enumerated() {
+            cell.transform = CGAffineTransform(translationX: 0, y: tableHeight)
+            UIView.animate(withDuration: 1.0, delay: 0.05 * Double(index), usingSpringWithDamping: 1.0, initialSpringVelocity: 0, options: [], animations: {
+                cell.transform = CGAffineTransform(translationX: 0, y: 0)
+            }, completion: nil)
+        }
+    }
+
     fileprivate func requestData() {
         NetworkManager.getTrendingRepository(success: { (items) in
             
             self.hud?.hide()
             
             self.items = items
+            
             self.tableView.reloadData()
+            self.animateTable()
             
         }) { (_) in
             self.hud?.hide()
@@ -101,6 +120,22 @@ extension DiscoveryViewController {
         vc.userName = self.items[indexPath.row].owner!.login!
         vc.repositoryName = self.items[indexPath.row].name!
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)!
+        UIView.beginAnimations(nil, context: nil)
+        UIView.setAnimationDuration(0.2) //设置动画时间
+        cell.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+        UIView.commitAnimations()
+    }
+    
+    func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)!
+        UIView.beginAnimations(nil, context: nil)
+        UIView.setAnimationDuration(0.2) //设置动画时间
+        cell.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+        UIView.commitAnimations()
     }
     
 }

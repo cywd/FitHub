@@ -10,6 +10,7 @@
 		11F41AE71FDC3BE700DD047E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 11F41AE91FDC3BE700DD047E /* Localizable.strings */; };
 		3D56D4B60E8D8CD0ECEEEF14 /* Pods_FitHub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 684B0EFC6A9D30F55DF1A218 /* Pods_FitHub.framework */; };
 		E70357641FE11163007571A3 /* DownArrowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70357631FE11163007571A3 /* DownArrowView.swift */; };
+		E720B75F203FA3C300286DAA /* Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E720B75E203FA3C300286DAA /* Themes.swift */; };
 		E727C65E1FCEA8DA00DC0BB7 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E727C65D1FCEA8DA00DC0BB7 /* EventModel.swift */; };
 		E72A3B431FE7B2E2005DCC90 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72A3B421FE7B2E2005DCC90 /* LaunchViewController.swift */; };
 		E72A3B451FE7B2F5005DCC90 /* LaunchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E72A3B441FE7B2F5005DCC90 /* LaunchViewController.storyboard */; };
@@ -130,6 +131,7 @@
 		6997D6C2A0F99CAC8347C059 /* Pods-FitHub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitHub.release.xcconfig"; path = "Pods/Target Support Files/Pods-FitHub/Pods-FitHub.release.xcconfig"; sourceTree = "<group>"; };
 		89905B76143CFD45D9D78DE2 /* Pods-FitHub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitHub.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FitHub/Pods-FitHub.debug.xcconfig"; sourceTree = "<group>"; };
 		E70357631FE11163007571A3 /* DownArrowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownArrowView.swift; sourceTree = "<group>"; };
+		E720B75E203FA3C300286DAA /* Themes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Themes.swift; sourceTree = "<group>"; };
 		E727C65D1FCEA8DA00DC0BB7 /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 		E72A3B421FE7B2E2005DCC90 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		E72A3B441FE7B2F5005DCC90 /* LaunchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchViewController.storyboard; sourceTree = "<group>"; };
@@ -295,6 +297,7 @@
 				E7F064E11FF4EA9700E3C7A8 /* SVGImage.swift */,
 				E7DB97A7202AE4C300948683 /* FitBadgeView.swift */,
 				E7F064E31FF4F51A00E3C7A8 /* LanguageColor.swift */,
+				E720B75E203FA3C300286DAA /* Themes.swift */,
 				E767ED502008A32C00BEC867 /* UserSessionManager.swift */,
 				E746085A1FC541FF00951AEF /* NetworkManager.swift */,
 			);
@@ -774,6 +777,7 @@
 				E72D4A272004B6F400F2F0D0 /* SourceTableViewCell.swift in Sources */,
 				E70357641FE11163007571A3 /* DownArrowView.swift in Sources */,
 				E72A3B431FE7B2E2005DCC90 /* LaunchViewController.swift in Sources */,
+				E720B75F203FA3C300286DAA /* Themes.swift in Sources */,
 				E7E092371FFB2DD100AA18F6 /* String+FitHub.swift in Sources */,
 				E72D4A0F20049DA500F2F0D0 /* LicenseViewController.swift in Sources */,
 				E7403E091FC3FDAC003054D7 /* MeViewController.swift in Sources */,
