@@ -85,6 +85,19 @@ class UsersTableViewController: UITableViewController, StoryboardLoadable {
         
         let cell = tableView.fit_dequeueReusableCell(indexPath: indexPath) as UserTableViewCell
         cell.model = self.items[indexPath.row]
+        
+        // 注册3D Touch
+        if self.responds(to: #selector(getter: traitCollection)) {
+            
+            if self.traitCollection.responds(to: #selector(getter: UITraitCollection.forceTouchCapability)) {
+                
+                if self.traitCollection.forceTouchCapability == UIForceTouchCapability.available {
+                    self.registerForPreviewing(with: self, sourceView: cell)
+                }
+                
+            }
+        }
+        
         return cell
     }
     
@@ -116,4 +129,20 @@ class UsersTableViewController: UITableViewController, StoryboardLoadable {
         // Dispose of any resources that can be recreated.
     }
 
+}
+
+extension UsersTableViewController: UIViewControllerPreviewingDelegate {
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        
+        let indexPath = self.tableView.indexPath(for: previewingContext.sourceView as! UserTableViewCell)!
+        let vc = UserDetailViewController.loadStoryboard()
+        vc.name = self.items[indexPath.row].login!
+        return vc
+        
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        self.show(viewControllerToCommit, sender: self)
+    }
+    
 }

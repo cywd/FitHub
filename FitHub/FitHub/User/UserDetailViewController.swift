@@ -242,3 +242,21 @@ class UserDetailViewController: BaseViewController, StoryboardLoadable {
     }
 
 }
+
+//extension UserDetailViewController {
+//    override var previewActionItems: [UIPreviewActionItem] {
+//        get {
+//            
+//            let p1 = UIPreviewAction(title: "Cancle", style: UIPreviewActionStyle.destructive) { (action, previewViewController) in
+//                print("didiClickCancel")
+//            }
+//            
+//            let p2 = UIPreviewAction(title: self.name, style: UIPreviewActionStyle.default) { (action, previewViewController) in
+//                print(self.name)
+//            }
+//            
+//            return [p1, p2]
+//        }
+//    }
+//}
+

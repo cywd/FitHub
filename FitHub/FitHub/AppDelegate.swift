@@ -23,6 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        let overlayClass = NSClassFromString("UIDebuggingInformationOverlay") as? UIWindow.Type
 //        _ = overlayClass?.perform(NSSelectorFromString("prepareDebuggingOverlay"))
 
+        self.initShortItems()
+        
         return true
     }
     
@@ -54,6 +56,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         return UIImage(named: launchImage)
     }
+    
+    private func initShortItems() {
+        
+        var shortcutItems = [UIApplicationShortcutItem]()
+        
+        let discoveryIcon =  UIApplicationShortcutIcon(templateImageName: "discovery")
+        let discoveryItem = UIApplicationShortcutItem(type: "com.cy.discovery", localizedTitle: "Discovery", localizedSubtitle: "", icon: discoveryIcon, userInfo: nil)
+        shortcutItems.append(discoveryItem)
+        
+        if NetworkManager.isLogin() {
+            let eventsIcon =  UIApplicationShortcutIcon(templateImageName: "events")
+            let eventsItem = UIApplicationShortcutItem(type: "com.cy.events", localizedTitle: "Events", localizedSubtitle: "", icon: eventsIcon, userInfo: nil)
+            shortcutItems.append(eventsItem)
+            
+            if let model = UserSessionManager.myself {
+                let meIcon =  UIApplicationShortcutIcon(templateImageName: "user")
+                let meItem = UIApplicationShortcutItem(type: "com.cy.me", localizedTitle: "Me", localizedSubtitle: model.login!, icon: meIcon, userInfo: nil)
+                shortcutItems.append(meItem)
+            }
+        } else {
+            // 去登陆
+        }
+        
+        
+        UIApplication.shared.shortcutItems = shortcutItems
+    }
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -76,7 +104,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
+    
+    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        
+        if shortcutItem.type == "com.cy.events" {
+            
+            if self.window!.rootViewController!.isKind(of: UITabBarController.self) {
+                let tabbarVC = self.window!.rootViewController as! TabBarController
+                tabbarVC.selectedIndex = 1
+            }
+            
+        } else if shortcutItem.type == "com.cy.me" {
+            if self.window!.rootViewController!.isKind(of: UITabBarController.self) {
+                let tabbarVC = self.window!.rootViewController as! TabBarController
+                tabbarVC.selectedIndex = 3
+                
+                let nav = tabbarVC.viewControllers!.last as! NavigationController
+                let vc = nav.viewControllers.first as! MeViewController
+                vc.tableView(vc.tableView, didSelectRowAt: IndexPath(row: 0, section: 0))
+            }
+        } else if shortcutItem.type == "com.cy.discovery" {
+            if self.window!.rootViewController!.isKind(of: UITabBarController.self) {
+                let tabbarVC = self.window!.rootViewController as! TabBarController
+                tabbarVC.selectedIndex = 2
+            }
+        }
+    }
 
 }
-

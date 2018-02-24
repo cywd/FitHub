@@ -38,6 +38,31 @@ class MeViewController: BaseViewController {
     @objc func rightTap() {
         NetworkManager.logout()
         self.tableView.reloadData()
+        
+        
+        var shortcutItems = [UIApplicationShortcutItem]()
+        
+        let discoveryIcon =  UIApplicationShortcutIcon(templateImageName: "discovery")
+        let discoveryItem = UIApplicationShortcutItem(type: "com.cy.discovery", localizedTitle: "Discovery", localizedSubtitle: "", icon: discoveryIcon, userInfo: nil)
+        shortcutItems.append(discoveryItem)
+        
+        if NetworkManager.isLogin() {
+            let eventsIcon =  UIApplicationShortcutIcon(templateImageName: "events")
+            let eventsItem = UIApplicationShortcutItem(type: "com.cy.events", localizedTitle: "Events", localizedSubtitle: "", icon: eventsIcon, userInfo: nil)
+            shortcutItems.append(eventsItem)
+            
+            if let model = UserSessionManager.myself {
+                let meIcon =  UIApplicationShortcutIcon(templateImageName: "user")
+                let meItem = UIApplicationShortcutItem(type: "com.cy.me", localizedTitle: "Me", localizedSubtitle: model.login!, icon: meIcon, userInfo: nil)
+                shortcutItems.append(meItem)
+            }
+        } else {
+            // 去登陆
+        }
+        
+        
+        UIApplication.shared.shortcutItems = shortcutItems
+        
     }
     
     // MARK: - dealloc
