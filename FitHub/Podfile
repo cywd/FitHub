@@ -13,5 +13,6 @@ target 'FitHub' do
     pod 'FitCoding'
     pod 'MarkdownView'
     pod 'AlamofireNetworkActivityIndicator'
+    pod 'SQLite.swift'
     
 end
