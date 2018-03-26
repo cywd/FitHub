@@ -10,6 +10,7 @@
 		11F41AE71FDC3BE700DD047E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 11F41AE91FDC3BE700DD047E /* Localizable.strings */; };
 		3D56D4B60E8D8CD0ECEEEF14 /* Pods_FitHub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 684B0EFC6A9D30F55DF1A218 /* Pods_FitHub.framework */; };
 		E70357641FE11163007571A3 /* DownArrowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70357631FE11163007571A3 /* DownArrowView.swift */; };
+		E710529E2068B185001F2911 /* colors.json in Resources */ = {isa = PBXBuildFile; fileRef = E710529D2068B184001F2911 /* colors.json */; };
 		E720B75F203FA3C300286DAA /* Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E720B75E203FA3C300286DAA /* Themes.swift */; };
 		E720B765203FE2E500286DAA /* icon_whitebg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E720B763203FE2E400286DAA /* icon_whitebg@2x.png */; };
 		E720B766203FE2E500286DAA /* icon_whitebg@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E720B764203FE2E400286DAA /* icon_whitebg@3x.png */; };
@@ -135,6 +136,7 @@
 		6997D6C2A0F99CAC8347C059 /* Pods-FitHub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitHub.release.xcconfig"; path = "Pods/Target Support Files/Pods-FitHub/Pods-FitHub.release.xcconfig"; sourceTree = "<group>"; };
 		89905B76143CFD45D9D78DE2 /* Pods-FitHub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitHub.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FitHub/Pods-FitHub.debug.xcconfig"; sourceTree = "<group>"; };
 		E70357631FE11163007571A3 /* DownArrowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownArrowView.swift; sourceTree = "<group>"; };
+		E710529D2068B184001F2911 /* colors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = colors.json; sourceTree = "<group>"; };
 		E720B75E203FA3C300286DAA /* Themes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Themes.swift; sourceTree = "<group>"; };
 		E720B763203FE2E400286DAA /* icon_whitebg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_whitebg@2x.png"; sourceTree = "<group>"; };
 		E720B764203FE2E400286DAA /* icon_whitebg@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_whitebg@3x.png"; sourceTree = "<group>"; };
@@ -424,6 +426,7 @@
 				11F41AE91FDC3BE700DD047E /* Localizable.strings */,
 				E720B762203FE2D400286DAA /* icons */,
 				E77CE54E1FBEC04500A120B2 /* Info.plist */,
+				E710529D2068B184001F2911 /* colors.json */,
 			);
 			path = FitHub;
 			sourceTree = "<group>";
@@ -676,6 +679,7 @@
 				E73011BB200F301700B43C68 /* OrgsTableViewCell.xib in Resources */,
 				E767470E1FC7F4760087A2DF /* LanguageViewController.storyboard in Resources */,
 				E7B635291FFF4E1F0085CF9A /* OrgsViewController.storyboard in Resources */,
+				E710529E2068B185001F2911 /* colors.json in Resources */,
 				E7A6DF411FD5276C00EA3449 /* EventsTableViewCell.xib in Resources */,
 				E72D4A282004B6F400F2F0D0 /* SourceTableViewCell.xib in Resources */,
 				E75AC76F200366A500EEBF05 /* UsersTableViewController.storyboard in Resources */,

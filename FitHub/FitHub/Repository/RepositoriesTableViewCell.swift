@@ -10,6 +10,7 @@ import UIKit
 
 class RepositoriesTableViewCell: UITableViewCell, RegisterCellOrNib {
 
+    @IBOutlet weak var languageColorView: UIView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var desLabel: UILabel!
     @IBOutlet weak var languageLabel: UILabel!
@@ -45,7 +46,19 @@ class RepositoriesTableViewCell: UITableViewCell, RegisterCellOrNib {
             if let language = model?.language {
                 self.languageLabel.isHidden = false
                 self.languageLabel.text = "\(language)"
+                
+                let dict = LanguageColor.colorDict()[language] as? NSDictionary
+                
+                if let colorStr = dict?["color"] as? String {
+                    let color = UIColor(hexString: colorStr)
+                    self.languageColorView.isHidden = false
+                    self.languageColorView.backgroundColor = color
+                } else {
+                    self.languageColorView.isHidden = true
+                }
+                
             } else {
+                self.languageColorView.isHidden = true
                 self.languageLabel.isHidden = true
             }
         }
