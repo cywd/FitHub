@@ -17,14 +17,12 @@ class ThemesViewController: BaseViewController, StoryboardLoadable {
         // Do any additional setup after loading the view.
         
         self.title = "更换图标"
-        
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "themeCell")
         
         guard let _ = UserDefaults.standard.value(forKey: "FitHubTheme") else {
             UserDefaults.standard.set(0, forKey: "FitHubTheme")
             return
         }
-        
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "themeCell")
     }
 
     override func didReceiveMemoryWarning() {
