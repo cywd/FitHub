@@ -16,11 +16,20 @@ class LanguageViewController: BaseViewController, StoryboardLoadable {
     var items: [String] {
         get {
             let allLanguageStr = NSLocalizedString("ALL_LANGUAGE", comment: "所有语言")
-            return [allLanguageStr,
-                "JavaScript", "Java", "PHP", "Ruby", "Python", "CSS",
-                "CPP", "C", "Objective-C", "Swift", "Shell", "Lua", "HTML", "Scala",
-                "Go", "C#", "Kotlin", "Haskell", "Matlab", "R", "Perl",
-                "TypeScript", "Vue", "PowerShell"]
+            var arr = Languages.languages()
+            for str in arr {
+                if str == "C++" {
+                    let index = arr.index(of: str)!
+                    arr[index] = "CPP"
+                }
+            }
+            arr.insert(allLanguageStr, at: 0)
+            return arr
+//            return [allLanguageStr,
+//                "JavaScript", "Java", "PHP", "Ruby", "Python", "CSS",
+//                "CPP", "C", "Objective-C", "Swift", "Shell", "Lua", "HTML", "Scala",
+//                "Go", "C#", "Kotlin", "Haskell", "Matlab", "R", "Perl",
+//                "TypeScript", "Vue", "PowerShell"]
         }
     }
 

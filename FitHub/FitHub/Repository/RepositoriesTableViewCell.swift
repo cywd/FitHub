@@ -47,7 +47,7 @@ class RepositoriesTableViewCell: UITableViewCell, RegisterCellOrNib {
                 self.languageLabel.isHidden = false
                 self.languageLabel.text = "\(language)"
                 
-                let dict = LanguageColor.colorDict()[language] as? NSDictionary
+                let dict = Languages.colorDict()[language] as? NSDictionary
                 
                 if let colorStr = dict?["color"] as? String {
                     let color = UIColor(hexString: colorStr)

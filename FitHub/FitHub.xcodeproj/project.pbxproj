@@ -109,7 +109,7 @@
 		E7E092391FFB30C000AA18F6 /* RepositoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E092381FFB30C000AA18F6 /* RepositoryViewController.swift */; };
 		E7E0923B1FFB30CB00AA18F6 /* RepositoryViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E0923A1FFB30CB00AA18F6 /* RepositoryViewController.storyboard */; };
 		E7F064E21FF4EA9700E3C7A8 /* SVGImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F064E11FF4EA9700E3C7A8 /* SVGImage.swift */; };
-		E7F064E41FF4F51A00E3C7A8 /* LanguageColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F064E31FF4F51A00E3C7A8 /* LanguageColor.swift */; };
+		E7F064E41FF4F51A00E3C7A8 /* Languages.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F064E31FF4F51A00E3C7A8 /* Languages.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -241,7 +241,7 @@
 		E7E092381FFB30C000AA18F6 /* RepositoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewController.swift; sourceTree = "<group>"; };
 		E7E0923A1FFB30CB00AA18F6 /* RepositoryViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RepositoryViewController.storyboard; sourceTree = "<group>"; };
 		E7F064E11FF4EA9700E3C7A8 /* SVGImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGImage.swift; sourceTree = "<group>"; };
-		E7F064E31FF4F51A00E3C7A8 /* LanguageColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageColor.swift; sourceTree = "<group>"; };
+		E7F064E31FF4F51A00E3C7A8 /* Languages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Languages.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -315,7 +315,7 @@
 				E7B347A01FECF1B500A114E9 /* FitHud.swift */,
 				E7F064E11FF4EA9700E3C7A8 /* SVGImage.swift */,
 				E7DB97A7202AE4C300948683 /* FitBadgeView.swift */,
-				E7F064E31FF4F51A00E3C7A8 /* LanguageColor.swift */,
+				E7F064E31FF4F51A00E3C7A8 /* Languages.swift */,
 				E720B75E203FA3C300286DAA /* Themes.swift */,
 				E767ED502008A32C00BEC867 /* UserSessionManager.swift */,
 				E746085A1FC541FF00951AEF /* NetworkManager.swift */,
@@ -796,7 +796,7 @@
 				E746084F1FC5117B00951AEF /* UIImage+FitHub.swift in Sources */,
 				E72D4A2C2005DF5E00F2F0D0 /* String+QueryItemValue.swift in Sources */,
 				E746085B1FC541FF00951AEF /* NetworkManager.swift in Sources */,
-				E7F064E41FF4F51A00E3C7A8 /* LanguageColor.swift in Sources */,
+				E7F064E41FF4F51A00E3C7A8 /* Languages.swift in Sources */,
 				E72D4A152004A8BF00F2F0D0 /* WebViewController.swift in Sources */,
 				E782AD511FCFA04C0054DA20 /* PayloadModel.swift in Sources */,
 				E767470C1FC7F4530087A2DF /* LanguageViewController.swift in Sources */,
