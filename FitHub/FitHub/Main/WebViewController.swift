@@ -35,6 +35,8 @@ class WebViewController: BaseViewController, StoryboardLoadable {
         webView.uiDelegate = self
         
         self.hud = FitHud.show(view: self.view)
+        
+        setupBackButton()
     }
 
     override func viewDidDisappear(_ animated: Bool) {
@@ -44,8 +46,26 @@ class WebViewController: BaseViewController, StoryboardLoadable {
     }
     
     func setupBackButton() {
-       
+        let backItem = UIBarButtonItem(title: "返回", style: UIBarButtonItemStyle.plain, target: self, action: #selector(goBack))
+        if self.webView.canGoBack {
+            let closeItem = UIBarButtonItem(title: "关闭", style: UIBarButtonItemStyle.plain, target: self, action: #selector(closeWebView))
+            self.navigationItem.leftBarButtonItems = [backItem, closeItem]
+        } else {
+            self.navigationItem.leftBarButtonItems = [backItem]
+        }
         
+    }
+    
+    @objc func goBack() {
+        if self.webView.canGoBack {
+            self.webView.goBack()
+        } else {
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
+    
+    @objc func closeWebView() {
+        self.navigationController?.popViewController(animated: true)
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -98,6 +118,9 @@ extension WebViewController: WKNavigationDelegate {
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
         
         webView.evaluateJavaScript("var a = document.getElementsByTagName('a');for(var i=0;i<a.length;i++){a[i].setAttribute('target','');}", completionHandler: nil)
+        
+        setupBackButton()
+        
         webView.evaluateJavaScript("document.title") { (obj, error) in
             self.navigationItem.title = obj as? String
         }
