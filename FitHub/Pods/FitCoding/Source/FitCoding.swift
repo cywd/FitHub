@@ -26,27 +26,9 @@ import Foundation
 
 extension NSObject {
     
-    func codableProperties() -> Dictionary<String, Any?> {
-        var codableProperties = [String: Any?]()
-        let mirrorOfSelf = Mirror(reflecting: self)
-        
-        for item in mirrorOfSelf.children {
-            if let label = item.label {
-                codableProperties[label] = unwrap(item.value)
-            }
-        }
-        return codableProperties
-    }
+    // MARK: - public
     
-    func unwrap(_ any: Any) -> Any? {
-        let mi = Mirror(reflecting: any)
-        if mi.displayStyle != Mirror.DisplayStyle.optional {
-            return any
-        }
-        if mi.children.count == 0 { return nil } // Optional.None
-        return mi.children.first?.value
-    }
-    
+    /// SetupWithDecoder: Use in `init?(coder aDecoder: NSCoder)`
     public func setup(withDecoder aDecoder: NSCoder) {
         for (key, _) in codableProperties() {
             let object = aDecoder.decodeObject(forKey: key)
@@ -54,6 +36,7 @@ extension NSObject {
         }
     }
     
+    /// SetupWithCoder: Use in `encode(with aCoder: NSCoder)`
     public func setup(withCoder aCoder: NSCoder) {
         for (key, value) in codableProperties() {
             switch value {
@@ -67,6 +50,31 @@ extension NSObject {
                 print("Nil value for \(key)")
             }
         }
+    }
+    
+    // MARK: - private
+    
+    /// Get codable properties
+    fileprivate func codableProperties() -> Dictionary<String, Any?> {
+        var codableProperties = [String: Any?]()
+        let mirrorOfSelf = Mirror(reflecting: self)
+        
+        for item in mirrorOfSelf.children {
+            if let label = item.label {
+                codableProperties[label] = unwrap(item.value)
+            }
+        }
+        return codableProperties
+    }
+    
+    /// Unwrap
+    private func unwrap(_ any: Any) -> Any? {
+        let mi = Mirror(reflecting: any)
+        if mi.displayStyle != Mirror.DisplayStyle.optional {
+            return any
+        }
+        if mi.children.count == 0 { return nil } // Optional.None
+        return mi.children.first?.value
     }
 }
 

@@ -11,20 +11,20 @@ import UIKit
 class FRAutoGifFooter: FRAutoStateFooter {
 
     // MARK: 方法接口
-    /** 设置刷新状态下,gif的图片 */
+    /// 设置刷新状态下,gif的图片 
     @discardableResult
     public func setImages(_ images: Array<UIImage>, state: RefreshState) -> Self {
         return self.setImages(images, duration: TimeInterval(images.count) * 0.1, state: state)
     }
     
-    /** 设置刷新状态下,gif的图片,动画每帧相隔的时间 */
+    /// 设置刷新状态下,gif的图片,动画每帧相隔的时间 
     @discardableResult
     public func setImages(_ images: Array<UIImage>, duration:TimeInterval, state:RefreshState) -> Self {
         // 防止空数组 []
         if images.count < 1 { return self}
         
-        self.stateImages[state] = images;
-        self.stateDurations[state] = duration;
+        self.stateImages[state] = images
+        self.stateDurations[state] = duration
         
         // 根据图片设置控件的高度
         let image: UIImage = images.first!
@@ -47,19 +47,21 @@ class FRAutoGifFooter: FRAutoStateFooter {
     
     
     // MARK: 重写
-    override public func prepare() {
+    override func prepare() {
         super.prepare()
     }
     
     override func placeSubvies() {
         super.placeSubvies()
         
+        if self.gifView.constraints.count > 0 { return }
+        
         self.gifView.frame = self.bounds
-        if self.refreshingTitleHidden {
+        if self.isRefreshingTitleHidden {
             self.gifView.contentMode = UIViewContentMode.center
         } else {
             self.gifView.contentMode = UIViewContentMode.right
-            self.gifView.width = self.width * 0.5 - 20 - self.stateLabel.fr_textWidth() * 0.5
+            self.gifView.width = self.width * 0.5 - self.labelLeftInset - self.stateLabel.fr_textWidth * 0.5
         }
     }
     
@@ -71,9 +73,7 @@ class FRAutoGifFooter: FRAutoStateFooter {
     }
     
     fileprivate func switchStateDoSomething(_ state: RefreshState) {
-        
-        if !(state == RefreshState.pulling || state == RefreshState.refreshing) { return }
-        
+         
         if state == RefreshState.refreshing {
             if let images = self.stateImages[state] {
                 if images.count < 1 { return }
@@ -90,7 +90,7 @@ class FRAutoGifFooter: FRAutoStateFooter {
                     self.gifView.startAnimating()
                 }
             }
-        } else if (state == RefreshState.pulling || state == RefreshState.idle) {
+        } else if (state == RefreshState.noMoreData || state == RefreshState.idle) {
             self.gifView.stopAnimating()
             self.gifView.isHidden = true
         }

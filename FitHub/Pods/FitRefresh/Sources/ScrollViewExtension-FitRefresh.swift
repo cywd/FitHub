@@ -42,13 +42,13 @@ extension FitRefresh where Base: ScrollView {
         
     }
     
-    /** 下拉刷新的控件 */
+    /// 下拉刷新的控件 
     public var headerView: FRHeader? {
         set {
             if headerView == newValue { return }
             
             headerView?.removeFromSuperview()
-            objc_setAssociatedObject(base,&RefreshHeaderKey, newValue , objc_AssociationPolicy.OBJC_ASSOCIATION_ASSIGN)
+            objc_setAssociatedObject(base, &RefreshHeaderKey, newValue , objc_AssociationPolicy.OBJC_ASSOCIATION_ASSIGN)
             
             if let newHeaderView = newValue {
                 base.addSubview(newHeaderView)
@@ -61,7 +61,7 @@ extension FitRefresh where Base: ScrollView {
     
     
     
-    /** 上拉刷新的控件 */
+    /// 上拉刷新的控件 
     public var footerView: FRFooter? {
         set {
             if footerView == newValue { return }
@@ -113,7 +113,7 @@ public extension UIScrollView {
     // MARK: 1.2 version
     // =================
     
-    /** reloadDataClosure */
+    /// reloadDataClosure 
     @available(*, deprecated, message: "Extensions directly on scroll Views are deprecated. Use like `scrollView.fr.reloadDataClosureClass` instead.", renamed: "fr.reloadDataClosureClass")
     public var reloadDataClosureClass:ReloadDataClosureInClass {
         set {
@@ -130,7 +130,7 @@ public extension UIScrollView {
         }
     }
         
-    /** 下拉刷新的控件 */
+    /// 下拉刷新的控件 
     @available(*, deprecated, message: "Extensions directly on scroll Views are deprecated. Use like `scrollView.fr.headerView` instead.", renamed: "fr.headerView")
     public var fr_headerView: FRHeader? {
         set {
@@ -148,7 +148,7 @@ public extension UIScrollView {
         }
     }
     
-    /** 上拉刷新的控件 */
+    /// 上拉刷新的控件 
     @available(*, deprecated, message: "Extensions directly on scroll Views are deprecated. Use like `scrollView.fr.footerView` instead.", renamed: "fr.footerView")
     var fr_footerView: FRFooter? {
         set {

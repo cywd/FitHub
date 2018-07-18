@@ -1,24 +1,23 @@
 //
-//  GifHeader.swift
+//  FRBackGifFooter.swift
 //  FitRefresh
 //
-//  Created by Cyrill on 2016/12/28.
-//  Copyright © 2016年 Cyrill. All rights reserved.
+//  Created by cyrill on 2018/2/2.
+//  Copyright © 2018年 Cyrill. All rights reserved.
 //
 
 import UIKit
 
-public class FRGifHeader: FRStateHeader {
-    
-    // MARK: 方法接口
-    /// 设置刷新状态下,gif的图片 
+class FRBackGifFooter: FRBackStateFooter {
+
+    // MARK: - public
+    /// 设置刷新状态下,gif的图片
     @discardableResult
     public func setImages(_ images: Array<UIImage>, state: RefreshState) -> Self {
-        
         return self.setImages(images, duration: TimeInterval(images.count) * 0.1, state: state)
     }
     
-    /// 设置刷新状态下,gif的图片,动画每帧相隔的时间 
+    /// 设置刷新状态下,gif的图片,动画每帧相隔的时间
     @discardableResult
     public func setImages(_ images: Array<UIImage>, duration:TimeInterval, state:RefreshState) -> Self {
         // 防止空数组 []
@@ -46,20 +45,21 @@ public class FRGifHeader: FRStateHeader {
     fileprivate var stateImages: Dictionary<RefreshState, Array<UIImage>> = [RefreshState.idle : []]
     fileprivate var stateDurations: Dictionary<RefreshState, TimeInterval> = [RefreshState.idle : 1, RefreshState.pulling : 1, RefreshState.refreshing : 1]
     
+    
     // MARK: 重写
-    override public var pullingPercent: CGFloat {
+    override public func prepare() {
+        super.prepare()
+    }
+    
+    override var pullingPercent: CGFloat {
         didSet {
-            if  let images = self.stateImages[RefreshState.idle] {
-                
-                if self.state != RefreshState.idle || images.count < 1 { return }
-                
-                // 停止动画
+            if let images = self.stateImages[RefreshState.idle] {
+                if self.state != .idle || images.count == 0 { return }
                 self.gifView.stopAnimating()
-                // 设置当前需要显示的图片,根据百分比显示
-                var index = Int(CGFloat(images.count) * pullingPercent)
-                
-                if index >= images.count { index = images.count - 1 }
-                
+                var index = images.count * Int(pullingPercent)
+                if index >= images.count {
+                    index = images.count - 1
+                }
                 self.gifView.image = images[index]
             }
         }
@@ -67,13 +67,13 @@ public class FRGifHeader: FRStateHeader {
     
     override func placeSubvies() {
         super.placeSubvies()
-        
+        if self.gifView.constraints.count > 0 { return }
         self.gifView.frame = self.bounds
-        if self.stateLabel.isHidden && self.lastUpdatedTimeLabel.isHidden {
+        if self.stateLabel.isHidden {
             self.gifView.contentMode = UIViewContentMode.center
         } else {
             self.gifView.contentMode = UIViewContentMode.right
-            self.gifView.width = self.width * 0.5 - RefreshGifViewWidthDeviation
+            self.gifView.width = self.width * 0.5 - self.labelLeftInset - self.stateLabel.fr_textWidth * 0.5
         }
     }
     
@@ -84,23 +84,29 @@ public class FRGifHeader: FRStateHeader {
         }
     }
     
-    fileprivate func switchStateDoSomething(_ state:RefreshState) {
+    fileprivate func switchStateDoSomething(_ state: RefreshState) {
         
-        if !(state == RefreshState.pulling || state == RefreshState.refreshing) { return }
-        
-        if let images = self.stateImages[state] {
-            if images.count < 1 { return }
-            
-            self.gifView.stopAnimating()
-            // 单张图片
-            if images.count == 1 {
-                self.gifView.image = images.last
-                // 多张图片
-            } else {
-                self.gifView.animationImages = images
-                self.gifView.animationDuration = self.stateDurations[state]!
-                self.gifView.startAnimating()
+        if state == RefreshState.pulling || state == RefreshState.refreshing {
+            if let images = self.stateImages[state] {
+                if images.count < 1 { return }
+                
+                self.gifView.stopAnimating()
+                self.gifView.isHidden = false
+                // 单张图片
+                if images.count == 1 {
+                    self.gifView.image = images.last
+                    // 多张图片
+                } else {
+                    self.gifView.animationImages = images
+                    self.gifView.animationDuration = self.stateDurations[state]!
+                    self.gifView.startAnimating()
+                }
             }
+        } else if (state == RefreshState.idle) {
+            self.gifView.isHidden = false
+        } else if (state == RefreshState.noMoreData) {
+            self.gifView.isHidden = true
         }
     }
+
 }

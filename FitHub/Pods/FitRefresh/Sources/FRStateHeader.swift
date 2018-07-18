@@ -11,7 +11,7 @@ import UIKit
 public class FRStateHeader: FRHeader {
     
     // MARK: - private
-    /** 每个状态对应的文字 */
+    /// 每个状态对应的文字
     fileprivate var stateTitles: Dictionary<RefreshState, String> = [
         RefreshState.idle : RefreshHeaderStateIdleText,
         RefreshState.refreshing : RefreshHeaderStateRefreshingText,
@@ -20,43 +20,43 @@ public class FRStateHeader: FRHeader {
     
     // MARK: - public
     
-    /** 利用这个colsure来决定显示的更新时间 */
+    /// 利用这个colsure来决定显示的更新时间
     var closureCallLastUpdatedTimeTitle: ((_ lastUpdatedTime:Date) -> String)?
     
-    /** 显示上一次刷新时间的label */
+    /// 显示上一次刷新时间的label
     lazy var lastUpdatedTimeLabel: UILabel = {
         [unowned self] in
-        let lable = UILabel.FRLabel()
-        self.addSubview(lable)
-        return lable
+        let label = UILabel.FRLabel()
+        self.addSubview(label)
+        return label
         }()
     
-    /** 显示刷新状态的label */
+    /// 显示刷新状态的label
     lazy var stateLabel: UILabel = {
         [unowned self] in
-        let lable = UILabel.FRLabel()
-        self.addSubview(lable)
-        return lable
+        let label = UILabel.FRLabel()
+        self.addSubview(label)
+        return label
         }()
     
-    /** 设置状态的显示文字 */
+    /// 设置状态的显示文字
     public func setTitle(_ title:String, state: RefreshState) {
-        self.stateLabel.text = self.stateTitles[self.state];
+        self.stateLabel.text = self.stateTitles[self.state]
     }
     
-    /** 文字刷新状态下的显示与隐藏 */
-    public var refreshingTitleHidden: Bool = false {
+    /// 文字刷新状态下的显示与隐藏
+    public var isRefreshingTitleHidden: Bool = false {
         didSet {
-            if oldValue == refreshingTitleHidden { return }
-            self.stateLabel.isHidden = refreshingTitleHidden
+            if oldValue == isRefreshingTitleHidden { return }
+            self.stateLabel.isHidden = isRefreshingTitleHidden
         }
     }
     
-    /** 时间刷新状态下的显示与隐藏*/
-    public var refreshingTimeHidden: Bool = false {
+    /// 时间刷新状态下的显示与隐藏
+    public var isRefreshingTimeHidden: Bool = false {
         didSet {
-            if oldValue == refreshingTimeHidden { return }
-            self.lastUpdatedTimeLabel.isHidden = refreshingTimeHidden
+            if oldValue == isRefreshingTimeHidden { return }
+            self.lastUpdatedTimeLabel.isHidden = isRefreshingTimeHidden
         }
     }
     
@@ -83,7 +83,7 @@ public class FRStateHeader: FRHeader {
     override var state: RefreshState {
         didSet {
             if state == oldValue { return }
-            self.stateLabel.text = self.stateTitles[self.state];
+            self.stateLabel.text = self.stateTitles[self.state]
             
             let tmpString = self.lastUpdatedateKey
             self.lastUpdatedateKey = tmpString

@@ -101,7 +101,7 @@ extension NSObject {
     
     class func exchangeClassMethod(_ method1:Selector, method2:Selector){
         
-        method_exchangeImplementations(class_getClassMethod(self, method1)!, class_getClassMethod(self, method2)!);
+        method_exchangeImplementations(class_getClassMethod(self, method1)!, class_getClassMethod(self, method2)!)
     }
     
 }
@@ -116,9 +116,9 @@ extension UIScrollView {
     var inset: UIEdgeInsets {
         get {
             if #available(iOS 11.0, *) {
-                return self.adjustedContentInset;
+                return self.adjustedContentInset
             }
-            return self.contentInset;
+            return self.contentInset
         }
     }
     
@@ -140,7 +140,7 @@ extension UIScrollView {
         }
     }
     
-    var insertTop: CGFloat {
+    var insetTop: CGFloat {
         get {
             return self.inset.top
         }
@@ -155,7 +155,7 @@ extension UIScrollView {
         }
     }
     
-    var insertRight:CGFloat {
+    var insetRight: CGFloat {
         get {
             return self.inset.right
         }
@@ -169,7 +169,7 @@ extension UIScrollView {
         }
     }
     
-    var insertLeft:CGFloat {
+    var insetLeft: CGFloat {
         get {
             return self.inset.left
         }
@@ -182,7 +182,7 @@ extension UIScrollView {
             self.contentInset.left = newValue
         }
     }
-    var insertBottom:CGFloat {
+    var insetBottom: CGFloat {
         get {
             return self.inset.bottom
         }
@@ -210,7 +210,6 @@ extension UIScrollView {
         get {
             return self.contentSize.height
         }
-        
         set {
             self.contentSize.height = newValue
         }
@@ -369,6 +368,7 @@ extension Date {
     }
     
     func currentCalendar() -> Calendar {
+        // 日历获取在9.0之后的系统使用 current 会抛出异常. 8.0之后使用新的API
         if #available(iOS 8.0, *) {
             return Calendar(identifier: Calendar.Identifier.gregorian)
         } else {

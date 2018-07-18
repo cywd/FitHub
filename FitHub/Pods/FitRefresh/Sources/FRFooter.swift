@@ -9,14 +9,26 @@
 import UIKit
 
 public class FRFooter: FRComponent {
+    
     // MARK: - public
-    /** 提示没有更多的数据 */
-    public func noticeNoMoreData() { self.state = RefreshState.noMoreData }
+    /// 提示没有更多的数据 
+    public func endRefreshingWithNoMoreData() {
+        DispatchQueue.main.async {
+            self.state = RefreshState.noMoreData
+        }
+    }
     
-    /** 重置没有更多的数据（消除没有更多数据的状态） */
-    public func resetNoMoreData() {  self.state = RefreshState.idle }
+    @available(*, deprecated, message: "使用endRefreshingWithNoMoreData", renamed: "endRefreshingWithNoMoreData")
+    public func noticeNoMoreData() { self.endRefreshingWithNoMoreData() }
     
-    /** 忽略多少scrollView的contentInset的bottom */
+    /// 重置没有更多的数据（消除没有更多数据的状态） 
+    public func resetNoMoreData() {
+        DispatchQueue.main.async {
+            self.state = RefreshState.idle
+        }
+    }
+    
+    /// 忽略多少scrollView的contentInset的bottom 
     public var ignoredScrollViewContentInsetBottom: CGFloat = 0
         
     // MARK: - private
@@ -28,15 +40,11 @@ public class FRFooter: FRComponent {
     
     override public func willMove(toSuperview newSuperview: UIView?) {
         super.willMove(toSuperview: newSuperview)
-        
+
         if let _ = newSuperview {
-            
-            // 监听scrollView数据的变化
             // 由于闭包是Any 所以不能采用关联对象
             let tmpClass = ReloadDataClosureInClass()
-            
             self.scrollView.fr.reloadDataClosureClass = tmpClass
-            
         }
     }
 }

@@ -11,19 +11,17 @@ import UIKit
 public class FRNormalHeader: FRStateHeader {
     // MARK: - public
     
-    /** loading样式 */
+    /// loading样式 
     public var activityIndicatorViewStyle:UIActivityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray {
-        
         didSet {
             self.activityView.activityIndicatorViewStyle = activityIndicatorViewStyle
             self.setNeedsLayout()
         }
     }
     
-    /** 指示器的图片[箭头] */
+    /// 指示器的图片[箭头] 
     public var arrowImage: UIImage? {
         didSet {
-            
             self.arrowView.image = arrowImage
             self.placeSubvies()
         }
@@ -31,8 +29,8 @@ public class FRNormalHeader: FRStateHeader {
     
     // MARK: lazy
     // 图片
-    /** 指示图片 */
-    lazy  var arrowView: UIImageView = {
+    /// 指示图片 
+    lazy var arrowView: UIImageView = {
         [unowned self] in
         
         var image = UIImage(named: FRIconSrcPath)
@@ -47,7 +45,6 @@ public class FRNormalHeader: FRStateHeader {
     
     // loading
     fileprivate lazy var activityView: UIActivityIndicatorView = {
-        
         [unowned self] in
         
         let activityView = UIActivityIndicatorView(activityIndicatorStyle: self.activityIndicatorViewStyle)
@@ -75,10 +72,9 @@ public class FRNormalHeader: FRStateHeader {
     }
     
     // 重写观察者属性
-    /** 辅助记录 旧值 */
+    /// 辅助记录 旧值 
     fileprivate var oldState: RefreshState!
     override var state: RefreshState {
-        
         didSet {
             self.oldState = oldValue
             if state == oldValue {return}
@@ -86,8 +82,7 @@ public class FRNormalHeader: FRStateHeader {
         }
     }
     
-    fileprivate func switchStateDoSomething(_ state: RefreshState){
-        
+    fileprivate func switchStateDoSomething(_ state: RefreshState) {
         func commonFun() {
             self.activityView.stopAnimating()
             self.arrowView.isHidden = false
@@ -128,7 +123,7 @@ public class FRNormalHeader: FRStateHeader {
             commonFun()
             UIView.animate(withDuration: RefreshSlowAnimationDuration, animations: { () -> Void in
                 let tmp:CGFloat = 0.000001 - CGFloat(Double.pi)
-                self.arrowView.transform = CGAffineTransform(rotationAngle: tmp);
+                self.arrowView.transform = CGAffineTransform(rotationAngle: tmp)
             })
             
         case .refreshing:

@@ -1,22 +1,22 @@
 PODS:
-  - Alamofire (4.6.0)
-  - AlamofireNetworkActivityIndicator (2.2.0):
-    - Alamofire (~> 4.5)
-  - FitCoding (1.0.1)
-  - FitRefresh (2.4.1)
-  - Kingfisher (4.6.1)
-  - MarkdownView (1.1.0)
-  - Moya (10.0.1):
-    - Moya/Core (= 10.0.1)
-  - Moya/Core (10.0.1):
+  - Alamofire (4.7.3)
+  - AlamofireNetworkActivityIndicator (2.2.1):
+    - Alamofire (~> 4.7)
+  - FitCoding (1.0.2)
+  - FitRefresh (2.6.1)
+  - Kingfisher (4.8.0)
+  - MarkdownView (1.3.0)
+  - Moya (11.0.2):
+    - Moya/Core (= 11.0.2)
+  - Moya/Core (11.0.2):
     - Alamofire (~> 4.1)
     - Result (~> 3.0)
   - Result (3.2.4)
   - SnapKit (4.0.0)
-  - SQLite.swift (0.11.4):
-    - SQLite.swift/standard (= 0.11.4)
-  - SQLite.swift/standard (0.11.4)
-  - SwiftyJSON (4.0.0)
+  - SQLite.swift (0.11.5):
+    - SQLite.swift/standard (= 0.11.5)
+  - SQLite.swift/standard (0.11.5)
+  - SwiftyJSON (4.1.0)
 
 DEPENDENCIES:
   - Alamofire
@@ -30,19 +30,33 @@ DEPENDENCIES:
   - SQLite.swift
   - SwiftyJSON
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - AlamofireNetworkActivityIndicator
+    - FitCoding
+    - FitRefresh
+    - Kingfisher
+    - MarkdownView
+    - Moya
+    - Result
+    - SnapKit
+    - SQLite.swift
+    - SwiftyJSON
+
 SPEC CHECKSUMS:
-  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
-  AlamofireNetworkActivityIndicator: 81e1630e7cfed22a4e4e82a174c59e651dc4f8ca
-  FitCoding: dcb277d68fbcae5081decf3ef8c4361d3ddf02ce
-  FitRefresh: 6dd84a3186a39563729c408aa8ea11b5ed030588
-  Kingfisher: 1f9157d9c02b380cbd0b7cc890161195164eb634
-  MarkdownView: 80db8e9a27a6c6cc22615e644e3e85c06065bab7
-  Moya: 9e621707ff754eeb51ff3ec51a3d54e517c0733a
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  AlamofireNetworkActivityIndicator: aeac50e6ecb78ec71a5f1f29098bcf4ec2962910
+  FitCoding: bf977092cfbb9f2d49866773d00691b7108c981b
+  FitRefresh: 3674a53f1317d5cddb7ff4fe65c2441755bcd6c7
+  Kingfisher: 976d828df2b24834c6a3f2fc4d82cdbd26552be1
+  MarkdownView: 6cee6c558eed4a012005405066071ef16a042d17
+  Moya: a725035953bc1c0eb1be505ab903984501d82440
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
-  SQLite.swift: 3e3bee21da701b5b9f87c4a672cb54f233505692
-  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
+  SQLite.swift: 6e5356850bb1791459f8c16d6ee9195b28714a2e
+  SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
 
 PODFILE CHECKSUM: 836237c3748658e79a179b75467425adb2fd3a53
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.5.3

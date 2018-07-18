@@ -1,9 +1,20 @@
 import UIKit
 import WebKit
 
+/**
+ Markdown View for iOS.
+ 
+ - Note: [How to get height of entire document with javascript](https://stackoverflow.com/questions/1145850/how-to-get-height-of-entire-document-with-javascript)
+ */
 open class MarkdownView: UIView {
 
   private var webView: WKWebView?
+  
+  fileprivate var intrinsicContentHeight: CGFloat? {
+    didSet {
+      self.invalidateIntrinsicContentSize()
+    }
+  }
 
   public var isScrollEnabled: Bool = true {
 
@@ -29,20 +40,25 @@ open class MarkdownView: UIView {
     super.init(coder: aDecoder)
   }
 
+  open override var intrinsicContentSize: CGSize {
+    if let height = self.intrinsicContentHeight {
+      return CGSize(width: UIViewNoIntrinsicMetric, height: height)
+    } else {
+      return CGSize.zero
+    }
+  }
+
   public func load(markdown: String?, enableImage: Bool = true) {
     guard let markdown = markdown else { return }
 
     let bundle = Bundle(for: MarkdownView.self)
 
-    var htmlURL: URL?
-    if bundle.bundleIdentifier?.hasPrefix("org.cocoapods") == true {
-      htmlURL = bundle.url(forResource: "index",
-                           withExtension: "html",
-                           subdirectory: "MarkdownView.bundle")
-    } else {
-      htmlURL = bundle.url(forResource: "index",
-                           withExtension: "html")
-    }
+    let htmlURL: URL? =
+      bundle.url(forResource: "index",
+                 withExtension: "html") ??
+      bundle.url(forResource: "index",
+                 withExtension: "html",
+                 subdirectory: "MarkdownView.bundle")
 
     if let url = htmlURL {
       let templateRequest = URLRequest(url: url)
@@ -86,12 +102,13 @@ open class MarkdownView: UIView {
 extension MarkdownView: WKNavigationDelegate {
 
   public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-    let script = "document.body.offsetHeight;"
+    let script = "document.body.scrollHeight;"
     webView.evaluateJavaScript(script) { [weak self] result, error in
       if let _ = error { return }
 
       if let height = result as? CGFloat {
         self?.onRendered?(height)
+        self?.intrinsicContentHeight = height
       }
     }
   }
