@@ -26,6 +26,10 @@ class ReposTableViewController: UITableViewController, StoryboardLoadable {
             self.loadData()
         })
         
+        self.tableView.fr.footerView = FRAutoNormalFooter(ComponentRefreshingClosure: {
+            self.loadMore()
+        })
+        
 //        self.tableView.fr.headerView?.beginRefreshing()
         self.hud = FitHud.show(view: self.view)
         self.loadData()
@@ -56,11 +60,9 @@ class ReposTableViewController: UITableViewController, StoryboardLoadable {
             self.tableView.reloadData()
             
             if items.count < 30 {
-                self.tableView.fr.footerView = nil;
+                self.tableView.fr.footerView?.isHidden = true
             } else {
-                self.tableView.fr.footerView = FRAutoNormalFooter(ComponentRefreshingClosure: {
-                    self.loadMore()
-                })
+                self.tableView.fr.footerView?.isHidden = false
             }
             
         }) { (error) in
@@ -75,7 +77,7 @@ class ReposTableViewController: UITableViewController, StoryboardLoadable {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        self.tableView.fr.footerView?.isHidden = (items.count == 0)
+        self.tableView.fr.footerView?.isHidden = (items.count < 30)
         return items.count
     }
     

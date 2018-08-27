@@ -79,7 +79,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // 去登陆
         }
         
-        
         UIApplication.shared.shortcutItems = shortcutItems
     }
 

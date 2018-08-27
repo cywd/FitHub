@@ -29,6 +29,10 @@ class EventsViewController: BaseViewController {
         self.tableView.fr.headerView = FRNormalHeader(ComponentRefreshingClosure: {
             self.loadData()
         })
+        
+        self.tableView.fr.footerView = FRAutoNormalFooter(ComponentRefreshingClosure: {
+            self.loadMore()
+        })
 
         if !NetworkManager.isLogin() {
             let loginVC = LoginViewController()
@@ -40,6 +44,9 @@ class EventsViewController: BaseViewController {
             self.hud = FitHud.show(view: self.view)
             self.loadData()
         }
+        
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(loginNotificationSel), name: NSNotification.Name(rawValue: "LoginNotifation"), object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,6 +57,15 @@ class EventsViewController: BaseViewController {
         } else {
             self.loginView.isHidden = true
         }
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc fileprivate func loginNotificationSel(noti : Notification) {
+        self.hud = FitHud.show(view: self.view)
+        self.loadData()
     }
 
     fileprivate func loadData() {
@@ -78,11 +94,9 @@ class EventsViewController: BaseViewController {
             self.tableView.reloadData()
             
             if items.count < 30 {
-                self.tableView.fr.footerView = nil;
+                self.tableView.fr.footerView?.isHidden = true
             } else {
-                self.tableView.fr.footerView = FRAutoNormalFooter(ComponentRefreshingClosure: {
-                    self.loadMore()
-                })
+                self.tableView.fr.footerView?.isHidden = false
             }
         }) { (error) in
             self.hud?.hide()
@@ -123,7 +137,7 @@ class EventsViewController: BaseViewController {
 extension EventsViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        self.tableView.fr.footerView?.isHidden = (items.count == 0)
+        self.tableView.fr.footerView?.isHidden = (items.count < 30)
         return items.count
     }
 

@@ -124,8 +124,9 @@ class LoginViewController: BaseViewController {
                 // 去登陆
             }
             
-            
             UIApplication.shared.shortcutItems = shortcutItems
+            
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "LoginNotifation"), object: nil)
             
             self.dismiss(animated: true, completion: nil)
         }) { (statusCode, error) in
