@@ -106,7 +106,7 @@ class FitHudView: UIView {
         backLayer.fillColor = UIColor.clear.cgColor
 //        backLayer.fillColor = UIColor.randomColor().cgColor
         backLayer.strokeColor = UIColor.white.cgColor
-        backLayer.lineCap = kCALineCapRound
+        backLayer.lineCap = CAShapeLayerLineCap.round
 //        backLayer.lineJoin = kCALineJoinRound
         backLayer.path = path.cgPath
         self.startAnimation(layerParam: self.backLayer)

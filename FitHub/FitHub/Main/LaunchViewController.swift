@@ -20,7 +20,7 @@ class LaunchViewController: UIViewController, StoryboardLoadable {
         // Do any additional setup after loading the view.
         
         
-        UIView.animate(withDuration: 2, delay: 0, options: UIViewAnimationOptions.allowAnimatedContent, animations: {
+        UIView.animate(withDuration: 2, delay: 0, options: UIView.AnimationOptions.allowAnimatedContent, animations: {
             self.logoImageView.alpha = 0
             self.fitLabel.alpha = 0
             

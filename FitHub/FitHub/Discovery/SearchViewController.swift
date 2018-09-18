@@ -180,7 +180,7 @@ extension SearchViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch type {
         case .repositories?:
-            return UITableViewAutomaticDimension
+            return UITableView.automaticDimension
         case .users?:
             return 60
         default:

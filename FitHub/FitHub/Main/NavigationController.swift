@@ -27,7 +27,7 @@ class NavigationController: BaseNavigationController {
 
         viewController.hidesBottomBarWhenPushed = true
         
-        viewController.navigationItem.backBarButtonItem = UIBarButtonItem(title: " ", style: UIBarButtonItemStyle.done, target: nil, action: nil)
+        viewController.navigationItem.backBarButtonItem = UIBarButtonItem(title: " ", style: UIBarButtonItem.Style.done, target: nil, action: nil)
         
         super.pushViewController(viewController, animated: animated)
     }

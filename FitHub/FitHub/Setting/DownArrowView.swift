@@ -58,7 +58,7 @@ class DownArrowView: UIView {
         _layerArrow.fillColor = UIColor.clear.cgColor
         _layerArrow.strokeColor = UIColor.white.cgColor
         _layerArrow.lineWidth = 3
-        _layerArrow.lineCap = kCALineCapRound
+        _layerArrow.lineCap = CAShapeLayerLineCap.round
         _layerArrow.contentsScale = UIScreen.main.scale
         setPath()
         
@@ -85,7 +85,7 @@ class DownArrowView: UIView {
         ani1.autoreverses = false
         ani1.repeatCount = 1
         ani1.isRemovedOnCompletion = false
-        ani1.fillMode = kCAFillModeForwards
+        ani1.fillMode = CAMediaTimingFillMode.forwards
         _layerArrow.add(ani1, forKey: "changePath")
     }
 }

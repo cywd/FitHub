@@ -31,7 +31,7 @@ class MeViewController: BaseViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.rowHeight = 44;
-        tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+        tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         return tableView
     }()
     
@@ -105,7 +105,7 @@ extension MeViewController: UITableViewDataSource, UITableViewDelegate {
             self.navigationItem.rightBarButtonItem = nil
         }
         
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "MeTableViewCell")
+        let cell: UITableViewCell = UITableViewCell(style:UITableViewCell.CellStyle.default, reuseIdentifier: "MeTableViewCell")
         
         cell.textLabel?.text = name
         

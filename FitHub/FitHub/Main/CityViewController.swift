@@ -30,7 +30,7 @@ class CityViewController: BaseViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.rowHeight = 44;
-        tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+        tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         return tableView
     }()
     

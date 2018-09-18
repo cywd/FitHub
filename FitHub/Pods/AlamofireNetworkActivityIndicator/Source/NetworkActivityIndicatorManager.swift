@@ -227,8 +227,8 @@ public class NetworkActivityIndicatorManager {
             RunLoop.main.add(timer, forMode: .common)
             RunLoop.main.add(timer, forMode: .tracking)
             #else
-            RunLoop.main.add(timer, forMode: .commonModes)
-            RunLoop.main.add(timer, forMode: .UITrackingRunLoopMode)
+            RunLoop.main.add(timer, forMode: RunLoop.Mode.common)
+            RunLoop.main.add(timer, forMode: RunLoop.Mode.tracking)
             #endif
         }
 
@@ -249,8 +249,8 @@ public class NetworkActivityIndicatorManager {
             RunLoop.main.add(timer, forMode: .common)
             RunLoop.main.add(timer, forMode: .tracking)
             #else
-            RunLoop.main.add(timer, forMode: .commonModes)
-            RunLoop.main.add(timer, forMode: .UITrackingRunLoopMode)
+            RunLoop.main.add(timer, forMode: RunLoop.Mode.common)
+            RunLoop.main.add(timer, forMode: RunLoop.Mode.tracking)
             #endif
         }
 

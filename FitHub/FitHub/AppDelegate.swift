@@ -13,9 +13,8 @@ import AlamofireNetworkActivityIndicator
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
-    func  application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         
         NetworkActivityIndicatorManager.shared.isEnabled = true
 
@@ -47,11 +46,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
             let dict = dic as! [String : Any]
 
-            let imageSize = CGSizeFromString(dict["UILaunchImageSize"] as! String)
+            let imageSize = NSCoder.cgSize(for: dict["UILaunchImageSize"] as! String)
 
             if (imageSize.equalTo(viewSize) && (viewOrientation == dict["UILaunchImageOrientation"] as? String))
             {
-                launchImage = dict["UILaunchImageName"] as! String
+                launchImage = (dict["UILaunchImageName"] as! String)
             }
         }
         return UIImage(named: launchImage)

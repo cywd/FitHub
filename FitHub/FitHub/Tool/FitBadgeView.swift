@@ -38,7 +38,9 @@ class FitBadgeView: UIView {
             if badgeValue.count == 0 { return CGSize.zero }
             
             let str = NSString(string: badgeValue)
-            var size = str.boundingRect(with: CGSize(width: CGFloat(MAXFLOAT), height: 20), options: NSStringDrawingOptions.truncatesLastVisibleLine.union(.usesLineFragmentOrigin).union(.usesFontLeading) , attributes: [NSAttributedStringKey.font: font], context: nil).size
+            
+            var size = str.boundingRect(with: CGSize(width: CGFloat(MAXFLOAT), height: 30), options: NSStringDrawingOptions.truncatesLastVisibleLine.union(.usesLineFragmentOrigin).union(.usesFontLeading), attributes: [NSAttributedString.Key.font : font], context: nil).size
+    
             if size.width < size.height {
                 size.width = size.height
             }
@@ -127,7 +129,7 @@ class FitBadgeView: UIView {
                 badgeTextStyle.lineBreakMode = .byWordWrapping
                 badgeTextStyle.alignment = .center
                 
-                NSString(string: self.badgeValue).draw(in: CGRect(x: badgeBackgroundFrame.minX+2, y: badgeBackgroundFrame.minY+2, width: badgeSize.width, height: badgeSize.height), withAttributes: [NSAttributedStringKey.font: self.badgeTextFont, NSAttributedStringKey.foregroundColor: self.badgeTextColor, NSAttributedStringKey.paragraphStyle: badgeTextStyle])
+                NSString(string: self.badgeValue).draw(in: CGRect(x: badgeBackgroundFrame.minX+2, y: badgeBackgroundFrame.minY+2, width: badgeSize.width, height: badgeSize.height), withAttributes: [NSAttributedString.Key.font: self.badgeTextFont, NSAttributedString.Key.foregroundColor: self.badgeTextColor, NSAttributedString.Key.paragraphStyle: badgeTextStyle])
             }
         }
         context?.restoreGState()
