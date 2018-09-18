@@ -20,9 +20,9 @@ class SearchSectionHeaderView: UITableViewHeaderFooterView {
         
         didSet {
             switch type {
-            case .repositories:
+            case .repositories?:
                 reposState()
-            case .users:
+            case .users?:
                 usersState()
             default:
                 break

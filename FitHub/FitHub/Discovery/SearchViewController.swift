@@ -81,9 +81,9 @@ extension SearchViewController {
         if let _ = text {
             self.text = text!
             switch type {
-            case .repositories:
+            case .repositories?:
                 self.searchRepos(name: text!)
-            case .users:
+            case .users?:
                 self.searchUsers(name: text!)
             default:
                 break
@@ -129,9 +129,9 @@ extension SearchViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch type {
-        case .repositories:
+        case .repositories?:
             return repos.count
-        case .users:
+        case .users?:
             return users.count
         default:
             return 0
@@ -141,11 +141,11 @@ extension SearchViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         switch type {
-        case .repositories:
+        case .repositories?:
             let cell = tableView.fit_dequeueReusableCell(indexPath: indexPath) as RepositoriesTableViewCell
             cell.model = self.repos[indexPath.row]
             return cell
-        case .users:
+        case .users?:
             let cell = tableView.fit_dequeueReusableCell(indexPath: indexPath) as UserTableViewCell
             cell.model = self.users[indexPath.row]
             return cell
@@ -179,9 +179,9 @@ extension SearchViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch type {
-        case .repositories:
+        case .repositories?:
             return UITableViewAutomaticDimension
-        case .users:
+        case .users?:
             return 60
         default:
             return 0
@@ -191,12 +191,12 @@ extension SearchViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         switch type {
-        case .repositories:
+        case .repositories?:
             let vc = RepositoryViewController.loadStoryboard()
             vc.userName = self.repos[indexPath.row].owner!.login!
             vc.repositoryName = self.repos[indexPath.row].name!
             self.nav?.pushViewController(vc, animated: true)
-        case .users:
+        case .users?:
             
             let model = self.users[indexPath.row]
             if model.type == "User" {
