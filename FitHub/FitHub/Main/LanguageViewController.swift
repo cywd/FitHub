@@ -9,20 +9,22 @@
 import UIKit
 
 class LanguageViewController: BaseViewController, StoryboardLoadable {
+    
     @IBOutlet weak var tableView: UITableView!
 
+    var selectString: String?
     var backHandler: (()->())?
 
     var items: [String] {
         get {
             let allLanguageStr = NSLocalizedString("ALL_LANGUAGE", comment: "所有语言")
             var arr = Languages.languages()
-            for str in arr {
-                if str == "C++" {
-                    let index = arr.index(of: str)!
-                    arr[index] = "CPP"
-                }
-            }
+//            for str in arr {
+//                if str == "C++" {
+//                    let index = arr.index(of: str)!
+//                    arr[index] = "CPP"
+//                }
+//            }
             arr.insert(allLanguageStr, at: 0)
             return arr
 //            return [allLanguageStr,
@@ -40,6 +42,16 @@ class LanguageViewController: BaseViewController, StoryboardLoadable {
         
         let allLanguageStr = NSLocalizedString("CODE_LANGUAGE", comment: "编程语言")
         self.title = allLanguageStr
+        
+        
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "locationCell")
+        
+        if let language = selectString {
+            let index = items.firstIndex(of: language)
+            let indexPath = IndexPath(row: index!, section: 0)
+            tableView.scrollToRow(at: indexPath, at: UITableView.ScrollPosition.top, animated: true)
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -69,8 +81,16 @@ extension LanguageViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
+        let string = items[indexPath.row]
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "languageCell")
-        cell?.textLabel?.text = items[indexPath.row]
+        cell?.textLabel?.text = string
+        
+        if string == self.selectString {
+            cell?.textLabel?.textColor = UIColor.red
+        } else {
+            cell?.textLabel?.textColor = nil
+        }
         return cell!
     }
 

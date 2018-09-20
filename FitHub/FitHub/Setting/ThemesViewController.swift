@@ -11,6 +11,12 @@ import UIKit
 class ThemesViewController: BaseViewController, StoryboardLoadable {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    static var images: [UIImage] {
+        get {
+            return [#imageLiteral(resourceName: "icon_blackbg"), #imageLiteral(resourceName: "icon_whitebg")]
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -54,11 +60,9 @@ extension ThemesViewController: UICollectionViewDataSource, UICollectionViewDele
 
         cell.contentView.layer.borderWidth = 1
         
-        if indexPath.item == 0 {
-            cell.contentView.backgroundColor = UIColor.black
-        } else {
-            cell.contentView.backgroundColor = UIColor.white
-        }
+        let image = ThemesViewController.images[indexPath.row]
+            
+        cell.contentView.layer.contents = image.cgImage
         
         let value = UserDefaults.standard.value(forKey: "FitHubTheme") as! Int
         if indexPath.item == value {
