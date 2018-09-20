@@ -102,6 +102,8 @@
 		E7B347A11FECF1B500A114E9 /* FitHud.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B347A01FECF1B500A114E9 /* FitHud.swift */; };
 		E7B635271FFF4E130085CF9A /* OrgsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B635261FFF4E130085CF9A /* OrgsViewController.swift */; };
 		E7B635291FFF4E1F0085CF9A /* OrgsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7B635281FFF4E1F0085CF9A /* OrgsViewController.storyboard */; };
+		E7CB5851215344320096CD79 /* location.json in Resources */ = {isa = PBXBuildFile; fileRef = E7CB5850215344310096CD79 /* location.json */; };
+		E7CB5853215344650096CD79 /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CB5852215344650096CD79 /* Locations.swift */; };
 		E7D3CD6A1FD69CF500F96B99 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D3CD691FD69CF500F96B99 /* AboutViewController.swift */; };
 		E7D3CD6C1FD69D0300F96B99 /* AboutViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7D3CD6B1FD69D0300F96B99 /* AboutViewController.storyboard */; };
 		E7DB97A8202AE4C300948683 /* FitBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DB97A7202AE4C300948683 /* FitBadgeView.swift */; };
@@ -234,6 +236,8 @@
 		E7B347A01FECF1B500A114E9 /* FitHud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitHud.swift; sourceTree = "<group>"; };
 		E7B635261FFF4E130085CF9A /* OrgsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrgsViewController.swift; sourceTree = "<group>"; };
 		E7B635281FFF4E1F0085CF9A /* OrgsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OrgsViewController.storyboard; sourceTree = "<group>"; };
+		E7CB5850215344310096CD79 /* location.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = location.json; sourceTree = "<group>"; };
+		E7CB5852215344650096CD79 /* Locations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
 		E7D3CD691FD69CF500F96B99 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		E7D3CD6B1FD69D0300F96B99 /* AboutViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AboutViewController.storyboard; sourceTree = "<group>"; };
 		E7DB97A7202AE4C300948683 /* FitBadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitBadgeView.swift; sourceTree = "<group>"; };
@@ -316,6 +320,7 @@
 				E7F064E11FF4EA9700E3C7A8 /* SVGImage.swift */,
 				E7DB97A7202AE4C300948683 /* FitBadgeView.swift */,
 				E7F064E31FF4F51A00E3C7A8 /* Languages.swift */,
+				E7CB5852215344650096CD79 /* Locations.swift */,
 				E720B75E203FA3C300286DAA /* Themes.swift */,
 				E767ED502008A32C00BEC867 /* UserSessionManager.swift */,
 				E746085A1FC541FF00951AEF /* NetworkManager.swift */,
@@ -427,6 +432,7 @@
 				E720B762203FE2D400286DAA /* icons */,
 				E77CE54E1FBEC04500A120B2 /* Info.plist */,
 				E710529D2068B184001F2911 /* colors.json */,
+				E7CB5850215344310096CD79 /* location.json */,
 			);
 			path = FitHub;
 			sourceTree = "<group>";
@@ -621,11 +627,13 @@
 					};
 					E77CE5521FBEC04500A120B2 = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 						TestTargetID = E77CE53E1FBEC04500A120B2;
 					};
 					E77CE55D1FBEC04500A120B2 = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 						TestTargetID = E77CE53E1FBEC04500A120B2;
 					};
@@ -669,6 +677,7 @@
 				E72D4A1320049DC400F2F0D0 /* LicenseViewController.storyboard in Resources */,
 				E7D3CD6C1FD69D0300F96B99 /* AboutViewController.storyboard in Resources */,
 				E742A5B91FCBB190002E8C0A /* UserDetailViewController.storyboard in Resources */,
+				E7CB5851215344320096CD79 /* location.json in Resources */,
 				E720B765203FE2E500286DAA /* icon_whitebg@2x.png in Resources */,
 				11F41AE71FDC3BE700DD047E /* Localizable.strings in Resources */,
 				E76746F11FC6CBB30087A2DF /* RepositoriesTableViewCell.xib in Resources */,
@@ -798,6 +807,7 @@
 				E746085D1FC551D100951AEF /* UserModel.swift in Sources */,
 				E796457B1FCD2E77006C9C1B /* LoginViewController.swift in Sources */,
 				E72D4A0D200499BE00F2F0D0 /* LicenseModel.swift in Sources */,
+				E7CB5853215344650096CD79 /* Locations.swift in Sources */,
 				E74608571FC51D1300951AEF /* UITableView+FitHub.swift in Sources */,
 				E74608601FC5769800951AEF /* UserTableViewCell.swift in Sources */,
 				E73011BA200F301700B43C68 /* OrgsTableViewCell.swift in Sources */,
@@ -1030,7 +1040,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.cyrill.FitHub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1049,7 +1059,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.cyrill.FitHub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1060,12 +1070,12 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3SL26X62NP;
+				DEVELOPMENT_TEAM = JXJV99SFC3;
 				INFOPLIST_FILE = FitHubTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cyrill.FitHubTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FitHub.app/FitHub";
 			};
@@ -1077,12 +1087,12 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3SL26X62NP;
+				DEVELOPMENT_TEAM = JXJV99SFC3;
 				INFOPLIST_FILE = FitHubTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cyrill.FitHubTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FitHub.app/FitHub";
 			};
@@ -1093,12 +1103,12 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3SL26X62NP;
+				DEVELOPMENT_TEAM = JXJV99SFC3;
 				INFOPLIST_FILE = FitHubUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cyrill.FitHubUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = FitHub;
 			};
@@ -1109,12 +1119,12 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3SL26X62NP;
+				DEVELOPMENT_TEAM = JXJV99SFC3;
 				INFOPLIST_FILE = FitHubUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cyrill.FitHubUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = FitHub;
 			};

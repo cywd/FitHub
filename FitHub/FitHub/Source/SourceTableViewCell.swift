@@ -19,7 +19,7 @@ class SourceTableViewCell: UITableViewCell, RegisterCellOrNib {
             typeImageView.image = image
             nameLabel.text = model!.name
             
-            self.accessoryType = model!.isDirectory ? UITableViewCellAccessoryType.disclosureIndicator : UITableViewCellAccessoryType.none
+            self.accessoryType = model!.isDirectory ? UITableViewCell.AccessoryType.disclosureIndicator : UITableViewCell.AccessoryType.none
             
         }
     }

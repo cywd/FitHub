@@ -112,25 +112,25 @@ class UserDetailViewController: BaseViewController, StoryboardLoadable {
             
             if let company = self.model?.company {
                 self.companyButton.isHidden = company==""
-                self.companyButton.setTitle(company, for: UIControlState.normal)
+                self.companyButton.setTitle(company, for: UIControl.State.normal)
             } else {
                 self.companyButton.isHidden = true
             }
             if let location = self.model!.location {
                 self.locationButton.isHidden = location==""
-                self.locationButton.setTitle(location, for: UIControlState.normal)
+                self.locationButton.setTitle(location, for: UIControl.State.normal)
             } else {
                 self.locationButton.isHidden = true
             }
             if let email = self.model!.email {
                 self.emailButton.isHidden = email==""
-                self.emailButton.setTitle(email, for: UIControlState.normal)
+                self.emailButton.setTitle(email, for: UIControl.State.normal)
             } else {
                 self.emailButton.isHidden = true
             }
             if let blog = self.model!.blog {
                 self.blogButton.isHidden = blog==""
-                self.blogButton.setTitle(blog, for: UIControlState.normal)
+                self.blogButton.setTitle(blog, for: UIControl.State.normal)
             } else {
                 self.blogButton.isHidden = true
             }

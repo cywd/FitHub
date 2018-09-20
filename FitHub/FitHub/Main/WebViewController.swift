@@ -46,9 +46,9 @@ class WebViewController: BaseViewController, StoryboardLoadable {
     }
     
     func setupBackButton() {
-        let backItem = UIBarButtonItem(title: "返回", style: UIBarButtonItemStyle.plain, target: self, action: #selector(goBack))
+        let backItem = UIBarButtonItem(title: "返回", style: UIBarButtonItem.Style.plain, target: self, action: #selector(goBack))
         if self.webView.canGoBack {
-            let closeItem = UIBarButtonItem(title: "关闭", style: UIBarButtonItemStyle.plain, target: self, action: #selector(closeWebView))
+            let closeItem = UIBarButtonItem(title: "关闭", style: UIBarButtonItem.Style.plain, target: self, action: #selector(closeWebView))
             self.navigationItem.leftBarButtonItems = [backItem, closeItem]
         } else {
             self.navigationItem.leftBarButtonItems = [backItem]

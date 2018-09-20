@@ -116,6 +116,12 @@ class HomeViewController: BaseViewController {
     
     @IBAction func cityItemTap(_ sender: UIBarButtonItem) {
         let vc = CityViewController()
+        
+        var location = UserDefaults.standard.object(forKey: "location") as? String
+        if location == nil || location == "" {
+            location = "China"
+        }
+        vc.selectString = location
         vc.backHandler = {
             self.tableView.fr.headerView?.beginRefreshing()
         }
@@ -124,6 +130,12 @@ class HomeViewController: BaseViewController {
     
     @IBAction func languageItemTap(_ sender: UIBarButtonItem) {
         let vc = LanguageViewController.loadStoryboard()
+        
+        var language = UserDefaults.standard.object(forKey: "language") as? String
+        if language == nil || language == "" {
+            language = NSLocalizedString("ALL_LANGUAGE", comment: "所有语言")
+        }
+        vc.selectString = language
         vc.backHandler = {
             self.tableView.fr.headerView?.beginRefreshing()
         }

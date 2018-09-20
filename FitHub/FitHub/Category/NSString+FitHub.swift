@@ -16,7 +16,7 @@ extension NSString {
         if self.length == 0 {
             height = 0.0
         } else {
-            let size = self.boundingRect(with: CGSize(width: labelWidth, height: CGFloat(MAXFLOAT)), options: NSStringDrawingOptions.truncatesLastVisibleLine.union(.usesLineFragmentOrigin).union(.usesFontLeading) , attributes: [NSAttributedStringKey.font: font], context: nil).size
+            let size = self.boundingRect(with: CGSize(width: labelWidth, height: CGFloat(MAXFLOAT)), options: NSStringDrawingOptions.truncatesLastVisibleLine.union(.usesLineFragmentOrigin).union(.usesFontLeading) , attributes: [NSAttributedString.Key.font: font], context: nil).size
             height = size.height
         }
         return CGFloat(height)
@@ -27,7 +27,7 @@ extension NSString {
         if self.length == 0 {
             width = 0.0
         } else {
-            let size = self.boundingRect(with: CGSize(width: CGFloat(MAXFLOAT), height: 0), options: NSStringDrawingOptions.truncatesLastVisibleLine.union(.usesLineFragmentOrigin).union(.usesFontLeading) , attributes: [NSAttributedStringKey.font: font], context: nil).size
+            let size = self.boundingRect(with: CGSize(width: CGFloat(MAXFLOAT), height: 0), options: NSStringDrawingOptions.truncatesLastVisibleLine.union(.usesLineFragmentOrigin).union(.usesFontLeading) , attributes: [NSAttributedString.Key.font: font], context: nil).size
             width = size.width
         }
         return CGFloat(width)

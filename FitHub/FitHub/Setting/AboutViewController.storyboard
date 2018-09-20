@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RWN-lT-C5k">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RWN-lT-C5k">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="PingFang.ttc">
-            <string>PingFangSC-Regular</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--About-->
         <scene sceneID="E1w-8F-zVz">
@@ -27,14 +22,15 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R8N-Gm-VS8" customClass="DownArrowView" customModule="FitHub" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="60" width="335" height="50"/>
+                                        <rect key="frame" x="87.5" y="60" width="200" height="50"/>
                                         <color key="backgroundColor" red="0.15686274510000001" green="0.65490196079999996" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="9s4-mT-rvr"/>
+                                            <constraint firstAttribute="width" constant="200" id="TlU-DI-qXy"/>
                                         </constraints>
                                     </view>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FitHubLogo" translatesAutoresizingMaskIntoConstraints="NO" id="aZE-FI-sDI">
-                                        <rect key="frame" x="137" y="130" width="100" height="100"/>
+                                        <rect key="frame" x="137.5" y="130" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="aZE-FI-sDI" secondAttribute="height" multiplier="1:1" id="7ZH-va-02F"/>
                                             <constraint firstAttribute="width" constant="100" id="PgN-1r-Jn2"/>
@@ -59,11 +55,10 @@
                                     <constraint firstAttribute="bottom" secondItem="pZC-yO-2gP" secondAttribute="bottom" constant="20" id="5YW-7Z-iiH"/>
                                     <constraint firstItem="aZE-FI-sDI" firstAttribute="top" secondItem="R8N-Gm-VS8" secondAttribute="bottom" constant="20" id="99F-zC-K9u"/>
                                     <constraint firstItem="aZE-FI-sDI" firstAttribute="centerX" secondItem="aMg-Hv-AW9" secondAttribute="centerX" id="FdY-2o-t95"/>
-                                    <constraint firstItem="R8N-Gm-VS8" firstAttribute="leading" secondItem="aMg-Hv-AW9" secondAttribute="leading" constant="20" id="KYV-DL-7N4"/>
                                     <constraint firstAttribute="trailing" secondItem="pZC-yO-2gP" secondAttribute="trailing" constant="20" id="LTM-9E-eTQ"/>
                                     <constraint firstItem="pZC-yO-2gP" firstAttribute="top" secondItem="vOC-oL-1ti" secondAttribute="bottom" constant="10" id="NRg-I7-OwQ"/>
                                     <constraint firstItem="pZC-yO-2gP" firstAttribute="leading" secondItem="aMg-Hv-AW9" secondAttribute="leading" constant="20" id="RLK-Es-Vhi"/>
-                                    <constraint firstAttribute="trailing" secondItem="R8N-Gm-VS8" secondAttribute="trailing" constant="20" id="SGG-n8-UQo"/>
+                                    <constraint firstItem="pZC-yO-2gP" firstAttribute="centerX" secondItem="aMg-Hv-AW9" secondAttribute="centerX" id="Tt8-9b-sQd"/>
                                     <constraint firstItem="vOC-oL-1ti" firstAttribute="top" secondItem="aZE-FI-sDI" secondAttribute="bottom" id="pBW-mo-BcU"/>
                                     <constraint firstItem="R8N-Gm-VS8" firstAttribute="top" secondItem="aMg-Hv-AW9" secondAttribute="top" constant="60" id="qc0-6q-WAB"/>
                                     <constraint firstItem="vOC-oL-1ti" firstAttribute="centerX" secondItem="aMg-Hv-AW9" secondAttribute="centerX" id="zfx-mb-6Jw"/>

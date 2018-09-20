@@ -10,17 +10,19 @@ import UIKit
 
 class CityViewController: BaseViewController {
 
-    
+    var selectString: String?
     var backHandler: (()->())?
     
     var items: [String] {
         get {
             
-            return ["China",
-                    "Beijing", "Shanghai", "Shenzhen",
-                    "Hangzhou", "Guangzhou", "Chengdu",
-                    "Nanjing", "Wuhan", "Xiamen",
-                    "Tianjin", "Chongqing", "Changsha", "Shenyang"]
+            return Locations.locations()
+            
+//            return ["China",
+//                    "Beijing", "Shanghai", "Shenzhen",
+//                    "Hangzhou", "Guangzhou", "Chengdu",
+//                    "Nanjing", "Wuhan", "Xiamen",
+//                    "Tianjin", "Chongqing", "Changsha", "Shenyang"]
         }
     }
     
@@ -30,7 +32,7 @@ class CityViewController: BaseViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.rowHeight = 44;
-        tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+        tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         return tableView
     }()
     
@@ -46,6 +48,12 @@ class CityViewController: BaseViewController {
         self.tableView.frame = self.view.bounds
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "locationCell")
+        if let loccation = selectString {
+            let index = items.firstIndex(of: loccation)
+            let indexPath = IndexPath(row: index!, section: 0)
+            tableView.scrollToRow(at: indexPath, at: UITableView.ScrollPosition.top, animated: true)
+        }
+        
         
     }
 
@@ -75,8 +83,16 @@ extension CityViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        let string = items[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "locationCell")
-        cell?.textLabel?.text = items[indexPath.row]
+        cell?.textLabel?.text = string
+        
+        if string == self.selectString {
+            cell?.textLabel?.textColor = UIColor.red
+        } else {
+            cell?.textLabel?.textColor = nil
+        }
+        
         return cell!
     }
     

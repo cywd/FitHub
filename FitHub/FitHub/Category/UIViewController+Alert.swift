@@ -31,7 +31,7 @@ extension UIViewController {
 
 extension UIViewController {
     
-    static func configured(title: String? = nil, message: String? = nil, preferredStyle: UIAlertControllerStyle) -> UIAlertController {
+    static func configured(title: String? = nil, message: String? = nil, preferredStyle: UIAlertController.Style) -> UIAlertController {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: preferredStyle)
         alertController.view.tintColor = #colorLiteral(red: 0.2666666667, green: 0.2666666667, blue: 0.2666666667, alpha: 1)
         return alertController

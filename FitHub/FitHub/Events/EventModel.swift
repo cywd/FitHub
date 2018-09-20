@@ -83,8 +83,8 @@ extension EventModel {
         let login = self.actor?.login
         let repoName = self.repo?.name
 
-        let loginAttr = NSAttributedString(string: login!, attributes: [NSAttributedStringKey.link : URL(string: "fithub-name://\(login!)")!])
-        let repoNameAttr = NSAttributedString(string: repoName!, attributes: [NSAttributedStringKey.link : URL(string: "fithub-repo://\(repoName!)")!])
+        let loginAttr = NSAttributedString(string: login!, attributes: [NSAttributedString.Key.link : URL(string: "fithub-name://\(login!)")!])
+        let repoNameAttr = NSAttributedString(string: repoName!, attributes: [NSAttributedString.Key.link : URL(string: "fithub-repo://\(repoName!)")!])
         
         finAttributeString.append(loginAttr)
         
@@ -118,7 +118,7 @@ extension EventModel {
             case EventModel.IssueCommentEvent:
                 let issue = "#" + "\(self.payload?.issue?.number ?? 0)"
                 desc = " comment on issue " + issue + " in "
-                let issueAttr = NSAttributedString(string: issue, attributes: [NSAttributedStringKey.link : URL(string: "")!])
+                let issueAttr = NSAttributedString(string: issue, attributes: [NSAttributedString.Key.link : URL(string: "")!])
                 let aAttr = NSAttributedString(string: " comment on issue ")
                 let bAttr = NSAttributedString(string: " in ")
                 descAttr.append(aAttr)
@@ -132,7 +132,7 @@ extension EventModel {
                 let issueUrl = self.payload?.issue?.url
                 desc = " " + action + " issue " + issue + " in "
                 let actionAttr = NSAttributedString(string: action)
-                let issueAttr = NSAttributedString(string: issue, attributes: [NSAttributedStringKey.link : URL(string: "fithub-issue://\(issueUrl ?? "")")!])
+                let issueAttr = NSAttributedString(string: issue, attributes: [NSAttributedString.Key.link : URL(string: "fithub-issue://\(issueUrl ?? "")")!])
                 let aAttr = NSAttributedString(string: " ")
                 let bAttr = NSAttributedString(string: " issue ")
                 let cAttr = NSAttributedString(string: " in ")
@@ -190,7 +190,7 @@ extension EventModel {
                 break
             case EventModel.ForkEvent:
                 let ttt = self.payload!.forkee!.full_name!
-                let repoAttr = NSAttributedString(string: ttt, attributes: [NSAttributedStringKey.link : URL(string: "fithub-repo://\(ttt)")!])
+                let repoAttr = NSAttributedString(string: ttt, attributes: [NSAttributedString.Key.link : URL(string: "fithub-repo://\(ttt)")!])
                 let aAttr = NSAttributedString(string: " forked ")
                 let bAttr = NSAttributedString(string: " from ")
                 descAttr.append(aAttr)
@@ -208,7 +208,7 @@ extension EventModel {
         
         finAttributeString.append(repoNameAttr)
         
-        finAttributeString.addAttribute(NSAttributedStringKey.font, value: UIFont.systemFont(ofSize: 16), range: NSMakeRange(0, finAttributeString.length))
+        finAttributeString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 16), range: NSMakeRange(0, finAttributeString.length))
         
         return self
     }
