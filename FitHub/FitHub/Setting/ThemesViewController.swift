@@ -14,7 +14,7 @@ class ThemesViewController: BaseViewController, StoryboardLoadable {
     
     static var images: [UIImage] {
         get {
-            return [#imageLiteral(resourceName: "icon_blackbg"), #imageLiteral(resourceName: "icon_whitebg")]
+            return [#imageLiteral(resourceName: "BlackbgIcon"), #imageLiteral(resourceName: "WhitebgIcon")]
         }
     }
     override func viewDidLoad() {
@@ -84,7 +84,7 @@ extension ThemesViewController: UICollectionViewDataSource, UICollectionViewDele
         if indexPath.item == 0 {
             IconManager.changeIcon(iconName: nil)
         } else {
-            IconManager.changeIcon(iconName: "icon_whitebg")
+            IconManager.changeIcon(iconName: "WhitebgIcon")
         }
         
         UserDefaults.standard.set(indexPath.item, forKey: "FitHubTheme")
