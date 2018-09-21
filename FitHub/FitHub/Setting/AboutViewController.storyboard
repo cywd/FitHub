@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RWN-lT-C5k">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina6_5" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,14 +15,14 @@
             <objects>
                 <viewController storyboardIdentifier="AboutViewController" title="About" id="RWN-lT-C5k" customClass="AboutViewController" customModule="FitHub" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0Yh-TN-F16">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMg-Hv-AW9">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="44" y="0.0" width="808" height="393"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R8N-Gm-VS8" customClass="DownArrowView" customModule="FitHub" customModuleProvider="target">
-                                        <rect key="frame" x="87.5" y="60" width="200" height="50"/>
+                                        <rect key="frame" x="304" y="60" width="200" height="50"/>
                                         <color key="backgroundColor" red="0.15686274510000001" green="0.65490196079999996" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="9s4-mT-rvr"/>
@@ -30,26 +30,25 @@
                                         </constraints>
                                     </view>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FitHubLogo" translatesAutoresizingMaskIntoConstraints="NO" id="aZE-FI-sDI">
-                                        <rect key="frame" x="137.5" y="130" width="100" height="100"/>
+                                        <rect key="frame" x="354" y="130" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="aZE-FI-sDI" secondAttribute="height" multiplier="1:1" id="7ZH-va-02F"/>
                                             <constraint firstAttribute="width" constant="100" id="PgN-1r-Jn2"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pZC-yO-2gP">
-                                        <rect key="frame" x="20" y="264" width="335" height="24"/>
+                                        <rect key="frame" x="20" y="264" width="768" height="24"/>
                                         <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12222" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vOC-oL-1ti">
-                                        <rect key="frame" x="163.5" y="230" width="48" height="24"/>
+                                        <rect key="frame" x="380.33333333333331" y="230" width="47.666666666666686" height="24"/>
                                         <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="R8N-Gm-VS8" firstAttribute="centerX" secondItem="aMg-Hv-AW9" secondAttribute="centerX" id="5AE-G5-7Du"/>
                                     <constraint firstAttribute="bottom" secondItem="pZC-yO-2gP" secondAttribute="bottom" constant="20" id="5YW-7Z-iiH"/>
@@ -68,6 +67,7 @@
                                 </connections>
                             </scrollView>
                         </subviews>
+                        <color key="backgroundColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="aMg-Hv-AW9" firstAttribute="leading" secondItem="B40-3R-9Gf" secondAttribute="leading" id="Lxd-ef-HQS"/>

@@ -45,7 +45,7 @@ class RepositoriesTableViewCell: UITableViewCell, RegisterCellOrNib {
             
             if let language = model?.language {
                 self.languageLabel.isHidden = false
-                self.languageLabel.text = "\(language)"
+                self.languageLabel.text = "\(language)" 
                 
                 let dict = Languages.colorDict()[language] as? NSDictionary
                 
