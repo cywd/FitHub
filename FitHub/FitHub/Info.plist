@@ -14,11 +14,11 @@
 	<dict>
 		<key>CFBundleAlternateIcons</key>
 		<dict>
-			<key>WhitebgIcon</key>
+			<key>icon_whitebg</key>
 			<dict>
 				<key>CFBundleIconFiles</key>
 				<array>
-					<string>WhitebgIcon</string>
+					<string>icon_whitebg</string>
 				</array>
 				<key>UIPrerenderedIcon</key>
 				<false/>

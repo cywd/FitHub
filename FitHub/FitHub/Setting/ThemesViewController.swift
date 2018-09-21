@@ -84,7 +84,7 @@ extension ThemesViewController: UICollectionViewDataSource, UICollectionViewDele
         if indexPath.item == 0 {
             IconManager.changeIcon(iconName: nil)
         } else {
-            IconManager.changeIcon(iconName: "WhitebgIcon")
+            IconManager.changeIcon(iconName: "icon_whitebg")
         }
         
         UserDefaults.standard.set(indexPath.item, forKey: "FitHubTheme")
