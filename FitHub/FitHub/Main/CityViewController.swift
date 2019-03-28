@@ -45,7 +45,9 @@ class CityViewController: BaseViewController {
         self.title = locationStr
         
         self.view.addSubview(self.tableView)
-        self.tableView.frame = self.view.bounds
+        self.tableView.snp.makeConstraints { (make) in
+            make.edges.equalTo(self.view)
+        }
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "locationCell")
         if let loccation = selectString {

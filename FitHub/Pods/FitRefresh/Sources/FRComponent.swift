@@ -199,8 +199,8 @@ public class FRComponent: UIView {
             // 执行方法
             if let realTaget = self.refreshingTarget {
                 if realTaget.responds(to: self.refreshingAction) == true {
-                    let timer = Timer.scheduledTimer(timeInterval: 0, target: self.refreshingTarget, selector: self.refreshingAction, userInfo: nil, repeats: false)
-                    RunLoop.main.add(timer, forMode: RunLoop.Mode.common)
+                    let timer = Timer.scheduledTimer(timeInterval: 0, target: self.refreshingTarget!, selector: self.refreshingAction, userInfo: nil, repeats: false)
+                    RunLoop.main.add(timer, forMode:.common)
                 }
             }
             self.beginRefreshingCompletionBlock()
@@ -209,7 +209,7 @@ public class FRComponent: UIView {
     
     // MARK: - private
     /// 记录scrollView刚开始的inset
-    var scrollViewOriginalInset: UIEdgeInsets = UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 0)
+    var scrollViewOriginalInset: UIEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     /// 父控件 */
     weak var scrollView: UIScrollView!
     
@@ -342,7 +342,7 @@ extension UILabel {
         
         if let text = self.text {
             if text.count > 0 {
-                stringWidth = text.boundingRect(with: size, options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font : self.font], context: nil).size.width
+                stringWidth = text.boundingRect(with: size, options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font : self.font!], context: nil).size.width
             }
         }
        

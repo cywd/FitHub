@@ -13,7 +13,7 @@ class Languages: NSObject {
     static let data = NSData(contentsOfFile: Bundle.main.path(forResource: "colors", ofType: ".json")!)
 
     class func colorDict() -> NSDictionary {
-        let json = try? JSONSerialization.jsonObject(with: data! as Data, options: []) as! NSDictionary
+        let json = try? JSONSerialization.jsonObject(with: data! as Data, options: []) as? NSDictionary
         return json!
     }
     

@@ -13,8 +13,8 @@ class Locations: NSObject {
     static let data = NSData(contentsOfFile: Bundle.main.path(forResource: "location", ofType: ".json")!)
 
     class func locationArray() -> NSArray {
-        let json = try? JSONSerialization.jsonObject(with: data! as Data, options: []) as! NSArray
-        return json!
+        let json = try? JSONSerialization.jsonObject(with: data! as Data, options: [])
+        return json as! NSArray
     }
     
     class func locations() -> [String] {
