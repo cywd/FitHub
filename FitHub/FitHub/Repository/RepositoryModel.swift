@@ -110,8 +110,6 @@ class RepositoryModel: NSObject {
     }
     
     override func setValue(_ value: Any?, forUndefinedKey key: String) {
-        print(key)
-        
         if key == "description" {
             self.repositoryDescription = value as? String
         }

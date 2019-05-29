@@ -254,7 +254,7 @@ class NetworkManager: NetworkManagerProtocol {
      */
     static func loadCommonRepos(withUrl urlStr: String, page: Int, success: @escaping (_ items: [RepositoryModel]) -> (), failure: @escaping (Error) -> ()) {
         
-        let url = "\(urlStr)?page=\(page)"
+        let url = "\(urlStr)?page=\(page)&sort=created"
         let header = self.getHeader()
         Alamofire.request(url, method: .get, headers:header).responseJSON { (response) in
             

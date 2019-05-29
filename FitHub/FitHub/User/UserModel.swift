@@ -70,7 +70,7 @@ class UserModel: NSObject, NSCoding {
     }
     
     override func setValue(_ value: Any?, forUndefinedKey key: String) {
-        print(key)
+        
     }
     
     func encode(with aCoder: NSCoder) {

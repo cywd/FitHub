@@ -38,7 +38,7 @@ class DeploymentModel: NSObject {
     }
 
     override func setValue(_ value: Any?, forUndefinedKey key: String) {
-        print(key)
+        
 
         if key == "description" {
             self.desc = value as? String
@@ -75,7 +75,7 @@ class DeploymentStatusModel: NSObject {
     }
 
     override func setValue(_ value: Any?, forUndefinedKey key: String) {
-        print(key)
+        
 
         if key == "description" {
             self.desc = value as? String

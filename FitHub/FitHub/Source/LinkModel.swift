@@ -28,7 +28,7 @@ class LinkModel: NSObject {
     }
     
     override func setValue(_ value: Any?, forUndefinedKey key: String) {
-        print(key)
+        
         
         if key == "self" {
             self.selfStr = value as? String
