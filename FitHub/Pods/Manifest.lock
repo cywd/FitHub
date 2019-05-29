@@ -1,22 +1,22 @@
 PODS:
   - Alamofire (4.8.2)
-  - AlamofireNetworkActivityIndicator (2.3.0):
-    - Alamofire (~> 4.7)
+  - AlamofireNetworkActivityIndicator (2.4.0):
+    - Alamofire (~> 4.8)
   - FitCoding (1.0.2)
   - FitRefresh (2.8.1)
-  - Kingfisher (5.3.0)
+  - Kingfisher (5.5.0)
   - MarkdownView (1.5.0)
-  - Moya (12.0.1):
-    - Moya/Core (= 12.0.1)
-  - Moya/Core (12.0.1):
+  - Moya (13.0.1):
+    - Moya/Core (= 13.0.1)
+  - Moya/Core (13.0.1):
     - Alamofire (~> 4.1)
-    - Result (~> 4.0)
+    - Result (~> 4.1)
   - Result (4.1.0)
-  - SnapKit (4.2.0)
-  - SQLite.swift (0.11.5):
-    - SQLite.swift/standard (= 0.11.5)
-  - SQLite.swift/standard (0.11.5)
-  - SwiftyJSON (4.2.0)
+  - SnapKit (5.0.0)
+  - SQLite.swift (0.12.0):
+    - SQLite.swift/standard (= 0.12.0)
+  - SQLite.swift/standard (0.12.0)
+  - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
   - Alamofire
@@ -46,16 +46,16 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
-  AlamofireNetworkActivityIndicator: 18346ff6d770d9513d0ac6f2d99706f40f93dbaa
+  AlamofireNetworkActivityIndicator: 9acc3de3ca6645bf0efed462396b0df13dd3e7b8
   FitCoding: bf977092cfbb9f2d49866773d00691b7108c981b
   FitRefresh: cd07390701a71f0db53def2a8e243149dcc821a9
-  Kingfisher: 4692c783ffb99e9e2e40a6eb3e518c3b96c6fa8c
+  Kingfisher: 6fe5e67a90fd335e49b0f5c075ff55ac5ebedd94
   MarkdownView: 5bbee438c823db1cd189002d44c84fa909b3a896
-  Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
+  Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
-  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
-  SQLite.swift: 6e5356850bb1791459f8c16d6ee9195b28714a2e
-  SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
+  SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
+  SQLite.swift: 7cad9db150a03716336e69469ec9559c85aece5b
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
 PODFILE CHECKSUM: 836237c3748658e79a179b75467425adb2fd3a53
 
