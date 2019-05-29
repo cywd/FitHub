@@ -19,19 +19,8 @@ class LanguageViewController: BaseViewController, StoryboardLoadable {
         get {
             let allLanguageStr = NSLocalizedString("ALL_LANGUAGE", comment: "所有语言")
             var arr = Languages.languages()
-//            for str in arr {
-//                if str == "C++" {
-//                    let index = arr.index(of: str)!
-//                    arr[index] = "CPP"
-//                }
-//            }
             arr.insert(allLanguageStr, at: 0)
             return arr
-//            return [allLanguageStr,
-//                "JavaScript", "Java", "PHP", "Ruby", "Python", "CSS",
-//                "CPP", "C", "Objective-C", "Swift", "Shell", "Lua", "HTML", "Scala",
-//                "Go", "C#", "Kotlin", "Haskell", "Matlab", "R", "Perl",
-//                "TypeScript", "Vue", "PowerShell"]
         }
     }
 
@@ -58,18 +47,6 @@ class LanguageViewController: BaseViewController, StoryboardLoadable {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension LanguageViewController: UITableViewDataSource, UITableViewDelegate {
