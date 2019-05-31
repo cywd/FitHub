@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class MeViewController: BaseViewController {
 
@@ -15,8 +16,10 @@ class MeViewController: BaseViewController {
         super.viewDidLoad()
                 
         self.view.addSubview(self.tableView)
-        self.tableView.frame = self.view.bounds
         
+        self.tableView.snp.makeConstraints { (make) in
+            make.edges.equalTo(self.view)
+        }
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "MeTableViewCell")
     }
     

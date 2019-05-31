@@ -542,6 +542,7 @@ class NetworkManager: NetworkManagerProtocol {
         }
     }
     
+    
     static func login(name: String, pwd: String, success: @escaping () -> (), failure: @escaping (Int, Error) -> ()) {
         
         let baseUrl = "https://api.github.com"
@@ -550,14 +551,13 @@ class NetworkManager: NetworkManagerProtocol {
         let dic = [
             "note" : "FitHub APP Token",
             "scopes" : [
-                "public_repo",
                 "repo",
                 "user",
+                "notifications",
                 "gist"
             ],
             "client_id" : "8d53a809cf0b28bb1ff7",
-            "client_secret" : "ac0fbe152c8940c2bb1a71a80a849d1f5eba9aed",
-            "fingerprint" : name
+            "client_secret" : "ac0fbe152c8940c2bb1a71a80a849d1f5eba9aed"
         ] as [String : Any]
    
         let header = self.addAuthorizationHead(username: name, pwd: pwd)
@@ -571,17 +571,8 @@ class NetworkManager: NetworkManagerProtocol {
                 let token = json["token"].string
                 
                 if token == nil {
-                    if let status = response.response?.statusCode {
-                        
-                        guard status == 422 else {
-                            failure(status, NSError(domain: "error", code: 999, userInfo: nil))
-                            return
-                        }
-                    } else {
-                        failure(0, NSError(domain: "error", code: 999, userInfo: nil))
-                        return
-                    }
-                    
+                    failure(0, NSError(domain: "error", code: 999, userInfo: nil))
+                    return
                 }
                 
                 UserDefaults.standard.set(true, forKey: "isLogin")
@@ -602,6 +593,10 @@ class NetworkManager: NetworkManagerProtocol {
             }
 
         }
+    }
+    
+    static func check(page: Int, username: String, success: @escaping ([EventModel]) -> (), failure: @escaping (Error) -> ()) {
+        
     }
     
     static func getRepositoriesEventsWith(page: Int, username: String, success: @escaping ([EventModel]) -> (), failure: @escaping (Error) -> ()) {
