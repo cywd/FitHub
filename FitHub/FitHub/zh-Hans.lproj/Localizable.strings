@@ -1,10 +1,10 @@
-/* 
-  Localization.strings
-  FitHub
-
-  Created by 李春阳 on 2017/12/9.
-  Copyright © 2017年 Cyrill. All rights reserved.
-*/
+/*
+ Localization.strings
+ FitHub
+ 
+ Created by 李春阳 on 2017/12/9.
+ Copyright © 2017年 Cyrill. All rights reserved.
+ */
 
 "LOCATION" = "地理位置";
 "CODE_LANGUAGE" = "编程语言";
@@ -17,10 +17,12 @@
 "ORG" = "组织";
 "ORGS" = "组织";
 
+"CANCEL" = "取消";
 "LOGIN" = "登录";
 "LOGOUT" = "退出";
 "USERNAME" = "用户名";
 "PASSWORD" = "密码";
+"GITHUB LOGIN" = "GitHub登录";
 
 "MEMBERS" = "成员";
 

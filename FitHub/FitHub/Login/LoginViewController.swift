@@ -15,7 +15,7 @@ private let loginUrl = URL(string: "https://github.com/login/oauth/authorize?cli
 private let callbackURLScheme = "fithub://"
 
 class LoginViewController: BaseViewController {
-
+    
     enum State {
         case idle
         case logining
@@ -61,7 +61,7 @@ class LoginViewController: BaseViewController {
         super.viewDidLoad()
         
         state = .idle
-
+        
         self.nameTextField.placeholder = NSLocalizedString("USERNAME", comment: "用户名")
         self.pwdTextField.placeholder = NSLocalizedString("PASSWORD", comment: "密码")
     }
@@ -130,6 +130,89 @@ class LoginViewController: BaseViewController {
                 self.showMessage(message: desc)
             }
         }
+    }
+    
+    @IBAction func onPersonalAccessTokenButton(_ sender: Any) {
+        let alert = UIAlertController.configured(
+            title: NSLocalizedString("Personal Access Token", comment: ""),
+            message: NSLocalizedString("Sign in with a Personal Access Token with both repo and user scopes.", comment: ""),
+            preferredStyle: .alert
+        )
+        
+        alert.addTextField { (textField) in
+            textField.placeholder = NSLocalizedString("Personal Access Token", comment: "")
+        }
+        
+        let cancelAction = UIAlertAction(title: NSLocalizedString("CANCEL", comment: ""), style: .cancel, handler: nil)
+        
+        let action = UIAlertAction(title: NSLocalizedString("LOGIN", comment: ""), style: .default, handler: { (tmpAction) in
+            
+            
+            self.coverView.isHidden = false
+            
+            
+            let token = alert.textFields?.first?.text ?? ""
+            
+            var headers : [String : String]? { return ["Authorization": "token \(token)"] }
+            
+            
+            UserDefaults.standard.set(headers, forKey: "header")
+            
+            
+            
+            Alamofire.request("https://api.github.com/user", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseJSON(completionHandler: { (response) in
+                
+                switch response.result {
+                case .success(let value):
+                    let json = JSON(value)
+                    
+                    if let dataDict = json.dictionaryObject {
+                        let model = UserModel(dict: dataDict as [String : AnyObject])
+                        UserSessionManager.save(user: model)
+                    }
+                    
+                    UserDefaults.standard.set(true, forKey: "isLogin")
+                    var shortcutItems = [UIApplicationShortcutItem]()
+                    
+                    let discoveryIcon =  UIApplicationShortcutIcon(templateImageName: "discovery")
+                    let discoveryItem = UIApplicationShortcutItem(type: "com.cy.discovery", localizedTitle: "Discovery", localizedSubtitle: "", icon: discoveryIcon, userInfo: nil)
+                    shortcutItems.append(discoveryItem)
+                    
+                    if NetworkManager.isLogin() {
+                        let eventsIcon =  UIApplicationShortcutIcon(templateImageName: "events")
+                        let eventsItem = UIApplicationShortcutItem(type: "com.cy.events", localizedTitle: "Events", localizedSubtitle: "", icon: eventsIcon, userInfo: nil)
+                        shortcutItems.append(eventsItem)
+                        
+                        if let model = UserSessionManager.myself {
+                            let meIcon =  UIApplicationShortcutIcon(templateImageName: "user")
+                            let meItem = UIApplicationShortcutItem(type: "com.cy.me", localizedTitle: "Me", localizedSubtitle: model.login!, icon: meIcon, userInfo: nil)
+                            shortcutItems.append(meItem)
+                        }
+                    } else {
+                        // 去登陆
+                    }
+                    
+                    self.coverView.isHidden = true
+                    
+                    UIApplication.shared.shortcutItems = shortcutItems
+                    
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "LoginNotifation"), object: nil)
+                    
+                    self.dismiss(animated: true, completion: nil)
+                case .failure(let error):
+                    self.state = .idle
+                    self.coverView.isHidden = true
+                    
+                    self.showMessage(message: error.localizedDescription)
+                }
+                
+            })
+        })
+        
+        alert.addAction(cancelAction)
+        alert.addAction(action)
+        
+        present(alert, animated: true)
     }
     
     @IBAction func githubLoginTap(_ sender: UIButton) {
@@ -217,19 +300,19 @@ class LoginViewController: BaseViewController {
                     })
                     
                     
-//                    UserDefaults.standard.set(true, forKey: "isLogin")
-//
-//                    UserSessionManager.save(token: token)
-//
-//                    self.loadUserDetailDataWith(userName: name, success: { (userModel) in
-//                        UserSessionManager.save(user: userModel)
-//                        success()
-//                    }, failure: { (err) in
-//                        failure(0, err)
-//                    })
-//
+                    //                    UserDefaults.standard.set(true, forKey: "isLogin")
+                    //
+                    //                    UserSessionManager.save(token: token)
+                    //
+                    //                    self.loadUserDetailDataWith(userName: name, success: { (userModel) in
+                    //                        UserSessionManager.save(user: userModel)
+                    //                        success()
+                    //                    }, failure: { (err) in
+                    //                        failure(0, err)
+                    //                    })
+                    //
                 }
-
+                
                 
             }
             
@@ -275,15 +358,15 @@ class LoginViewController: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
