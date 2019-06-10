@@ -163,7 +163,7 @@ class LoginViewController: BaseViewController {
                 t_alert.addAction(t_action)
                 self.present(t_alert, animated: true)
                 
-                self.coverView.isHidden = false
+                self.coverView.isHidden = true
                 return;
             }
             
