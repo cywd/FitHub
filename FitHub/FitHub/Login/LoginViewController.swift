@@ -153,6 +153,20 @@ class LoginViewController: BaseViewController {
             
             let token = alert.textFields?.first?.text ?? ""
             
+            if token.count == 0 {
+                let t_alert = UIAlertController.configured(
+                    title: NSLocalizedString("Error", comment: ""),
+                    message: NSLocalizedString("不能为空", comment: ""),
+                    preferredStyle: .alert
+                )
+                let t_action = UIAlertAction(title: "OK", style: .default, handler: nil)
+                t_alert.addAction(t_action)
+                self.present(t_alert, animated: true)
+                
+                self.coverView.isHidden = false
+                return;
+            }
+            
             var headers : [String : String]? { return ["Authorization": "token \(token)"] }
             
             
@@ -165,6 +179,13 @@ class LoginViewController: BaseViewController {
                 switch response.result {
                 case .success(let value):
                     let json = JSON(value)
+                    
+                    if response.response!.statusCode != 200 {
+                        self.coverView.isHidden = true
+                        
+                        self.handleError()
+                        return;
+                    }
                     
                     if let dataDict = json.dictionaryObject {
                         let model = UserModel(dict: dataDict as [String : AnyObject])
