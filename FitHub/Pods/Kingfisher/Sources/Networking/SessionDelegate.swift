@@ -62,7 +62,9 @@ class SessionDelegate: NSObject {
 
         // Create a new task if necessary.
         let task = SessionDataTask(task: dataTask)
-        task.onCallbackCancelled.delegate(on: self) { [unowned task] (self, value) in
+        task.onCallbackCancelled.delegate(on: self) { [weak task] (self, value) in
+            guard let task = task else { return }
+
             let (token, callback) = value
 
             let error = KingfisherError.requestError(reason: .taskCancelled(task: task, token: token))
@@ -165,14 +167,12 @@ extension SessionDelegate: URLSessionDataDelegate {
         guard let task = self.task(for: dataTask) else {
             return
         }
+        
         task.didReceiveData(data)
-
-        if let expectedContentLength = dataTask.response?.expectedContentLength, expectedContentLength != -1 {
-            let dataLength = Int64(task.mutableData.count)
-            DispatchQueue.main.async {
-                task.callbacks.forEach { callback in
-                    callback.onProgress?.call((dataLength, expectedContentLength))
-                }
+        
+        task.callbacks.forEach { callback in
+            callback.options.onDataReceived?.forEach { sideEffect in
+                sideEffect.onDataReceived(session, task: task, data: data)
             }
         }
     }
@@ -248,6 +248,6 @@ extension SessionDelegate: URLSessionDataDelegate {
             return
         }
         remove(task)
-        sessionTask.onTaskDone.call((result, Array(sessionTask.callbacks)))
+        sessionTask.onTaskDone.call((result, sessionTask.callbacks))
     }
 }

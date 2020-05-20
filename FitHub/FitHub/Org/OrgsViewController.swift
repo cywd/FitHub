@@ -25,6 +25,7 @@ class OrgsViewController: BaseViewController, StoryboardLoadable {
         // Do any additional setup after loading the view.
         
         self.tableView.fit_registerCell(cell: OrgsTableViewCell.self)
+        self.tableView.estimatedRowHeight = UIScreen.main.bounds.height;
         self.page = 1
         self.tableView.fr.headerView = FRNormalHeader(ComponentRefreshingClosure: {
             self.loadData()

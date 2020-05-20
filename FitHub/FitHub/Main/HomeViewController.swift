@@ -35,6 +35,7 @@ class HomeViewController: BaseViewController {
         
         self.title = "Users"
         
+        self.tableView.estimatedRowHeight = UIScreen.main.bounds.height;
         self.tableView.fit_registerCell(cell: UserTableViewCell.self)
         
         self.page = 1

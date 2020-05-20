@@ -24,6 +24,7 @@ class EventsViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.tableView.estimatedRowHeight = UIScreen.main.bounds.height;
         tableView.fit_registerCell(cell: EventsTableViewCell.self)
 
         self.tableView.fr.headerView = FRNormalHeader(ComponentRefreshingClosure: {

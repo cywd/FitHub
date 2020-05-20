@@ -10,7 +10,7 @@ Controls the visibility of the network activity indicator on iOS using Alamofire
 
 ## Features
 
-- [X] Automatic Management of Activity Indicator Visiblity
+- [X] Automatic Management of Activity Indicator Visibility
 - [X] Delay Timers to Mitigate Flicker
 - [X] Can Support `URLSession` Instances Not Managed by Alamofire
 - [x] Comprehensive Test Coverage
@@ -18,13 +18,13 @@ Controls the visibility of the network activity indicator on iOS using Alamofire
 
 ## Requirements
 
-- iOS 8.0+
-- Xcode 8.1+
-- Swift 3.0+
+- iOS 10.0+
+- Xcode 11+
+- Swift 5.1+
 
 ## Dependencies
 
-- [Alamofire 4.7+](https://github.com/Alamofire/Alamofire)
+- [Alamofire 5.0+](https://github.com/Alamofire/Alamofire)
 
 ## Communication
 
@@ -38,46 +38,25 @@ Controls the visibility of the network activity indicator on iOS using Alamofire
 
 ### CocoaPods
 
-[CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects. You can install it with the following command:
-
-```bash
-$ gem install cocoapods
-```
-
-> CocoaPods 1.1.0+ is required.
-
-To integrate AlamofireNetworkActivityIndicator into your Xcode project using CocoaPods, specify it in your `Podfile`:
+[CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To integrate Alamofire into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
-source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '10.0'
-use_frameworks!
-
-pod 'AlamofireNetworkActivityIndicator', '~> 2.2'
-```
-
-Then, run the following command:
-
-```bash
-$ pod install
+pod 'AlamofireNetworkActivityIndicator', '~> 3.1'
 ```
 
 ### Carthage
 
-[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
-
-You can install Carthage with [Homebrew](http://brew.sh/) using the following command:
-
-```bash
-$ brew update
-$ brew install carthage
-```
-
-To integrate AlamofireNetworkActivityIndicator into your Xcode project using Carthage, specify it in your `Cartfile`:
+[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks. To integrate Alamofire into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "Alamofire/AlamofireNetworkActivityIndicator" ~> 2.2
+github "Alamofire/AlamofireNetworkActivityIndicator" ~> 3.1
 ```
+
+### Swift Package Manager (requires Xcode 11)
+
+1. Select File > Swift Packages > Add Package Dependency. Enter `https://github.com/Alamofire/AlamofireNetworkActivityIndicator` in the "Choose Package Repository" dialog.
+2. In the next page, specify the version resolving rule as "Up to Next Major" with "3.1.0" as its earliest version.
+3. After Xcode checking out the source and resolving the version, you can choose the "AlamofireNetworkActivityIndicator" library and add it to your app target.
 
 ### Manually
 

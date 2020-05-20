@@ -126,8 +126,8 @@ class NetworkManager: NetworkManagerProtocol {
     static func searchUser(name: String, success: @escaping (_ items: [UserModel]) -> (), failure: @escaping (Error) -> ()) {
         
         let url = "https://api.github.com/search/users?q=\(name)"
-        let header = self.getHeader()
-        Alamofire.request(url, method: .get, headers:header).responseJSON { (response) in
+        let headers = self.getHeader()
+        AF.request(url, method: .get, headers: headers).responseJSON { (response) in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
@@ -158,7 +158,7 @@ class NetworkManager: NetworkManagerProtocol {
         
         let url = "https://api.github.com/search/repositories?q=\(name)"
         let header = self.getHeader()
-        Alamofire.request(url, method: .get, headers:header).responseJSON { (response) in
+        AF.request(url, method: .get, headers:header).responseJSON { (response) in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
@@ -185,7 +185,7 @@ class NetworkManager: NetworkManagerProtocol {
         
         let url = "https://raw.githubusercontent.com/cywd/cywd.github.io/master/json/trending.json"
         let header = self.getHeader()
-        Alamofire.request(url, method: .get, headers:header).responseJSON { (response) in
+        AF.request(url, method: .get, headers:header).responseJSON { (response) in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
@@ -211,7 +211,7 @@ class NetworkManager: NetworkManagerProtocol {
         
         let url = "\(urlStr)?page=\(page)"
         let header = self.getHeader()
-        Alamofire.request(url, method: .get, headers:header).responseJSON { (response) in
+        AF.request(url, method: .get, headers:header).responseJSON { (response) in
             
             switch response.result {
             case .success(let value):
@@ -256,7 +256,7 @@ class NetworkManager: NetworkManagerProtocol {
         
         let url = "\(urlStr)?page=\(page)"
         let header = self.getHeader()
-        Alamofire.request(url, method: .get, headers:header).responseJSON { (response) in
+        AF.request(url, method: .get, headers:header).responseJSON { (response) in
             
             switch response.result {
             case .success(let value):
@@ -283,7 +283,7 @@ class NetworkManager: NetworkManagerProtocol {
     static func loadOrgs(withUrl urlStr: String, page: Int, success: @escaping (_ items: [OrgModel]) -> (), failure: @escaping (Error) -> ()) {
         let url = "\(urlStr)?page=\(page)"
         let header = self.getHeader()
-        Alamofire.request(url, method: .get, headers:header).responseJSON { (response) in
+        AF.request(url, method: .get, headers:header).responseJSON { (response) in
             
             switch response.result {
             case .success(let value):
@@ -332,7 +332,7 @@ class NetworkManager: NetworkManagerProtocol {
         
         let header = self.getHeader()
         
-        Alamofire.request(url, method: .get, headers:header).responseJSON { (response) in
+        AF.request(url, method: .get, headers:header).responseJSON { (response) in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
@@ -370,7 +370,7 @@ class NetworkManager: NetworkManagerProtocol {
         
         let url = baseUrl + string
         let header = self.getHeader()
-        Alamofire.request(url, method: .get, headers:header).responseJSON { (response) in
+        AF.request(url, method: .get, headers:header).responseJSON { (response) in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
@@ -395,7 +395,7 @@ class NetworkManager: NetworkManagerProtocol {
         
         let url = baseUrl + string
         let header = self.getHeader()
-        Alamofire.request(url, method: .get, headers:header).responseJSON { (response) in
+        AF.request(url, method: .get, headers:header).responseJSON { (response) in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
@@ -424,7 +424,7 @@ class NetworkManager: NetworkManagerProtocol {
         
         let url = baseUrl + string
         let header = self.getHeader()
-        Alamofire.request(url, method: .get, headers:header).responseJSON { (response) in
+        AF.request(url, method: .get, headers:header).responseJSON { (response) in
             switch response.result {
             case .success(let value):
                 
@@ -459,7 +459,7 @@ class NetworkManager: NetworkManagerProtocol {
         
         let url = baseUrl + string
         let header = self.getHeader()
-        Alamofire.request(url, method: .get, headers:header).responseJSON { (response) in
+        AF.request(url, method: .get, headers:header).responseJSON { (response) in
             
             switch response.result {
             case .success(let value):
@@ -490,7 +490,7 @@ class NetworkManager: NetworkManagerProtocol {
         
         let url = baseUrl + string
         let header = self.getHeader()
-        Alamofire.request(url, method: .get, headers:header).responseJSON { (response) in
+        AF.request(url, method: .get, headers:header).responseJSON { (response) in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
@@ -521,7 +521,7 @@ class NetworkManager: NetworkManagerProtocol {
         
         let url = baseUrl + string
         let header = self.getHeader()
-        Alamofire.request(url, method: .get, headers: header).responseJSON { (response) in
+        AF.request(url, method: .get, headers: header).responseJSON { (response) in
             
             switch response.result {
             case .success(let value):
@@ -563,7 +563,7 @@ class NetworkManager: NetworkManagerProtocol {
         let header = self.addAuthorizationHead(username: name, pwd: pwd)
         UserDefaults.standard.set(header, forKey: "header")
         
-        Alamofire.request(url, method: .post, parameters: dic, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
+        AF.request(url, method: .post, parameters: dic, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
 
             switch response.result {
             case .success(let value):
@@ -611,7 +611,7 @@ class NetworkManager: NetworkManagerProtocol {
         let url = baseUrl + string
         
         let header = self.getHeader()
-        Alamofire.request(url, method: HTTPMethod.get, parameters: nil, headers: header).responseJSON { (response) in
+        AF.request(url, method: HTTPMethod.get, parameters: nil, headers: header).responseJSON { (response) in
             
             switch response.result {
             case .success(let value):
@@ -639,7 +639,7 @@ class NetworkManager: NetworkManagerProtocol {
     static func loadLicenseData(withUrl urlStr: String, success: @escaping (_ model: LicenseModel) -> (), failure: @escaping (Error) -> ()) {
         let url = urlStr
         let header = self.getHeader()
-        Alamofire.request(url, method: .get, headers:header).responseJSON { (response) in
+        AF.request(url, method: .get, headers:header).responseJSON { (response) in
             
             switch response.result {
             case .success(let value):
@@ -663,7 +663,7 @@ class NetworkManager: NetworkManagerProtocol {
         let url = urlStr
         let header = self.getHeader()
         
-        Alamofire.request(url, method: HTTPMethod.get, parameters: nil, headers: header).responseJSON { (response) in
+        AF.request(url, method: HTTPMethod.get, parameters: nil, headers: header).responseJSON { (response) in
             
             switch response.result {
             case .success(let value):
@@ -691,7 +691,7 @@ class NetworkManager: NetworkManagerProtocol {
     static func loadContentData(withUrl urlStr: String, success: @escaping (_ model: ContentModel) -> (), failure: @escaping (Error) -> ()) {
         let url = urlStr
         let header = self.getHeader()
-        Alamofire.request(url, method: .get, headers:header).responseJSON { (response) in
+        AF.request(url, method: .get, headers:header).responseJSON { (response) in
             
             switch response.result {
             case .success(let value):
@@ -728,7 +728,7 @@ class NetworkManager: NetworkManagerProtocol {
         let url = baseUrl + string
         
         let header = self.getHeader()
-        Alamofire.request(url, method: type, parameters: nil, headers: header).responseJSON { (response) in
+        AF.request(url, method: type, parameters: nil, headers: header).responseJSON { (response) in
             
             switch response.result {
             case .success(_):
@@ -769,7 +769,7 @@ class NetworkManager: NetworkManagerProtocol {
         let url = baseUrl + string
         
         let header = self.getHeader()
-        Alamofire.request(url, method: type, parameters: nil, headers: header).responseJSON { (response) in
+        AF.request(url, method: type, parameters: nil, headers: header).responseJSON { (response) in
             
             switch response.result {
             case .success(_):
@@ -805,7 +805,7 @@ class NetworkManager: NetworkManagerProtocol {
     }
     
     // MARK: - private
-    fileprivate class func getHeader() -> [String: String]! {
+    fileprivate class func getHeader() -> HTTPHeaders {
         var header = [String: String]()
         header["headers"] = "application/vnd.github.v3+json"
         header["User-Agent"] = "FirHub"
@@ -817,7 +817,7 @@ class NetworkManager: NetworkManagerProtocol {
                 }
             }
         }
-        return header
+        return HTTPHeaders(header)
     }
     
     private class func removeLoginInfo() {
@@ -828,16 +828,16 @@ class NetworkManager: NetworkManagerProtocol {
         UserSessionManager.removeUser()
     }
     
-    fileprivate class func addAuthorizationHead(base64UsernameAndPwd: String) -> [String: String] {
+    fileprivate class func addAuthorizationHead(base64UsernameAndPwd: String) -> HTTPHeaders {
         let jsonStr = "Basic " + base64UsernameAndPwd
-        return ["Authorization": jsonStr]
+        return HTTPHeaders(["Authorization": jsonStr])
     }
     
-    fileprivate class func addAuthorizationHead(username: String, pwd: String) -> [String: String] {
+    fileprivate class func addAuthorizationHead(username: String, pwd: String) -> HTTPHeaders {
         let nameAndPwd = username + ":" + pwd
         let data = nameAndPwd.data(using: String.Encoding.utf8)
         let jsonStr = "Basic " + String(data!.base64EncodedString())
-        return ["Authorization": jsonStr]
+        return HTTPHeaders(["Authorization": jsonStr])
     }
     
 }

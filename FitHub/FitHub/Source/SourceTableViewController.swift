@@ -20,7 +20,7 @@ class SourceTableViewController: UITableViewController, StoryboardLoadable {
         super.viewDidLoad()
 
         self.tableView.fit_registerCell(cell: SourceTableViewCell.self)
-        
+        self.tableView.estimatedRowHeight = UIScreen.main.bounds.height;
         self.tableView.fr.headerView = FRNormalHeader(ComponentRefreshingClosure: {
             self.loadData()
         })

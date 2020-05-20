@@ -23,6 +23,7 @@ class UsersTableViewController: UITableViewController, StoryboardLoadable {
         // Do any additional setup after loading the view.
         
         self.tableView.fit_registerCell(cell: UserTableViewCell.self)
+        self.tableView.estimatedRowHeight = UIScreen.main.bounds.height;
         self.page = 1
         self.tableView.fr.headerView = FRNormalHeader(ComponentRefreshingClosure: {
             self.loadData()
