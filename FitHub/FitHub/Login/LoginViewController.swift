@@ -8,6 +8,7 @@
 
 import UIKit
 import SafariServices
+import AuthenticationServices
 
 private let loginUrl = URL(string: "https://github.com/login/oauth/authorize?client_id=\("8d53a809cf0b28bb1ff7")&scope=user+repo+notifications")!
 private let callbackURLScheme = "fithub://"
@@ -26,9 +27,17 @@ class LoginViewController: BaseViewController {
     @IBOutlet weak var pwdTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     
-    private var authSession: SFAuthenticationSession? {
+    
+    private enum Session {
+        @available(iOS 12.0, *)
+        case asWebAuthenticationSession(ASWebAuthenticationSession)
+        @available(iOS, introduced: 11.0, deprecated: 12.0)
+        case sfAuthenticationSession(SFAuthenticationSession)
+    }
+    
+    private var authSession: Session? {
         get {
-            return _authSession as? SFAuthenticationSession
+            return _authSession as? Session
         }
         set {
             _authSession = newValue
