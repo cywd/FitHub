@@ -18,6 +18,15 @@ class UserSessionManager: NSObject {
     static var myself: UserModel? {
         get {
             if let data = UserDefaults.standard.object(forKey: "user") as? NSData {
+                if #available(iOS 12.0, *) {
+                    do {
+                        var user: UserModel? = nil
+                        try user = NSKeyedUnarchiver.unarchivedObject(ofClass: UserModel.self, from: data as Data)!
+                        return user
+                    } catch {
+                        return nil
+                    }
+                }
                 let user = NSKeyedUnarchiver.unarchiveObject(with: data as Data) as! UserModel
                 return user
             } else {
@@ -27,8 +36,16 @@ class UserSessionManager: NSObject {
     }
     
     class func save(user: UserModel) {
-        let data = NSKeyedArchiver.archivedData(withRootObject: user)
-        UserDefaults.standard.setValue(data, forKey: "user")
+        if #available(iOS 12.0, *) {
+            do {
+                try UserDefaults.standard.setValue(NSKeyedArchiver.archivedData(withRootObject: user, requiringSecureCoding: true), forKey: "user")
+            } catch {
+                
+            }
+        } else {
+            let data = NSKeyedArchiver.archivedData(withRootObject: user)
+            UserDefaults.standard.setValue(data, forKey: "user")
+        }
     }
     
     class func removeUser() {

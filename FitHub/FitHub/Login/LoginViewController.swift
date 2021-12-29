@@ -27,25 +27,6 @@ class LoginViewController: BaseViewController {
     @IBOutlet weak var pwdTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     
-    
-    private enum Session {
-        @available(iOS 12.0, *)
-        case asWebAuthenticationSession(ASWebAuthenticationSession)
-        @available(iOS, introduced: 11.0, deprecated: 12.0)
-        case sfAuthenticationSession(SFAuthenticationSession)
-    }
-    
-    private var authSession: Session? {
-        get {
-            return _authSession as? Session
-        }
-        set {
-            _authSession = newValue
-        }
-    }
-    
-    private var _authSession: Any?
-    
     var state: State = .idle {
         didSet {
             let hideSpinner: Bool
@@ -94,20 +75,6 @@ class LoginViewController: BaseViewController {
             self.showMessage(message: desc)
             return
         }
-        
-//        if #available(iOS 11.0, *) {
-//            self.authSession = SFAuthenticationSession(url: loginUrl, callbackURLScheme: callbackURLScheme, completionHandler: { [weak self] (callBackUrl, error) in
-//                guard error == nil, let callBackUrl = callBackUrl else {
-//                    switch error! {
-//                    case SFAuthenticationError.canceledLogin: break
-//                    default: print("error")
-//                    }
-//                    return
-//                }
-//                self?.receivedCodeRedirect(url: callBackUrl)
-//            })
-//            self.authSession?.start()
-//        }
         
         self.state = .logining
         

@@ -57,17 +57,17 @@ extension AppDelegate {
         
         var shortcutItems = [UIApplicationShortcutItem]()
         
-        let discoveryIcon =  UIApplicationShortcutIcon(templateImageName: "discovery")
+        let discoveryIcon = UIApplicationShortcutIcon(templateImageName: "discovery")
         let discoveryItem = UIApplicationShortcutItem(type: "com.cy.discovery", localizedTitle: "Discovery", localizedSubtitle: "", icon: discoveryIcon, userInfo: nil)
         shortcutItems.append(discoveryItem)
         
         if NetworkManager.isLogin() {
-            let eventsIcon =  UIApplicationShortcutIcon(templateImageName: "events")
+            let eventsIcon = UIApplicationShortcutIcon(templateImageName: "events")
             let eventsItem = UIApplicationShortcutItem(type: "com.cy.events", localizedTitle: "Events", localizedSubtitle: "", icon: eventsIcon, userInfo: nil)
             shortcutItems.append(eventsItem)
             
             if let model = UserSessionManager.myself {
-                let meIcon =  UIApplicationShortcutIcon(templateImageName: "user")
+                let meIcon = UIApplicationShortcutIcon(templateImageName: "user")
                 let meItem = UIApplicationShortcutItem(type: "com.cy.me", localizedTitle: "Me", localizedSubtitle: model.login!, icon: meIcon, userInfo: nil)
                 shortcutItems.append(meItem)
             }
